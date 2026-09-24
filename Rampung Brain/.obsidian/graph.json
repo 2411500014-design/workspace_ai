@@ -62,6 +62,13 @@
         "a": 1,
         "rgb": 12566463
       }
+    },
+    {
+      "query": "path:Validasi",
+      "color": {
+        "a": 1,
+        "rgb": 16733986
+      }
     }
   ],
   "collapse-display": true,

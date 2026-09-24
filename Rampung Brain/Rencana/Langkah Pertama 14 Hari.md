@@ -16,8 +16,8 @@ Centang langsung di Obsidian. Setelah selesai, catat hasilnya di [[Riwayat]].
 
 ## Minggu 1: pahami masalahnya (28 Sep – 4 Okt)
 
-- [ ] Tulis satu halaman hipotesis: masalah, calon pengguna, solusi, dan harga yang mungkin dibayar.
-- [ ] Susun 10 pertanyaan wawancara tentang cara responden mengelola skripsi sekarang. Tanyakan kejadian nyata dan jangan menawarkan ide, sesuai prinsip buku *The Mom Test*.
+- [x] Tulis satu halaman hipotesis: masalah, calon pengguna, solusi, dan harga yang mungkin dibayar. → [[Hipotesis]] *(draf 2026-09-24, baca ulang sebelum wawancara pertama)*
+- [x] Susun 10 pertanyaan wawancara tentang cara responden mengelola skripsi sekarang. Tanyakan kejadian nyata dan jangan menawarkan ide, sesuai prinsip buku *The Mom Test*. → [[Panduan Wawancara Mahasiswa]], ditambah 6 pertanyaan untuk dosen di [[Panduan Wawancara Dosen]]. *(draf 2026-09-24; uji coba dulu dengan satu teman)*
 - [ ] Jadwalkan 10–15 wawancara mahasiswa tingkat akhir dari minimal 3 prodi, plus 2 dosen pembimbing.
 - [ ] Rekrut 5 peserta concierge test dan minta proposal atau draf mereka dengan izin tertulis.
 - [ ] Cek ketersediaan nama **Rampung** dan beberapa cadangan: domain, username media sosial, dan merek terdaftar di PDKI milik DJKI. Master plan meminta 5 kandidat; Rampung sudah jadi pilihan utama ([[K-001 Nama produk Rampung]]).

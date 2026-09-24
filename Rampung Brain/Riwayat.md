@@ -12,6 +12,11 @@ Catatan bertanggal tentang apa yang terjadi di project ini. Entri terbaru ditaru
 
 ## 2026-09
 
+- **2026-09-24**: Bahan Fase 0 selesai dirancang:
+  - [[Hipotesis]]: calon pengguna, 5 hipotesis masalah, 3 hipotesis solusi, 2 hipotesis harga, dan asumsi paling berisiko.
+  - [[Panduan Wawancara Mahasiswa]]: 10 pertanyaan *The Mom Test*, kode kesulitan yang ditetapkan sebelum wawancara, dan teks izin untuk concierge test.
+  - [[Panduan Wawancara Dosen]]: 6 pertanyaan.
+  - Template catatan wawancara dan `Hasil Wawancara.base`, yang menghitung kriteria keluar Fase 0 secara otomatis. Tabelnya sudah dicek dengan dua catatan contoh, lalu contohnya dihapus.
 - **2026-09-24**: Repo disusun sebagai monorepo sesuai master plan. Kerangka Flutter dipindah ke `app/`, lalu dibuat `backend/`, `modes/`, `evals/` (baru berisi README), `docs/adr/0001-pilihan-stack.md`, README root, dan CI GitHub Actions. `flutter analyze` dan `flutter test` lolos sebelum dan sesudah dipindah. Git lokal diinisialisasi dengan commit pertama. → [[K-003 Vault dan struktur folder]]
 - **2026-09-24**: Ditetapkan: **aplikasi belum dibangun selama Fase 0**. Pemasangan l10n dan penggantian nama package ditunda. → [[Langkah Pertama 14 Hari]]
 - **2026-09-24**: Master plan "AI Academic Workspace" selesai ditulis (43 halaman, 19 bagian). Disalin ke `docs/`. → [[Master Plan]]

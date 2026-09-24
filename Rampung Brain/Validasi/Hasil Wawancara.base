@@ -1,0 +1,66 @@
+filters:
+  and:
+    - 'type == "wawancara"'
+    - '!file.inFolder("Templates")'
+
+properties:
+  tanggal:
+    displayName: "Tanggal"
+  prodi:
+    displayName: "Prodi"
+  tahap:
+    displayName: "Tahap"
+  kesulitan_1:
+    displayName: "Kesulitan 1"
+  kesulitan_2:
+    displayName: "Kesulitan 2"
+  kesulitan_3:
+    displayName: "Kesulitan 3"
+  pengelolaan_top3:
+    displayName: "Pengelolaan di top 3"
+  kandidat_concierge:
+    displayName: "Kandidat concierge"
+
+views:
+  - type: table
+    name: "Mahasiswa"
+    filters:
+      and:
+        - 'peran == "mahasiswa"'
+    order:
+      - file.name
+      - tanggal
+      - prodi
+      - tahap
+      - kesulitan_1
+      - kesulitan_2
+      - kesulitan_3
+      - pengelolaan_top3
+      - kandidat_concierge
+    summaries:
+      prodi: Unique
+      kesulitan_1: Filled
+      pengelolaan_top3: Checked
+      kandidat_concierge: Checked
+
+  - type: table
+    name: "Kandidat concierge"
+    filters:
+      and:
+        - 'peran == "mahasiswa"'
+        - 'kandidat_concierge == true'
+    order:
+      - file.name
+      - prodi
+      - tahap
+      - tanggal
+
+  - type: table
+    name: "Dosen"
+    filters:
+      and:
+        - 'peran == "dosen"'
+    order:
+      - file.name
+      - tanggal
+      - prodi

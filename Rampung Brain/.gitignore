@@ -7,3 +7,11 @@
 
 .DS_Store
 Thumbs.db
+
+# Interview recordings never enter the vault (it is committed to git).
+*.m4a
+*.mp3
+*.wav
+*.ogg
+*.webm
+*.aac

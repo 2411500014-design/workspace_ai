@@ -37,6 +37,7 @@ Aplikasi dan web tersedia dalam **Bahasa Indonesia dan English**. Lihat [[K-002 
 | Bisnis | [[Monetisasi]] · [[Go-to-Market]] · [[Metrik]] |
 | Legal | [[Keamanan dan Privasi]] · [[Integritas Akademik]] |
 | Rencana | [[Roadmap]] · [[Langkah Pertama 14 Hari]] · [[Risiko]] |
+| Validasi (Fase 0) | [[Hipotesis]] · [[Panduan Wawancara Mahasiswa]] · [[Panduan Wawancara Dosen]] · `Validasi/Hasil Wawancara.base` |
 | Kerja | [[Log Keputusan]] · [[Pertanyaan Terbuka]] · [[Riwayat]] |
 | Sumber | [[Master Plan]] · [[Knowledge Graph]] · [[Cara pakai vault ini]] |
 
