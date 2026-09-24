@@ -1,4 +1,4 @@
-# Rampung: AI evals
+# Purnara: AI evals
 
 Dataset dan skrip untuk menguji kualitas setiap workflow AI. Perubahan prompt atau model hanya boleh di-merge jika skor evals tidak turun lebih dari 2 poin persentase. **Belum ada isi.**
 

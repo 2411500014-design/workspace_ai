@@ -1,5 +1,5 @@
 # Repo-wide ignores. The Flutter app has its own list in app/.gitignore, and the
-# Obsidian vault has one in "Rampung Brain/.gitignore".
+# Obsidian vault has one in "Purnara Brain/.gitignore".
 
 # Secrets never enter the repo. API keys live only on the server.
 .env

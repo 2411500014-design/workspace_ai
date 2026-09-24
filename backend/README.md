@@ -1,4 +1,4 @@
-# Rampung: backend
+# Purnara: backend
 
 FastAPI dengan pola modular monolith, ditambah worker background (Celery atau ARQ, dengan Redis). **Belum ada kode.**
 
