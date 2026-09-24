@@ -1,7 +1,7 @@
 ---
 type: decision
 area: Keputusan
-status: diterima
+status: ditinjau ulang
 tanggal: 2026-09-24
 tags:
   - keputusan
@@ -20,7 +20,16 @@ Nama produk: **Rampung**, atau **Rampung AI**. *Rampung* berarti selesai. Yang d
 ## Akibat
 - Nama ini netral terhadap segmen dan cocok untuk semua mode.
 - Di UI English, "Rampung" tetap dipakai sebagai merek dan tidak diterjemahkan. Artinya bisa dijelaskan di tagline landing page, misalnya "Rampung means *done*." Lihat [[Bilingual ID-EN]].
-- **Masih harus dicek** di Fase 0: domain, username media sosial, dan merek terdaftar di PDKI (DJKI). Siapkan nama cadangan kalau ada bentrok. Lihat [[Langkah Pertama 14 Hari]].
 - Nama package Flutter saat ini masih `workspace_ai`. Penggantian nama dibahas di [[K-003 Vault dan struktur folder]].
+
+## Hasil cek nama (2026-09-24): perlu ditinjau ulang
+
+Hasil lengkapnya ada di [[Cek Nama]].
+
+- **Merek "Rampung Indonesia" sudah terdaftar** di PDKI (IDM000904862, kelas 41, berlaku sampai 18 Sep 2029). Cakupannya jasa pendidikan, termasuk informasi pendidikan online dan layanan akademik. Wilayah itu bersinggungan dengan Rampung.
+- `rampung.com` dan `rampung.id` sudah terdaftar pihak lain. `rampung.ai`, `rampung.app`, dan beberapa varian lain masih tersedia.
+- Username `rampung` sudah dipakai di TikTok, X, YouTube, dan GitHub, semuanya tidak aktif. Di Instagram tampaknya masih kosong.
+
+**Status keputusan berubah menjadi *ditinjau ulang*.** Rampung tetap nama kerja, tetapi belum boleh ada biaya untuk merek, domain, atau logo sampai konsultan KI menilai risikonya. Siapkan nama cadangan secara paralel.
 
 Terkait: [[Visi dan Positioning]] · [[Log Keputusan]]

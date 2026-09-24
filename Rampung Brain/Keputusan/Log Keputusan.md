@@ -16,7 +16,7 @@ Satu tempat untuk semua keputusan. Keputusan baru dibuat dari template `Template
 
 | No | Keputusan | Tanggal | Status |
 | --- | --- | --- | --- |
-| [[K-001 Nama produk Rampung]] | Nama produk Rampung / Rampung AI | 2026-09-24 | Diterima, menunggu cek merek |
+| [[K-001 Nama produk Rampung]] | Nama produk Rampung / Rampung AI | 2026-09-24 | **Ditinjau ulang**: ada merek terdaftar di kelas 41 ([[Cek Nama]]) |
 | [[K-002 Dua bahasa ID dan EN]] | Aplikasi dan web dalam Bahasa Indonesia dan English | 2026-09-24 | Diterima |
 | [[K-003 Vault dan struktur folder]] | Vault di dalam folder project; monorepo menyusul | 2026-09-24 | Diterima, sebagian terbuka |
 

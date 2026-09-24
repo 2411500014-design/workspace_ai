@@ -20,7 +20,9 @@ Centang langsung di Obsidian. Setelah selesai, catat hasilnya di [[Riwayat]].
 - [x] Susun 10 pertanyaan wawancara tentang cara responden mengelola skripsi sekarang. Tanyakan kejadian nyata dan jangan menawarkan ide, sesuai prinsip buku *The Mom Test*. → [[Panduan Wawancara Mahasiswa]], ditambah 6 pertanyaan untuk dosen di [[Panduan Wawancara Dosen]]. *(draf 2026-09-24; uji coba dulu dengan satu teman)*
 - [ ] Jadwalkan 10–15 wawancara mahasiswa tingkat akhir dari minimal 3 prodi, plus 2 dosen pembimbing.
 - [ ] Rekrut 5 peserta concierge test dan minta proposal atau draf mereka dengan izin tertulis.
-- [ ] Cek ketersediaan nama **Rampung** dan beberapa cadangan: domain, username media sosial, dan merek terdaftar di PDKI milik DJKI. Master plan meminta 5 kandidat; Rampung sudah jadi pilihan utama ([[K-001 Nama produk Rampung]]).
+- [x] Cek ketersediaan nama **Rampung**: domain, username media sosial, dan merek terdaftar di PDKI milik DJKI. *Selesai 2026-09-24.* Ada merek terdaftar "Rampung Indonesia" di kelas 41, jadi nama ini perlu ditinjau konsultan KI. → [[Cek Nama]]
+- [ ] Cek 3–4 nama cadangan dengan cara yang sama. Master plan meminta 5 kandidat.
+- [ ] Konsultasi dengan konsultan KI terdaftar tentang "Rampung" di kelas 9 dan 42 ([[K-001 Nama produk Rampung]]).
 - [x] Siapkan monorepo (`app/`, `backend/`, `modes/`, `evals/`, `docs/adr/`), README, ADR-001 tentang pilihan stack, dan lint di GitHub Actions. *Selesai 2026-09-24. CI baru berjalan setelah ada remote GitHub.* Lihat [[K-003 Vault dan struktur folder]].
 - [ ] ~~Pasang l10n Flutter dengan dua ARB (`id`, `en`)~~ **Ditunda:** aplikasi belum dibangun selama Fase 0. Pasang sebagai langkah pertama saat Fase 1 dimulai, sebelum layar pertama dibuat ([[Bilingual ID-EN]]).
 

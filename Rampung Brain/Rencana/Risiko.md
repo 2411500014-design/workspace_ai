@@ -26,6 +26,12 @@ Dua risiko teratas adalah **scope yang melebar** dan **retensi rendah**. Skor = 
 | Prompt injection lewat dokumen | 4 (2×2) | Isi dokumen diperlakukan sebagai data; AI hanya mengusulkan dan setiap perubahan butuh persetujuan; kasus injeksi masuk dataset evals | Output yang menjalankan perintah dari isi dokumen |
 | Kebocoran data atau pelanggaran UU PDP | 3 (3×1) | RLS, enkripsi, akses minimal, DPIA, respons insiden 3×24 jam ([[Keamanan dan Privasi]]) | Akses tidak wajar di log audit |
 
+## Risiko nama (ditemukan 2026-09-24)
+
+| Risiko | Skor usulan | Mitigasi | Tanda awal |
+| --- | --- | --- | --- |
+| Nama "Rampung" bentrok dengan merek terdaftar "Rampung Indonesia" (kelas 41, pendidikan, berlaku sampai 2029): permohonan merek ditolak, atau ada sengketa setelah launch | 6 (3×2) | Konsultasi konsultan KI sebelum ada biaya untuk merek, domain, atau logo; siapkan nama cadangan; pertimbangkan penghapusan karena tidak dipakai, pembelian, atau lisensi ([[Cek Nama]]) | Konsultan menilai ada persamaan pada pokoknya, atau pemilik merek mulai aktif |
+
 ## Risiko baru dari keputusan dua bahasa
 
 Master plan belum memuat risiko ini. Skornya masih usulan.

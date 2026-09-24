@@ -12,6 +12,11 @@ Catatan bertanggal tentang apa yang terjadi di project ini. Entri terbaru ditaru
 
 ## 2026-09
 
+- **2026-09-24**: Nama **Rampung** dicek:
+  - Merek terdaftar "Rampung Indonesia" ditemukan di kelas 41 (pendidikan, IDM000904862, berlaku sampai 2029).
+  - `rampung.com` dan `rampung.id` sudah dipakai; `rampung.ai` dan `rampung.app` tersedia.
+  - Username `rampung` sudah dipakai (tidak aktif) di TikTok, X, YouTube, dan GitHub.
+  - K-001 berubah menjadi *ditinjau ulang*, menunggu konsultan KI. → [[Cek Nama]]
 - **2026-09-24**: Bahan Fase 0 selesai dirancang:
   - [[Hipotesis]]: calon pengguna, 5 hipotesis masalah, 3 hipotesis solusi, 2 hipotesis harga, dan asumsi paling berisiko.
   - [[Panduan Wawancara Mahasiswa]]: 10 pertanyaan *The Mom Test*, kode kesulitan yang ditetapkan sebelum wawancara, dan teks izin untuk concierge test.

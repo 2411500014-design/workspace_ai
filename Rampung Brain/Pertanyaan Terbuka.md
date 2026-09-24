@@ -11,7 +11,9 @@ updated: 2026-09-24
 Hal yang belum diputuskan. Setelah diputuskan, buat catatan keputusan ([[Log Keputusan]]) lalu centang di sini.
 
 ## Nama dan merek
-- [ ] Apakah **Rampung** tersedia sebagai domain, username media sosial, dan merek di PDKI? Apa nama cadangannya? → [[K-001 Nama produk Rampung]]
+- [x] ~~Apakah **Rampung** tersedia sebagai domain, username media sosial, dan merek di PDKI?~~ Sudah dicek 2026-09-24. Ada merek terdaftar "Rampung Indonesia" di kelas 41 (pendidikan), dan `rampung.com` serta `rampung.id` sudah dipakai. → [[Cek Nama]]
+- [ ] **Tetap memakai nama Rampung atau ganti?** Tunggu pendapat konsultan KI. Pertanyaannya: bisakah "Rampung" didaftarkan di kelas 9 dan 42, dan apa pilihan terhadap IDM000904862 (penghapusan karena tidak dipakai, pembelian, atau lisensi)? → [[K-001 Nama produk Rampung]]
+- [ ] **Nama cadangan:** siapkan 3–4 nama dan cek dengan cara yang sama seperti [[Cek Nama]].
 
 ## Dua bahasa
 - [ ] **Apakah semua teks English harus lengkap saat beta tertutup (1 Feb 2027)?** Peserta beta adalah mahasiswa Indonesia. Pilihan yang lebih ringan: key dan infrastruktur lengkap sejak Fase 1, terjemahan English menyusul per fitur, dan English lengkap saat launch publik. → [[K-002 Dua bahasa ID dan EN]]
