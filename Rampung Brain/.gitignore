@@ -1,0 +1,9 @@
+# Obsidian's per-machine UI state: open panes, window size, recent files.
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Deleted notes Obsidian keeps around.
+.trash/
+
+.DS_Store
+Thumbs.db

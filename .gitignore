@@ -1,0 +1,33 @@
+# Repo-wide ignores. The Flutter app has its own list in app/.gitignore, and the
+# Obsidian vault has one in "Rampung Brain/.gitignore".
+
+# Secrets never enter the repo. API keys live only on the server.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# graphify working files and cache (the graph outputs themselves are kept)
+**/graphify-out/.graphify_*
+**/graphify-out/cache/
+
+# Python (backend/, evals/)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.hypothesis/
+.coverage
+htmlcov/
+
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,50 @@
+filters:
+  and:
+    - file.ext == "md"
+    - '!file.inFolder("Templates")'
+formulas:
+  hari_sejak_edit: (now() - file.mtime).days.round(0)
+properties:
+  area:
+    displayName: Area
+  sumber:
+    displayName: Bagian master plan
+  status:
+    displayName: Status
+  tanggal:
+    displayName: Tanggal
+  formula.hari_sejak_edit:
+    displayName: Hari sejak edit
+views:
+  - type: table
+    name: Semua catatan
+    filters:
+      and:
+        - "!area.isEmpty()"
+    groupBy:
+      property: area
+      direction: ASC
+    order:
+      - file.name
+      - sumber
+      - updated
+      - formula.hari_sejak_edit
+  - type: table
+    name: Keputusan
+    filters:
+      and:
+        - type == "decision"
+    order:
+      - file.name
+      - status
+      - tanggal
+      - updated
+  - type: table
+    name: Lama tidak disentuh
+    filters:
+      and:
+        - "!area.isEmpty()"
+    order:
+      - file.name
+      - area
+      - formula.hari_sejak_edit
