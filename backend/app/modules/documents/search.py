@@ -20,7 +20,11 @@ from dataclasses import dataclass
 _TOKEN = re.compile(r"[0-9a-zà-öø-ÿ]+", re.IGNORECASE)
 
 STOPWORDS = frozenset(
-    ["yang", "dan", "di", "ke", "dari", "untuk", "dengan", "pada", "adalah", "ini", "itu", "atau", "dalam", "oleh", "akan", "juga", "tidak", "ada", "karena", "sebagai", "bisa", "dapat", "telah", "sudah", "lebih", "agar", "serta", "saat", "maka", "jika", "bahwa", "para", "apa", "bagaimana", "mengapa", "kapan", "siapa", "mana", "saya", "kamu", "kami", "kita", "mereka", "dia", "ia", "nya", "pun", "lah", "the", "a", "an", "of", "to", "in", "and", "or", "is", "are", "was", "were", "be", "been", "for", "on", "with", "as", "by", "at", "from", "this", "that", "these", "those", "it", "its", "into", "than", "then", "what", "which", "who", "how", "why", "when", "where", "do", "does", "did", "not", "no", "can", "could", "should", "would", "will", "may", "might", "about", "over", "under", "also", "any", "all", "some", "such"]
+    ["yang", "dan", "di", "ke", "dari", "untuk", "dengan", "pada", "adalah", "ini", "itu", "atau", "dalam", "oleh", "akan", "juga", "tidak", "ada", "karena", "sebagai", "bisa", "dapat", "telah", "sudah", "lebih", "agar", "serta", "saat", "maka", "jika", "bahwa", "para", "apa", "bagaimana", "mengapa", "kapan", "siapa", "mana", "saya", "kamu", "kami", "kita", "mereka", "dia", "ia", "nya", "pun", "lah", "the", "a", "an", "of", "to", "in", "and", "or", "is", "are", "was", "were", "be", "been", "for", "on", "with", "as", "by", "at", "from", "this", "that", "these", "those", "it", "its", "into", "than", "then", "what", "which", "who", "how", "why", "when", "where", "do", "does", "did", "not", "no", "can", "could", "should", "would", "will", "may", "might", "about", "over", "under", "also", "any", "all", "some", "such",
+     # Words that only frame a question ("berapa banyak yang perlu saya ...", "how many do I need ...").
+     # Left in, they outscore the words that carry the meaning.
+     "berapa", "banyak", "perlu", "apakah", "aku", "gue", "tolong", "mohon", "bisakah", "sih", "dong",
+     "i", "me", "my", "you", "your", "we", "our", "many", "much", "need", "needs", "have", "has", "there", "please", "tell"]
 )
 
 

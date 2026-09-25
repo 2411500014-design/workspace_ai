@@ -439,8 +439,9 @@ def answer_question(
     result, error = _try_ai(ctx, call)
     if result is not None:
         return Outcome(_map_citations(result.content, relevant), True, None, result.model, result.input_tokens, result.output_tokens)
-    if relevant:
-        citations = [
+
+    def quoted(found: list[Passage]) -> list[dict]:
+        return [
             {
                 "number": i + 1,
                 "document_id": p.document_id,
@@ -450,9 +451,15 @@ def answer_question(
                 "heading_path": p.heading_path,
                 "cited_text": best_snippet(p.text, question),
             }
-            for i, p in enumerate(relevant[:3])
+            for i, p in enumerate(found)
         ]
-        return Outcome(ChatAnswer("extractive", "", citations), False, error)
+
+    if relevant:
+        return Outcome(ChatAnswer("extractive", "", quoted(relevant[:3])), False, error)
+    if passages:
+        # Without AI, a question worded differently from the documents matches only some of
+        # its words. Show the closest passages, labelled as such, rather than nothing.
+        return Outcome(ChatAnswer("closest", "", quoted(passages[:2])), False, error)
     return Outcome(ChatAnswer("not_found", ""), False, error)
 
 

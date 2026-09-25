@@ -401,5 +401,20 @@
   "welcomePreviewProject": "Skripsi: NPC untuk game RTS",
   "welcomePreviewMilestone": "Studi literatur",
   "welcomePreviewTask1": "Rumuskan masalah penelitian",
-  "welcomePreviewTask2": "Baca dan rangkum 10 jurnal utama"
+  "welcomePreviewTask2": "Baca dan rangkum 10 jurnal utama",
+
+  "breakingDown": "Memecah task menjadi langkah kecil…",
+  "discardChangesMessage": "Perubahan belum disimpan. Tinggalkan halaman ini?",
+  "discardChangesAction": "Tinggalkan",
+  "sampleProjectTry": "Coba dengan contoh project",
+  "sampleProjectHint": "Contoh berisi dokumen, brief, rencana, dan satu usulan untuk dicoba. Bisa dihapus kapan saja dari Pengaturan Project.",
+  "sampleProjectCreating": "Menyiapkan contoh project…",
+  "sampleProjectReady": "Contoh project siap. Silakan dicoba.",
+  "settingsPhoneTitle": "Buka di HP",
+  "settingsPhoneNoNetwork": "Laptop ini belum terhubung ke Wi-Fi. Sambungkan laptop dan HP ke Wi-Fi yang sama.",
+  "settingsPhoneStartServer": "Server hanya bisa dibuka dari laptop ini. Di VS Code, jalankan \"Backend: API for phones on the same Wi-Fi\", lalu muat ulang kartu ini.",
+  "settingsPhoneOpen": "Sambungkan HP ke Wi-Fi yang sama, lalu buka alamat ini di browser HP:",
+  "settingsPhoneBuildFirst": "Build aplikasi web dulu (Terminal → Run Task → App: build web), lalu buka alamat ini di browser HP pada Wi-Fi yang sama:",
+  "answerClosestHeader": "AI belum aktif dan tidak ada bagian yang cocok persis. Ini yang paling mendekati, periksa apakah menjawab pertanyaanmu:",
+  "answerNotFoundNoAi": "Tanpa AI, asisten mencari kata yang sama di dokumen. Coba kata kunci yang dipakai dokumenmu, misalnya \"referensi\" atau nama metode."
 }

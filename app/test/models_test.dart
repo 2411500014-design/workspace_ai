@@ -29,7 +29,11 @@ void main() {
 
     test('a plan knows its leaf tasks', () {
       final plan = PlanData.fromJson({
-        'project': {'id': 'p1', 'deadline': '2027-01-01', 'hours_by_weekday': [1, 1, 1, 1, 1, 0, 0]},
+        'project': {
+          'id': 'p1',
+          'deadline': '2027-01-01',
+          'hours_by_weekday': [1, 1, 1, 1, 1, 0, 0],
+        },
         'milestones': [],
         'tasks': [
           {'id': 'a', 'project_id': 'p1', 'key': 'T1'},
@@ -48,11 +52,23 @@ void main() {
         'project_id': 'p1',
         'kind': 'replan',
         'ops': [
-          {'op': 'update', 'entity': 'task', 'id': 't1', 'fields': {'deferred': true}, 'label': 'Bab 5'},
+          {
+            'op': 'update',
+            'entity': 'task',
+            'id': 't1',
+            'fields': {'deferred': true},
+            'label': 'Bab 5',
+          },
           {'op': 'reschedule', 'entity': 'project'},
         ],
         'preview': {'feasibility': 'tight', 'projected_finish': '2027-01-20', 'changed_count': 4, 'changes': []},
-        'meta': {'option': 'reduce_scope', 'params': {'deferred_titles': ['Bab 5']}, 'ai_error': 'ai_unavailable'},
+        'meta': {
+          'option': 'reduce_scope',
+          'params': {
+            'deferred_titles': ['Bab 5'],
+          },
+          'ai_error': 'ai_unavailable',
+        },
       });
       expect(s.isPending, isTrue);
       expect(s.option, 'reduce_scope');

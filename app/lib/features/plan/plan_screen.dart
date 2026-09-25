@@ -281,9 +281,10 @@ class _BoardView extends ConsumerWidget {
       await setTaskDone(context, ref, projectId: plan.project.id, taskId: task.id, done: true);
       return;
     }
+    final container = containerOf(ref);
     try {
-      await ref.read(repositoryProvider).updateTask(task.id, {'status': status});
-      refreshProject(ref, plan.project.id);
+      await container.read(repositoryProvider).updateTask(task.id, {'status': status});
+      refreshProjectIn(container, plan.project.id);
     } catch (e) {
       if (context.mounted) showMessage(context, errorMessage(context, e));
     }
@@ -760,8 +761,9 @@ class _AddTaskDialogState extends ConsumerState<_AddTaskDialog> {
   Future<void> _save() async {
     if (!(_formKey.currentState?.validate() ?? false)) return;
     setState(() => _busy = true);
+    final container = containerOf(ref);
     try {
-      await ref
+      await container
           .read(repositoryProvider)
           .createTask(
             widget.plan.project.id,
@@ -769,7 +771,7 @@ class _AddTaskDialogState extends ConsumerState<_AddTaskDialog> {
             estimateHours: _parseHours(_estimate.text)!,
             milestoneId: _milestoneId,
           );
-      refreshProject(ref, widget.plan.project.id);
+      refreshProjectIn(container, widget.plan.project.id);
       if (mounted) Navigator.pop(context, true);
     } catch (e) {
       if (mounted) {
@@ -796,7 +798,7 @@ class _AddTaskDialogState extends ConsumerState<_AddTaskDialog> {
                 controller: _title,
                 autofocus: true,
                 maxLength: 300,
-                decoration: InputDecoration(labelText: l.taskTitle),
+                decoration: InputDecoration(labelText: l.taskTitle, counterText: ''),
                 validator: (v) => (v == null || v.trim().isEmpty) ? l.fieldRequired : null,
               ),
               const SizedBox(height: Space.sm),
@@ -830,7 +832,10 @@ class _AddTaskDialogState extends ConsumerState<_AddTaskDialog> {
       ),
       actions: [
         TextButton(onPressed: _busy ? null : () => Navigator.pop(context, false), child: Text(l.actionCancel)),
-        FilledButton(onPressed: _busy ? null : _save, child: Text(l.actionSave)),
+        FilledButton(
+          onPressed: _busy ? null : _save,
+          child: BusyLabel(busy: _busy, child: Text(l.actionSave)),
+        ),
       ],
     );
   }

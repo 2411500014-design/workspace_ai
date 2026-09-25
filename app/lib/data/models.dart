@@ -737,6 +737,7 @@ class ChatMessage {
     required this.kind,
     required this.citations,
     required this.feedback,
+    this.model,
   });
 
   factory ChatMessage.fromJson(Json j) => ChatMessage(
@@ -747,6 +748,7 @@ class ChatMessage {
     kind: j['kind'] as String? ?? 'ai',
     citations: _list(j['citations']).map(Citation.fromJson).toList(),
     feedback: j['feedback'] as String?,
+    model: j['model'] as String?,
   );
 
   final String id;
@@ -756,6 +758,9 @@ class ChatMessage {
   final String kind;
   final List<Citation> citations;
   final String? feedback;
+
+  /// The model that wrote the answer; null when it came from the non-AI fallback.
+  final String? model;
 
   bool get isUser => role == 'user';
 }
@@ -826,10 +831,18 @@ class WeeklyReview {
 }
 
 class NotificationItem {
-  const NotificationItem({required this.id, required this.type, required this.payload, required this.read, required this.createdAt});
+  const NotificationItem({
+    required this.id,
+    required this.projectId,
+    required this.type,
+    required this.payload,
+    required this.read,
+    required this.createdAt,
+  });
 
   factory NotificationItem.fromJson(Json j) => NotificationItem(
     id: j['id'] as String,
+    projectId: j['project_id'] as String?,
     type: j['type'] as String? ?? '',
     payload: Json.from(j['payload'] as Map? ?? {}),
     read: j['read'] as bool? ?? false,
@@ -837,6 +850,9 @@ class NotificationItem {
   );
 
   final String id;
+
+  /// The project the notice is about; null for account-wide notices.
+  final String? projectId;
   final String type;
   final Json payload;
   final bool read;

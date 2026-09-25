@@ -40,6 +40,10 @@ class PurnaraRepository {
 
   Future<List<Project>> projects() async => _l(await api.get<dynamic>('/projects')).map(Project.fromJson).toList();
 
+  /// A complete example project in [locale] ('id' or 'en'), made from the app's own rules.
+  Future<Project> createSampleProject({required String locale}) async =>
+      Project.fromJson(_j(await api.post<dynamic>('/projects/sample', data: {'locale': locale})));
+
   Future<Project> createProject({
     required String template,
     required String title,

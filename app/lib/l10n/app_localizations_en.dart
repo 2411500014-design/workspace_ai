@@ -81,52 +81,43 @@ class AppLocalizationsEn extends AppLocalizations {
   String get errorNotFound => 'Not found. It may have been deleted.';
 
   @override
-  String get errorValidation =>
-      'Some fields aren\'t valid yet. Please check them.';
+  String get errorValidation => 'Some fields aren\'t valid yet. Please check them.';
 
   @override
   String get errorDeadlinePast => 'The deadline must be after today.';
 
   @override
-  String get errorDependencyCycle =>
-      'This dependency creates a loop: the tasks would wait on each other.';
+  String get errorDependencyCycle => 'This dependency creates a loop: the tasks would wait on each other.';
 
   @override
-  String get errorPlanExists =>
-      'This project already has a plan. Use \"Adjust plan\" instead.';
+  String get errorPlanExists => 'This project already has a plan. Use \"Adjust plan\" instead.';
 
   @override
   String get errorNoPlan => 'Create a plan first.';
 
   @override
-  String get errorSuggestionDecided =>
-      'This suggestion has already been decided.';
+  String get errorSuggestionDecided => 'This suggestion has already been decided.';
 
   @override
-  String get errorUnsupportedFile =>
-      'This format isn\'t supported yet. Use PDF, DOCX, TXT or MD.';
+  String get errorUnsupportedFile => 'This format isn\'t supported yet. Use PDF, DOCX, TXT or MD.';
 
   @override
   String get errorFileTooLarge => 'The file is too large (20 MB maximum).';
 
   @override
-  String get errorTooManyPages =>
-      'The document is too long (300 pages maximum).';
+  String get errorTooManyPages => 'The document is too long (300 pages maximum).';
 
   @override
   String get errorDuplicate => 'This document is already in the library.';
 
   @override
-  String get errorUnreadable =>
-      'The file can\'t be read. It may be damaged or password-protected.';
+  String get errorUnreadable => 'The file can\'t be read. It may be damaged or password-protected.';
 
   @override
-  String get errorNoText =>
-      'No readable text found. It may be a scan; support for scanned documents comes later.';
+  String get errorNoText => 'No readable text found. It may be a scan; support for scanned documents comes later.';
 
   @override
-  String get errorInvalidCapacity =>
-      'Enter 0 to 16 hours per day, with at least one day above 0.';
+  String get errorInvalidCapacity => 'Enter 0 to 16 hours per day, with at least one day above 0.';
 
   @override
   String errorQuota(String date) {
@@ -134,15 +125,13 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get errorUnauthenticated =>
-      'Your session has ended. Please sign in again.';
+  String get errorUnauthenticated => 'Your session has ended. Please sign in again.';
 
   @override
   String get errorEmptyFile => 'The file is empty.';
 
   @override
-  String get aiNotActive =>
-      'AI isn\'t active on this server. Every feature still works in a basic version without AI.';
+  String get aiNotActive => 'AI isn\'t active on this server. Every feature still works in a basic version without AI.';
 
   @override
   String get aiLabel => 'AI suggestion';
@@ -157,20 +146,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get basicLabel => 'Without AI';
 
   @override
-  String get aiErrorUnavailable =>
-      'AI isn\'t active, so the basic version was used.';
+  String get aiErrorUnavailable => 'AI isn\'t active, so the basic version was used.';
 
   @override
-  String get aiErrorQuota =>
-      'The AI quota is used up, so the basic version was used.';
+  String get aiErrorQuota => 'The AI quota is used up, so the basic version was used.';
 
   @override
-  String get aiErrorFailed =>
-      'AI had a problem, so the basic version was used.';
+  String get aiErrorFailed => 'AI had a problem, so the basic version was used.';
 
   @override
-  String get aiErrorInvalidPlan =>
-      'The AI plan didn\'t pass the checks, so the template was used.';
+  String get aiErrorInvalidPlan => 'The AI plan didn\'t pass the checks, so the template was used.';
 
   @override
   String get healthOnTrack => 'On track';
@@ -185,8 +170,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get healthNoPlan => 'No plan yet';
 
   @override
-  String get healthReasonInfeasible =>
-      'The available hours aren\'t enough before the deadline.';
+  String get healthReasonInfeasible => 'The available hours aren\'t enough before the deadline.';
 
   @override
   String healthReasonCriticalLate(int days) {
@@ -236,13 +220,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String daysLeft(int days) {
-    String _temp0 = intl.Intl.pluralLogic(
-      days,
-      locale: localeName,
-      other: '$days days left',
-      one: '1 day left',
-      zero: 'Deadline is today',
-    );
+    String _temp0 = intl.Intl.pluralLogic(days, locale: localeName, other: '$days days left', one: '1 day left', zero: 'Deadline is today');
     return '$_temp0';
   }
 
@@ -296,12 +274,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String lateBadge(int days) {
-    String _temp0 = intl.Intl.pluralLogic(
-      days,
-      locale: localeName,
-      other: '$days days late',
-      one: '1 day late',
-    );
+    String _temp0 = intl.Intl.pluralLogic(days, locale: localeName, other: '$days days late', one: '1 day late');
     return '$_temp0';
   }
 
@@ -430,16 +403,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get taskPostpone => 'Postpone';
 
   @override
-  String get taskPostponed =>
-      'Task postponed. The schedule changes when you accept an adjustment.';
+  String get taskPostponed => 'Task postponed. The schedule changes when you accept an adjustment.';
 
   @override
   String taskPostponedTwice(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other:
-          'This task has been postponed $count times. Try breaking it into small 25-minute steps.',
+      other: 'This task has been postponed $count times. Try breaking it into small 25-minute steps.',
     );
     return '$_temp0';
   }
@@ -487,12 +458,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String suggestionAcceptSelected(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Accept $count selected',
-      one: 'Accept 1 selected',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: 'Accept $count selected', one: 'Accept 1 selected');
     return '$_temp0';
   }
 
@@ -500,12 +466,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get suggestionReject => 'Reject';
 
   @override
-  String get suggestionApplied =>
-      'Suggestion applied. The schedule is updated.';
+  String get suggestionApplied => 'Suggestion applied. The schedule is updated.';
 
   @override
-  String get suggestionRejected =>
-      'Suggestion rejected. The plan is unchanged.';
+  String get suggestionRejected => 'Suggestion rejected. The plan is unchanged.';
 
   @override
   String get suggestionNothingChanges => 'Nothing changes until you accept it.';
@@ -591,8 +555,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get replanTitle => 'Adjust the plan';
 
   @override
-  String get replanIntro =>
-      'The scheduler has worked out a few options. Pick the one that fits; nothing changes until you accept it.';
+  String get replanIntro => 'The scheduler has worked out a few options. Pick the one that fits; nothing changes until you accept it.';
 
   @override
   String get replanComputing => 'Working out the options…';
@@ -601,8 +564,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get optionReschedule => 'Reschedule from today';
 
   @override
-  String get optionRescheduleDesc =>
-      'Unfinished tasks are rescheduled from today, the most urgent first.';
+  String get optionRescheduleDesc => 'Unfinished tasks are rescheduled from today, the most urgent first.';
 
   @override
   String get optionAddCapacity => 'Add working hours';
@@ -655,12 +617,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String docPages(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count pages',
-      one: '1 page',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count pages', one: '1 page');
     return '$_temp0';
   }
 
@@ -708,15 +665,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get assistantHint => 'Ask about your project or documents…';
 
   @override
-  String get assistantEmpty =>
-      'Ask anything about this project. Answers cite your documents and their pages.';
+  String get assistantEmpty => 'Ask anything about this project. Answers cite your documents and their pages.';
 
   @override
   String get assistantSuggestion1 => 'What did my supervisor require?';
 
   @override
-  String get assistantSuggestion2 =>
-      'Which method appears most often in my papers?';
+  String get assistantSuggestion2 => 'Which method appears most often in my papers?';
 
   @override
   String get assistantSuggestion3 => 'What should I work on this week?';
@@ -728,15 +683,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get assistantSend => 'Send';
 
   @override
-  String get answerExtractiveHeader =>
-      'AI isn\'t active. These are the most relevant passages:';
+  String get answerExtractiveHeader => 'AI isn\'t active. These are the most relevant passages:';
 
   @override
   String get answerNotFound => 'This isn\'t in your project documents.';
 
   @override
-  String get answerGeneral =>
-      'Answer from general knowledge, not from your project documents.';
+  String get answerGeneral => 'Answer from general knowledge, not from your project documents.';
 
   @override
   String citationPages(String start, String end) {
@@ -808,8 +761,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get deleteProject => 'Delete project';
 
   @override
-  String get deleteProjectConfirm =>
-      'This project moves to the trash and is permanently deleted after 30 days.';
+  String get deleteProjectConfirm => 'This project moves to the trash and is permanently deleted after 30 days.';
 
   @override
   String get pendingTitle => 'Waiting suggestions';
@@ -853,8 +805,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get briefSaved => 'Brief saved as a new version.';
 
   @override
-  String get briefExtracting =>
-      'Drafting the brief from your documents… usually 30–60 seconds.';
+  String get briefExtracting => 'Drafting the brief from your documents… usually 30–60 seconds.';
 
   @override
   String get briefExtractAgain => 'Redraft from documents';
@@ -876,15 +827,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get supervisionNotes => 'Meeting notes';
 
   @override
-  String get supervisionNotesHint =>
-      'One revision per line, e.g.: - Add 5 recent references to chapter 2';
+  String get supervisionNotesHint => 'One revision per line, e.g.: - Add 5 recent references to chapter 2';
 
   @override
   String get supervisionSave => 'Save and suggest tasks';
 
   @override
-  String get supervisionNoProposal =>
-      'Notes saved. No revisions were detected.';
+  String get supervisionNoProposal => 'Notes saved. No revisions were detected.';
 
   @override
   String get supervisionHistory => 'Past meetings';
@@ -913,12 +862,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get reviewNextFocus => 'Focus for next week';
 
   @override
-  String get reviewRecommendReplan =>
-      'The plan needs adjusting to stay realistic.';
+  String get reviewRecommendReplan => 'The plan needs adjusting to stay realistic.';
 
   @override
-  String get reviewNothingDone =>
-      'No tasks finished this week. That\'s okay; start again with one small step.';
+  String get reviewNothingDone => 'No tasks finished this week. That\'s okay; start again with one small step.';
 
   @override
   String get reviewHealthNow => 'Current status';
@@ -963,8 +910,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsAiActive => 'Active';
 
   @override
-  String get settingsAiInactive =>
-      'Not active. The server runs without an API key.';
+  String get settingsAiInactive => 'Not active. The server runs without an API key.';
 
   @override
   String settingsQuota(String used, String limit) {
@@ -992,8 +938,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsDeleteAccount => 'Delete account';
 
   @override
-  String get settingsDeleteConfirm =>
-      'Every project, document and note will be permanently deleted. This can\'t be undone.';
+  String get settingsDeleteConfirm => 'Every project, document and note will be permanently deleted. This can\'t be undone.';
 
   @override
   String get settingsDeleteButton => 'Delete permanently';
@@ -1011,12 +956,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'Your documents and notes are stored on the Purnara server. When AI is active, the relevant parts are sent to the AI provider (Claude) for processing and are not used to train models.';
 
   @override
-  String get settingsFontLicense =>
-      'Plus Jakarta Sans font, SIL Open Font License 1.1.';
+  String get settingsFontLicense => 'Plus Jakarta Sans font, SIL Open Font License 1.1.';
 
   @override
-  String get onboardingWelcomeTitle =>
-      'Finish your big project, one step a day.';
+  String get onboardingWelcomeTitle => 'Finish your big project, one step a day.';
 
   @override
   String get onboardingWelcomeBody =>
@@ -1078,12 +1021,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pickDate => 'Pick a date';
 
   @override
-  String get documentsStepHint =>
-      'Upload your proposal and your supervisor\'s instructions. You can skip this and add them later.';
+  String get documentsStepHint => 'Upload your proposal and your supervisor\'s instructions. You can skip this and add them later.';
 
   @override
-  String get capacityIntro =>
-      'How many hours a day can you realistically give this project?';
+  String get capacityIntro => 'How many hours a day can you realistically give this project?';
 
   @override
   String capacityWeekly(String hours) {
@@ -1173,12 +1114,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String opsCount(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count changes',
-      one: '1 change',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count changes', one: '1 change');
     return '$_temp0';
   }
 
@@ -1194,8 +1130,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get chartActual => 'Actual';
 
   @override
-  String get briefDraftUnsaved =>
-      'New draft from your documents. Check it, then save.';
+  String get briefDraftUnsaved => 'New draft from your documents. Check it, then save.';
 
   @override
   String get copyText => 'Copy';
@@ -1207,8 +1142,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsLicenses => 'Open source licences';
 
   @override
-  String get settingsServerInvalid =>
-      'Not a valid address. Example: http://localhost:8000';
+  String get settingsServerInvalid => 'Not a valid address. Example: http://localhost:8000';
 
   @override
   String get settingsServerReset => 'Use the default address';
@@ -1224,4 +1158,51 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get welcomePreviewTask2 => 'Read and summarise 10 key papers';
+
+  @override
+  String get breakingDown => 'Breaking the task into small steps…';
+
+  @override
+  String get discardChangesMessage => 'Your changes are not saved. Leave this page?';
+
+  @override
+  String get discardChangesAction => 'Leave';
+
+  @override
+  String get sampleProjectTry => 'Try a sample project';
+
+  @override
+  String get sampleProjectHint =>
+      'The sample has documents, a brief, a plan and one proposal to try. Delete it any time from Project settings.';
+
+  @override
+  String get sampleProjectCreating => 'Setting up the sample project…';
+
+  @override
+  String get sampleProjectReady => 'The sample project is ready. Have a look around.';
+
+  @override
+  String get settingsPhoneTitle => 'Open on your phone';
+
+  @override
+  String get settingsPhoneNoNetwork => 'This computer is not on a Wi-Fi network. Connect it and your phone to the same Wi-Fi.';
+
+  @override
+  String get settingsPhoneStartServer =>
+      'The server only answers this computer. In VS Code, run \"Backend: API for phones on the same Wi-Fi\", then refresh this card.';
+
+  @override
+  String get settingsPhoneOpen => 'Connect your phone to the same Wi-Fi, then open this address in its browser:';
+
+  @override
+  String get settingsPhoneBuildFirst =>
+      'Build the web app first (Terminal → Run Task → App: build web), then open this address in your phone\'s browser on the same Wi-Fi:';
+
+  @override
+  String get answerClosestHeader =>
+      'AI isn\'t active and no passage matches exactly. These come closest; check whether they answer your question:';
+
+  @override
+  String get answerNotFoundNoAi =>
+      'Without AI, the assistant looks for the same words in your documents. Try terms your documents use, such as \"references\" or a method\'s name.';
 }

@@ -47,7 +47,17 @@ _DATE_ISO = re.compile(r"\b(\d{4})-(\d{2})-(\d{2})\b")
 _DATE_SLASH = re.compile(r"\b(\d{1,2})[/.-](\d{1,2})[/.-](\d{4})\b")
 
 
+_HEAD_ORDER = ("instruction", "proposal", "journal", "supervision", "draft")
+
+
 def classify(filename: str, text: str) -> str:
+    """Kind of document. The title and opening lines decide first ("Panduan Skripsi"
+    stays a guideline even when its body mentions bimbingan); then the whole text."""
+    rules = dict(_KIND_RULES)
+    head = f"{filename}\n{text[:400]}".lower()
+    for kind in _HEAD_ORDER:
+        if any(word in head for word in rules[kind]):
+            return kind
     haystack = f"{filename}\n{text[:6000]}".lower()
     for kind, words in _KIND_RULES:
         if any(word in haystack for word in words):

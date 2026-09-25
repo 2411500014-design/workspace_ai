@@ -3,6 +3,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../core/format.dart';
 import '../../core/l10n.dart';
 import '../../core/theme/tokens.dart';
+import '../../core/widgets/common.dart';
 
 @immutable
 class CapacityValue {
@@ -85,7 +86,7 @@ class CapacityEditor extends StatelessWidget {
               label: Text(l.addBlockedDate),
               onPressed: () async {
                 final now = DateTime.now();
-                final picked = await showDatePicker(context: context, firstDate: now, lastDate: DateTime(now.year + 3), initialDate: now);
+                final picked = await pickDate(context, first: now, last: DateTime(now.year + 3));
                 if (picked != null && !value.blockedDates.any((d) => isoDate(d) == isoDate(picked))) {
                   onChanged(value.copyWith(blockedDates: [...value.blockedDates, dateOnly(picked)]..sort()));
                 }

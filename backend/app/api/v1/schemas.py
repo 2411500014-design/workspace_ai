@@ -74,6 +74,10 @@ class BriefContent(BaseModel):
     open_questions: list[QuestionIn] = Field(default_factory=list, max_length=50)
 
 
+class SampleCreate(BaseModel):
+    locale: Literal["id", "en"] = "id"
+
+
 class BriefSave(BaseModel):
     content: BriefContent
     source: Literal["ai", "user", "template"] = "user"

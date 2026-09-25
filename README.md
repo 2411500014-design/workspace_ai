@@ -68,7 +68,15 @@ cd app && flutter run -d chrome --web-port 5000
 cd app && flutter build web --release
 ```
 
-**Ponsel di Wi-Fi yang sama:** jalankan backend dengan `--host 0.0.0.0` (di VS Code: *Backend: API for phones on the same Wi-Fi*). Lalu di aplikasi, buka **Pengaturan → Alamat server** dan isi `http://<IP laptop>:8000`. Emulator Android otomatis memakai `http://10.0.2.2:8000`.
+**Ponsel di Wi-Fi yang sama:**
+
+1. Build aplikasi web sekali: `cd app && flutter build web --release` (atau Run Task *App: build web*).
+2. Jalankan backend untuk ponsel: di VS Code pilih *Backend: API for phones on the same Wi-Fi* (sama dengan `--host 0.0.0.0`).
+3. Di laptop, buka **Pengaturan → Buka di HP**. Kartu itu menampilkan alamat yang dibuka di browser ponsel, misalnya `http://192.168.1.20:8000`, atau memberi tahu langkah yang belum dilakukan.
+
+Aplikasi Android yang diinstal memakai alamat yang sama di **Pengaturan → Alamat server**. Emulator Android otomatis memakai `http://10.0.2.2:8000`. Jika ponsel tidak bisa membuka alamatnya, izinkan Python di Windows Firewall untuk jaringan *Private*.
+
+**Coba tanpa menyiapkan apa pun:** di layar sambutan, pilih **Coba dengan contoh project**. Purnara membuat project skripsi contoh lengkap dengan dua dokumen, brief, rencana yang sudah diterima, satu task sedang dikerjakan, dan satu usulan dari catatan bimbingan. Contoh ini project biasa dan bisa dihapus dari Pengaturan Project.
 
 **AI (opsional):** buat file `backend/.env` berisi `ANTHROPIC_API_KEY=...`. File ini tidak pernah masuk git. Tanpa kunci, semua fitur tetap jalan dengan versi dasar.
 
@@ -82,6 +90,12 @@ cd backend && uv run ruff check . && uv run pytest
 
 ```bash
 cd app && flutter analyze && flutter test
+```
+
+Test layar Flutter memutar ulang jawaban asli backend untuk project contoh (`app/test/fixtures/`). Setelah mengubah bentuk respons API, rekam ulang:
+
+```bash
+cd backend && uv run python scripts/record_app_fixtures.py
 ```
 
 ## Dokumen

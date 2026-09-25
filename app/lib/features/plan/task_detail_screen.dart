@@ -49,11 +49,12 @@ class TaskDetailScreen extends ConsumerWidget {
               icon: const Icon(Icons.delete_outline),
               onPressed: () async {
                 final ok = await confirm(context, message: l.taskDeleteConfirm, confirmLabel: l.actionDelete, destructive: true);
-                if (!ok) return;
+                if (!ok || !context.mounted) return;
+                final container = containerOf(ref);
                 try {
-                  await ref.read(repositoryProvider).deleteTask(task.id);
+                  await container.read(repositoryProvider).deleteTask(task.id);
+                  refreshProjectIn(container, projectId!);
                   if (context.mounted) context.canPop() ? context.pop() : context.go('/plan');
-                  refreshProject(ref, projectId!);
                 } catch (e) {
                   if (context.mounted) showMessage(context, errorMessage(context, e));
                 }
@@ -105,15 +106,19 @@ class _TaskBodyState extends ConsumerState<_TaskBody> {
     if (!_dirty) setState(() => _dirty = true);
   }
 
-  Future<void> _update(Json changes, {String? message}) async {
+  /// Sends [changes]; true when the server accepted them.
+  Future<bool> _update(Json changes, {String? message}) async {
     final l = context.l10n;
+    final container = containerOf(ref);
     try {
-      await ref.read(repositoryProvider).updateTask(task.id, changes);
-      refreshProject(ref, projectId);
-      ref.invalidate(taskProvider(task.id));
+      await container.read(repositoryProvider).updateTask(task.id, changes);
+      refreshProjectIn(container, projectId);
+      container.invalidate(taskProvider(task.id));
       if (mounted) showMessage(context, message ?? l.taskSaved);
+      return true;
     } catch (e) {
       if (mounted) showMessage(context, errorMessage(context, e));
+      return false;
     }
   }
 
@@ -125,7 +130,7 @@ class _TaskBodyState extends ConsumerState<_TaskBody> {
     if (estimate == null || estimate < 0.5 || estimate > 40) return showMessage(context, l.estimateRange);
     if (_actual.text.trim().isNotEmpty && (actual == null || actual < 0)) return showMessage(context, l.errorValidation);
     setState(() => _saving = true);
-    await _update({
+    final saved = await _update({
       if (_title.text.trim() != task.title) 'title': _title.text.trim(),
       if (_description.text.trim() != task.description) 'description': _description.text.trim(),
       if (_dod.text.trim() != task.definitionOfDone) 'definition_of_done': _dod.text.trim(),
@@ -138,7 +143,8 @@ class _TaskBodyState extends ConsumerState<_TaskBody> {
     if (mounted) {
       setState(() {
         _saving = false;
-        _dirty = false;
+        // Edits stay marked unsaved when the server refused them.
+        if (saved) _dirty = false;
       });
     }
   }
@@ -154,220 +160,227 @@ class _TaskBodyState extends ConsumerState<_TaskBody> {
     final requirements = ref.watch(requirementsProvider(projectId)).value ?? const <RequirementStatus>[];
     final linked = requirements.where((r) => task.requirementIds.contains(r.id)).toList();
 
-    return Column(
-      children: [
-        Expanded(
-          child: PageBody(
-            maxWidth: kReadingWidth,
-            children: [
-              TextField(
-                controller: _title,
-                style: theme.textTheme.headlineSmall,
-                maxLines: null,
-                // An editable heading, not a form field: no box until it has focus.
-                decoration: InputDecoration(
-                  hintText: l.taskTitle,
-                  filled: false,
-                  isDense: true,
-                  contentPadding: const EdgeInsets.symmetric(vertical: Space.xs),
-                  border: InputBorder.none,
-                  enabledBorder: InputBorder.none,
-                  focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: theme.colorScheme.primary, width: 2)),
-                ),
-                onChanged: (_) => _touch(),
-              ),
-              const SizedBox(height: Space.md),
-              if (!isParent && !task.deferred)
-                SegmentedButton<String>(
-                  segments: [
-                    for (final s in const ['todo', 'in_progress', 'done']) ButtonSegment(value: s, label: Text(taskStatusLabel(l, s))),
-                  ],
-                  selected: {task.status},
-                  onSelectionChanged: (s) => s.first == 'done'
-                      ? setTaskDone(context, ref, projectId: projectId, taskId: task.id, done: true)
-                      : _update({'status': s.first}),
-                ),
-              const SizedBox(height: Space.lg),
-              if (task.postponeCount >= 2 && !task.isDone)
-                InfoBanner(
-                  tone: BannerTone.warning,
-                  icon: Icons.low_priority,
-                  message: l.taskPostponedTwice(task.postponeCount),
-                  action: TextButton(onPressed: () => breakDownTask(context, ref, task.id), child: Text(l.taskBreakDown)),
-                ),
-              _ScheduleCard(task: task),
-              if (!task.isDone)
-                Padding(
-                  padding: const EdgeInsets.only(bottom: Space.lg),
-                  child: Wrap(
-                    spacing: Space.sm,
-                    runSpacing: Space.sm,
-                    children: [
-                      FilledButton.tonalIcon(
-                        onPressed: () => showStartHelp(context, ref, task.id),
-                        icon: const Icon(Icons.play_circle_outline),
-                        label: Text(l.helpMeStart),
-                      ),
-                      OutlinedButton.icon(
-                        onPressed: () => breakDownTask(context, ref, task.id),
-                        icon: const Icon(Icons.account_tree_outlined),
-                        label: Text(l.taskBreakDown),
-                      ),
-                      OutlinedButton.icon(
-                        onPressed: () =>
-                            context.go(Uri(path: '/assistant', queryParameters: {'q': l.explainPrompt(task.title)}).toString()),
-                        icon: const Icon(Icons.menu_book_outlined),
-                        label: Text(l.taskExplain),
-                      ),
-                      if (!isParent)
-                        OutlinedButton.icon(
-                          onPressed: () => _update({'postpone': true}, message: l.taskPostponed),
-                          icon: const Icon(Icons.snooze_outlined),
-                          label: Text(l.taskPostpone),
-                        ),
-                    ],
+    return UnsavedChangesGuard(
+      dirty: _dirty,
+      child: Column(
+        children: [
+          Expanded(
+            child: PageBody(
+              maxWidth: kReadingWidth,
+              children: [
+                TextField(
+                  controller: _title,
+                  style: theme.textTheme.headlineSmall,
+                  maxLines: null,
+                  // An editable heading, not a form field: no box until it has focus.
+                  decoration: InputDecoration(
+                    hintText: l.taskTitle,
+                    filled: false,
+                    isDense: true,
+                    contentPadding: const EdgeInsets.symmetric(vertical: Space.xs),
+                    border: InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: theme.colorScheme.primary, width: 2)),
                   ),
+                  onChanged: (_) => _touch(),
                 ),
-              if (subtasks.isNotEmpty)
-                SectionCard(
-                  title: l.subtasksTitle,
-                  padding: const EdgeInsets.fromLTRB(0, Space.lg, 0, Space.sm),
-                  child: Column(
-                    children: [
-                      for (final s in subtasks)
-                        ListTile(
-                          leading: Icon(s.isDone ? Icons.check_circle : Icons.radio_button_unchecked),
-                          title: Text(s.title),
-                          subtitle: Text('${s.key} · ${l.hoursValue(formatHours(s.estimateHours))}'),
-                          onTap: () => context.push('/tasks/${s.id}'),
-                        ),
+                const SizedBox(height: Space.md),
+                if (!isParent && !task.deferred)
+                  SegmentedButton<String>(
+                    segments: [
+                      for (final s in const ['todo', 'in_progress', 'done']) ButtonSegment(value: s, label: Text(taskStatusLabel(l, s))),
                     ],
+                    selected: {task.status},
+                    onSelectionChanged: (s) => s.first == 'done'
+                        ? setTaskDone(context, ref, projectId: projectId, taskId: task.id, done: true)
+                        : _update({'status': s.first}),
                   ),
-                ),
-              _DependenciesCard(task: task, plan: plan, onChanged: (ids) => _update({'depends_on': ids})),
-              if (linked.isNotEmpty)
-                SectionCard(
-                  title: l.taskRequirements,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      for (final r in linked)
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: Space.xs),
-                          child: Text('${r.code}  ${r.text}', style: theme.textTheme.bodyMedium),
-                        ),
-                    ],
+                const SizedBox(height: Space.lg),
+                if (task.postponeCount >= 2 && !task.isDone)
+                  InfoBanner(
+                    tone: BannerTone.warning,
+                    icon: Icons.low_priority,
+                    message: l.taskPostponedTwice(task.postponeCount),
+                    action: TextButton(onPressed: () => breakDownTask(context, ref, task.id), child: Text(l.taskBreakDown)),
                   ),
-                ),
-              SectionCard(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Row(
+                _ScheduleCard(task: task),
+                if (!task.isDone)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: Space.lg),
+                    child: Wrap(
+                      spacing: Space.sm,
+                      runSpacing: Space.sm,
                       children: [
-                        Expanded(
-                          child: TextField(
-                            controller: _estimate,
-                            enabled: !isParent,
-                            keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                            decoration: InputDecoration(labelText: l.taskEstimate),
-                            onChanged: (_) => _touch(),
-                          ),
+                        FilledButton.tonalIcon(
+                          onPressed: () => showStartHelp(context, ref, task.id),
+                          icon: const Icon(Icons.play_circle_outline),
+                          label: Text(l.helpMeStart),
                         ),
-                        const SizedBox(width: Space.md),
-                        Expanded(
-                          child: TextField(
-                            controller: _actual,
-                            keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                            decoration: InputDecoration(labelText: l.taskActual),
-                            onChanged: (_) => _touch(),
-                          ),
+                        OutlinedButton.icon(
+                          onPressed: () => breakDownTask(context, ref, task.id),
+                          icon: const Icon(Icons.account_tree_outlined),
+                          label: Text(l.taskBreakDown),
                         ),
-                      ],
-                    ),
-                    const SizedBox(height: Space.lg),
-                    DropdownButtonFormField<String?>(
-                      initialValue: _milestoneId,
-                      isExpanded: true,
-                      decoration: InputDecoration(labelText: l.taskMilestone),
-                      items: [
-                        DropdownMenuItem<String?>(value: null, child: Text(l.taskNoMilestone)),
-                        for (final m in milestones)
-                          DropdownMenuItem<String?>(
-                            value: m.id,
-                            child: Text(m.title, overflow: TextOverflow.ellipsis),
+                        OutlinedButton.icon(
+                          onPressed: () =>
+                              context.go(Uri(path: '/assistant', queryParameters: {'q': l.explainPrompt(task.title)}).toString()),
+                          icon: const Icon(Icons.menu_book_outlined),
+                          label: Text(l.taskExplain),
+                        ),
+                        if (!isParent)
+                          OutlinedButton.icon(
+                            onPressed: () => _update({'postpone': true}, message: l.taskPostponed),
+                            icon: const Icon(Icons.snooze_outlined),
+                            label: Text(l.taskPostpone),
                           ),
                       ],
-                      onChanged: (v) => setState(() {
-                        _milestoneId = v;
-                        _dirty = true;
-                      }),
                     ),
-                    const SizedBox(height: Space.lg),
-                    Text(l.taskImportance, style: theme.textTheme.titleSmall),
-                    const SizedBox(height: Space.sm),
-                    SegmentedButton<double>(
-                      showSelectedIcon: false,
-                      segments: [
-                        ButtonSegment(value: 0, label: Text(l.importanceNormal)),
-                        ButtonSegment(value: 0.5, label: Text(l.importanceHigh)),
-                        ButtonSegment(value: 1, label: Text(l.importanceTop)),
+                  ),
+                if (subtasks.isNotEmpty)
+                  SectionCard(
+                    title: l.subtasksTitle,
+                    padding: const EdgeInsets.fromLTRB(0, Space.lg, 0, Space.sm),
+                    child: Column(
+                      children: [
+                        for (final s in subtasks)
+                          ListTile(
+                            leading: Icon(s.isDone ? Icons.check_circle : Icons.radio_button_unchecked),
+                            title: Text(s.title),
+                            subtitle: Text('${s.key} · ${l.hoursValue(formatHours(s.estimateHours))}'),
+                            onTap: () => context.push('/tasks/${s.id}'),
+                          ),
                       ],
-                      selected: {_importance},
-                      onSelectionChanged: (s) => setState(() {
-                        _importance = s.first;
-                        _dirty = true;
-                      }),
                     ),
-                    const SizedBox(height: Space.sm),
-                    SwitchListTile(
-                      contentPadding: EdgeInsets.zero,
-                      title: Text(l.taskOptional),
-                      value: _optional,
-                      onChanged: (v) => setState(() {
-                        _optional = v;
-                        _dirty = true;
-                      }),
+                  ),
+                _DependenciesCard(task: task, plan: plan, onChanged: (ids) => _update({'depends_on': ids})),
+                if (linked.isNotEmpty)
+                  SectionCard(
+                    title: l.taskRequirements,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        for (final r in linked)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: Space.xs),
+                            child: Text('${r.code}  ${r.text}', style: theme.textTheme.bodyMedium),
+                          ),
+                      ],
                     ),
-                    const SizedBox(height: Space.sm),
-                    TextField(
-                      controller: _dod,
-                      minLines: 1,
-                      maxLines: 4,
-                      decoration: InputDecoration(labelText: l.taskDefinitionOfDone),
-                      onChanged: (_) => _touch(),
-                    ),
-                    const SizedBox(height: Space.lg),
-                    TextField(
-                      controller: _description,
-                      minLines: 2,
-                      maxLines: 8,
-                      decoration: InputDecoration(labelText: l.taskNotes),
-                      onChanged: (_) => _touch(),
-                    ),
-                  ],
+                  ),
+                SectionCard(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              controller: _estimate,
+                              enabled: !isParent,
+                              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                              decoration: InputDecoration(labelText: l.taskEstimate),
+                              onChanged: (_) => _touch(),
+                            ),
+                          ),
+                          const SizedBox(width: Space.md),
+                          Expanded(
+                            child: TextField(
+                              controller: _actual,
+                              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                              decoration: InputDecoration(labelText: l.taskActual),
+                              onChanged: (_) => _touch(),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: Space.lg),
+                      DropdownButtonFormField<String?>(
+                        initialValue: _milestoneId,
+                        isExpanded: true,
+                        decoration: InputDecoration(labelText: l.taskMilestone),
+                        items: [
+                          DropdownMenuItem<String?>(value: null, child: Text(l.taskNoMilestone)),
+                          for (final m in milestones)
+                            DropdownMenuItem<String?>(
+                              value: m.id,
+                              child: Text(m.title, overflow: TextOverflow.ellipsis),
+                            ),
+                        ],
+                        onChanged: (v) => setState(() {
+                          _milestoneId = v;
+                          _dirty = true;
+                        }),
+                      ),
+                      const SizedBox(height: Space.lg),
+                      Text(l.taskImportance, style: theme.textTheme.titleSmall),
+                      const SizedBox(height: Space.sm),
+                      SegmentedButton<double>(
+                        showSelectedIcon: false,
+                        segments: [
+                          ButtonSegment(value: 0, label: Text(l.importanceNormal)),
+                          ButtonSegment(value: 0.5, label: Text(l.importanceHigh)),
+                          ButtonSegment(value: 1, label: Text(l.importanceTop)),
+                        ],
+                        selected: {_importance},
+                        onSelectionChanged: (s) => setState(() {
+                          _importance = s.first;
+                          _dirty = true;
+                        }),
+                      ),
+                      const SizedBox(height: Space.sm),
+                      SwitchListTile(
+                        contentPadding: EdgeInsets.zero,
+                        title: Text(l.taskOptional),
+                        value: _optional,
+                        onChanged: (v) => setState(() {
+                          _optional = v;
+                          _dirty = true;
+                        }),
+                      ),
+                      const SizedBox(height: Space.sm),
+                      TextField(
+                        controller: _dod,
+                        minLines: 1,
+                        maxLines: 4,
+                        decoration: InputDecoration(labelText: l.taskDefinitionOfDone),
+                        onChanged: (_) => _touch(),
+                      ),
+                      const SizedBox(height: Space.lg),
+                      TextField(
+                        controller: _description,
+                        minLines: 2,
+                        maxLines: 8,
+                        decoration: InputDecoration(labelText: l.taskNotes),
+                        onChanged: (_) => _touch(),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        if (_dirty)
-          SafeArea(
-            top: false,
-            child: Padding(
-              padding: const EdgeInsets.all(Space.md),
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: kMaxContentWidth),
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: FilledButton.icon(onPressed: _saving ? null : _save, icon: const Icon(Icons.check), label: Text(l.actionSave)),
+          if (_dirty)
+            SafeArea(
+              top: false,
+              child: Padding(
+                padding: const EdgeInsets.all(Space.md),
+                child: Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: kMaxContentWidth),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: FilledButton.icon(
+                        onPressed: _saving ? null : _save,
+                        icon: const Icon(Icons.check),
+                        label: BusyLabel(busy: _saving, child: Text(l.actionSave)),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-      ],
+        ],
+      ),
     );
   }
 }

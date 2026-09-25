@@ -48,8 +48,10 @@ class ProjectScreen extends ConsumerWidget {
             IconButton(
               tooltip: l.projectSettings,
               icon: const Icon(Icons.tune),
+              // Above the tab bar and the project switcher: a full-screen form of its own.
               onPressed: () => Navigator.of(
                 context,
+                rootNavigator: true,
               ).push(MaterialPageRoute<void>(fullscreenDialog: true, builder: (_) => ProjectSettingsPage(project: project))),
             ),
           ],
@@ -422,6 +424,31 @@ class _ProjectSettingsPageState extends ConsumerState<ProjectSettingsPage> {
   );
   bool _busy = false;
 
+  /// What the form held when it opened; any difference counts as unsaved.
+  late final String _initial = _signature();
+
+  @override
+  void initState() {
+    super.initState();
+    _initial;
+    // Rebuild on typing so the unsaved-changes guard knows about text edits.
+    _title.addListener(_changed);
+    _description.addListener(_changed);
+  }
+
+  void _changed() => setState(() {});
+
+  String _signature() => [
+    _title.text.trim(),
+    _description.text.trim(),
+    isoDate(_deadline),
+    _capacity.hours.join(','),
+    _capacity.blockedDates.map(isoDate).join(','),
+    _capacity.bufferPct,
+  ].join('|');
+
+  bool get _dirty => _signature() != _initial;
+
   @override
   void dispose() {
     _title.dispose();
@@ -433,9 +460,10 @@ class _ProjectSettingsPageState extends ConsumerState<ProjectSettingsPage> {
     final l = context.l10n;
     if (_title.text.trim().isEmpty) return showMessage(context, '${l.fieldTitle}: ${l.fieldRequired}');
     setState(() => _busy = true);
+    final container = containerOf(ref);
     try {
       final p = widget.project;
-      await ref
+      await container
           .read(repositoryProvider)
           .updateProject(
             p.id,
@@ -446,10 +474,11 @@ class _ProjectSettingsPageState extends ConsumerState<ProjectSettingsPage> {
             blockedDates: _capacity.blockedDates,
             bufferPct: _capacity.bufferPct,
           );
-      refreshProject(ref, p.id);
+      refreshProjectIn(container, p.id);
       if (!mounted) return;
       showMessage(context, l.taskSaved);
-      Navigator.pop(context);
+      // Saved: leave without the unsaved-changes question.
+      Navigator.of(context).pop(true);
     } catch (e) {
       if (mounted) showMessage(context, errorMessage(context, e));
     } finally {
@@ -461,13 +490,17 @@ class _ProjectSettingsPageState extends ConsumerState<ProjectSettingsPage> {
     final l = context.l10n;
     final ok = await confirm(context, message: l.deleteProjectConfirm, confirmLabel: l.deleteProject, destructive: true);
     if (!ok || !mounted) return;
+    final container = containerOf(ref);
+    final router = GoRouter.of(context);
+    final navigator = Navigator.of(context);
     try {
-      await ref.read(repositoryProvider).deleteProject(widget.project.id);
-      ref.invalidate(projectsProvider);
-      ref.invalidate(todayProvider);
+      await container.read(repositoryProvider).deleteProject(widget.project.id);
+      container.invalidate(projectsProvider);
+      container.invalidate(todayProvider);
+      container.invalidate(notificationsProvider);
       if (!mounted) return;
-      Navigator.pop(context);
-      context.go('/today');
+      navigator.pop(true);
+      router.go('/today');
     } catch (e) {
       if (mounted) showMessage(context, errorMessage(context, e));
     }
@@ -477,67 +510,73 @@ class _ProjectSettingsPageState extends ConsumerState<ProjectSettingsPage> {
   Widget build(BuildContext context) {
     final l = context.l10n;
     final theme = Theme.of(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l.projectSettings),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: Space.sm),
-            child: FilledButton(onPressed: _busy ? null : _save, child: Text(l.actionSave)),
-          ),
-        ],
-      ),
-      body: PageBody(
-        children: [
-          TextField(
-            controller: _title,
-            maxLength: 300,
-            decoration: InputDecoration(labelText: l.fieldTitle),
-          ),
-          const SizedBox(height: Space.sm),
-          TextField(
-            controller: _description,
-            minLines: 2,
-            maxLines: 5,
-            decoration: InputDecoration(labelText: l.fieldDescription),
-          ),
-          const SizedBox(height: Space.xl),
-          Text(l.fieldDeadline, style: theme.textTheme.titleMedium),
-          const SizedBox(height: Space.sm),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: OutlinedButton.icon(
-              icon: const Icon(Icons.event_outlined),
-              label: Text(formatDateLong(context, _deadline)),
-              onPressed: () async {
-                final now = DateTime.now();
-                final picked = await showDatePicker(
-                  context: context,
-                  initialDate: _deadline.isAfter(now) ? _deadline : now.add(const Duration(days: 1)),
-                  firstDate: now.add(const Duration(days: 1)),
-                  lastDate: DateTime(now.year + 5),
-                );
-                if (picked != null) setState(() => _deadline = dateOnly(picked));
-              },
+    return UnsavedChangesGuard(
+      dirty: _dirty && !_busy,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(l.projectSettings),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: Space.sm),
+              child: FilledButton(
+                onPressed: _busy ? null : _save,
+                child: BusyLabel(busy: _busy, child: Text(l.actionSave)),
+              ),
             ),
-          ),
-          const SizedBox(height: Space.xl),
-          const Divider(),
-          const SizedBox(height: Space.lg),
-          CapacityEditor(value: _capacity, onChanged: (v) => setState(() => _capacity = v)),
-          const SizedBox(height: Space.xxl),
-          const Divider(),
-          const SizedBox(height: Space.lg),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: TextButton.icon(
-              style: TextButton.styleFrom(foregroundColor: theme.colorScheme.error),
-              onPressed: _busy ? null : _delete,
-              icon: const Icon(Icons.delete_outline),
-              label: Text(l.deleteProject),
+          ],
+        ),
+        body: PageBody(
+          children: [
+            TextField(
+              controller: _title,
+              maxLength: 300,
+              decoration: InputDecoration(labelText: l.fieldTitle, counterText: ''),
             ),
-          ),
-        ],
+            const SizedBox(height: Space.sm),
+            TextField(
+              controller: _description,
+              minLines: 2,
+              maxLines: 5,
+              decoration: InputDecoration(labelText: l.fieldDescription),
+            ),
+            const SizedBox(height: Space.xl),
+            Text(l.fieldDeadline, style: theme.textTheme.titleMedium),
+            const SizedBox(height: Space.sm),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: OutlinedButton.icon(
+                icon: const Icon(Icons.event_outlined),
+                label: Text(formatDateLong(context, _deadline)),
+                onPressed: () async {
+                  final now = DateTime.now();
+                  final picked = await pickDate(
+                    context,
+                    initial: _deadline,
+                    first: now.add(const Duration(days: 1)),
+                    last: DateTime(now.year + 5),
+                  );
+                  if (picked != null) setState(() => _deadline = picked);
+                },
+              ),
+            ),
+            const SizedBox(height: Space.xl),
+            const Divider(),
+            const SizedBox(height: Space.lg),
+            CapacityEditor(value: _capacity, onChanged: (v) => setState(() => _capacity = v)),
+            const SizedBox(height: Space.xxl),
+            const Divider(),
+            const SizedBox(height: Space.lg),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton.icon(
+                style: TextButton.styleFrom(foregroundColor: theme.colorScheme.error),
+                onPressed: _busy ? null : _delete,
+                icon: const Icon(Icons.delete_outline),
+                label: Text(l.deleteProject),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

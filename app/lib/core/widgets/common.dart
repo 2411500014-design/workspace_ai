@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../data/providers.dart';
+import '../format.dart';
 import '../l10n.dart';
 import '../theme/app_theme.dart';
 import '../theme/tokens.dart';
@@ -761,6 +762,85 @@ void showMessage(BuildContext context, String message) {
     ..showSnackBar(SnackBar(content: Text(message)));
 }
 
+/// Runs [action] behind a small blocking progress dialog, so a slow request cannot be
+/// started twice. Returns the result, or null after showing the error.
+Future<T?> runWithProgress<T>(BuildContext context, String message, Future<T> Function() action) async {
+  final navigator = Navigator.of(context, rootNavigator: true);
+  final messenger = ScaffoldMessenger.maybeOf(context);
+  showDialog<void>(
+    context: context,
+    barrierDismissible: false,
+    useRootNavigator: true,
+    builder: (_) => PopScope(
+      canPop: false,
+      child: Dialog(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 360),
+          child: Padding(
+            padding: const EdgeInsets.all(Space.lg),
+            child: LoadingView(message: message),
+          ),
+        ),
+      ),
+    ),
+  );
+  try {
+    return await action();
+  } catch (e) {
+    if (messenger != null && messenger.mounted) {
+      messenger
+        ..hideCurrentSnackBar()
+        ..showSnackBar(SnackBar(content: Text(errorMessage(messenger.context, e))));
+    }
+    return null;
+  } finally {
+    if (navigator.mounted) navigator.pop();
+  }
+}
+
+/// Button content that turns into a small spinner while [busy].
+class BusyLabel extends StatelessWidget {
+  const BusyLabel({super.key, required this.busy, required this.child});
+
+  final bool busy;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    if (!busy) return child;
+    return Semantics(
+      label: context.l10n.loading,
+      child: const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2, strokeCap: StrokeCap.round)),
+    );
+  }
+}
+
+/// Asks before leaving a screen with unsaved edits. Returns true when leaving is fine.
+Future<bool> confirmDiscard(BuildContext context) =>
+    confirm(context, message: context.l10n.discardChangesMessage, confirmLabel: context.l10n.discardChangesAction, destructive: true);
+
+/// Wraps a screen with unsaved edits: the system back gesture and the app bar's
+/// back button ask first instead of throwing the edits away.
+class UnsavedChangesGuard extends StatelessWidget {
+  const UnsavedChangesGuard({super.key, required this.dirty, required this.child});
+
+  final bool dirty;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return PopScope(
+      canPop: !dirty,
+      onPopInvokedWithResult: (didPop, _) async {
+        if (didPop) return;
+        final navigator = Navigator.of(context);
+        if (await confirmDiscard(context) && navigator.mounted) navigator.pop();
+      },
+      child: child,
+    );
+  }
+}
+
 Future<bool> confirm(BuildContext context, {required String message, required String confirmLabel, bool destructive = false}) async {
   final l = context.l10n;
   final result = await showDialog<bool>(
@@ -781,4 +861,16 @@ Future<bool> confirm(BuildContext context, {required String message, required St
     },
   );
   return result ?? false;
+}
+
+/// A date picker that cannot fail on an out-of-range starting date (a deadline read
+/// from an old guideline, say): the starting date is moved into the allowed range.
+Future<DateTime?> pickDate(BuildContext context, {DateTime? initial, required DateTime first, required DateTime last}) async {
+  final lo = dateOnly(first);
+  final hi = dateOnly(last);
+  var start = dateOnly(initial ?? DateTime.now());
+  if (start.isBefore(lo)) start = lo;
+  if (start.isAfter(hi)) start = hi;
+  final picked = await showDatePicker(context: context, initialDate: start, firstDate: lo, lastDate: hi);
+  return picked == null ? null : dateOnly(picked);
 }

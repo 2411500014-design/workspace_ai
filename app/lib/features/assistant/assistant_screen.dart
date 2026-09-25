@@ -28,19 +28,40 @@ class _AssistantScreenState extends ConsumerState<AssistantScreen> {
   bool _newConversation = false;
   String? _pendingQuestion;
 
+  /// A question handed over by another screen, asked once the project is known.
+  String? _queued;
+
   @override
   void initState() {
     super.initState();
     final q = widget.initialQuestion;
     if (q != null && q.trim().isNotEmpty) {
       _newConversation = true;
+      _queued = q;
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (!mounted) return;
         // Drop the question from the address so returning to this tab does not ask again.
         context.go('/assistant');
-        _send(q);
+        _sendQueued();
       });
     }
+    ref.listenManual(currentProjectProvider.select((p) => p?.id), (previous, next) {
+      if (previous != null && previous != next) {
+        // Another project: its conversations are not this one's.
+        setState(() {
+          _threadId = null;
+          _newConversation = false;
+        });
+      }
+      _sendQueued();
+    });
+  }
+
+  void _sendQueued() {
+    final q = _queued;
+    if (q == null || !mounted || ref.read(currentProjectProvider) == null) return;
+    _queued = null;
+    _send(q);
   }
 
   @override
@@ -59,16 +80,17 @@ class _AssistantScreenState extends ConsumerState<AssistantScreen> {
     final question = text.trim();
     final project = ref.read(currentProjectProvider);
     if (question.isEmpty || project == null || _pendingQuestion != null) return;
+    final container = containerOf(ref);
     final threads = ref.read(threadsProvider(project.id)).value ?? const <ChatThread>[];
     final threadId = _activeThread(threads);
     setState(() => _pendingQuestion = question);
     _input.clear();
     _scrollToEnd();
     try {
-      final exchange = await ref.read(repositoryProvider).ask(project.id, question, threadId: threadId);
-      ref.invalidate(threadsProvider(project.id));
-      ref.invalidate(messagesProvider(exchange.thread.id));
-      await ref.read(messagesProvider(exchange.thread.id).future);
+      final exchange = await container.read(repositoryProvider).ask(project.id, question, threadId: threadId);
+      container.invalidate(threadsProvider(project.id));
+      container.invalidate(messagesProvider(exchange.thread.id));
+      await container.read(messagesProvider(exchange.thread.id).future);
       if (!mounted) return;
       setState(() {
         _threadId = exchange.thread.id;
@@ -87,7 +109,7 @@ class _AssistantScreenState extends ConsumerState<AssistantScreen> {
 
   void _scrollToEnd() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (_scroll.hasClients) {
+      if (mounted && _scroll.hasClients) {
         _scroll.animateTo(_scroll.position.maxScrollExtent, duration: Motion.normal, curve: Motion.enter);
       }
     });
@@ -110,13 +132,17 @@ class _AssistantScreenState extends ConsumerState<AssistantScreen> {
   Widget build(BuildContext context) {
     final project = ref.watch(currentProjectProvider);
     if (project == null) return const PageSkeleton();
-    final threads = ref.watch(threadsProvider(project.id)).value ?? const <ChatThread>[];
+    final threadList = ref.watch(threadsProvider(project.id));
+    final threads = threadList.value ?? const <ChatThread>[];
     final active = _activeThread(threads);
     return LayoutBuilder(
       builder: (context, constraints) {
         final wide = constraints.maxWidth >= 1000;
         final conversation = _Conversation(
           threadId: active,
+          // Until the list arrives, "no conversation yet" is not known to be true.
+          threads: _newConversation ? const AsyncValue.data(null) : threadList,
+          onRetryThreads: () => ref.invalidate(threadsProvider(project.id)),
           pendingQuestion: _pendingQuestion,
           scroll: _scroll,
           input: _input,
@@ -224,6 +250,8 @@ class _ThreadPicker extends StatelessWidget {
 class _Conversation extends ConsumerWidget {
   const _Conversation({
     required this.threadId,
+    required this.threads,
+    required this.onRetryThreads,
     required this.pendingQuestion,
     required this.scroll,
     required this.input,
@@ -232,6 +260,8 @@ class _Conversation extends ConsumerWidget {
   });
 
   final String? threadId;
+  final AsyncValue<Object?> threads;
+  final VoidCallback onRetryThreads;
   final String? pendingQuestion;
   final ScrollController scroll;
   final TextEditingController input;
@@ -241,7 +271,7 @@ class _Conversation extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l = context.l10n;
-    final messages = threadId == null ? const AsyncValue<List<ChatMessage>>.data([]) : ref.watch(messagesProvider(threadId!));
+    final messages = threadId == null ? threads.whenData((_) => const <ChatMessage>[]) : ref.watch(messagesProvider(threadId!));
     final list = messages.value ?? const <ChatMessage>[];
     final empty = list.isEmpty && pendingQuestion == null;
     return Column(
@@ -249,7 +279,10 @@ class _Conversation extends ConsumerWidget {
         if (header != null) Padding(padding: const EdgeInsets.fromLTRB(Space.lg, Space.sm, Space.sm, 0), child: header),
         Expanded(
           child: messages.hasError && !messages.hasValue
-              ? ErrorView(error: messages.error!, onRetry: () => ref.invalidate(messagesProvider(threadId!)))
+              ? ErrorView(
+                  error: messages.error!,
+                  onRetry: threadId == null ? onRetryThreads : () => ref.invalidate(messagesProvider(threadId!)),
+                )
               : !messages.hasValue
               ? const LoadingView()
               : empty
@@ -359,9 +392,20 @@ class _MessageBubble extends ConsumerWidget {
             ],
           ),
         );
-      case 'extractive':
+        // Without AI the search needs the documents' own words; say so, with a way forward.
+        if (message.model == null) {
+          body
+            ..add(const SizedBox(height: Space.sm))
+            ..add(Text(l.answerNotFoundNoAi, style: theme.textTheme.bodyMedium?.copyWith(color: scheme.onSurfaceVariant)));
+        }
+      case 'extractive' || 'closest':
         body
-          ..add(Text(l.answerExtractiveHeader, style: theme.textTheme.bodyMedium?.copyWith(color: scheme.onSurfaceVariant)))
+          ..add(
+            Text(
+              message.kind == 'closest' ? l.answerClosestHeader : l.answerExtractiveHeader,
+              style: theme.textTheme.bodyMedium?.copyWith(color: scheme.onSurfaceVariant),
+            ),
+          )
           ..add(const SizedBox(height: Space.md));
         for (final c in message.citations) {
           body.add(_Quote(citation: c));
@@ -407,7 +451,7 @@ class _MessageBubble extends ConsumerWidget {
                 tooltip: l.copyText,
                 icon: const Icon(Icons.copy_outlined, size: 18),
                 onPressed: () {
-                  final text = message.kind == 'extractive'
+                  final text = message.kind == 'extractive' || message.kind == 'closest'
                       ? message.citations.map((c) => '${c.citedText}\n(${c.title}, ${_pages(l, c)})').join('\n\n')
                       : message.content;
                   Clipboard.setData(ClipboardData(text: text));
@@ -444,9 +488,10 @@ class _FeedbackButton extends ConsumerWidget {
       icon: Icon(up ? Icons.thumb_up_outlined : Icons.thumb_down_outlined, size: 18),
       selectedIcon: Icon(up ? Icons.thumb_up : Icons.thumb_down, size: 18),
       onPressed: () async {
+        final container = containerOf(ref);
         try {
-          await ref.read(repositoryProvider).feedback(message.id, selected ? null : value);
-          ref.invalidate(messagesProvider(message.threadId));
+          await container.read(repositoryProvider).feedback(message.id, selected ? null : value);
+          container.invalidate(messagesProvider(message.threadId));
         } catch (e) {
           if (context.mounted) showMessage(context, errorMessage(context, e));
         }
@@ -467,6 +512,7 @@ class _CitationChip extends StatelessWidget {
       avatar: CircleAvatar(child: Text('${citation.number}', style: const TextStyle(fontSize: 11))),
       label: Text('${citation.title}, ${_pages(l, citation)}', overflow: TextOverflow.ellipsis),
       onPressed: () => showModalBottomSheet<void>(
+        useRootNavigator: true,
         context: context,
         isScrollControlled: true,
         showDragHandle: true,

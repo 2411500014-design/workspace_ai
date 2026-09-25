@@ -9,6 +9,11 @@
 # packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
+# Lines up to 140 columns, as the ruler in .vscode/settings.json shows. VS Code's
+# format-on-save and `dart format` both read this.
+formatter:
+  page_width: 140
+
 analyzer:
   exclude:
     - build/**

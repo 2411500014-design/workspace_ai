@@ -25,7 +25,8 @@ class _SuggestionScreenState extends ConsumerState<SuggestionScreen> {
   bool _busy = false;
 
   Future<void> _decide(Suggestion s, {required bool accept}) async {
-    final repo = ref.read(repositoryProvider);
+    final container = containerOf(ref);
+    final repo = container.read(repositoryProvider);
     final l = context.l10n;
     final selected = _selected ?? {for (var i = 0; i < s.ops.length; i++) i};
     setState(() => _busy = true);
@@ -36,13 +37,16 @@ class _SuggestionScreenState extends ConsumerState<SuggestionScreen> {
       } else {
         await repo.rejectSuggestion(s.id);
       }
-      refreshProject(ref, s.projectId);
-      ref.invalidate(briefProvider(s.projectId));
-      ref.invalidate(suggestionProvider(s.id));
+      refreshProjectIn(container, s.projectId);
+      container.invalidate(documentsProvider(s.projectId));
+      container.invalidate(suggestionProvider(s.id));
       if (!mounted) return;
       showMessage(context, accept ? l.suggestionApplied : l.suggestionRejected);
       context.canPop() ? context.pop(true) : context.go('/project');
     } catch (e) {
+      // Decided elsewhere meanwhile (another tab, the phone): show its current state.
+      container.invalidate(suggestionProvider(s.id));
+      container.invalidate(suggestionsProvider(s.projectId));
       if (mounted) showMessage(context, errorMessage(context, e));
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -311,12 +315,22 @@ class _DecisionBar extends StatelessWidget {
               child: Row(
                 children: [
                   TextButton(onPressed: busy ? null : onReject, child: Text(l.suggestionReject)),
-                  const Spacer(),
-                  FilledButton(
-                    onPressed: busy || selected == 0 ? null : onAccept,
-                    child: busy
-                        ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2))
-                        : Text(selected == total ? l.suggestionAcceptAll : l.suggestionAcceptSelected(selected)),
+                  const SizedBox(width: Space.sm),
+                  // The accept label grows with "3 selected"; on a phone it wraps rather than overflows.
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: FilledButton(
+                        onPressed: busy || selected == 0 ? null : onAccept,
+                        child: BusyLabel(
+                          busy: busy,
+                          child: Text(
+                            selected == total ? l.suggestionAcceptAll : l.suggestionAcceptSelected(selected),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

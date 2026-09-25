@@ -5,8 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 /// Both languages must always be complete (vault: UX/Bilingual ID-EN).
 void main() {
-  Map<String, dynamic> arb(String locale) =>
-      jsonDecode(File('lib/l10n/app_$locale.arb').readAsStringSync()) as Map<String, dynamic>;
+  Map<String, dynamic> arb(String locale) => jsonDecode(File('lib/l10n/app_$locale.arb').readAsStringSync()) as Map<String, dynamic>;
 
   Set<String> messages(Map<String, dynamic> file) => file.keys.where((k) => !k.startsWith('@')).toSet();
 

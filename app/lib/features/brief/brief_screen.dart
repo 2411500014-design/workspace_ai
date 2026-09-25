@@ -21,11 +21,30 @@ class _BriefScreenState extends ConsumerState<BriefScreen> {
   BriefContent? _edited;
   BriefDraft? _draft;
   int _revision = 0;
-  bool _busy = false;
+  bool _extracting = false;
+  bool _saving = false;
   bool _dirty = false;
 
+  bool get _busy => _extracting || _saving;
+
+  @override
+  void initState() {
+    super.initState();
+    // Switching project drops an unsaved draft of the previous project's brief.
+    ref.listenManual(currentProjectProvider.select((p) => p?.id), (previous, next) {
+      if (previous != null && previous != next) {
+        setState(() {
+          _edited = null;
+          _draft = null;
+          _dirty = false;
+          _revision++;
+        });
+      }
+    });
+  }
+
   Future<void> _extract(String projectId) async {
-    setState(() => _busy = true);
+    setState(() => _extracting = true);
     try {
       final draft = await ref.read(repositoryProvider).extractBrief(projectId);
       if (!mounted) return;
@@ -38,7 +57,7 @@ class _BriefScreenState extends ConsumerState<BriefScreen> {
     } catch (e) {
       if (mounted) showMessage(context, errorMessage(context, e));
     } finally {
-      if (mounted) setState(() => _busy = false);
+      if (mounted) setState(() => _extracting = false);
     }
   }
 
@@ -46,11 +65,11 @@ class _BriefScreenState extends ConsumerState<BriefScreen> {
     final content = _edited;
     if (content == null) return;
     final l = context.l10n;
-    setState(() => _busy = true);
+    final container = containerOf(ref);
+    setState(() => _saving = true);
     try {
-      await ref.read(repositoryProvider).saveBrief(projectId, content, source: (_draft?.aiUsed ?? false) ? 'ai' : 'user');
-      ref.invalidate(briefProvider(projectId));
-      ref.invalidate(requirementsProvider(projectId));
+      await container.read(repositoryProvider).saveBrief(projectId, content, source: (_draft?.aiUsed ?? false) ? 'ai' : 'user');
+      refreshProjectIn(container, projectId);
       if (!mounted) return;
       setState(() {
         _draft = null;
@@ -61,7 +80,7 @@ class _BriefScreenState extends ConsumerState<BriefScreen> {
     } catch (e) {
       if (mounted) showMessage(context, errorMessage(context, e));
     } finally {
-      if (mounted) setState(() => _busy = false);
+      if (mounted) setState(() => _saving = false);
     }
   }
 
@@ -71,67 +90,73 @@ class _BriefScreenState extends ConsumerState<BriefScreen> {
     final project = ref.watch(currentProjectProvider);
     if (project == null) return Scaffold(appBar: AppBar(), body: const PageSkeleton());
     final brief = ref.watch(briefProvider(project.id));
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l.briefTitle),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: Space.sm),
-            child: FilledButton(onPressed: _busy || !_dirty ? null : () => _save(project.id), child: Text(l.actionSave)),
-          ),
-        ],
-      ),
-      body: AsyncBody(
-        value: brief,
-        onRetry: () => ref.invalidate(briefProvider(project.id)),
-        data: (b) {
-          final draft = _draft;
-          final reason = draft == null ? null : aiFallbackReason(l, draft.aiError);
-          return PageBody(
-            maxWidth: kReadingWidth,
-            children: [
-              Wrap(
-                spacing: Space.sm,
-                runSpacing: Space.sm,
-                crossAxisAlignment: WrapCrossAlignment.center,
-                children: [
-                  if (b.version > 0 && draft == null)
-                    StatusPill(
-                      label: l.briefVersion('${b.version}'),
-                      icon: Icons.history,
-                      foreground: Theme.of(context).colorScheme.onSurfaceVariant,
-                      background: Theme.of(context).colorScheme.surfaceContainerHigh,
+    return UnsavedChangesGuard(
+      dirty: _dirty && !_saving,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(l.briefTitle),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: Space.sm),
+              child: FilledButton(
+                onPressed: _busy || !_dirty ? null : () => _save(project.id),
+                child: BusyLabel(busy: _saving, child: Text(l.actionSave)),
+              ),
+            ),
+          ],
+        ),
+        body: AsyncBody(
+          value: brief,
+          onRetry: () => ref.invalidate(briefProvider(project.id)),
+          data: (b) {
+            final draft = _draft;
+            final reason = draft == null ? null : aiFallbackReason(l, draft.aiError);
+            return PageBody(
+              maxWidth: kReadingWidth,
+              children: [
+                Wrap(
+                  spacing: Space.sm,
+                  runSpacing: Space.sm,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    if (b.version > 0 && draft == null)
+                      StatusPill(
+                        label: l.briefVersion('${b.version}'),
+                        icon: Icons.history,
+                        foreground: Theme.of(context).colorScheme.onSurfaceVariant,
+                        background: Theme.of(context).colorScheme.surfaceContainerHigh,
+                      ),
+                    if (draft != null) SourceLabel(aiUsed: draft.aiUsed) else if (b.source == 'ai') const SourceLabel(aiUsed: true),
+                    TextButton.icon(
+                      onPressed: _busy ? null : () => _extract(project.id),
+                      icon: _extracting
+                          ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2))
+                          : const Icon(Icons.auto_awesome_outlined),
+                      label: Text(l.briefExtractAgain),
                     ),
-                  if (draft != null) SourceLabel(aiUsed: draft.aiUsed) else if (b.source == 'ai') const SourceLabel(aiUsed: true),
-                  TextButton.icon(
-                    onPressed: _busy ? null : () => _extract(project.id),
-                    icon: _busy
-                        ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2))
-                        : const Icon(Icons.auto_awesome_outlined),
-                    label: Text(l.briefExtractAgain),
-                  ),
-                ],
-              ),
-              const SizedBox(height: Space.md),
-              if (_busy && draft == null) InfoBanner(icon: Icons.hourglass_top, message: l.briefExtracting),
-              if (reason != null) InfoBanner(icon: Icons.auto_awesome_outlined, message: reason),
-              if (draft != null) InfoBanner(icon: Icons.edit_note, message: l.briefDraftUnsaved),
-              if (b.version == 0 && draft == null)
-                Padding(
-                  padding: const EdgeInsets.only(bottom: Space.lg),
-                  child: Text(l.briefEmpty, style: Theme.of(context).textTheme.bodyLarge),
+                  ],
                 ),
-              BriefEditor(
-                key: ValueKey('brief-$_revision-${b.version}'),
-                initial: draft?.content ?? b.content,
-                onChanged: (content) {
-                  _edited = content;
-                  if (!_dirty && _differs(content, draft?.content ?? b.content)) setState(() => _dirty = true);
-                },
-              ),
-            ],
-          );
-        },
+                const SizedBox(height: Space.md),
+                if (_extracting) InfoBanner(icon: Icons.hourglass_top, message: l.briefExtracting),
+                if (reason != null) InfoBanner(icon: Icons.auto_awesome_outlined, message: reason),
+                if (draft != null) InfoBanner(icon: Icons.edit_note, message: l.briefDraftUnsaved),
+                if (b.version == 0 && draft == null)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: Space.lg),
+                    child: Text(l.briefEmpty, style: Theme.of(context).textTheme.bodyLarge),
+                  ),
+                BriefEditor(
+                  key: ValueKey('brief-$_revision-${b.version}'),
+                  initial: draft?.content ?? b.content,
+                  onChanged: (content) {
+                    _edited = content;
+                    if (!_dirty && _differs(content, draft?.content ?? b.content)) setState(() => _dirty = true);
+                  },
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

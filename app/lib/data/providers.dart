@@ -89,6 +89,9 @@ final repositoryProvider = Provider<PurnaraRepository>((ref) => PurnaraRepositor
 
 final meProvider = FutureProvider<Profile>((ref) => ref.watch(repositoryProvider).me());
 
+/// The server's own status: AI on or off, and where a phone on the same Wi-Fi reaches it.
+final serverHealthProvider = FutureProvider<Json>((ref) => ref.watch(repositoryProvider).serverHealth());
+
 final modesProvider = FutureProvider<List<ModeInfo>>((ref) => ref.watch(repositoryProvider).modes());
 
 final projectsProvider = FutureProvider<List<Project>>((ref) => ref.watch(repositoryProvider).projects());
@@ -137,12 +140,20 @@ final weeklyReviewProvider = FutureProvider.family<WeeklyReview, String>((ref, i
 final notificationsProvider = FutureProvider<List<NotificationItem>>((ref) => ref.watch(repositoryProvider).notifications());
 
 /// After any change to a project's plan, everything derived from it is stale.
-void refreshProject(WidgetRef ref, String projectId) {
-  ref.invalidate(planProvider(projectId));
-  ref.invalidate(healthProvider(projectId));
-  ref.invalidate(suggestionsProvider(projectId));
-  ref.invalidate(requirementsProvider(projectId));
-  ref.invalidate(todayProvider);
-  ref.invalidate(projectsProvider);
-  ref.invalidate(notificationsProvider);
+void refreshProject(WidgetRef ref, String projectId) => refreshProjectIn(containerOf(ref), projectId);
+
+/// The same refresh through a container captured earlier. Use this after an `await`:
+/// by then the widget that started the work may be gone, and its `ref` with it.
+void refreshProjectIn(ProviderContainer container, String projectId) {
+  container.invalidate(planProvider(projectId));
+  container.invalidate(healthProvider(projectId));
+  container.invalidate(suggestionsProvider(projectId));
+  container.invalidate(requirementsProvider(projectId));
+  container.invalidate(briefProvider(projectId));
+  container.invalidate(todayProvider);
+  container.invalidate(projectsProvider);
+  container.invalidate(notificationsProvider);
 }
+
+/// The provider container behind [ref]. Capture it before an `await`; it outlives the widget.
+ProviderContainer containerOf(WidgetRef ref) => ProviderScope.containerOf(ref.context, listen: false);

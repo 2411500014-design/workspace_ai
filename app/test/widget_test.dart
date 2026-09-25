@@ -25,10 +25,7 @@ Future<void> pumpApp(
   await tester.pumpWidget(
     ProviderScope(
       retry: (retryCount, error) => null,
-      overrides: [
-        sharedPreferencesProvider.overrideWithValue(preferences),
-        repositoryProvider.overrideWithValue(repo),
-      ],
+      overrides: [sharedPreferencesProvider.overrideWithValue(preferences), repositoryProvider.overrideWithValue(repo)],
       child: const PurnaraApp(),
     ),
   );
@@ -67,13 +64,21 @@ void main() {
   });
 
   testWidgets('the saved language choice switches the app to English', (tester) async {
-    await pumpApp(tester, FakeRepository(projectList: [projectJson()], todayView: todayJson()), prefs: {'locale': 'en'});
+    await pumpApp(
+      tester,
+      FakeRepository(projectList: [projectJson()], todayView: todayJson()),
+      prefs: {'locale': 'en'},
+    );
     expect(find.text("Today's focus"), findsOneWidget);
     expect(find.text('Critical path'), findsOneWidget);
   });
 
   testWidgets('wide screens get a navigation rail instead of a bottom bar', (tester) async {
-    await pumpApp(tester, FakeRepository(projectList: [projectJson()], todayView: todayJson()), size: const Size(1280, 900));
+    await pumpApp(
+      tester,
+      FakeRepository(projectList: [projectJson()], todayView: todayJson()),
+      size: const Size(1280, 900),
+    );
     expect(find.byType(NavigationRail), findsOneWidget);
     expect(find.byType(NavigationBar), findsNothing);
   });

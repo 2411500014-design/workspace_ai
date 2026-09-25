@@ -3,6 +3,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../core/format.dart';
 import '../../core/l10n.dart';
 import '../../core/theme/tokens.dart';
+import '../../core/widgets/common.dart';
 import '../../data/models.dart';
 
 /// Edits a project brief. The brief is the single source of truth (master plan §4);
@@ -125,16 +126,17 @@ class _BriefEditorState extends State<BriefEditor> {
                       const SizedBox(width: Space.sm),
                       OutlinedButton.icon(
                         icon: const Icon(Icons.event_outlined, size: 18),
-                        label: Text(
-                          _dateValues[i] == null ? l.pickDate : formatDate(context, DateTime.parse(_dateValues[i]!), alwaysYear: true),
-                        ),
+                        label: Text(switch (DateTime.tryParse(_dateValues[i] ?? '')) {
+                          final date? => formatDate(context, date, alwaysYear: true),
+                          null => l.pickDate,
+                        }),
                         onPressed: () async {
                           final now = DateTime.now();
-                          final picked = await showDatePicker(
-                            context: context,
-                            initialDate: _dateValues[i] == null ? now : DateTime.parse(_dateValues[i]!),
-                            firstDate: DateTime(now.year - 1),
-                            lastDate: DateTime(now.year + 5),
+                          final picked = await pickDate(
+                            context,
+                            initial: DateTime.tryParse(_dateValues[i] ?? ''),
+                            first: DateTime(now.year - 1),
+                            last: DateTime(now.year + 5),
                           );
                           if (picked != null) {
                             setState(() => _dateValues[i] = isoDate(picked));

@@ -62,8 +62,7 @@ import 'app_localizations_id.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -71,8 +70,7 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -84,19 +82,15 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
-      <LocalizationsDelegate<dynamic>>[
-        delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ];
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+    delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+  ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[
-    Locale('en'),
-    Locale('id'),
-  ];
+  static const List<Locale> supportedLocales = <Locale>[Locale('en'), Locale('id')];
 
   /// No description provided for @appTitle.
   ///
@@ -2059,10 +2053,93 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Baca dan rangkum 10 jurnal utama'**
   String get welcomePreviewTask2;
+
+  /// No description provided for @breakingDown.
+  ///
+  /// In id, this message translates to:
+  /// **'Memecah task menjadi langkah kecil…'**
+  String get breakingDown;
+
+  /// No description provided for @discardChangesMessage.
+  ///
+  /// In id, this message translates to:
+  /// **'Perubahan belum disimpan. Tinggalkan halaman ini?'**
+  String get discardChangesMessage;
+
+  /// No description provided for @discardChangesAction.
+  ///
+  /// In id, this message translates to:
+  /// **'Tinggalkan'**
+  String get discardChangesAction;
+
+  /// No description provided for @sampleProjectTry.
+  ///
+  /// In id, this message translates to:
+  /// **'Coba dengan contoh project'**
+  String get sampleProjectTry;
+
+  /// No description provided for @sampleProjectHint.
+  ///
+  /// In id, this message translates to:
+  /// **'Contoh berisi dokumen, brief, rencana, dan satu usulan untuk dicoba. Bisa dihapus kapan saja dari Pengaturan Project.'**
+  String get sampleProjectHint;
+
+  /// No description provided for @sampleProjectCreating.
+  ///
+  /// In id, this message translates to:
+  /// **'Menyiapkan contoh project…'**
+  String get sampleProjectCreating;
+
+  /// No description provided for @sampleProjectReady.
+  ///
+  /// In id, this message translates to:
+  /// **'Contoh project siap. Silakan dicoba.'**
+  String get sampleProjectReady;
+
+  /// No description provided for @settingsPhoneTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Buka di HP'**
+  String get settingsPhoneTitle;
+
+  /// No description provided for @settingsPhoneNoNetwork.
+  ///
+  /// In id, this message translates to:
+  /// **'Laptop ini belum terhubung ke Wi-Fi. Sambungkan laptop dan HP ke Wi-Fi yang sama.'**
+  String get settingsPhoneNoNetwork;
+
+  /// No description provided for @settingsPhoneStartServer.
+  ///
+  /// In id, this message translates to:
+  /// **'Server hanya bisa dibuka dari laptop ini. Di VS Code, jalankan \"Backend: API for phones on the same Wi-Fi\", lalu muat ulang kartu ini.'**
+  String get settingsPhoneStartServer;
+
+  /// No description provided for @settingsPhoneOpen.
+  ///
+  /// In id, this message translates to:
+  /// **'Sambungkan HP ke Wi-Fi yang sama, lalu buka alamat ini di browser HP:'**
+  String get settingsPhoneOpen;
+
+  /// No description provided for @settingsPhoneBuildFirst.
+  ///
+  /// In id, this message translates to:
+  /// **'Build aplikasi web dulu (Terminal → Run Task → App: build web), lalu buka alamat ini di browser HP pada Wi-Fi yang sama:'**
+  String get settingsPhoneBuildFirst;
+
+  /// No description provided for @answerClosestHeader.
+  ///
+  /// In id, this message translates to:
+  /// **'AI belum aktif dan tidak ada bagian yang cocok persis. Ini yang paling mendekati, periksa apakah menjawab pertanyaanmu:'**
+  String get answerClosestHeader;
+
+  /// No description provided for @answerNotFoundNoAi.
+  ///
+  /// In id, this message translates to:
+  /// **'Tanpa AI, asisten mencari kata yang sama di dokumen. Coba kata kunci yang dipakai dokumenmu, misalnya \"referensi\" atau nama metode.'**
+  String get answerNotFoundNoAi;
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -2071,8 +2148,7 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'id'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'id'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;

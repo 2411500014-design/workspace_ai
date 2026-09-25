@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -7,6 +8,7 @@ import '../../core/l10n.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
+import '../../data/providers.dart';
 
 /// First run: what Purnara does, and one way in. The preview on the side is
 /// built from the app's own components, so it shows the product rather than
@@ -69,13 +71,37 @@ class WelcomeScreen extends StatelessWidget {
   }
 }
 
-class _Copy extends StatelessWidget {
+class _Copy extends ConsumerWidget {
   const _Copy({required this.large});
 
   final bool large;
 
+  /// A ready-made project (documents, brief, plan, a pending proposal) to look around in.
+  Future<void> _trySample(BuildContext context, WidgetRef ref) async {
+    final l = context.l10n;
+    final container = containerOf(ref);
+    final router = GoRouter.of(context);
+    final messenger = ScaffoldMessenger.of(context);
+    final locale = context.localeCode == 'en' ? 'en' : 'id';
+    final project = await runWithProgress(
+      context,
+      l.sampleProjectCreating,
+      () => container.read(repositoryProvider).createSampleProject(locale: locale),
+    );
+    if (project == null) return;
+    await container.read(settingsProvider.notifier).selectProject(project.id);
+    container
+      ..invalidate(projectsProvider)
+      ..invalidate(todayProvider)
+      ..invalidate(notificationsProvider);
+    router.go('/today');
+    messenger
+      ..hideCurrentSnackBar()
+      ..showSnackBar(SnackBar(content: Text(l.sampleProjectReady)));
+  }
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l = context.l10n;
     final theme = Theme.of(context);
     final headline = (large ? theme.textTheme.displayLarge : theme.textTheme.headlineLarge)!.copyWith(
@@ -118,15 +144,39 @@ class _Copy extends StatelessWidget {
         SizedBox(height: large ? Space.xxl : Space.xl),
         FadeSlideIn(
           delay: Motion.stagger * 3,
-          child: FilledButton.icon(
-            style: FilledButton.styleFrom(
-              minimumSize: const Size(0, 52),
-              padding: const EdgeInsets.symmetric(horizontal: Space.xl + 4),
-            ),
-            onPressed: () => context.push('/onboarding'),
-            iconAlignment: IconAlignment.end,
-            icon: const Icon(Icons.arrow_forward, size: 20),
-            label: Text(l.onboardingStart),
+          child: Wrap(
+            spacing: Space.md,
+            runSpacing: Space.md,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              FilledButton.icon(
+                style: FilledButton.styleFrom(
+                  minimumSize: const Size(0, 52),
+                  padding: const EdgeInsets.symmetric(horizontal: Space.xl + 4),
+                ),
+                onPressed: () => context.push('/onboarding'),
+                iconAlignment: IconAlignment.end,
+                icon: const Icon(Icons.arrow_forward, size: 20),
+                label: Text(l.onboardingStart),
+              ),
+              TextButton.icon(
+                style: TextButton.styleFrom(
+                  minimumSize: const Size(0, 52),
+                  padding: const EdgeInsets.symmetric(horizontal: Space.lg),
+                ),
+                onPressed: () => _trySample(context, ref),
+                icon: const Icon(Icons.auto_stories_outlined, size: 20),
+                label: Text(l.sampleProjectTry),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: Space.md),
+        FadeSlideIn(
+          delay: Motion.stagger * 4,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 460),
+            child: Text(l.sampleProjectHint, style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant)),
           ),
         ),
       ],

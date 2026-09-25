@@ -50,6 +50,9 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   String? _busyMessage;
   Object? _error;
 
+  /// Whether the resumed project's saved details are in the form yet.
+  bool _hydrated = false;
+
   @override
   void initState() {
     super.initState();
@@ -57,17 +60,25 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     if (resume != null) {
       _projectId = resume;
       _step = _Step.documents;
-      final project = ref.read(projectsProvider).value?.where((p) => p.id == resume).firstOrNull;
-      if (project != null) {
-        _templateId = project.template;
-        _title.text = project.title;
-        _description.text = project.description;
-        _target.text = project.target;
-        _deadline = project.deadline;
-        if (project.hoursByWeekday.length == 7) {
-          _capacity = CapacityValue(hours: project.hoursByWeekday, blockedDates: project.blockedDates, bufferPct: project.bufferPct);
-        }
-      }
+      _hydrate(ref.read(projectsProvider).value);
+      // Opened from a link, the project list may still be on its way.
+      ref.listenManual(projectsProvider, (_, next) {
+        if (!_hydrated) setState(() => _hydrate(next.value));
+      });
+    }
+  }
+
+  void _hydrate(List<Project>? projects) {
+    final project = projects?.where((p) => p.id == widget.projectId).firstOrNull;
+    if (project == null) return;
+    _hydrated = true;
+    _templateId = project.template;
+    _title.text = project.title;
+    _description.text = project.description;
+    _target.text = project.target;
+    _deadline = project.deadline;
+    if (project.hoursByWeekday.length == 7) {
+      _capacity = CapacityValue(hours: project.hoursByWeekday, blockedDates: project.blockedDates, bufferPct: project.bufferPct);
     }
   }
 
@@ -111,7 +122,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     final valid = _formKey.currentState?.validate() ?? false;
     setState(() => _deadlineMissing = _deadline == null);
     if (!valid || _deadline == null) return;
-    final repo = ref.read(repositoryProvider);
+    final container = containerOf(ref);
+    final repo = container.read(repositoryProvider);
     final l = context.l10n;
     final project = await _run(l.creatingProject, () async {
       if (_projectId == null) {
@@ -128,10 +140,11 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     });
     if (project == null || !mounted) return;
     _projectId = project.id;
-    await ref.read(settingsProvider.notifier).selectProject(project.id);
-    ref.invalidate(projectsProvider);
-    ref.invalidate(todayProvider);
-    _go(_Step.documents);
+    _hydrated = true;
+    await container.read(settingsProvider.notifier).selectProject(project.id);
+    container.invalidate(projectsProvider);
+    container.invalidate(todayProvider);
+    if (mounted) _go(_Step.documents);
   }
 
   Future<void> _loadBrief({bool forceExtract = false}) async {
@@ -216,6 +229,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
 
   void _finish(String message) {
     refreshProject(ref, _projectId!);
+    ref.invalidate(documentsProvider(_projectId!));
     ref.read(settingsProvider.notifier).selectProject(_projectId!);
     showMessage(context, message);
     context.go('/today');
@@ -292,7 +306,13 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                               message: errorMessage(context, _error!, serverUrl: ref.read(apiBaseUrlProvider)),
                             ),
                           ],
-                          FadeSlideIn(key: ValueKey('${_step.name}-$_busy'), offset: 8, child: _stepBody(context)),
+                          // Re-animates when the step or the full-page loading view changes, not on
+                          // a quick save, which would rebuild the brief editor and lose the edits.
+                          FadeSlideIn(
+                            key: ValueKey('${_step.name}-${_busy && _busyMessage != null}'),
+                            offset: 8,
+                            child: _stepBody(context),
+                          ),
                         ],
                       ),
                     ),
@@ -300,7 +320,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                 ],
               ),
             ),
-            _BottomBar(children: _actions(context)),
+            _BottomBar(bar: _actions(context)),
           ],
         ),
       ),
@@ -319,46 +339,52 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     };
   }
 
-  List<Widget> _actions(BuildContext context) {
+  /// The bottom bar: an optional way back on the left, the way forward on the right.
+  ({Widget? back, List<Widget> actions}) _actions(BuildContext context) {
     final l = context.l10n;
     Widget back(_Step to) => TextButton(onPressed: _busy ? null : () => _go(to), child: Text(l.actionBack));
-    Widget next(VoidCallback? onPressed, [String? label]) =>
-        FilledButton(onPressed: _busy ? null : onPressed, child: Text(label ?? l.actionNext));
+    Widget next(VoidCallback? onPressed, [String? label]) => FilledButton(
+      onPressed: _busy ? null : onPressed,
+      child: BusyLabel(
+        busy: _busy && _busyMessage == null,
+        child: Text(label ?? l.actionNext, textAlign: TextAlign.center),
+      ),
+    );
     switch (_step) {
       case _Step.template:
-        return [const Spacer(), next(_templateId == null ? null : () => _go(_Step.details))];
+        return (back: null, actions: [next(_templateId == null ? null : () => _go(_Step.details))]);
       case _Step.details:
-        return [if (_projectId == null) back(_Step.template), const Spacer(), next(_submitDetails)];
+        return (back: _projectId == null ? back(_Step.template) : null, actions: [next(_submitDetails)]);
       case _Step.documents:
         final docs = ref.watch(documentsProvider(_projectId!)).value ?? const [];
         final processing = docs.any((d) => d.status == 'processing');
-        return [
-          back(_Step.details),
-          const Spacer(),
-          if (docs.isEmpty) TextButton(onPressed: _busy ? null : _loadBrief, child: Text(l.actionSkip)),
-          const SizedBox(width: Space.sm),
-          next(processing ? null : _loadBrief, processing ? l.documentsWaitProcessing : null),
-        ];
+        return (
+          back: back(_Step.details),
+          actions: [
+            if (docs.isEmpty) TextButton(onPressed: _busy ? null : _loadBrief, child: Text(l.actionSkip)),
+            next(processing ? null : _loadBrief, processing ? l.documentsWaitProcessing : null),
+          ],
+        );
       case _Step.brief:
-        return [back(_Step.documents), const Spacer(), next(_brief == null ? null : _saveBrief)];
+        return (back: back(_Step.documents), actions: [next(_brief == null ? null : _saveBrief)]);
       case _Step.capacity:
         final enough = _capacity.weekly > 0;
-        return [back(_Step.brief), const Spacer(), next(enough ? _saveCapacity : null)];
+        return (back: back(_Step.brief), actions: [next(enough ? _saveCapacity : null)]);
       case _Step.preview:
         if (_plan == null && isPlanExists(_error)) {
-          return [const Spacer(), next(() => context.go('/plan'), l.navPlan)];
+          return (back: null, actions: [next(() => context.go('/plan'), l.navPlan)]);
         }
         if (_plan == null) {
           // After an error, or after the draft was rejected on the detail screen.
-          return [back(_Step.capacity), const Spacer(), next(_generate, _error == null ? l.previewRegenerate : l.actionRetry)];
+          return (back: back(_Step.capacity), actions: [next(_generate, _error == null ? l.previewRegenerate : l.actionRetry)]);
         }
-        return [
-          back(_Step.capacity),
-          const Spacer(),
-          TextButton(onPressed: _busy ? null : _reviewDetails, child: Text(l.previewReviewDetails)),
-          const SizedBox(width: Space.sm),
-          next(_accept, l.previewAccept),
-        ];
+        return (
+          back: back(_Step.capacity),
+          actions: [
+            TextButton(onPressed: _busy ? null : _reviewDetails, child: Text(l.previewReviewDetails)),
+            next(_accept, l.previewAccept),
+          ],
+        );
     }
   }
 
@@ -375,7 +401,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
             autofocus: true,
             maxLength: 300,
             textInputAction: TextInputAction.next,
-            decoration: InputDecoration(labelText: l.fieldTitle, hintText: l.fieldTitleHint),
+            // The limit still applies; a running 0/300 counter is only noise here.
+            decoration: InputDecoration(labelText: l.fieldTitle, hintText: l.fieldTitleHint, counterText: ''),
             validator: (v) => (v == null || v.trim().isEmpty) ? l.fieldRequired : null,
           ),
           const SizedBox(height: Space.md),
@@ -400,11 +427,11 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
               label: Text(_deadline == null ? l.pickDate : formatDateLong(context, _deadline!)),
               onPressed: () async {
                 final now = DateTime.now();
-                final picked = await showDatePicker(
-                  context: context,
-                  initialDate: _deadline ?? DateTime(now.year, now.month + 4, now.day),
-                  firstDate: now.add(const Duration(days: 1)),
-                  lastDate: DateTime(now.year + 5),
+                final picked = await pickDate(
+                  context,
+                  initial: _deadline ?? DateTime(now.year, now.month + 4, now.day),
+                  first: now.add(const Duration(days: 1)),
+                  last: DateTime(now.year + 5),
                 );
                 if (picked != null) {
                   setState(() {
@@ -471,16 +498,17 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
         ),
         const SizedBox(height: Space.md),
         if (reason != null) InfoBanner(message: reason, icon: Icons.auto_awesome_outlined),
-        BriefEditor(key: ValueKey(_briefRevision), initial: draft.content, onChanged: (b) => _brief = b),
+        // Coming back from a later step keeps the edits made here.
+        BriefEditor(key: ValueKey(_briefRevision), initial: _brief ?? draft.content, onChanged: (b) => _brief = b),
       ],
     );
   }
 }
 
 class _BottomBar extends StatelessWidget {
-  const _BottomBar({required this.children});
+  const _BottomBar({required this.bar});
 
-  final List<Widget> children;
+  final ({Widget? back, List<Widget> actions}) bar;
 
   @override
   Widget build(BuildContext context) {
@@ -495,7 +523,22 @@ class _BottomBar extends StatelessWidget {
         child: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 720),
-            child: Row(children: children),
+            child: Row(
+              children: [
+                ?bar.back,
+                const SizedBox(width: Space.sm),
+                // On a narrow phone the actions wrap onto a second line instead of overflowing.
+                Expanded(
+                  child: Wrap(
+                    alignment: WrapAlignment.end,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    spacing: Space.sm,
+                    runSpacing: Space.xs,
+                    children: bar.actions,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

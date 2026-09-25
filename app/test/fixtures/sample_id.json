@@ -1,0 +1,4589 @@
+{
+ "answers": {
+  "GET /health": {
+   "ai_enabled": false,
+   "auth_mode": "local",
+   "environment": "test",
+   "lan_listening": true,
+   "lan_urls": [
+    "http://192.168.1.20:8000"
+   ],
+   "status": "ok",
+   "version": "0.1.0",
+   "web_app": true
+  },
+  "GET /me": {
+   "ai_enabled": false,
+   "auth_mode": "local",
+   "email": null,
+   "id": "00000000-0000-4000-8000-000000000001",
+   "locale": "id",
+   "name": "",
+   "quota": {
+    "limit": 400000,
+    "resets_at": "2026-10-01",
+    "used": 0
+   },
+   "timezone": "Asia/Jakarta"
+  },
+  "GET /me/today": {
+   "date": "2026-10-05",
+   "focus": [
+    {
+     "estimate_hours": 14.0,
+     "id": "d62e79aa-449e-4b06-95da-85c9d5cd630c",
+     "is_critical": true,
+     "key": "T2",
+     "late_days": 0,
+     "milestone_title": "Studi literatur dan rumusan masalah",
+     "postpone_count": 0,
+     "priority_score": 0.5982,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "project_title": "Contoh: Decision-making NPC untuk game RTS",
+     "scheduled_end": "2026-10-15",
+     "scheduled_start": "2026-10-08",
+     "status": "in_progress",
+     "title": "Baca dan rangkum jurnal ke matriks literatur"
+    }
+   ],
+   "more_today": [],
+   "projects": [
+    {
+     "days_left": 140,
+     "deadline": "2027-02-22",
+     "feasibility": "feasible",
+     "has_plan": true,
+     "health": "on_track",
+     "hours_today": 2.0,
+     "id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "needs_reschedule": false,
+     "next_milestone": {
+      "id": "a8bd7e29-c432-44af-a135-e2244d64c742",
+      "planned_end": "2026-10-17",
+      "title": "Studi literatur dan rumusan masalah"
+     },
+     "pending_suggestions": 1,
+     "title": "Contoh: Decision-making NPC untuk game RTS"
+    }
+   ],
+   "upcoming": []
+  },
+  "GET /modes": [
+   {
+    "id": "academic",
+    "name": {
+     "en": "Academic",
+     "id": "Akademik"
+    },
+    "templates": [
+     {
+      "description": {
+       "en": "From literature review to the final defense, with a proposal seminar along the way.",
+       "id": "Dari studi literatur sampai sidang, dengan seminar proposal di tengah jalan."
+      },
+      "id": "skripsi",
+      "name": {
+       "en": "Undergraduate thesis",
+       "id": "Skripsi"
+      },
+      "task_count": 21,
+      "total_hours": 168.0
+     },
+     {
+      "description": {
+       "en": "A final project that builds a system or product, from requirements to the defense.",
+       "id": "Proyek akhir yang membangun sistem atau produk, dari analisis kebutuhan sampai sidang."
+      },
+      "id": "tugas_akhir",
+      "name": {
+       "en": "Final project",
+       "id": "Tugas akhir"
+      },
+      "task_count": 13,
+      "total_hours": 126.0
+     },
+     {
+      "description": {
+       "en": "A course group project, usually 6 to 10 weeks.",
+       "id": "Tugas besar mata kuliah, biasanya 6 sampai 10 minggu."
+      },
+      "id": "tugas_besar",
+      "name": {
+       "en": "Group project",
+       "id": "Tugas besar"
+      },
+      "task_count": 8,
+      "total_hours": 42.0
+     },
+     {
+      "description": {
+       "en": "A paper, journal article or competition entry.",
+       "id": "Makalah, artikel jurnal, atau naskah lomba."
+      },
+      "id": "makalah",
+      "name": {
+       "en": "Paper or article",
+       "id": "Makalah atau artikel"
+      },
+      "task_count": 6,
+      "total_hours": 33.0
+     }
+    ],
+    "terms": {
+     "chapter": {
+      "en": "Chapter",
+      "id": "Bab"
+     },
+     "defense": {
+      "en": "Thesis defense",
+      "id": "Sidang"
+     },
+     "proposal_seminar": {
+      "en": "Proposal seminar",
+      "id": "Seminar proposal"
+     },
+     "supervision": {
+      "en": "Supervision",
+      "id": "Bimbingan"
+     },
+     "supervisor": {
+      "en": "Supervisor",
+      "id": "Dosen pembimbing"
+     }
+    }
+   }
+  ],
+  "GET /notifications": [],
+  "GET /projects": [
+   {
+    "blocked_dates": [],
+    "buffer_pct": 0.15,
+    "created_at": "2026-09-25T04:05:30.943486+00:00",
+    "deadline": "2027-02-22",
+    "description": "Membandingkan MCTS dan Utility AI untuk pengambilan keputusan NPC di game strategi real-time.",
+    "extra_hours": {},
+    "feasibility": "feasible",
+    "has_plan": true,
+    "health": "on_track",
+    "hours_by_weekday": [
+     2.0,
+     2.0,
+     2.0,
+     2.0,
+     2.0,
+     3.0,
+     0.0
+    ],
+    "id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+    "mode": "academic",
+    "needs_reschedule": false,
+    "plan_accepted_at": "2026-09-25T04:05:31.011524+00:00",
+    "target": "",
+    "task_count": 25,
+    "template": "skripsi",
+    "title": "Contoh: Decision-making NPC untuk game RTS"
+   }
+  ],
+  "GET /projects/212260dd-6687-4bd4-a22f-ce9d3915df7a/brief": {
+   "content": {
+    "constraints": [
+     "13 jam per minggu"
+    ],
+    "deliverables": [
+     "Proposal",
+     "Naskah Bab 1 sampai 5",
+     "Slide seminar proposal dan sidang"
+    ],
+    "goal": "Membandingkan MCTS dan Utility AI untuk pengambilan keputusan NPC di game strategi real-time.",
+    "important_dates": [
+     {
+      "date": "2026-11-04",
+      "label": "Jadwal penting Batas pengumpulan proposal"
+     },
+     {
+      "date": "2026-12-04",
+      "label": "Seminar proposal dilaksanakan"
+     },
+     {
+      "date": "2027-02-22",
+      "label": "Sidang akhir paling lambat"
+     }
+    ],
+    "open_questions": [
+     {
+      "answer": "",
+      "question": "Metode atau pendekatan apa yang akan dipakai?"
+     },
+     {
+      "answer": "",
+      "question": "Data atau objek penelitiannya dari mana?"
+     },
+     {
+      "answer": "",
+      "question": "Kapan target seminar proposal?"
+     }
+    ],
+    "requirements": [
+     {
+      "code": "R1",
+      "text": "Skripsi wajib menggunakan minimal 20 referensi dari 5 tahun terakhir."
+     },
+     {
+      "code": "R2",
+      "text": "Format sitasi harus mengikuti gaya IEEE."
+     },
+     {
+      "code": "R3",
+      "text": "Naskah paling sedikit 40 halaman tidak termasuk lampiran."
+     },
+     {
+      "code": "R4",
+      "text": "Setiap bab wajib dibahas dalam bimbingan minimal dua kali."
+     }
+    ]
+   },
+   "created_at": "2026-09-25T04:05:30.969307+00:00",
+   "source": "user",
+   "version": 1
+  },
+  "GET /projects/212260dd-6687-4bd4-a22f-ce9d3915df7a/documents": [
+   {
+    "chunk_count": 1,
+    "created_at": "2026-09-25T04:05:30.960155+00:00",
+    "error_code": null,
+    "filename": "mcts_rts_2025.txt",
+    "id": "4bf21df9-d9bb-4c4a-b682-6f7c24ceb762",
+    "kind": "journal",
+    "metadata": {
+     "doi": "10.5555/purnara.sample.2025"
+    },
+    "mime": "text/plain",
+    "pages": 1,
+    "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+    "size_bytes": 898,
+    "status": "ready",
+    "summary": "Decision Making for NPCs in Real-Time Strategy Games Abstract This paper compares Behavior Trees, Utility AI and Monte Carlo Tree Search (MCTS) for non-player character decisions in real-time strategy games. doi: 10.5555/purnara.sample.2025 Keywords: RTS, MCTS, Utility AI, game AI Real-time strategy games need fast decisions under uncertainty, with many units acting at once. We implement MCTS with a 50 ms budget per decision and compare it with a Utility AI baseline over 200 matches on three maps.",
+    "summary_ai": false,
+    "title": "Decision Making for NPCs in Real-Time Strategy Games"
+   },
+   {
+    "chunk_count": 1,
+    "created_at": "2026-09-25T04:05:30.949242+00:00",
+    "error_code": null,
+    "filename": "panduan_skripsi.txt",
+    "id": "b64c38fa-ba0e-4016-891d-1847d68ebb54",
+    "kind": "instruction",
+    "metadata": {
+     "year": 2026
+    },
+    "mime": "text/plain",
+    "pages": 1,
+    "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+    "size_bytes": 463,
+    "status": "ready",
+    "summary": "Program Studi Informatika Ketentuan umum Skripsi wajib menggunakan minimal 20 referensi dari 5 tahun terakhir.",
+    "summary_ai": false,
+    "title": "PANDUAN PENULISAN SKRIPSI"
+   }
+  ],
+  "GET /projects/212260dd-6687-4bd4-a22f-ce9d3915df7a/health": {
+   "actual_pct": 0.0326,
+   "critical_late_days": 0,
+   "done_hours": 6.0,
+   "feasibility": "feasible",
+   "has_plan": true,
+   "history": [
+    {
+     "actual_pct": 0.0326,
+     "day": "2026-10-05",
+     "health": "on_track",
+     "planned_pct": 0.0,
+     "spi": null
+    }
+   ],
+   "late_tasks": 0,
+   "needs_reschedule": false,
+   "planned_pct": 0.0,
+   "reasons": [],
+   "spi": null,
+   "spi_stable": false,
+   "status": "on_track",
+   "total_hours": 184.0
+  },
+  "GET /projects/212260dd-6687-4bd4-a22f-ce9d3915df7a/notes?kind=supervision": [
+   {
+    "content": "- Tambahkan 5 referensi terbaru di Bab 2\n- Perjelas rumusan masalah di Bab 1\n- Siapkan tabel perbandingan MCTS dan Utility AI\n- Dosen lebih suka paragraf yang pendek",
+    "created_at": "2026-09-25T04:05:31.014708+00:00",
+    "id": "b4b34a90-9092-4f71-811b-fbac8595fcd0",
+    "kind": "supervision",
+    "meeting_date": "2026-10-04"
+   }
+  ],
+  "GET /projects/212260dd-6687-4bd4-a22f-ce9d3915df7a/plan": {
+   "milestones": [
+    {
+     "id": "a8bd7e29-c432-44af-a135-e2244d64c742",
+     "key": "M1",
+     "position": 0,
+     "status": "open",
+     "target_date": null,
+     "title": "Studi literatur dan rumusan masalah"
+    },
+    {
+     "id": "ff75b73c-b496-4201-82bf-c36d7431eff5",
+     "key": "M2",
+     "position": 1,
+     "status": "open",
+     "target_date": null,
+     "title": "Desain metode"
+    },
+    {
+     "id": "d9a599d8-6433-4499-b122-abc712ba4e14",
+     "key": "M3",
+     "position": 2,
+     "status": "open",
+     "target_date": null,
+     "title": "Instrumen atau prototipe"
+    },
+    {
+     "id": "25c8b837-1e6f-46cf-afbf-d99bb674b879",
+     "key": "M4",
+     "position": 3,
+     "status": "open",
+     "target_date": null,
+     "title": "Draf Bab 1 sampai 3"
+    },
+    {
+     "id": "9fa1837e-62ca-45e7-b3f5-d29390eb5b9d",
+     "key": "S1",
+     "position": 4,
+     "status": "open",
+     "target_date": null,
+     "title": "Seminar proposal"
+    },
+    {
+     "id": "a18126e2-bc78-4191-8ed6-f814923f7668",
+     "key": "M5",
+     "position": 5,
+     "status": "open",
+     "target_date": null,
+     "title": "Eksperimen dan evaluasi"
+    },
+    {
+     "id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+     "key": "M6",
+     "position": 6,
+     "status": "open",
+     "target_date": null,
+     "title": "Bab 4 sampai 5 dan revisi"
+    },
+    {
+     "id": "3f6986c2-6ebb-46b9-b6d0-d536020db78c",
+     "key": "S2",
+     "position": 7,
+     "status": "open",
+     "target_date": null,
+     "title": "Sidang"
+    }
+   ],
+   "project": {
+    "blocked_dates": [],
+    "buffer_pct": 0.15,
+    "created_at": "2026-09-25T04:05:30.943486+00:00",
+    "deadline": "2027-02-22",
+    "description": "Membandingkan MCTS dan Utility AI untuk pengambilan keputusan NPC di game strategi real-time.",
+    "extra_hours": {},
+    "feasibility": "feasible",
+    "has_plan": true,
+    "health": "on_track",
+    "hours_by_weekday": [
+     2.0,
+     2.0,
+     2.0,
+     2.0,
+     2.0,
+     3.0,
+     0.0
+    ],
+    "id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+    "mode": "academic",
+    "needs_reschedule": false,
+    "plan_accepted_at": "2026-09-25T04:05:31.011524+00:00",
+    "target": "",
+    "task_count": 0,
+    "template": "skripsi",
+    "title": "Contoh: Decision-making NPC untuk game RTS"
+   },
+   "tasks": [
+    {
+     "actual_hours": 6.0,
+     "completed_at": "2026-09-25T04:05:31.012852+00:00",
+     "deferred": false,
+     "definition_of_done": "Semua PDF masuk library dan terindeks",
+     "depends_on": [],
+     "description": "",
+     "estimate_hours": 6.0,
+     "id": "de8c854e-8a24-4102-99f7-91f1c7c9c920",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T1",
+     "late_days": 0,
+     "latest_finish": "2026-11-25",
+     "milestone_id": "a8bd7e29-c432-44af-a135-e2244d64c742",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6065,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-10-07",
+     "scheduled_start": "2026-10-05",
+     "source": "template",
+     "status": "done",
+     "title": "Kumpulkan 20 sampai 25 jurnal yang relevan"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "Setiap jurnal punya ringkasan metode dan hasil",
+     "depends_on": [
+      "de8c854e-8a24-4102-99f7-91f1c7c9c920"
+     ],
+     "description": "",
+     "estimate_hours": 14.0,
+     "id": "d62e79aa-449e-4b06-95da-85c9d5cd630c",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T2",
+     "late_days": 0,
+     "latest_finish": "2026-12-02",
+     "milestone_id": "a8bd7e29-c432-44af-a135-e2244d64c742",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5982,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-10-15",
+     "scheduled_start": "2026-10-08",
+     "source": "template",
+     "status": "in_progress",
+     "title": "Baca dan rangkum jurnal ke matriks literatur"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "Rumusan disetujui dosen",
+     "depends_on": [
+      "d62e79aa-449e-4b06-95da-85c9d5cd630c"
+     ],
+     "description": "",
+     "estimate_hours": 4.0,
+     "id": "c13bb391-1a1d-4876-a413-27b948dd6c8b",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T3",
+     "late_days": 0,
+     "latest_finish": "2026-12-04",
+     "milestone_id": "a8bd7e29-c432-44af-a135-e2244d64c742",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5815,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-10-17",
+     "scheduled_start": "2026-10-15",
+     "source": "template",
+     "status": "todo",
+     "title": "Rumuskan masalah"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "c13bb391-1a1d-4876-a413-27b948dd6c8b"
+     ],
+     "description": "",
+     "estimate_hours": 6.0,
+     "id": "3cb92ad6-4fdb-4c87-ba03-8231b8c05fa3",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T4",
+     "late_days": 0,
+     "latest_finish": "2026-12-08",
+     "milestone_id": "ff75b73c-b496-4201-82bf-c36d7431eff5",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5649,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-10-20",
+     "scheduled_start": "2026-10-17",
+     "source": "template",
+     "status": "todo",
+     "title": "Tentukan metode dan pembanding"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "3cb92ad6-4fdb-4c87-ba03-8231b8c05fa3"
+     ],
+     "description": "",
+     "estimate_hours": 6.0,
+     "id": "34d367d5-9f3e-4686-8436-8c49b34b0902",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T5",
+     "late_days": 0,
+     "latest_finish": "2026-12-11",
+     "milestone_id": "ff75b73c-b496-4201-82bf-c36d7431eff5",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5565,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-10-23",
+     "scheduled_start": "2026-10-21",
+     "source": "template",
+     "status": "todo",
+     "title": "Rancang eksperimen atau pengumpulan data"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "34d367d5-9f3e-4686-8436-8c49b34b0902"
+     ],
+     "description": "",
+     "estimate_hours": 20.0,
+     "id": "45ba60c2-beae-4574-bd70-5139a5df1589",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T6",
+     "late_days": 0,
+     "latest_finish": "2026-12-22",
+     "milestone_id": "d9a599d8-6433-4499-b122-abc712ba4e14",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6327,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-11-23",
+     "scheduled_start": "2026-11-12",
+     "source": "template",
+     "status": "todo",
+     "title": "Siapkan instrumen penelitian atau prototipe"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "c13bb391-1a1d-4876-a413-27b948dd6c8b"
+     ],
+     "description": "",
+     "estimate_hours": 6.0,
+     "id": "45bf2f05-6062-475b-b370-a4a3bdb496b5",
+     "importance": 0.0,
+     "is_critical": false,
+     "key": "T7",
+     "late_days": 0,
+     "latest_finish": "2026-12-15",
+     "milestone_id": "25c8b837-1e6f-46cf-afbf-d99bb674b879",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.1333,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-10-27",
+     "scheduled_start": "2026-10-24",
+     "source": "template",
+     "status": "todo",
+     "title": "Tulis Bab 1 Pendahuluan"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "d62e79aa-449e-4b06-95da-85c9d5cd630c"
+     ],
+     "description": "",
+     "estimate_hours": 12.0,
+     "id": "8ad4dc79-f341-44b4-b82f-364c48a8ca1f",
+     "importance": 0.0,
+     "is_critical": false,
+     "key": "T8",
+     "late_days": 0,
+     "latest_finish": "2026-12-15",
+     "milestone_id": "25c8b837-1e6f-46cf-afbf-d99bb674b879",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.1726,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-11-02",
+     "scheduled_start": "2026-10-27",
+     "source": "template",
+     "status": "todo",
+     "title": "Tulis Bab 2 Tinjauan Pustaka"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "34d367d5-9f3e-4686-8436-8c49b34b0902"
+     ],
+     "description": "",
+     "estimate_hours": 8.0,
+     "id": "9952a143-daba-46e8-8b67-3e5b8c450c35",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T9",
+     "late_days": 0,
+     "latest_finish": "2026-12-15",
+     "milestone_id": "25c8b837-1e6f-46cf-afbf-d99bb674b879",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5988,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-11-06",
+     "scheduled_start": "2026-11-03",
+     "source": "template",
+     "status": "todo",
+     "title": "Tulis Bab 3 Metodologi"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "45bf2f05-6062-475b-b370-a4a3bdb496b5",
+      "8ad4dc79-f341-44b4-b82f-364c48a8ca1f",
+      "9952a143-daba-46e8-8b67-3e5b8c450c35"
+     ],
+     "description": "",
+     "estimate_hours": 6.0,
+     "id": "8e538bbf-1b97-4fa4-97dd-f0c65dca2d7a",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T10",
+     "late_days": 0,
+     "latest_finish": "2026-12-18",
+     "milestone_id": "25c8b837-1e6f-46cf-afbf-d99bb674b879",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5904,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-11-10",
+     "scheduled_start": "2026-11-07",
+     "source": "template",
+     "status": "todo",
+     "title": "Revisi Bab 1 sampai 3 dari bimbingan"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "8e538bbf-1b97-4fa4-97dd-f0c65dca2d7a"
+     ],
+     "description": "",
+     "estimate_hours": 4.0,
+     "id": "8db32b1c-62bf-4670-884f-561f22071584",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T11",
+     "late_days": 0,
+     "latest_finish": "2026-12-21",
+     "milestone_id": "9fa1837e-62ca-45e7-b3f5-d29390eb5b9d",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5821,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-11-12",
+     "scheduled_start": "2026-11-10",
+     "source": "template",
+     "status": "todo",
+     "title": "Siapkan slide dan latihan seminar proposal"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "8db32b1c-62bf-4670-884f-561f22071584"
+     ],
+     "description": "",
+     "estimate_hours": 2.0,
+     "id": "c4174750-6e20-4299-b3f2-fe0a83789e87",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T12",
+     "late_days": 0,
+     "latest_finish": "2026-12-22",
+     "milestone_id": "9fa1837e-62ca-45e7-b3f5-d29390eb5b9d",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6392,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-11-24",
+     "scheduled_start": "2026-11-23",
+     "source": "template",
+     "status": "todo",
+     "title": "Seminar proposal"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "45ba60c2-beae-4574-bd70-5139a5df1589",
+      "c4174750-6e20-4299-b3f2-fe0a83789e87"
+     ],
+     "description": "",
+     "estimate_hours": 24.0,
+     "id": "743b9ce8-b099-404b-a0d9-4dea307b223c",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T13",
+     "late_days": 0,
+     "latest_finish": "2027-01-04",
+     "milestone_id": "a18126e2-bc78-4191-8ed6-f814923f7668",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6309,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-12-07",
+     "scheduled_start": "2026-11-24",
+     "source": "template",
+     "status": "todo",
+     "title": "Jalankan penelitian atau eksperimen"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "743b9ce8-b099-404b-a0d9-4dea307b223c"
+     ],
+     "description": "",
+     "estimate_hours": 12.0,
+     "id": "4005fbc0-ea70-46cf-833f-9d2c75b06187",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T14",
+     "late_days": 0,
+     "latest_finish": "2027-01-09",
+     "milestone_id": "a18126e2-bc78-4191-8ed6-f814923f7668",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6225,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-12-12",
+     "scheduled_start": "2026-12-07",
+     "source": "template",
+     "status": "todo",
+     "title": "Olah dan analisis data"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "4005fbc0-ea70-46cf-833f-9d2c75b06187"
+     ],
+     "description": "",
+     "estimate_hours": 14.0,
+     "id": "1c8a53e9-176e-48c5-9c6b-0d64d2f4312f",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T15",
+     "late_days": 0,
+     "latest_finish": "2027-01-18",
+     "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6142,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-12-21",
+     "scheduled_start": "2026-12-14",
+     "source": "template",
+     "status": "todo",
+     "title": "Tulis Bab 4 Hasil dan Pembahasan"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "1c8a53e9-176e-48c5-9c6b-0d64d2f4312f"
+     ],
+     "description": "",
+     "estimate_hours": 4.0,
+     "id": "4416e277-ab64-4283-a794-a2a2ad2b09b9",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T16",
+     "late_days": 0,
+     "latest_finish": "2027-01-20",
+     "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6059,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-12-23",
+     "scheduled_start": "2026-12-21",
+     "source": "template",
+     "status": "todo",
+     "title": "Tulis Bab 5 Kesimpulan dan Saran"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "4416e277-ab64-4283-a794-a2a2ad2b09b9"
+     ],
+     "description": "",
+     "estimate_hours": 10.0,
+     "id": "dee0f11d-0a2d-4dc2-b70d-7bf705aafb75",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T17",
+     "late_days": 0,
+     "latest_finish": "2027-01-25",
+     "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5975,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-12-28",
+     "scheduled_start": "2026-12-23",
+     "source": "template",
+     "status": "todo",
+     "title": "Revisi naskah lengkap"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "dee0f11d-0a2d-4dc2-b70d-7bf705aafb75"
+     ],
+     "description": "",
+     "estimate_hours": 4.0,
+     "id": "97a09824-07bd-4776-80b7-c24f348e93ab",
+     "importance": 0.0,
+     "is_critical": false,
+     "key": "T18",
+     "late_days": 0,
+     "latest_finish": "2027-01-29",
+     "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.1377,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2026-12-30",
+     "scheduled_start": "2026-12-29",
+     "source": "template",
+     "status": "todo",
+     "title": "Rapikan abstrak"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "dee0f11d-0a2d-4dc2-b70d-7bf705aafb75"
+     ],
+     "description": "",
+     "estimate_hours": 12.0,
+     "id": "a43f58eb-40b2-467b-8679-236fb68591ea",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T19",
+     "late_days": 0,
+     "latest_finish": "2027-02-01",
+     "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+     "optional": true,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5904,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2027-01-08",
+     "scheduled_start": "2027-01-02",
+     "source": "template",
+     "status": "todo",
+     "title": "Tulis artikel jurnal"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "97a09824-07bd-4776-80b7-c24f348e93ab"
+     ],
+     "description": "",
+     "estimate_hours": 4.0,
+     "id": "a85fad64-006f-4e02-995f-815b491633c7",
+     "importance": 0.0,
+     "is_critical": false,
+     "key": "T20",
+     "late_days": 0,
+     "latest_finish": "2027-01-30",
+     "milestone_id": "3f6986c2-6ebb-46b9-b6d0-d536020db78c",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.1294,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2027-01-01",
+     "scheduled_start": "2026-12-31",
+     "source": "template",
+     "status": "todo",
+     "title": "Siapkan slide dan latihan sidang"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "a85fad64-006f-4e02-995f-815b491633c7"
+     ],
+     "description": "",
+     "estimate_hours": 2.0,
+     "id": "0a136bc6-4c42-4d6d-99e9-5e6240bb2d3a",
+     "importance": 0.0,
+     "is_critical": false,
+     "key": "T21",
+     "late_days": 0,
+     "latest_finish": "2027-02-01",
+     "milestone_id": "3f6986c2-6ebb-46b9-b6d0-d536020db78c",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.1734,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [],
+     "scheduled_end": "2027-01-11",
+     "scheduled_start": "2027-01-11",
+     "source": "template",
+     "status": "todo",
+     "title": "Sidang"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "a43f58eb-40b2-467b-8679-236fb68591ea"
+     ],
+     "description": "",
+     "estimate_hours": 1.0,
+     "id": "3791158a-0c1f-460b-831e-228467877296",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T22",
+     "late_days": 0,
+     "latest_finish": "2027-02-01",
+     "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.557,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [
+      "c4fd8b77-9025-4820-9370-3138f881f530"
+     ],
+     "scheduled_end": "2027-01-08",
+     "scheduled_start": "2027-01-08",
+     "source": "template",
+     "status": "todo",
+     "title": "Pastikan syarat terpenuhi: Skripsi wajib menggunakan minimal 20 referensi dari 5 tahun terakhir."
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "a43f58eb-40b2-467b-8679-236fb68591ea"
+     ],
+     "description": "",
+     "estimate_hours": 1.0,
+     "id": "f0d947b3-e9ed-4620-be7d-d80461453519",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T23",
+     "late_days": 0,
+     "latest_finish": "2027-02-01",
+     "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5603,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [
+      "6e6d745b-312d-475b-9061-1e9b33c0a568"
+     ],
+     "scheduled_end": "2027-01-09",
+     "scheduled_start": "2027-01-09",
+     "source": "template",
+     "status": "todo",
+     "title": "Pastikan syarat terpenuhi: Format sitasi harus mengikuti gaya IEEE."
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "a43f58eb-40b2-467b-8679-236fb68591ea"
+     ],
+     "description": "",
+     "estimate_hours": 1.0,
+     "id": "4ab9a907-7df7-45a7-b75d-f3c069116e30",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T24",
+     "late_days": 0,
+     "latest_finish": "2027-02-01",
+     "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5636,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [
+      "cc2c290b-845d-4db3-88ee-eb7114e307ac"
+     ],
+     "scheduled_end": "2027-01-09",
+     "scheduled_start": "2027-01-09",
+     "source": "template",
+     "status": "todo",
+     "title": "Pastikan syarat terpenuhi: Naskah paling sedikit 40 halaman tidak termasuk lampiran."
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "a43f58eb-40b2-467b-8679-236fb68591ea"
+     ],
+     "description": "",
+     "estimate_hours": 1.0,
+     "id": "b7b9af8c-601c-444f-b9d2-8de145e21fee",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T25",
+     "late_days": 0,
+     "latest_finish": "2027-02-01",
+     "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5668,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "requirement_ids": [
+      "4ec62fcb-df71-45b5-8f75-fec70aadebf1"
+     ],
+     "scheduled_end": "2027-01-09",
+     "scheduled_start": "2027-01-09",
+     "source": "template",
+     "status": "todo",
+     "title": "Pastikan syarat terpenuhi: Setiap bab wajib dibahas dalam bimbingan minimal dua kali."
+    }
+   ]
+  },
+  "GET /projects/212260dd-6687-4bd4-a22f-ce9d3915df7a/requirements": [
+   {
+    "code": "R1",
+    "covered": true,
+    "id": "c4fd8b77-9025-4820-9370-3138f881f530",
+    "met": false,
+    "tasks": [
+     {
+      "id": "3791158a-0c1f-460b-831e-228467877296",
+      "key": "T22",
+      "status": "todo",
+      "title": "Pastikan syarat terpenuhi: Skripsi wajib menggunakan minimal 20 referensi dari 5 tahun terakhir."
+     }
+    ],
+    "text": "Skripsi wajib menggunakan minimal 20 referensi dari 5 tahun terakhir."
+   },
+   {
+    "code": "R2",
+    "covered": true,
+    "id": "6e6d745b-312d-475b-9061-1e9b33c0a568",
+    "met": false,
+    "tasks": [
+     {
+      "id": "f0d947b3-e9ed-4620-be7d-d80461453519",
+      "key": "T23",
+      "status": "todo",
+      "title": "Pastikan syarat terpenuhi: Format sitasi harus mengikuti gaya IEEE."
+     }
+    ],
+    "text": "Format sitasi harus mengikuti gaya IEEE."
+   },
+   {
+    "code": "R3",
+    "covered": true,
+    "id": "cc2c290b-845d-4db3-88ee-eb7114e307ac",
+    "met": false,
+    "tasks": [
+     {
+      "id": "4ab9a907-7df7-45a7-b75d-f3c069116e30",
+      "key": "T24",
+      "status": "todo",
+      "title": "Pastikan syarat terpenuhi: Naskah paling sedikit 40 halaman tidak termasuk lampiran."
+     }
+    ],
+    "text": "Naskah paling sedikit 40 halaman tidak termasuk lampiran."
+   },
+   {
+    "code": "R4",
+    "covered": true,
+    "id": "4ec62fcb-df71-45b5-8f75-fec70aadebf1",
+    "met": false,
+    "tasks": [
+     {
+      "id": "b7b9af8c-601c-444f-b9d2-8de145e21fee",
+      "key": "T25",
+      "status": "todo",
+      "title": "Pastikan syarat terpenuhi: Setiap bab wajib dibahas dalam bimbingan minimal dua kali."
+     }
+    ],
+    "text": "Setiap bab wajib dibahas dalam bimbingan minimal dua kali."
+   }
+  ],
+  "GET /projects/212260dd-6687-4bd4-a22f-ce9d3915df7a/suggestions": [
+   {
+    "ai_used": false,
+    "created_at": "2026-09-25T04:05:31.020067+00:00",
+    "decided_at": null,
+    "id": "bd96c1dd-4d25-4056-a1dd-45cd5cb244fd",
+    "kind": "task_change",
+    "meta": {
+     "ai_error": "ai_unavailable",
+     "meeting_date": "2026-10-04",
+     "note_id": "b4b34a90-9092-4f71-811b-fbac8595fcd0",
+     "origin": "supervision"
+    },
+    "ops": [
+     {
+      "entity": "memory",
+      "fields": {
+       "content": "Siapkan tabel perbandingan MCTS dan Utility AI",
+       "kind": "feedback",
+       "source": "supervision"
+      },
+      "op": "add"
+     },
+     {
+      "entity": "memory",
+      "fields": {
+       "content": "Dosen lebih suka paragraf yang pendek",
+       "kind": "feedback",
+       "source": "supervision"
+      },
+      "op": "add"
+     },
+     {
+      "entity": "task",
+      "fields": {
+       "estimate_hours": 2.0,
+       "milestone_id": "a8bd7e29-c432-44af-a135-e2244d64c742",
+       "position": 5000,
+       "source": "supervision",
+       "title": "Tambahkan 5 referensi terbaru di Bab 2"
+      },
+      "op": "add"
+     },
+     {
+      "entity": "task",
+      "fields": {
+       "estimate_hours": 2.0,
+       "milestone_id": "a8bd7e29-c432-44af-a135-e2244d64c742",
+       "position": 5001,
+       "source": "supervision",
+       "title": "Perjelas rumusan masalah di Bab 1"
+      },
+      "op": "add"
+     }
+    ],
+    "preview": {},
+    "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+    "rationale": "",
+    "status": "pending"
+   }
+  ],
+  "GET /projects/212260dd-6687-4bd4-a22f-ce9d3915df7a/threads": [
+   {
+    "created_at": "2026-09-25T04:05:31.058450+00:00",
+    "id": "170e5d45-8e66-432f-b7fe-307510d50a70",
+    "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+    "title": "Apa syarat jumlah referensi?"
+   }
+  ],
+  "GET /projects/212260dd-6687-4bd4-a22f-ce9d3915df7a/weekly-review": {
+   "ai_error": "ai_unavailable",
+   "ai_used": false,
+   "done": [],
+   "done_hours": 0,
+   "focus_next": [
+    {
+     "estimate_hours": 14.0,
+     "id": "d62e79aa-449e-4b06-95da-85c9d5cd630c",
+     "is_critical": true,
+     "key": "T2",
+     "late_days": 0,
+     "milestone_title": "Studi literatur dan rumusan masalah",
+     "postpone_count": 0,
+     "priority_score": 0.5982,
+     "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+     "project_title": "Contoh: Decision-making NPC untuk game RTS",
+     "scheduled_end": "2026-10-15",
+     "scheduled_start": "2026-10-08",
+     "status": "in_progress",
+     "title": "Baca dan rangkum jurnal ke matriks literatur"
+    }
+   ],
+   "health_now": "on_track",
+   "health_week_ago": null,
+   "period_end": "2026-10-05",
+   "period_start": "2026-09-28",
+   "postponed": 0,
+   "recommend_replan": false,
+   "slipped": [],
+   "summary": null
+  },
+  "GET /projects/2e160dd4-a585-4731-92d7-d8d1179980f7/brief": {
+   "content": {
+    "requirements": []
+   },
+   "created_at": null,
+   "source": null,
+   "version": 0
+  },
+  "GET /projects/2e160dd4-a585-4731-92d7-d8d1179980f7/documents": [],
+  "GET /suggestions/9a446750-87c7-4ebf-9ce4-ff50b708e30b": {
+   "ai_used": false,
+   "created_at": "2026-09-25T04:05:31.678484+00:00",
+   "decided_at": null,
+   "id": "9a446750-87c7-4ebf-9ce4-ff50b708e30b",
+   "kind": "plan",
+   "meta": {
+    "ai_error": "ai_unavailable",
+    "assumptions": [],
+    "questions": [],
+    "uncovered_requirements": []
+   },
+   "ops": [
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 0,
+      "title": "Studi literatur dan rumusan masalah"
+     },
+     "key": "M1",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 1,
+      "title": "Desain metode"
+     },
+     "key": "M2",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 2,
+      "title": "Instrumen atau prototipe"
+     },
+     "key": "M3",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 3,
+      "title": "Draf Bab 1 sampai 3"
+     },
+     "key": "M4",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 4,
+      "title": "Seminar proposal"
+     },
+     "key": "S1",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 5,
+      "title": "Eksperimen dan evaluasi"
+     },
+     "key": "M5",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 6,
+      "title": "Bab 4 sampai 5 dan revisi"
+     },
+     "key": "M6",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 7,
+      "title": "Sidang"
+     },
+     "key": "S2",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Semua PDF masuk library dan terindeks",
+      "depends_on": [],
+      "estimate_hours": 6.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 0,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Kumpulkan 20 sampai 25 jurnal yang relevan"
+     },
+     "key": "T1",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Setiap jurnal punya ringkasan metode dan hasil",
+      "depends_on": [
+       "T1"
+      ],
+      "estimate_hours": 14.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 1,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Baca dan rangkum jurnal ke matriks literatur"
+     },
+     "key": "T2",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Rumusan disetujui dosen",
+      "depends_on": [
+       "T2"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 2,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Rumuskan masalah"
+     },
+     "key": "T3",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T3"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M2",
+      "optional": false,
+      "position": 3,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tentukan metode dan pembanding"
+     },
+     "key": "T4",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T4"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M2",
+      "optional": false,
+      "position": 4,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Rancang eksperimen atau pengumpulan data"
+     },
+     "key": "T5",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T5"
+      ],
+      "estimate_hours": 20.0,
+      "milestone_key": "M3",
+      "optional": false,
+      "position": 5,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Siapkan instrumen penelitian atau prototipe"
+     },
+     "key": "T6",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T3"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 6,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 1 Pendahuluan"
+     },
+     "key": "T7",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T2"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 7,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 2 Tinjauan Pustaka"
+     },
+     "key": "T8",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T5"
+      ],
+      "estimate_hours": 8.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 8,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 3 Metodologi"
+     },
+     "key": "T9",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T7",
+       "T8",
+       "T9"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 9,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Revisi Bab 1 sampai 3 dari bimbingan"
+     },
+     "key": "T10",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T10"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "S1",
+      "optional": false,
+      "position": 10,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Siapkan slide dan latihan seminar proposal"
+     },
+     "key": "T11",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T11"
+      ],
+      "estimate_hours": 2.0,
+      "milestone_key": "S1",
+      "optional": false,
+      "position": 11,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Seminar proposal"
+     },
+     "key": "T12",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T12",
+       "T6"
+      ],
+      "estimate_hours": 24.0,
+      "milestone_key": "M5",
+      "optional": false,
+      "position": 12,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Jalankan penelitian atau eksperimen"
+     },
+     "key": "T13",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T13"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M5",
+      "optional": false,
+      "position": 13,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Olah dan analisis data"
+     },
+     "key": "T14",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T14"
+      ],
+      "estimate_hours": 14.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 14,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 4 Hasil dan Pembahasan"
+     },
+     "key": "T15",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T15"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 15,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 5 Kesimpulan dan Saran"
+     },
+     "key": "T16",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T16"
+      ],
+      "estimate_hours": 10.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 16,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Revisi naskah lengkap"
+     },
+     "key": "T17",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T17"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 17,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Rapikan abstrak"
+     },
+     "key": "T18",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T17"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M6",
+      "optional": true,
+      "position": 18,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis artikel jurnal"
+     },
+     "key": "T19",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T18"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "S2",
+      "optional": false,
+      "position": 19,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Siapkan slide dan latihan sidang"
+     },
+     "key": "T20",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T20"
+      ],
+      "estimate_hours": 2.0,
+      "milestone_key": "S2",
+      "optional": false,
+      "position": 20,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Sidang"
+     },
+     "key": "T21",
+     "op": "add"
+    }
+   ],
+   "preview": {
+    "available_hours": 212.0,
+    "buffer_deadline": "2027-02-08",
+    "critical_path": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5",
+     "T6",
+     "T13",
+     "T14",
+     "T15",
+     "T16",
+     "T17",
+     "T19"
+    ],
+    "feasibility": "feasible",
+    "projected_finish": "2027-02-05",
+    "shortfall_hours": 0.0,
+    "tasks": {
+     "T1": {
+      "critical": true,
+      "end": "2026-10-07",
+      "priority": 0.612,
+      "start": "2026-10-05"
+     },
+     "T10": {
+      "critical": true,
+      "end": "2026-11-19",
+      "priority": 0.6295,
+      "start": "2026-11-17"
+     },
+     "T11": {
+      "critical": true,
+      "end": "2026-11-23",
+      "priority": 0.6195,
+      "start": "2026-11-20"
+     },
+     "T12": {
+      "critical": true,
+      "end": "2026-12-08",
+      "priority": 0.729,
+      "start": "2026-12-08"
+     },
+     "T13": {
+      "critical": true,
+      "end": "2026-12-24",
+      "priority": 0.719,
+      "start": "2026-12-09"
+     },
+     "T14": {
+      "critical": true,
+      "end": "2027-01-01",
+      "priority": 0.709,
+      "start": "2026-12-25"
+     },
+     "T15": {
+      "critical": true,
+      "end": "2027-01-12",
+      "priority": 0.699,
+      "start": "2027-01-04"
+     },
+     "T16": {
+      "critical": true,
+      "end": "2027-01-14",
+      "priority": 0.689,
+      "start": "2027-01-13"
+     },
+     "T17": {
+      "critical": true,
+      "end": "2027-01-21",
+      "priority": 0.679,
+      "start": "2027-01-15"
+     },
+     "T18": {
+      "critical": false,
+      "end": "2027-01-25",
+      "priority": 0.2471,
+      "start": "2027-01-22"
+     },
+     "T19": {
+      "critical": true,
+      "end": "2027-02-04",
+      "priority": 0.6869,
+      "start": "2027-01-28"
+     },
+     "T2": {
+      "critical": true,
+      "end": "2026-10-16",
+      "priority": 0.602,
+      "start": "2026-10-08"
+     },
+     "T20": {
+      "critical": false,
+      "end": "2027-01-27",
+      "priority": 0.2371,
+      "start": "2027-01-26"
+     },
+     "T21": {
+      "critical": false,
+      "end": "2027-02-05",
+      "priority": 0.2988,
+      "start": "2027-02-05"
+     },
+     "T3": {
+      "critical": true,
+      "end": "2026-10-20",
+      "priority": 0.582,
+      "start": "2026-10-19"
+     },
+     "T4": {
+      "critical": true,
+      "end": "2026-10-23",
+      "priority": 0.562,
+      "start": "2026-10-21"
+     },
+     "T5": {
+      "critical": true,
+      "end": "2026-10-28",
+      "priority": 0.552,
+      "start": "2026-10-26"
+     },
+     "T6": {
+      "critical": true,
+      "end": "2026-12-07",
+      "priority": 0.7171,
+      "start": "2026-11-24"
+     },
+     "T7": {
+      "critical": false,
+      "end": "2026-11-02",
+      "priority": 0.12,
+      "start": "2026-10-29"
+     },
+     "T8": {
+      "critical": false,
+      "end": "2026-11-10",
+      "priority": 0.1917,
+      "start": "2026-11-03"
+     },
+     "T9": {
+      "critical": true,
+      "end": "2026-11-16",
+      "priority": 0.6395,
+      "start": "2026-11-11"
+     }
+    },
+    "total_hours": 180.0
+   },
+   "project_id": "2e160dd4-a585-4731-92d7-d8d1179980f7",
+   "rationale": "",
+   "status": "pending"
+  },
+  "GET /suggestions/bd96c1dd-4d25-4056-a1dd-45cd5cb244fd": {
+   "ai_used": false,
+   "created_at": "2026-09-25T04:05:31.020067+00:00",
+   "decided_at": null,
+   "id": "bd96c1dd-4d25-4056-a1dd-45cd5cb244fd",
+   "kind": "task_change",
+   "meta": {
+    "ai_error": "ai_unavailable",
+    "meeting_date": "2026-10-04",
+    "note_id": "b4b34a90-9092-4f71-811b-fbac8595fcd0",
+    "origin": "supervision"
+   },
+   "ops": [
+    {
+     "entity": "memory",
+     "fields": {
+      "content": "Siapkan tabel perbandingan MCTS dan Utility AI",
+      "kind": "feedback",
+      "source": "supervision"
+     },
+     "op": "add"
+    },
+    {
+     "entity": "memory",
+     "fields": {
+      "content": "Dosen lebih suka paragraf yang pendek",
+      "kind": "feedback",
+      "source": "supervision"
+     },
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "estimate_hours": 2.0,
+      "milestone_id": "a8bd7e29-c432-44af-a135-e2244d64c742",
+      "position": 5000,
+      "source": "supervision",
+      "title": "Tambahkan 5 referensi terbaru di Bab 2"
+     },
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "estimate_hours": 2.0,
+      "milestone_id": "a8bd7e29-c432-44af-a135-e2244d64c742",
+      "position": 5001,
+      "source": "supervision",
+      "title": "Perjelas rumusan masalah di Bab 1"
+     },
+     "op": "add"
+    }
+   ],
+   "preview": {},
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "rationale": "",
+   "status": "pending"
+  },
+  "GET /tasks/0a136bc6-4c42-4d6d-99e9-5e6240bb2d3a": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "a85fad64-006f-4e02-995f-815b491633c7"
+   ],
+   "description": "",
+   "estimate_hours": 2.0,
+   "id": "0a136bc6-4c42-4d6d-99e9-5e6240bb2d3a",
+   "importance": 0.0,
+   "is_critical": false,
+   "key": "T21",
+   "late_days": 0,
+   "latest_finish": "2027-02-01",
+   "milestone_id": "3f6986c2-6ebb-46b9-b6d0-d536020db78c",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.1734,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2027-01-11",
+   "scheduled_start": "2027-01-11",
+   "source": "template",
+   "status": "todo",
+   "title": "Sidang"
+  },
+  "GET /tasks/1c8a53e9-176e-48c5-9c6b-0d64d2f4312f": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "4005fbc0-ea70-46cf-833f-9d2c75b06187"
+   ],
+   "description": "",
+   "estimate_hours": 14.0,
+   "id": "1c8a53e9-176e-48c5-9c6b-0d64d2f4312f",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T15",
+   "late_days": 0,
+   "latest_finish": "2027-01-18",
+   "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6142,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-12-21",
+   "scheduled_start": "2026-12-14",
+   "source": "template",
+   "status": "todo",
+   "title": "Tulis Bab 4 Hasil dan Pembahasan"
+  },
+  "GET /tasks/34d367d5-9f3e-4686-8436-8c49b34b0902": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "3cb92ad6-4fdb-4c87-ba03-8231b8c05fa3"
+   ],
+   "description": "",
+   "estimate_hours": 6.0,
+   "id": "34d367d5-9f3e-4686-8436-8c49b34b0902",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T5",
+   "late_days": 0,
+   "latest_finish": "2026-12-11",
+   "milestone_id": "ff75b73c-b496-4201-82bf-c36d7431eff5",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5565,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-10-23",
+   "scheduled_start": "2026-10-21",
+   "source": "template",
+   "status": "todo",
+   "title": "Rancang eksperimen atau pengumpulan data"
+  },
+  "GET /tasks/3791158a-0c1f-460b-831e-228467877296": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "a43f58eb-40b2-467b-8679-236fb68591ea"
+   ],
+   "description": "",
+   "estimate_hours": 1.0,
+   "id": "3791158a-0c1f-460b-831e-228467877296",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T22",
+   "late_days": 0,
+   "latest_finish": "2027-02-01",
+   "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.557,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [
+    "c4fd8b77-9025-4820-9370-3138f881f530"
+   ],
+   "scheduled_end": "2027-01-08",
+   "scheduled_start": "2027-01-08",
+   "source": "template",
+   "status": "todo",
+   "title": "Pastikan syarat terpenuhi: Skripsi wajib menggunakan minimal 20 referensi dari 5 tahun terakhir."
+  },
+  "GET /tasks/3cb92ad6-4fdb-4c87-ba03-8231b8c05fa3": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "c13bb391-1a1d-4876-a413-27b948dd6c8b"
+   ],
+   "description": "",
+   "estimate_hours": 6.0,
+   "id": "3cb92ad6-4fdb-4c87-ba03-8231b8c05fa3",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T4",
+   "late_days": 0,
+   "latest_finish": "2026-12-08",
+   "milestone_id": "ff75b73c-b496-4201-82bf-c36d7431eff5",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5649,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-10-20",
+   "scheduled_start": "2026-10-17",
+   "source": "template",
+   "status": "todo",
+   "title": "Tentukan metode dan pembanding"
+  },
+  "GET /tasks/4005fbc0-ea70-46cf-833f-9d2c75b06187": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "743b9ce8-b099-404b-a0d9-4dea307b223c"
+   ],
+   "description": "",
+   "estimate_hours": 12.0,
+   "id": "4005fbc0-ea70-46cf-833f-9d2c75b06187",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T14",
+   "late_days": 0,
+   "latest_finish": "2027-01-09",
+   "milestone_id": "a18126e2-bc78-4191-8ed6-f814923f7668",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6225,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-12-12",
+   "scheduled_start": "2026-12-07",
+   "source": "template",
+   "status": "todo",
+   "title": "Olah dan analisis data"
+  },
+  "GET /tasks/4416e277-ab64-4283-a794-a2a2ad2b09b9": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "1c8a53e9-176e-48c5-9c6b-0d64d2f4312f"
+   ],
+   "description": "",
+   "estimate_hours": 4.0,
+   "id": "4416e277-ab64-4283-a794-a2a2ad2b09b9",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T16",
+   "late_days": 0,
+   "latest_finish": "2027-01-20",
+   "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6059,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-12-23",
+   "scheduled_start": "2026-12-21",
+   "source": "template",
+   "status": "todo",
+   "title": "Tulis Bab 5 Kesimpulan dan Saran"
+  },
+  "GET /tasks/45ba60c2-beae-4574-bd70-5139a5df1589": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "34d367d5-9f3e-4686-8436-8c49b34b0902"
+   ],
+   "description": "",
+   "estimate_hours": 20.0,
+   "id": "45ba60c2-beae-4574-bd70-5139a5df1589",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T6",
+   "late_days": 0,
+   "latest_finish": "2026-12-22",
+   "milestone_id": "d9a599d8-6433-4499-b122-abc712ba4e14",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6327,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-11-23",
+   "scheduled_start": "2026-11-12",
+   "source": "template",
+   "status": "todo",
+   "title": "Siapkan instrumen penelitian atau prototipe"
+  },
+  "GET /tasks/45bf2f05-6062-475b-b370-a4a3bdb496b5": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "c13bb391-1a1d-4876-a413-27b948dd6c8b"
+   ],
+   "description": "",
+   "estimate_hours": 6.0,
+   "id": "45bf2f05-6062-475b-b370-a4a3bdb496b5",
+   "importance": 0.0,
+   "is_critical": false,
+   "key": "T7",
+   "late_days": 0,
+   "latest_finish": "2026-12-15",
+   "milestone_id": "25c8b837-1e6f-46cf-afbf-d99bb674b879",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.1333,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-10-27",
+   "scheduled_start": "2026-10-24",
+   "source": "template",
+   "status": "todo",
+   "title": "Tulis Bab 1 Pendahuluan"
+  },
+  "GET /tasks/4ab9a907-7df7-45a7-b75d-f3c069116e30": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "a43f58eb-40b2-467b-8679-236fb68591ea"
+   ],
+   "description": "",
+   "estimate_hours": 1.0,
+   "id": "4ab9a907-7df7-45a7-b75d-f3c069116e30",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T24",
+   "late_days": 0,
+   "latest_finish": "2027-02-01",
+   "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5636,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [
+    "cc2c290b-845d-4db3-88ee-eb7114e307ac"
+   ],
+   "scheduled_end": "2027-01-09",
+   "scheduled_start": "2027-01-09",
+   "source": "template",
+   "status": "todo",
+   "title": "Pastikan syarat terpenuhi: Naskah paling sedikit 40 halaman tidak termasuk lampiran."
+  },
+  "GET /tasks/743b9ce8-b099-404b-a0d9-4dea307b223c": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "45ba60c2-beae-4574-bd70-5139a5df1589",
+    "c4174750-6e20-4299-b3f2-fe0a83789e87"
+   ],
+   "description": "",
+   "estimate_hours": 24.0,
+   "id": "743b9ce8-b099-404b-a0d9-4dea307b223c",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T13",
+   "late_days": 0,
+   "latest_finish": "2027-01-04",
+   "milestone_id": "a18126e2-bc78-4191-8ed6-f814923f7668",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6309,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-12-07",
+   "scheduled_start": "2026-11-24",
+   "source": "template",
+   "status": "todo",
+   "title": "Jalankan penelitian atau eksperimen"
+  },
+  "GET /tasks/8ad4dc79-f341-44b4-b82f-364c48a8ca1f": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "d62e79aa-449e-4b06-95da-85c9d5cd630c"
+   ],
+   "description": "",
+   "estimate_hours": 12.0,
+   "id": "8ad4dc79-f341-44b4-b82f-364c48a8ca1f",
+   "importance": 0.0,
+   "is_critical": false,
+   "key": "T8",
+   "late_days": 0,
+   "latest_finish": "2026-12-15",
+   "milestone_id": "25c8b837-1e6f-46cf-afbf-d99bb674b879",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.1726,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-11-02",
+   "scheduled_start": "2026-10-27",
+   "source": "template",
+   "status": "todo",
+   "title": "Tulis Bab 2 Tinjauan Pustaka"
+  },
+  "GET /tasks/8db32b1c-62bf-4670-884f-561f22071584": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "8e538bbf-1b97-4fa4-97dd-f0c65dca2d7a"
+   ],
+   "description": "",
+   "estimate_hours": 4.0,
+   "id": "8db32b1c-62bf-4670-884f-561f22071584",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T11",
+   "late_days": 0,
+   "latest_finish": "2026-12-21",
+   "milestone_id": "9fa1837e-62ca-45e7-b3f5-d29390eb5b9d",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5821,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-11-12",
+   "scheduled_start": "2026-11-10",
+   "source": "template",
+   "status": "todo",
+   "title": "Siapkan slide dan latihan seminar proposal"
+  },
+  "GET /tasks/8e538bbf-1b97-4fa4-97dd-f0c65dca2d7a": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "45bf2f05-6062-475b-b370-a4a3bdb496b5",
+    "8ad4dc79-f341-44b4-b82f-364c48a8ca1f",
+    "9952a143-daba-46e8-8b67-3e5b8c450c35"
+   ],
+   "description": "",
+   "estimate_hours": 6.0,
+   "id": "8e538bbf-1b97-4fa4-97dd-f0c65dca2d7a",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T10",
+   "late_days": 0,
+   "latest_finish": "2026-12-18",
+   "milestone_id": "25c8b837-1e6f-46cf-afbf-d99bb674b879",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5904,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-11-10",
+   "scheduled_start": "2026-11-07",
+   "source": "template",
+   "status": "todo",
+   "title": "Revisi Bab 1 sampai 3 dari bimbingan"
+  },
+  "GET /tasks/97a09824-07bd-4776-80b7-c24f348e93ab": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "dee0f11d-0a2d-4dc2-b70d-7bf705aafb75"
+   ],
+   "description": "",
+   "estimate_hours": 4.0,
+   "id": "97a09824-07bd-4776-80b7-c24f348e93ab",
+   "importance": 0.0,
+   "is_critical": false,
+   "key": "T18",
+   "late_days": 0,
+   "latest_finish": "2027-01-29",
+   "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.1377,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-12-30",
+   "scheduled_start": "2026-12-29",
+   "source": "template",
+   "status": "todo",
+   "title": "Rapikan abstrak"
+  },
+  "GET /tasks/9952a143-daba-46e8-8b67-3e5b8c450c35": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "34d367d5-9f3e-4686-8436-8c49b34b0902"
+   ],
+   "description": "",
+   "estimate_hours": 8.0,
+   "id": "9952a143-daba-46e8-8b67-3e5b8c450c35",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T9",
+   "late_days": 0,
+   "latest_finish": "2026-12-15",
+   "milestone_id": "25c8b837-1e6f-46cf-afbf-d99bb674b879",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5988,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-11-06",
+   "scheduled_start": "2026-11-03",
+   "source": "template",
+   "status": "todo",
+   "title": "Tulis Bab 3 Metodologi"
+  },
+  "GET /tasks/a43f58eb-40b2-467b-8679-236fb68591ea": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "dee0f11d-0a2d-4dc2-b70d-7bf705aafb75"
+   ],
+   "description": "",
+   "estimate_hours": 12.0,
+   "id": "a43f58eb-40b2-467b-8679-236fb68591ea",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T19",
+   "late_days": 0,
+   "latest_finish": "2027-02-01",
+   "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+   "optional": true,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5904,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2027-01-08",
+   "scheduled_start": "2027-01-02",
+   "source": "template",
+   "status": "todo",
+   "title": "Tulis artikel jurnal"
+  },
+  "GET /tasks/a85fad64-006f-4e02-995f-815b491633c7": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "97a09824-07bd-4776-80b7-c24f348e93ab"
+   ],
+   "description": "",
+   "estimate_hours": 4.0,
+   "id": "a85fad64-006f-4e02-995f-815b491633c7",
+   "importance": 0.0,
+   "is_critical": false,
+   "key": "T20",
+   "late_days": 0,
+   "latest_finish": "2027-01-30",
+   "milestone_id": "3f6986c2-6ebb-46b9-b6d0-d536020db78c",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.1294,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2027-01-01",
+   "scheduled_start": "2026-12-31",
+   "source": "template",
+   "status": "todo",
+   "title": "Siapkan slide dan latihan sidang"
+  },
+  "GET /tasks/b7b9af8c-601c-444f-b9d2-8de145e21fee": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "a43f58eb-40b2-467b-8679-236fb68591ea"
+   ],
+   "description": "",
+   "estimate_hours": 1.0,
+   "id": "b7b9af8c-601c-444f-b9d2-8de145e21fee",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T25",
+   "late_days": 0,
+   "latest_finish": "2027-02-01",
+   "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5668,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [
+    "4ec62fcb-df71-45b5-8f75-fec70aadebf1"
+   ],
+   "scheduled_end": "2027-01-09",
+   "scheduled_start": "2027-01-09",
+   "source": "template",
+   "status": "todo",
+   "title": "Pastikan syarat terpenuhi: Setiap bab wajib dibahas dalam bimbingan minimal dua kali."
+  },
+  "GET /tasks/c13bb391-1a1d-4876-a413-27b948dd6c8b": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "Rumusan disetujui dosen",
+   "depends_on": [
+    "d62e79aa-449e-4b06-95da-85c9d5cd630c"
+   ],
+   "description": "",
+   "estimate_hours": 4.0,
+   "id": "c13bb391-1a1d-4876-a413-27b948dd6c8b",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T3",
+   "late_days": 0,
+   "latest_finish": "2026-12-04",
+   "milestone_id": "a8bd7e29-c432-44af-a135-e2244d64c742",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5815,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-10-17",
+   "scheduled_start": "2026-10-15",
+   "source": "template",
+   "status": "todo",
+   "title": "Rumuskan masalah"
+  },
+  "GET /tasks/c4174750-6e20-4299-b3f2-fe0a83789e87": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "8db32b1c-62bf-4670-884f-561f22071584"
+   ],
+   "description": "",
+   "estimate_hours": 2.0,
+   "id": "c4174750-6e20-4299-b3f2-fe0a83789e87",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T12",
+   "late_days": 0,
+   "latest_finish": "2026-12-22",
+   "milestone_id": "9fa1837e-62ca-45e7-b3f5-d29390eb5b9d",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6392,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-11-24",
+   "scheduled_start": "2026-11-23",
+   "source": "template",
+   "status": "todo",
+   "title": "Seminar proposal"
+  },
+  "GET /tasks/d62e79aa-449e-4b06-95da-85c9d5cd630c": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "Setiap jurnal punya ringkasan metode dan hasil",
+   "depends_on": [
+    "de8c854e-8a24-4102-99f7-91f1c7c9c920"
+   ],
+   "description": "",
+   "estimate_hours": 14.0,
+   "id": "d62e79aa-449e-4b06-95da-85c9d5cd630c",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T2",
+   "late_days": 0,
+   "latest_finish": "2026-12-02",
+   "milestone_id": "a8bd7e29-c432-44af-a135-e2244d64c742",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5982,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-10-15",
+   "scheduled_start": "2026-10-08",
+   "source": "template",
+   "status": "in_progress",
+   "title": "Baca dan rangkum jurnal ke matriks literatur"
+  },
+  "GET /tasks/de8c854e-8a24-4102-99f7-91f1c7c9c920": {
+   "actual_hours": 6.0,
+   "completed_at": "2026-09-25T04:05:31.012852+00:00",
+   "deferred": false,
+   "definition_of_done": "Semua PDF masuk library dan terindeks",
+   "depends_on": [],
+   "description": "",
+   "estimate_hours": 6.0,
+   "id": "de8c854e-8a24-4102-99f7-91f1c7c9c920",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T1",
+   "late_days": 0,
+   "latest_finish": "2026-11-25",
+   "milestone_id": "a8bd7e29-c432-44af-a135-e2244d64c742",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6065,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-10-07",
+   "scheduled_start": "2026-10-05",
+   "source": "template",
+   "status": "done",
+   "title": "Kumpulkan 20 sampai 25 jurnal yang relevan"
+  },
+  "GET /tasks/dee0f11d-0a2d-4dc2-b70d-7bf705aafb75": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "4416e277-ab64-4283-a794-a2a2ad2b09b9"
+   ],
+   "description": "",
+   "estimate_hours": 10.0,
+   "id": "dee0f11d-0a2d-4dc2-b70d-7bf705aafb75",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T17",
+   "late_days": 0,
+   "latest_finish": "2027-01-25",
+   "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5975,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [],
+   "scheduled_end": "2026-12-28",
+   "scheduled_start": "2026-12-23",
+   "source": "template",
+   "status": "todo",
+   "title": "Revisi naskah lengkap"
+  },
+  "GET /tasks/f0d947b3-e9ed-4620-be7d-d80461453519": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "a43f58eb-40b2-467b-8679-236fb68591ea"
+   ],
+   "description": "",
+   "estimate_hours": 1.0,
+   "id": "f0d947b3-e9ed-4620-be7d-d80461453519",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T23",
+   "late_days": 0,
+   "latest_finish": "2027-02-01",
+   "milestone_id": "9e09b337-0b62-464e-ac73-8dafa0c009bf",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5603,
+   "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "requirement_ids": [
+    "6e6d745b-312d-475b-9061-1e9b33c0a568"
+   ],
+   "scheduled_end": "2027-01-09",
+   "scheduled_start": "2027-01-09",
+   "source": "template",
+   "status": "todo",
+   "title": "Pastikan syarat terpenuhi: Format sitasi harus mengikuti gaya IEEE."
+  },
+  "GET /threads/170e5d45-8e66-432f-b7fe-307510d50a70/messages": [
+   {
+    "citations": [],
+    "content": "Apa syarat jumlah referensi?",
+    "created_at": "2026-09-25T04:05:31.061236+00:00",
+    "feedback": null,
+    "id": "a6165808-85da-4970-9db4-1526f15b59c4",
+    "kind": "user",
+    "model": null,
+    "role": "user",
+    "thread_id": "170e5d45-8e66-432f-b7fe-307510d50a70"
+   },
+   {
+    "citations": [
+     {
+      "cited_text": "Program Studi Informatika Ketentuan umum 1. Skripsi wajib menggunakan minimal 20 referensi dari 5 tahun terakhir. 2. Format sitasi harus mengikuti gaya IEEE. 3. Naskah paling sedikit 40 halaman tidak termasuk lampiran. 4. Setiap bab wajib dibahas dalam bimbingan minimal dua kali. Jadwal penting Batas pengumpulan proposal: 4 November 2026 Seminar proposal dilaksanakan pada 4 Desember 2026 Sidang akhir paling lambat 22 Februari 2027",
+      "document_id": "b64c38fa-ba0e-4016-891d-1847d68ebb54",
+      "heading_path": "PANDUAN PENULISAN SKRIPSI",
+      "number": 1,
+      "page_end": 1,
+      "page_start": 1,
+      "title": "PANDUAN PENULISAN SKRIPSI"
+     }
+    ],
+    "content": "",
+    "created_at": "2026-09-25T04:05:31.066035+00:00",
+    "feedback": null,
+    "id": "449af38d-be19-4a70-9cf1-32069ffbc6a0",
+    "kind": "closest",
+    "model": null,
+    "role": "assistant",
+    "thread_id": "170e5d45-8e66-432f-b7fe-307510d50a70"
+   }
+  ],
+  "PATCH /projects/2e160dd4-a585-4731-92d7-d8d1179980f7": {
+   "blocked_dates": [],
+   "buffer_pct": 0.15,
+   "created_at": "2026-09-25T04:05:31.643246+00:00",
+   "deadline": "2027-03-01",
+   "description": "",
+   "extra_hours": {},
+   "feasibility": null,
+   "has_plan": false,
+   "health": null,
+   "hours_by_weekday": [
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    0.0,
+    0.0
+   ],
+   "id": "2e160dd4-a585-4731-92d7-d8d1179980f7",
+   "mode": "academic",
+   "needs_reschedule": false,
+   "plan_accepted_at": null,
+   "target": "",
+   "task_count": 0,
+   "template": "skripsi",
+   "title": "Sistem rekomendasi skripsi"
+  },
+  "POST /projects": {
+   "blocked_dates": [],
+   "buffer_pct": 0.15,
+   "created_at": "2026-09-25T04:05:31.643246+00:00",
+   "deadline": "2027-03-01",
+   "description": "",
+   "extra_hours": {},
+   "feasibility": null,
+   "has_plan": false,
+   "health": null,
+   "hours_by_weekday": [
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    0.0,
+    0.0
+   ],
+   "id": "2e160dd4-a585-4731-92d7-d8d1179980f7",
+   "mode": "academic",
+   "needs_reschedule": false,
+   "plan_accepted_at": null,
+   "target": "",
+   "task_count": 0,
+   "template": "skripsi",
+   "title": "Sistem rekomendasi skripsi"
+  },
+  "POST /projects/212260dd-6687-4bd4-a22f-ce9d3915df7a/chat": {
+   "ai_error": "ai_unavailable",
+   "answer": {
+    "citations": [
+     {
+      "cited_text": "Program Studi Informatika Ketentuan umum 1. Skripsi wajib menggunakan minimal 20 referensi dari 5 tahun terakhir. 2. Format sitasi harus mengikuti gaya IEEE. 3. Naskah paling sedikit 40 halaman tidak termasuk lampiran. 4. Setiap bab wajib dibahas dalam bimbingan minimal dua kali. Jadwal penting Batas pengumpulan proposal: 4 November 2026 Seminar proposal dilaksanakan pada 4 Desember 2026 Sidang akhir paling lambat 22 Februari 2027",
+      "document_id": "b64c38fa-ba0e-4016-891d-1847d68ebb54",
+      "heading_path": "PANDUAN PENULISAN SKRIPSI",
+      "number": 1,
+      "page_end": 1,
+      "page_start": 1,
+      "title": "PANDUAN PENULISAN SKRIPSI"
+     }
+    ],
+    "content": "",
+    "created_at": "2026-09-25T04:05:31.066035+00:00",
+    "feedback": null,
+    "id": "449af38d-be19-4a70-9cf1-32069ffbc6a0",
+    "kind": "closest",
+    "model": null,
+    "role": "assistant",
+    "thread_id": "170e5d45-8e66-432f-b7fe-307510d50a70"
+   },
+   "question": {
+    "citations": [],
+    "content": "Apa syarat jumlah referensi?",
+    "created_at": "2026-09-25T04:05:31.061236+00:00",
+    "feedback": null,
+    "id": "a6165808-85da-4970-9db4-1526f15b59c4",
+    "kind": "user",
+    "model": null,
+    "role": "user",
+    "thread_id": "170e5d45-8e66-432f-b7fe-307510d50a70"
+   },
+   "thread": {
+    "created_at": "2026-09-25T04:05:31.058450+00:00",
+    "id": "170e5d45-8e66-432f-b7fe-307510d50a70",
+    "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+    "title": "Apa syarat jumlah referensi?"
+   }
+  },
+  "POST /projects/212260dd-6687-4bd4-a22f-ce9d3915df7a/replan": [
+   {
+    "ai_used": false,
+    "created_at": "2026-09-25T04:05:31.633602+00:00",
+    "decided_at": null,
+    "id": "39359d59-0ef1-4828-9390-1bed968ac56f",
+    "kind": "replan",
+    "meta": {
+     "ai_error": "ai_unavailable",
+     "option": "reschedule",
+     "params": {}
+    },
+    "ops": [
+     {
+      "entity": "project",
+      "op": "reschedule"
+     }
+    ],
+    "preview": {
+     "available_hours": 262.0,
+     "buffer_deadline": "2027-02-01",
+     "changed_count": 24,
+     "changes": [
+      {
+       "key": "T2",
+       "new_end": "2026-10-12",
+       "old_end": "2026-10-15",
+       "task_id": "d62e79aa-449e-4b06-95da-85c9d5cd630c",
+       "title": "Baca dan rangkum jurnal ke matriks literatur"
+      },
+      {
+       "key": "T3",
+       "new_end": "2026-10-14",
+       "old_end": "2026-10-17",
+       "task_id": "c13bb391-1a1d-4876-a413-27b948dd6c8b",
+       "title": "Rumuskan masalah"
+      },
+      {
+       "key": "T4",
+       "new_end": "2026-10-17",
+       "old_end": "2026-10-20",
+       "task_id": "3cb92ad6-4fdb-4c87-ba03-8231b8c05fa3",
+       "title": "Tentukan metode dan pembanding"
+      },
+      {
+       "key": "T5",
+       "new_end": "2026-10-20",
+       "old_end": "2026-10-23",
+       "task_id": "34d367d5-9f3e-4686-8436-8c49b34b0902",
+       "title": "Rancang eksperimen atau pengumpulan data"
+      },
+      {
+       "key": "T7",
+       "new_end": "2026-10-23",
+       "old_end": "2026-10-27",
+       "task_id": "45bf2f05-6062-475b-b370-a4a3bdb496b5",
+       "title": "Tulis Bab 1 Pendahuluan"
+      },
+      {
+       "key": "T8",
+       "new_end": "2026-10-30",
+       "old_end": "2026-11-02",
+       "task_id": "8ad4dc79-f341-44b4-b82f-364c48a8ca1f",
+       "title": "Tulis Bab 2 Tinjauan Pustaka"
+      },
+      {
+       "key": "T9",
+       "new_end": "2026-11-03",
+       "old_end": "2026-11-06",
+       "task_id": "9952a143-daba-46e8-8b67-3e5b8c450c35",
+       "title": "Tulis Bab 3 Metodologi"
+      },
+      {
+       "key": "T10",
+       "new_end": "2026-11-06",
+       "old_end": "2026-11-10",
+       "task_id": "8e538bbf-1b97-4fa4-97dd-f0c65dca2d7a",
+       "title": "Revisi Bab 1 sampai 3 dari bimbingan"
+      },
+      {
+       "key": "T11",
+       "new_end": "2026-11-09",
+       "old_end": "2026-11-12",
+       "task_id": "8db32b1c-62bf-4670-884f-561f22071584",
+       "title": "Siapkan slide dan latihan seminar proposal"
+      },
+      {
+       "key": "T6",
+       "new_end": "2026-11-19",
+       "old_end": "2026-11-23",
+       "task_id": "45ba60c2-beae-4574-bd70-5139a5df1589",
+       "title": "Siapkan instrumen penelitian atau prototipe"
+      },
+      {
+       "key": "T12",
+       "new_end": "2026-11-20",
+       "old_end": "2026-11-24",
+       "task_id": "c4174750-6e20-4299-b3f2-fe0a83789e87",
+       "title": "Seminar proposal"
+      },
+      {
+       "key": "T13",
+       "new_end": "2026-12-03",
+       "old_end": "2026-12-07",
+       "task_id": "743b9ce8-b099-404b-a0d9-4dea307b223c",
+       "title": "Jalankan penelitian atau eksperimen"
+      },
+      {
+       "key": "T14",
+       "new_end": "2026-12-10",
+       "old_end": "2026-12-12",
+       "task_id": "4005fbc0-ea70-46cf-833f-9d2c75b06187",
+       "title": "Olah dan analisis data"
+      },
+      {
+       "key": "T15",
+       "new_end": "2026-12-17",
+       "old_end": "2026-12-21",
+       "task_id": "1c8a53e9-176e-48c5-9c6b-0d64d2f4312f",
+       "title": "Tulis Bab 4 Hasil dan Pembahasan"
+      },
+      {
+       "key": "T16",
+       "new_end": "2026-12-19",
+       "old_end": "2026-12-23",
+       "task_id": "4416e277-ab64-4283-a794-a2a2ad2b09b9",
+       "title": "Tulis Bab 5 Kesimpulan dan Saran"
+      },
+      {
+       "key": "T17",
+       "new_end": "2026-12-25",
+       "old_end": "2026-12-28",
+       "task_id": "dee0f11d-0a2d-4dc2-b70d-7bf705aafb75",
+       "title": "Revisi naskah lengkap"
+      },
+      {
+       "key": "T18",
+       "new_end": "2026-12-26",
+       "old_end": "2026-12-30",
+       "task_id": "97a09824-07bd-4776-80b7-c24f348e93ab",
+       "title": "Rapikan abstrak"
+      },
+      {
+       "key": "T20",
+       "new_end": "2026-12-29",
+       "old_end": "2027-01-01",
+       "task_id": "a85fad64-006f-4e02-995f-815b491633c7",
+       "title": "Siapkan slide dan latihan sidang"
+      },
+      {
+       "key": "T19",
+       "new_end": "2027-01-05",
+       "old_end": "2027-01-08",
+       "task_id": "a43f58eb-40b2-467b-8679-236fb68591ea",
+       "title": "Tulis artikel jurnal"
+      },
+      {
+       "key": "T22",
+       "new_end": "2027-01-05",
+       "old_end": "2027-01-08",
+       "task_id": "3791158a-0c1f-460b-831e-228467877296",
+       "title": "Pastikan syarat terpenuhi: Skripsi wajib menggunakan minimal 20 referensi dari 5 tahun terakhir."
+      },
+      {
+       "key": "T23",
+       "new_end": "2027-01-06",
+       "old_end": "2027-01-09",
+       "task_id": "f0d947b3-e9ed-4620-be7d-d80461453519",
+       "title": "Pastikan syarat terpenuhi: Format sitasi harus mengikuti gaya IEEE."
+      },
+      {
+       "key": "T24",
+       "new_end": "2027-01-06",
+       "old_end": "2027-01-09",
+       "task_id": "4ab9a907-7df7-45a7-b75d-f3c069116e30",
+       "title": "Pastikan syarat terpenuhi: Naskah paling sedikit 40 halaman tidak termasuk lampiran."
+      },
+      {
+       "key": "T25",
+       "new_end": "2027-01-07",
+       "old_end": "2027-01-09",
+       "task_id": "b7b9af8c-601c-444f-b9d2-8de145e21fee",
+       "title": "Pastikan syarat terpenuhi: Setiap bab wajib dibahas dalam bimbingan minimal dua kali."
+      },
+      {
+       "key": "T21",
+       "new_end": "2027-01-08",
+       "old_end": "2027-01-11",
+       "task_id": "0a136bc6-4c42-4d6d-99e9-5e6240bb2d3a",
+       "title": "Sidang"
+      }
+     ],
+     "critical_path": [
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T13",
+      "T14",
+      "T15",
+      "T16",
+      "T17",
+      "T19",
+      "T22"
+     ],
+     "feasibility": "feasible",
+     "projected_finish": "2027-01-08",
+     "shortfall_hours": 0.0,
+     "tasks": {
+      "T10": {
+       "critical": true,
+       "end": "2026-11-06",
+       "priority": 0.5918,
+       "start": "2026-11-04"
+      },
+      "T11": {
+       "critical": true,
+       "end": "2026-11-09",
+       "priority": 0.5832,
+       "start": "2026-11-07"
+      },
+      "T12": {
+       "critical": true,
+       "end": "2026-11-20",
+       "priority": 0.6359,
+       "start": "2026-11-20"
+      },
+      "T13": {
+       "critical": true,
+       "end": "2026-12-03",
+       "priority": 0.6272,
+       "start": "2026-11-21"
+      },
+      "T14": {
+       "critical": true,
+       "end": "2026-12-10",
+       "priority": 0.6185,
+       "start": "2026-12-04"
+      },
+      "T15": {
+       "critical": true,
+       "end": "2026-12-17",
+       "priority": 0.6098,
+       "start": "2026-12-10"
+      },
+      "T16": {
+       "critical": true,
+       "end": "2026-12-19",
+       "priority": 0.6011,
+       "start": "2026-12-18"
+      },
+      "T17": {
+       "critical": true,
+       "end": "2026-12-25",
+       "priority": 0.5924,
+       "start": "2026-12-19"
+      },
+      "T18": {
+       "critical": false,
+       "end": "2026-12-26",
+       "priority": 0.131,
+       "start": "2026-12-25"
+      },
+      "T19": {
+       "critical": true,
+       "end": "2027-01-05",
+       "priority": 0.5822,
+       "start": "2026-12-30"
+      },
+      "T2": {
+       "critical": true,
+       "end": "2026-10-12",
+       "priority": 0.6061,
+       "start": "2026-10-05"
+      },
+      "T20": {
+       "critical": false,
+       "end": "2026-12-29",
+       "priority": 0.1223,
+       "start": "2026-12-28"
+      },
+      "T21": {
+       "critical": false,
+       "end": "2027-01-08",
+       "priority": 0.1627,
+       "start": "2027-01-07"
+      },
+      "T22": {
+       "critical": true,
+       "end": "2027-01-05",
+       "priority": 0.5474,
+       "start": "2027-01-05"
+      },
+      "T23": {
+       "critical": true,
+       "end": "2027-01-06",
+       "priority": 0.5505,
+       "start": "2027-01-06"
+      },
+      "T24": {
+       "critical": true,
+       "end": "2027-01-06",
+       "priority": 0.5535,
+       "start": "2027-01-06"
+      },
+      "T25": {
+       "critical": true,
+       "end": "2027-01-07",
+       "priority": 0.5566,
+       "start": "2027-01-07"
+      },
+      "T3": {
+       "critical": true,
+       "end": "2026-10-14",
+       "priority": 0.5887,
+       "start": "2026-10-12"
+      },
+      "T4": {
+       "critical": true,
+       "end": "2026-10-17",
+       "priority": 0.5714,
+       "start": "2026-10-14"
+      },
+      "T5": {
+       "critical": true,
+       "end": "2026-10-20",
+       "priority": 0.5627,
+       "start": "2026-10-17"
+      },
+      "T6": {
+       "critical": true,
+       "end": "2026-11-19",
+       "priority": 0.6297,
+       "start": "2026-11-09"
+      },
+      "T7": {
+       "critical": false,
+       "end": "2026-10-23",
+       "priority": 0.1391,
+       "start": "2026-10-21"
+      },
+      "T8": {
+       "critical": false,
+       "end": "2026-10-30",
+       "priority": 0.176,
+       "start": "2026-10-24"
+      },
+      "T9": {
+       "critical": true,
+       "end": "2026-11-03",
+       "priority": 0.6005,
+       "start": "2026-10-30"
+      }
+     },
+     "total_hours": 178.0
+    },
+    "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+    "rationale": "",
+    "status": "pending"
+   }
+  ],
+  "POST /projects/2e160dd4-a585-4731-92d7-d8d1179980f7/brief/extract": {
+   "ai_error": "ai_unavailable",
+   "ai_used": false,
+   "content": {
+    "constraints": [
+     "10 jam per minggu"
+    ],
+    "deliverables": [
+     "Proposal",
+     "Naskah Bab 1 sampai 5",
+     "Slide seminar proposal dan sidang"
+    ],
+    "goal": "Sistem rekomendasi skripsi",
+    "important_dates": [],
+    "open_questions": [
+     {
+      "answer": "",
+      "question": "Metode atau pendekatan apa yang akan dipakai?"
+     },
+     {
+      "answer": "",
+      "question": "Data atau objek penelitiannya dari mana?"
+     },
+     {
+      "answer": "",
+      "question": "Kapan target seminar proposal?"
+     }
+    ],
+    "requirements": []
+   },
+   "documents_used": 0
+  },
+  "POST /projects/2e160dd4-a585-4731-92d7-d8d1179980f7/plan/generate": {
+   "ai_used": false,
+   "created_at": "2026-09-25T04:05:31.678484+00:00",
+   "decided_at": null,
+   "id": "9a446750-87c7-4ebf-9ce4-ff50b708e30b",
+   "kind": "plan",
+   "meta": {
+    "ai_error": "ai_unavailable",
+    "assumptions": [],
+    "questions": [],
+    "uncovered_requirements": []
+   },
+   "ops": [
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 0,
+      "title": "Studi literatur dan rumusan masalah"
+     },
+     "key": "M1",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 1,
+      "title": "Desain metode"
+     },
+     "key": "M2",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 2,
+      "title": "Instrumen atau prototipe"
+     },
+     "key": "M3",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 3,
+      "title": "Draf Bab 1 sampai 3"
+     },
+     "key": "M4",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 4,
+      "title": "Seminar proposal"
+     },
+     "key": "S1",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 5,
+      "title": "Eksperimen dan evaluasi"
+     },
+     "key": "M5",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 6,
+      "title": "Bab 4 sampai 5 dan revisi"
+     },
+     "key": "M6",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 7,
+      "title": "Sidang"
+     },
+     "key": "S2",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Semua PDF masuk library dan terindeks",
+      "depends_on": [],
+      "estimate_hours": 6.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 0,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Kumpulkan 20 sampai 25 jurnal yang relevan"
+     },
+     "key": "T1",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Setiap jurnal punya ringkasan metode dan hasil",
+      "depends_on": [
+       "T1"
+      ],
+      "estimate_hours": 14.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 1,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Baca dan rangkum jurnal ke matriks literatur"
+     },
+     "key": "T2",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Rumusan disetujui dosen",
+      "depends_on": [
+       "T2"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 2,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Rumuskan masalah"
+     },
+     "key": "T3",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T3"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M2",
+      "optional": false,
+      "position": 3,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tentukan metode dan pembanding"
+     },
+     "key": "T4",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T4"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M2",
+      "optional": false,
+      "position": 4,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Rancang eksperimen atau pengumpulan data"
+     },
+     "key": "T5",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T5"
+      ],
+      "estimate_hours": 20.0,
+      "milestone_key": "M3",
+      "optional": false,
+      "position": 5,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Siapkan instrumen penelitian atau prototipe"
+     },
+     "key": "T6",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T3"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 6,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 1 Pendahuluan"
+     },
+     "key": "T7",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T2"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 7,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 2 Tinjauan Pustaka"
+     },
+     "key": "T8",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T5"
+      ],
+      "estimate_hours": 8.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 8,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 3 Metodologi"
+     },
+     "key": "T9",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T7",
+       "T8",
+       "T9"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 9,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Revisi Bab 1 sampai 3 dari bimbingan"
+     },
+     "key": "T10",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T10"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "S1",
+      "optional": false,
+      "position": 10,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Siapkan slide dan latihan seminar proposal"
+     },
+     "key": "T11",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T11"
+      ],
+      "estimate_hours": 2.0,
+      "milestone_key": "S1",
+      "optional": false,
+      "position": 11,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Seminar proposal"
+     },
+     "key": "T12",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T12",
+       "T6"
+      ],
+      "estimate_hours": 24.0,
+      "milestone_key": "M5",
+      "optional": false,
+      "position": 12,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Jalankan penelitian atau eksperimen"
+     },
+     "key": "T13",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T13"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M5",
+      "optional": false,
+      "position": 13,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Olah dan analisis data"
+     },
+     "key": "T14",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T14"
+      ],
+      "estimate_hours": 14.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 14,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 4 Hasil dan Pembahasan"
+     },
+     "key": "T15",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T15"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 15,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 5 Kesimpulan dan Saran"
+     },
+     "key": "T16",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T16"
+      ],
+      "estimate_hours": 10.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 16,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Revisi naskah lengkap"
+     },
+     "key": "T17",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T17"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 17,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Rapikan abstrak"
+     },
+     "key": "T18",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T17"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M6",
+      "optional": true,
+      "position": 18,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis artikel jurnal"
+     },
+     "key": "T19",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T18"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "S2",
+      "optional": false,
+      "position": 19,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Siapkan slide dan latihan sidang"
+     },
+     "key": "T20",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T20"
+      ],
+      "estimate_hours": 2.0,
+      "milestone_key": "S2",
+      "optional": false,
+      "position": 20,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Sidang"
+     },
+     "key": "T21",
+     "op": "add"
+    }
+   ],
+   "preview": {
+    "available_hours": 212.0,
+    "buffer_deadline": "2027-02-08",
+    "critical_path": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5",
+     "T6",
+     "T13",
+     "T14",
+     "T15",
+     "T16",
+     "T17",
+     "T19"
+    ],
+    "feasibility": "feasible",
+    "projected_finish": "2027-02-05",
+    "shortfall_hours": 0.0,
+    "tasks": {
+     "T1": {
+      "critical": true,
+      "end": "2026-10-07",
+      "priority": 0.612,
+      "start": "2026-10-05"
+     },
+     "T10": {
+      "critical": true,
+      "end": "2026-11-19",
+      "priority": 0.6295,
+      "start": "2026-11-17"
+     },
+     "T11": {
+      "critical": true,
+      "end": "2026-11-23",
+      "priority": 0.6195,
+      "start": "2026-11-20"
+     },
+     "T12": {
+      "critical": true,
+      "end": "2026-12-08",
+      "priority": 0.729,
+      "start": "2026-12-08"
+     },
+     "T13": {
+      "critical": true,
+      "end": "2026-12-24",
+      "priority": 0.719,
+      "start": "2026-12-09"
+     },
+     "T14": {
+      "critical": true,
+      "end": "2027-01-01",
+      "priority": 0.709,
+      "start": "2026-12-25"
+     },
+     "T15": {
+      "critical": true,
+      "end": "2027-01-12",
+      "priority": 0.699,
+      "start": "2027-01-04"
+     },
+     "T16": {
+      "critical": true,
+      "end": "2027-01-14",
+      "priority": 0.689,
+      "start": "2027-01-13"
+     },
+     "T17": {
+      "critical": true,
+      "end": "2027-01-21",
+      "priority": 0.679,
+      "start": "2027-01-15"
+     },
+     "T18": {
+      "critical": false,
+      "end": "2027-01-25",
+      "priority": 0.2471,
+      "start": "2027-01-22"
+     },
+     "T19": {
+      "critical": true,
+      "end": "2027-02-04",
+      "priority": 0.6869,
+      "start": "2027-01-28"
+     },
+     "T2": {
+      "critical": true,
+      "end": "2026-10-16",
+      "priority": 0.602,
+      "start": "2026-10-08"
+     },
+     "T20": {
+      "critical": false,
+      "end": "2027-01-27",
+      "priority": 0.2371,
+      "start": "2027-01-26"
+     },
+     "T21": {
+      "critical": false,
+      "end": "2027-02-05",
+      "priority": 0.2988,
+      "start": "2027-02-05"
+     },
+     "T3": {
+      "critical": true,
+      "end": "2026-10-20",
+      "priority": 0.582,
+      "start": "2026-10-19"
+     },
+     "T4": {
+      "critical": true,
+      "end": "2026-10-23",
+      "priority": 0.562,
+      "start": "2026-10-21"
+     },
+     "T5": {
+      "critical": true,
+      "end": "2026-10-28",
+      "priority": 0.552,
+      "start": "2026-10-26"
+     },
+     "T6": {
+      "critical": true,
+      "end": "2026-12-07",
+      "priority": 0.7171,
+      "start": "2026-11-24"
+     },
+     "T7": {
+      "critical": false,
+      "end": "2026-11-02",
+      "priority": 0.12,
+      "start": "2026-10-29"
+     },
+     "T8": {
+      "critical": false,
+      "end": "2026-11-10",
+      "priority": 0.1917,
+      "start": "2026-11-03"
+     },
+     "T9": {
+      "critical": true,
+      "end": "2026-11-16",
+      "priority": 0.6395,
+      "start": "2026-11-11"
+     }
+    },
+    "total_hours": 180.0
+   },
+   "project_id": "2e160dd4-a585-4731-92d7-d8d1179980f7",
+   "rationale": "",
+   "status": "pending"
+  },
+  "POST /projects/sample": {
+   "blocked_dates": [],
+   "buffer_pct": 0.15,
+   "created_at": "2026-09-25T04:05:30.943486+00:00",
+   "deadline": "2027-02-22",
+   "description": "Membandingkan MCTS dan Utility AI untuk pengambilan keputusan NPC di game strategi real-time.",
+   "extra_hours": {},
+   "feasibility": "feasible",
+   "has_plan": true,
+   "health": null,
+   "hours_by_weekday": [
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    3.0,
+    0.0
+   ],
+   "id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+   "mode": "academic",
+   "needs_reschedule": false,
+   "plan_accepted_at": "2026-09-25T04:05:31.011524+00:00",
+   "target": "",
+   "task_count": 25,
+   "template": "skripsi",
+   "title": "Contoh: Decision-making NPC untuk game RTS"
+  },
+  "POST /suggestions/9a446750-87c7-4ebf-9ce4-ff50b708e30b/apply": {
+   "ai_used": false,
+   "created_at": "2026-09-25T04:05:31.678484+00:00",
+   "decided_at": "2026-09-25T04:05:31.712587+00:00",
+   "id": "9a446750-87c7-4ebf-9ce4-ff50b708e30b",
+   "kind": "plan",
+   "meta": {
+    "ai_error": "ai_unavailable",
+    "assumptions": [],
+    "questions": [],
+    "uncovered_requirements": []
+   },
+   "ops": [
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 0,
+      "title": "Studi literatur dan rumusan masalah"
+     },
+     "key": "M1",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 1,
+      "title": "Desain metode"
+     },
+     "key": "M2",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 2,
+      "title": "Instrumen atau prototipe"
+     },
+     "key": "M3",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 3,
+      "title": "Draf Bab 1 sampai 3"
+     },
+     "key": "M4",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 4,
+      "title": "Seminar proposal"
+     },
+     "key": "S1",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 5,
+      "title": "Eksperimen dan evaluasi"
+     },
+     "key": "M5",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 6,
+      "title": "Bab 4 sampai 5 dan revisi"
+     },
+     "key": "M6",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 7,
+      "title": "Sidang"
+     },
+     "key": "S2",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Semua PDF masuk library dan terindeks",
+      "depends_on": [],
+      "estimate_hours": 6.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 0,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Kumpulkan 20 sampai 25 jurnal yang relevan"
+     },
+     "key": "T1",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Setiap jurnal punya ringkasan metode dan hasil",
+      "depends_on": [
+       "T1"
+      ],
+      "estimate_hours": 14.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 1,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Baca dan rangkum jurnal ke matriks literatur"
+     },
+     "key": "T2",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Rumusan disetujui dosen",
+      "depends_on": [
+       "T2"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 2,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Rumuskan masalah"
+     },
+     "key": "T3",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T3"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M2",
+      "optional": false,
+      "position": 3,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tentukan metode dan pembanding"
+     },
+     "key": "T4",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T4"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M2",
+      "optional": false,
+      "position": 4,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Rancang eksperimen atau pengumpulan data"
+     },
+     "key": "T5",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T5"
+      ],
+      "estimate_hours": 20.0,
+      "milestone_key": "M3",
+      "optional": false,
+      "position": 5,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Siapkan instrumen penelitian atau prototipe"
+     },
+     "key": "T6",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T3"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 6,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 1 Pendahuluan"
+     },
+     "key": "T7",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T2"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 7,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 2 Tinjauan Pustaka"
+     },
+     "key": "T8",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T5"
+      ],
+      "estimate_hours": 8.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 8,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 3 Metodologi"
+     },
+     "key": "T9",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T7",
+       "T8",
+       "T9"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 9,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Revisi Bab 1 sampai 3 dari bimbingan"
+     },
+     "key": "T10",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T10"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "S1",
+      "optional": false,
+      "position": 10,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Siapkan slide dan latihan seminar proposal"
+     },
+     "key": "T11",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T11"
+      ],
+      "estimate_hours": 2.0,
+      "milestone_key": "S1",
+      "optional": false,
+      "position": 11,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Seminar proposal"
+     },
+     "key": "T12",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T12",
+       "T6"
+      ],
+      "estimate_hours": 24.0,
+      "milestone_key": "M5",
+      "optional": false,
+      "position": 12,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Jalankan penelitian atau eksperimen"
+     },
+     "key": "T13",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T13"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M5",
+      "optional": false,
+      "position": 13,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Olah dan analisis data"
+     },
+     "key": "T14",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T14"
+      ],
+      "estimate_hours": 14.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 14,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 4 Hasil dan Pembahasan"
+     },
+     "key": "T15",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T15"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 15,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis Bab 5 Kesimpulan dan Saran"
+     },
+     "key": "T16",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T16"
+      ],
+      "estimate_hours": 10.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 16,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Revisi naskah lengkap"
+     },
+     "key": "T17",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T17"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 17,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Rapikan abstrak"
+     },
+     "key": "T18",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T17"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M6",
+      "optional": true,
+      "position": 18,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Tulis artikel jurnal"
+     },
+     "key": "T19",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T18"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "S2",
+      "optional": false,
+      "position": 19,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Siapkan slide dan latihan sidang"
+     },
+     "key": "T20",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T20"
+      ],
+      "estimate_hours": 2.0,
+      "milestone_key": "S2",
+      "optional": false,
+      "position": 20,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Sidang"
+     },
+     "key": "T21",
+     "op": "add"
+    }
+   ],
+   "preview": {
+    "available_hours": 212.0,
+    "buffer_deadline": "2027-02-08",
+    "critical_path": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5",
+     "T6",
+     "T13",
+     "T14",
+     "T15",
+     "T16",
+     "T17",
+     "T19"
+    ],
+    "feasibility": "feasible",
+    "projected_finish": "2027-02-05",
+    "shortfall_hours": 0.0,
+    "tasks": {
+     "T1": {
+      "critical": true,
+      "end": "2026-10-07",
+      "priority": 0.612,
+      "start": "2026-10-05"
+     },
+     "T10": {
+      "critical": true,
+      "end": "2026-11-19",
+      "priority": 0.6295,
+      "start": "2026-11-17"
+     },
+     "T11": {
+      "critical": true,
+      "end": "2026-11-23",
+      "priority": 0.6195,
+      "start": "2026-11-20"
+     },
+     "T12": {
+      "critical": true,
+      "end": "2026-12-08",
+      "priority": 0.729,
+      "start": "2026-12-08"
+     },
+     "T13": {
+      "critical": true,
+      "end": "2026-12-24",
+      "priority": 0.719,
+      "start": "2026-12-09"
+     },
+     "T14": {
+      "critical": true,
+      "end": "2027-01-01",
+      "priority": 0.709,
+      "start": "2026-12-25"
+     },
+     "T15": {
+      "critical": true,
+      "end": "2027-01-12",
+      "priority": 0.699,
+      "start": "2027-01-04"
+     },
+     "T16": {
+      "critical": true,
+      "end": "2027-01-14",
+      "priority": 0.689,
+      "start": "2027-01-13"
+     },
+     "T17": {
+      "critical": true,
+      "end": "2027-01-21",
+      "priority": 0.679,
+      "start": "2027-01-15"
+     },
+     "T18": {
+      "critical": false,
+      "end": "2027-01-25",
+      "priority": 0.2471,
+      "start": "2027-01-22"
+     },
+     "T19": {
+      "critical": true,
+      "end": "2027-02-04",
+      "priority": 0.6869,
+      "start": "2027-01-28"
+     },
+     "T2": {
+      "critical": true,
+      "end": "2026-10-16",
+      "priority": 0.602,
+      "start": "2026-10-08"
+     },
+     "T20": {
+      "critical": false,
+      "end": "2027-01-27",
+      "priority": 0.2371,
+      "start": "2027-01-26"
+     },
+     "T21": {
+      "critical": false,
+      "end": "2027-02-05",
+      "priority": 0.2988,
+      "start": "2027-02-05"
+     },
+     "T3": {
+      "critical": true,
+      "end": "2026-10-20",
+      "priority": 0.582,
+      "start": "2026-10-19"
+     },
+     "T4": {
+      "critical": true,
+      "end": "2026-10-23",
+      "priority": 0.562,
+      "start": "2026-10-21"
+     },
+     "T5": {
+      "critical": true,
+      "end": "2026-10-28",
+      "priority": 0.552,
+      "start": "2026-10-26"
+     },
+     "T6": {
+      "critical": true,
+      "end": "2026-12-07",
+      "priority": 0.7171,
+      "start": "2026-11-24"
+     },
+     "T7": {
+      "critical": false,
+      "end": "2026-11-02",
+      "priority": 0.12,
+      "start": "2026-10-29"
+     },
+     "T8": {
+      "critical": false,
+      "end": "2026-11-10",
+      "priority": 0.1917,
+      "start": "2026-11-03"
+     },
+     "T9": {
+      "critical": true,
+      "end": "2026-11-16",
+      "priority": 0.6395,
+      "start": "2026-11-11"
+     }
+    },
+    "total_hours": 180.0
+   },
+   "project_id": "2e160dd4-a585-4731-92d7-d8d1179980f7",
+   "rationale": "",
+   "status": "applied"
+  },
+  "POST /tasks/d62e79aa-449e-4b06-95da-85c9d5cd630c/start-help": {
+   "ai_error": "ai_unavailable",
+   "ai_used": false,
+   "first_step": "Pasang timer 25 menit. Tulis tiga poin tentang apa yang harus dihasilkan \"Baca dan rangkum jurnal ke matriks literatur\", lalu kerjakan poin yang paling kecil.",
+   "subtasks": [
+    {
+     "estimate_hours": 1.5,
+     "title": "Tentukan hasil akhir yang dicari: Baca dan rangkum jurnal ke matriks literatur"
+    },
+    {
+     "estimate_hours": 3.5,
+     "title": "Kumpulkan bahan dan referensi yang dibutuhkan: Baca dan rangkum jurnal ke matriks literatur"
+    },
+    {
+     "estimate_hours": 6.5,
+     "title": "Kerjakan bagian inti: Baca dan rangkum jurnal ke matriks literatur"
+    },
+    {
+     "estimate_hours": 3.0,
+     "title": "Periksa dan rapikan hasilnya: Baca dan rangkum jurnal ke matriks literatur"
+    }
+   ]
+  },
+  "PUT /projects/2e160dd4-a585-4731-92d7-d8d1179980f7/brief": {
+   "content": {
+    "constraints": [
+     "10 jam per minggu"
+    ],
+    "deliverables": [
+     "Proposal",
+     "Naskah Bab 1 sampai 5",
+     "Slide seminar proposal dan sidang"
+    ],
+    "goal": "Sistem rekomendasi skripsi",
+    "important_dates": [],
+    "open_questions": [
+     {
+      "answer": "",
+      "question": "Metode atau pendekatan apa yang akan dipakai?"
+     },
+     {
+      "answer": "",
+      "question": "Data atau objek penelitiannya dari mana?"
+     },
+     {
+      "answer": "",
+      "question": "Kapan target seminar proposal?"
+     }
+    ],
+    "requirements": []
+   },
+   "created_at": "2026-09-25T04:05:31.662998+00:00",
+   "source": "user",
+   "version": 1
+  }
+ },
+ "locale": "id",
+ "project_id": "212260dd-6687-4bd4-a22f-ce9d3915df7a",
+ "today": "2026-10-05",
+ "wizard_project_id": "2e160dd4-a585-4731-92d7-d8d1179980f7"
+}

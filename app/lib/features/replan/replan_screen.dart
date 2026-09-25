@@ -24,23 +24,29 @@ class _ReplanScreenState extends ConsumerState<ReplanScreen> {
   String? _applying;
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    final project = ref.read(currentProjectProvider);
-    if (_options == null && project != null) {
-      _projectId = project.id;
-      _options = ref.read(repositoryProvider).replan(project.id);
-    }
+  void initState() {
+    super.initState();
+    // Opened straight from a link, the project list may still be loading: start
+    // computing as soon as the project is known.
+    _start(ref.read(currentProjectProvider));
+    ref.listenManual(currentProjectProvider, (_, project) => setState(() => _start(project)));
+  }
+
+  void _start(Project? project) {
+    if (_options != null || project == null) return;
+    _projectId = project.id;
+    _options = ref.read(repositoryProvider).replan(project.id);
   }
 
   void _recompute() => setState(() => _options = ref.read(repositoryProvider).replan(_projectId!));
 
   Future<void> _choose(Suggestion option) async {
     final l = context.l10n;
+    final container = containerOf(ref);
     setState(() => _applying = option.id);
     try {
-      await ref.read(repositoryProvider).applySuggestion(option.id);
-      refreshProject(ref, option.projectId);
+      await container.read(repositoryProvider).applySuggestion(option.id);
+      refreshProjectIn(container, option.projectId);
       if (!mounted) return;
       showMessage(context, l.suggestionApplied);
       context.canPop() ? context.pop() : context.go('/plan');
@@ -144,10 +150,10 @@ class _OptionCard extends StatelessWidget {
       'extend_deadline' => (
         Icons.event_outlined,
         l.optionExtendDeadline,
-        l.optionExtendDeadlineDesc(
-          p['new_deadline'] == null ? '' : formatDate(context, DateTime.parse('${p['new_deadline']}'), alwaysYear: true),
-          '${p['days'] ?? ''}',
-        ),
+        l.optionExtendDeadlineDesc(switch (DateTime.tryParse('${p['new_deadline'] ?? ''}')) {
+          final date? => formatDate(context, date, alwaysYear: true),
+          null => '',
+        }, '${p['days'] ?? ''}'),
       ),
       _ => (Icons.event_repeat, l.optionReschedule, l.optionRescheduleDesc),
     };

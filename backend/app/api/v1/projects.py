@@ -15,14 +15,15 @@ from app.modules.ai.chat import supervision_suggestion
 from app.modules.ai.gateway import Gateway
 from app.modules.ai.models import AiSuggestion
 from app.modules.ai.workflows import extract_brief
-from app.modules.documents.models import Document, DocumentChunk
+from app.modules.demo.service import create_sample_project
+from app.modules.documents import service as document_service
 from app.modules.insight.service import project_health, weekly_review
 from app.modules.modes.loader import get_mode, load_modes
 from app.modules.projects import service as projects
 from app.modules.tasks import service as tasks_service
 from app.modules.tasks.plan_service import create_replan, generate_plan
 
-from .schemas import BriefSave, NoteCreate, ProjectCreate, ProjectUpdate
+from .schemas import BriefSave, NoteCreate, ProjectCreate, ProjectUpdate, SampleCreate
 
 router = APIRouter(tags=["projects"])
 
@@ -63,6 +64,16 @@ def create_project(body: ProjectCreate, db: Session = Db, user: Profile = Curren
     return ser.project(project)
 
 
+@router.post("/projects/sample", status_code=201)
+def create_sample(
+    body: SampleCreate, db: Session = Db, user: Profile = CurrentUser, today: date = Depends(get_today),
+    gateway: Gateway = Depends(get_ai_gateway),
+) -> dict:
+    """A ready-made sample project in the app's language, for trying Purnara out."""
+    project = create_sample_project(db, user, gateway, body.locale, today)
+    return ser.project(project, projects.task_count(db, project.id))
+
+
 @router.get("/projects/{project_id}")
 def get_project(project_id: str, db: Session = Db, user: Profile = CurrentUser) -> dict:
     project = projects.get_project(db, user, project_id)
@@ -98,12 +109,7 @@ def extract_project_brief(
     project = projects.get_project(db, user, project_id)
     mode = get_mode(project.mode)
     template = mode.template(project.template) if mode else None
-    documents = []
-    for doc in db.scalars(select(Document).where(Document.project_id == project.id, Document.status == "ready")):
-        text = "\n".join(
-            db.scalars(select(DocumentChunk.text).where(DocumentChunk.document_id == doc.id).order_by(DocumentChunk.position))
-        )
-        documents.append({"title": doc.title, "kind": doc.kind, "text": text})
+    documents = document_service.ready_documents(db, project.id)
     intake = {
         "title": project.title,
         "description": project.description,

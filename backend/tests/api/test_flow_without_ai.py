@@ -170,8 +170,16 @@ def test_chat_without_ai_returns_cited_passages(client):
         f"/v1/projects/{pid}/chat", json={"question": "resep rendang padang", "thread_id": answer["thread"]["id"]}
     ).json()
     assert followup["answer"]["kind"] == "not_found"
+
+    # Worded differently from the paper: only part of the question matches, so the closest
+    # passage is shown as such instead of "not found".
+    closest = client.post(
+        f"/v1/projects/{pid}/chat", json={"question": "siapa pemenang turnamen catur MCTS", "thread_id": answer["thread"]["id"]}
+    ).json()["answer"]
+    assert closest["kind"] == "closest"
+    assert 1 <= len(closest["citations"]) <= 2
     messages = client.get(f"/v1/threads/{answer['thread']['id']}/messages").json()
-    assert [m["role"] for m in messages] == ["user", "assistant", "user", "assistant"]
+    assert [m["role"] for m in messages] == ["user", "assistant"] * 3
 
     liked = client.patch(f"/v1/messages/{message['id']}", json={"feedback": "up"}).json()
     assert liked["feedback"] == "up"

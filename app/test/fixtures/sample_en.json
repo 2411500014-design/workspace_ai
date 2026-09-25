@@ -1,0 +1,4589 @@
+{
+ "answers": {
+  "GET /health": {
+   "ai_enabled": false,
+   "auth_mode": "local",
+   "environment": "test",
+   "lan_listening": true,
+   "lan_urls": [
+    "http://192.168.1.20:8000"
+   ],
+   "status": "ok",
+   "version": "0.1.0",
+   "web_app": true
+  },
+  "GET /me": {
+   "ai_enabled": false,
+   "auth_mode": "local",
+   "email": null,
+   "id": "00000000-0000-4000-8000-000000000001",
+   "locale": "en",
+   "name": "",
+   "quota": {
+    "limit": 400000,
+    "resets_at": "2026-10-01",
+    "used": 0
+   },
+   "timezone": "Asia/Jakarta"
+  },
+  "GET /me/today": {
+   "date": "2026-10-05",
+   "focus": [
+    {
+     "estimate_hours": 14.0,
+     "id": "dd7d3e90-a57f-4eaf-a393-55a55dfa023c",
+     "is_critical": true,
+     "key": "T2",
+     "late_days": 0,
+     "milestone_title": "Literature review and problem statement",
+     "postpone_count": 0,
+     "priority_score": 0.5982,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "project_title": "Sample: NPC decision-making for an RTS game",
+     "scheduled_end": "2026-10-15",
+     "scheduled_start": "2026-10-08",
+     "status": "in_progress",
+     "title": "Read and summarise papers into a literature matrix"
+    }
+   ],
+   "more_today": [],
+   "projects": [
+    {
+     "days_left": 140,
+     "deadline": "2027-02-22",
+     "feasibility": "feasible",
+     "has_plan": true,
+     "health": "on_track",
+     "hours_today": 2.0,
+     "id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "needs_reschedule": false,
+     "next_milestone": {
+      "id": "81501024-0a42-4568-9d2c-045f6542598c",
+      "planned_end": "2026-10-17",
+      "title": "Literature review and problem statement"
+     },
+     "pending_suggestions": 1,
+     "title": "Sample: NPC decision-making for an RTS game"
+    }
+   ],
+   "upcoming": []
+  },
+  "GET /modes": [
+   {
+    "id": "academic",
+    "name": {
+     "en": "Academic",
+     "id": "Akademik"
+    },
+    "templates": [
+     {
+      "description": {
+       "en": "From literature review to the final defense, with a proposal seminar along the way.",
+       "id": "Dari studi literatur sampai sidang, dengan seminar proposal di tengah jalan."
+      },
+      "id": "skripsi",
+      "name": {
+       "en": "Undergraduate thesis",
+       "id": "Skripsi"
+      },
+      "task_count": 21,
+      "total_hours": 168.0
+     },
+     {
+      "description": {
+       "en": "A final project that builds a system or product, from requirements to the defense.",
+       "id": "Proyek akhir yang membangun sistem atau produk, dari analisis kebutuhan sampai sidang."
+      },
+      "id": "tugas_akhir",
+      "name": {
+       "en": "Final project",
+       "id": "Tugas akhir"
+      },
+      "task_count": 13,
+      "total_hours": 126.0
+     },
+     {
+      "description": {
+       "en": "A course group project, usually 6 to 10 weeks.",
+       "id": "Tugas besar mata kuliah, biasanya 6 sampai 10 minggu."
+      },
+      "id": "tugas_besar",
+      "name": {
+       "en": "Group project",
+       "id": "Tugas besar"
+      },
+      "task_count": 8,
+      "total_hours": 42.0
+     },
+     {
+      "description": {
+       "en": "A paper, journal article or competition entry.",
+       "id": "Makalah, artikel jurnal, atau naskah lomba."
+      },
+      "id": "makalah",
+      "name": {
+       "en": "Paper or article",
+       "id": "Makalah atau artikel"
+      },
+      "task_count": 6,
+      "total_hours": 33.0
+     }
+    ],
+    "terms": {
+     "chapter": {
+      "en": "Chapter",
+      "id": "Bab"
+     },
+     "defense": {
+      "en": "Thesis defense",
+      "id": "Sidang"
+     },
+     "proposal_seminar": {
+      "en": "Proposal seminar",
+      "id": "Seminar proposal"
+     },
+     "supervision": {
+      "en": "Supervision",
+      "id": "Bimbingan"
+     },
+     "supervisor": {
+      "en": "Supervisor",
+      "id": "Dosen pembimbing"
+     }
+    }
+   }
+  ],
+  "GET /notifications": [],
+  "GET /projects": [
+   {
+    "blocked_dates": [],
+    "buffer_pct": 0.15,
+    "created_at": "2026-09-25T04:05:32.154659+00:00",
+    "deadline": "2027-02-22",
+    "description": "Compare MCTS and Utility AI for NPC decision-making in real-time strategy games.",
+    "extra_hours": {},
+    "feasibility": "feasible",
+    "has_plan": true,
+    "health": "on_track",
+    "hours_by_weekday": [
+     2.0,
+     2.0,
+     2.0,
+     2.0,
+     2.0,
+     3.0,
+     0.0
+    ],
+    "id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+    "mode": "academic",
+    "needs_reschedule": false,
+    "plan_accepted_at": "2026-09-25T04:05:32.208449+00:00",
+    "target": "",
+    "task_count": 25,
+    "template": "skripsi",
+    "title": "Sample: NPC decision-making for an RTS game"
+   }
+  ],
+  "GET /projects/5394e573-a3e5-4bae-9ca2-792f2f5e779f/brief": {
+   "content": {
+    "constraints": [
+     "13 hours per week"
+    ],
+    "deliverables": [
+     "Proposal",
+     "Chapters 1 to 5",
+     "Proposal seminar and defense slides"
+    ],
+    "goal": "Compare MCTS and Utility AI for NPC decision-making in real-time strategy games.",
+    "important_dates": [
+     {
+      "date": "2026-11-04",
+      "label": "Key dates Proposal submission"
+     },
+     {
+      "date": "2026-12-04",
+      "label": "The proposal seminar takes place"
+     },
+     {
+      "date": "2027-02-22",
+      "label": "Final defense no later than"
+     }
+    ],
+    "open_questions": [
+     {
+      "answer": "",
+      "question": "Which method or approach will you use?"
+     },
+     {
+      "answer": "",
+      "question": "Where will the data or research object come from?"
+     },
+     {
+      "answer": "",
+      "question": "When is the proposal seminar planned?"
+     }
+    ],
+    "requirements": [
+     {
+      "code": "R1",
+      "text": "The thesis must cite at least 20 references from the last 5 years."
+     },
+     {
+      "code": "R2",
+      "text": "Citations must follow the IEEE style."
+     },
+     {
+      "code": "R3",
+      "text": "The manuscript must be at least 40 pages, excluding appendices."
+     },
+     {
+      "code": "R4",
+      "text": "Each chapter must be reviewed with the supervisor at least twice."
+     }
+    ]
+   },
+   "created_at": "2026-09-25T04:05:32.174976+00:00",
+   "source": "user",
+   "version": 1
+  },
+  "GET /projects/5394e573-a3e5-4bae-9ca2-792f2f5e779f/documents": [
+   {
+    "chunk_count": 1,
+    "created_at": "2026-09-25T04:05:32.168242+00:00",
+    "error_code": null,
+    "filename": "mcts_rts_2025.txt",
+    "id": "dd0225e0-65a5-41fd-bf65-f9ff9d69f55b",
+    "kind": "journal",
+    "metadata": {
+     "doi": "10.5555/purnara.sample.2025"
+    },
+    "mime": "text/plain",
+    "pages": 1,
+    "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+    "size_bytes": 898,
+    "status": "ready",
+    "summary": "Decision Making for NPCs in Real-Time Strategy Games Abstract This paper compares Behavior Trees, Utility AI and Monte Carlo Tree Search (MCTS) for non-player character decisions in real-time strategy games. doi: 10.5555/purnara.sample.2025 Keywords: RTS, MCTS, Utility AI, game AI Real-time strategy games need fast decisions under uncertainty, with many units acting at once. We implement MCTS with a 50 ms budget per decision and compare it with a Utility AI baseline over 200 matches on three maps.",
+    "summary_ai": false,
+    "title": "Decision Making for NPCs in Real-Time Strategy Games"
+   },
+   {
+    "chunk_count": 1,
+    "created_at": "2026-09-25T04:05:32.159616+00:00",
+    "error_code": null,
+    "filename": "thesis_guidelines.txt",
+    "id": "cfada233-f7d8-4d8c-9394-62c11eb0bfa7",
+    "kind": "instruction",
+    "metadata": {
+     "year": 2026
+    },
+    "mime": "text/plain",
+    "pages": 1,
+    "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+    "size_bytes": 461,
+    "status": "ready",
+    "summary": "Informatics Study Programme General rules The thesis must cite at least 20 references from the last 5 years.",
+    "summary_ai": false,
+    "title": "THESIS WRITING GUIDELINES"
+   }
+  ],
+  "GET /projects/5394e573-a3e5-4bae-9ca2-792f2f5e779f/health": {
+   "actual_pct": 0.0326,
+   "critical_late_days": 0,
+   "done_hours": 6.0,
+   "feasibility": "feasible",
+   "has_plan": true,
+   "history": [
+    {
+     "actual_pct": 0.0326,
+     "day": "2026-10-05",
+     "health": "on_track",
+     "planned_pct": 0.0,
+     "spi": null
+    }
+   ],
+   "late_tasks": 0,
+   "needs_reschedule": false,
+   "planned_pct": 0.0,
+   "reasons": [],
+   "spi": null,
+   "spi_stable": false,
+   "status": "on_track",
+   "total_hours": 184.0
+  },
+  "GET /projects/5394e573-a3e5-4bae-9ca2-792f2f5e779f/notes?kind=supervision": [
+   {
+    "content": "- Add 5 recent references to Chapter 2\n- Clarify the research questions in Chapter 1\n- Prepare a comparison table of MCTS and Utility AI\n- The supervisor prefers short paragraphs",
+    "created_at": "2026-09-25T04:05:32.211606+00:00",
+    "id": "00a8d1a7-c973-4125-a16b-f9e8493b2cab",
+    "kind": "supervision",
+    "meeting_date": "2026-10-04"
+   }
+  ],
+  "GET /projects/5394e573-a3e5-4bae-9ca2-792f2f5e779f/plan": {
+   "milestones": [
+    {
+     "id": "81501024-0a42-4568-9d2c-045f6542598c",
+     "key": "M1",
+     "position": 0,
+     "status": "open",
+     "target_date": null,
+     "title": "Literature review and problem statement"
+    },
+    {
+     "id": "bf7e1984-3e99-40d6-9c73-399e081b81ee",
+     "key": "M2",
+     "position": 1,
+     "status": "open",
+     "target_date": null,
+     "title": "Method design"
+    },
+    {
+     "id": "132edf50-c0cb-4138-9d11-6077b2105b04",
+     "key": "M3",
+     "position": 2,
+     "status": "open",
+     "target_date": null,
+     "title": "Instrument or prototype"
+    },
+    {
+     "id": "b69b5871-f338-410f-b0c6-183fc8d0bac2",
+     "key": "M4",
+     "position": 3,
+     "status": "open",
+     "target_date": null,
+     "title": "Draft of chapters 1 to 3"
+    },
+    {
+     "id": "c122e2cf-e25c-4be8-84a8-80524d6254bf",
+     "key": "S1",
+     "position": 4,
+     "status": "open",
+     "target_date": null,
+     "title": "Proposal seminar"
+    },
+    {
+     "id": "86826efa-9b1f-455e-a9bb-2e4b9c28209d",
+     "key": "M5",
+     "position": 5,
+     "status": "open",
+     "target_date": null,
+     "title": "Experiment and evaluation"
+    },
+    {
+     "id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+     "key": "M6",
+     "position": 6,
+     "status": "open",
+     "target_date": null,
+     "title": "Chapters 4 to 5 and revisions"
+    },
+    {
+     "id": "b51427b3-1e13-4f56-80c3-b1ff22282475",
+     "key": "S2",
+     "position": 7,
+     "status": "open",
+     "target_date": null,
+     "title": "Thesis defense"
+    }
+   ],
+   "project": {
+    "blocked_dates": [],
+    "buffer_pct": 0.15,
+    "created_at": "2026-09-25T04:05:32.154659+00:00",
+    "deadline": "2027-02-22",
+    "description": "Compare MCTS and Utility AI for NPC decision-making in real-time strategy games.",
+    "extra_hours": {},
+    "feasibility": "feasible",
+    "has_plan": true,
+    "health": "on_track",
+    "hours_by_weekday": [
+     2.0,
+     2.0,
+     2.0,
+     2.0,
+     2.0,
+     3.0,
+     0.0
+    ],
+    "id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+    "mode": "academic",
+    "needs_reschedule": false,
+    "plan_accepted_at": "2026-09-25T04:05:32.208449+00:00",
+    "target": "",
+    "task_count": 0,
+    "template": "skripsi",
+    "title": "Sample: NPC decision-making for an RTS game"
+   },
+   "tasks": [
+    {
+     "actual_hours": 6.0,
+     "completed_at": "2026-09-25T04:05:32.209646+00:00",
+     "deferred": false,
+     "definition_of_done": "All PDFs are in the library and indexed",
+     "depends_on": [],
+     "description": "",
+     "estimate_hours": 6.0,
+     "id": "d4d7cd16-43b2-4dd2-ae97-48b6872230c6",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T1",
+     "late_days": 0,
+     "latest_finish": "2026-11-25",
+     "milestone_id": "81501024-0a42-4568-9d2c-045f6542598c",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6065,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-10-07",
+     "scheduled_start": "2026-10-05",
+     "source": "template",
+     "status": "done",
+     "title": "Collect 20 to 25 relevant papers"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "Every paper has a method and result summary",
+     "depends_on": [
+      "d4d7cd16-43b2-4dd2-ae97-48b6872230c6"
+     ],
+     "description": "",
+     "estimate_hours": 14.0,
+     "id": "dd7d3e90-a57f-4eaf-a393-55a55dfa023c",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T2",
+     "late_days": 0,
+     "latest_finish": "2026-12-02",
+     "milestone_id": "81501024-0a42-4568-9d2c-045f6542598c",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5982,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-10-15",
+     "scheduled_start": "2026-10-08",
+     "source": "template",
+     "status": "in_progress",
+     "title": "Read and summarise papers into a literature matrix"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "Approved by the supervisor",
+     "depends_on": [
+      "dd7d3e90-a57f-4eaf-a393-55a55dfa023c"
+     ],
+     "description": "",
+     "estimate_hours": 4.0,
+     "id": "c0bc82bd-4ef0-4531-9a71-8b6919739386",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T3",
+     "late_days": 0,
+     "latest_finish": "2026-12-04",
+     "milestone_id": "81501024-0a42-4568-9d2c-045f6542598c",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5815,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-10-17",
+     "scheduled_start": "2026-10-15",
+     "source": "template",
+     "status": "todo",
+     "title": "Define the problem"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "c0bc82bd-4ef0-4531-9a71-8b6919739386"
+     ],
+     "description": "",
+     "estimate_hours": 6.0,
+     "id": "3e69d8f2-bc8c-4974-8871-ad77bae437d1",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T4",
+     "late_days": 0,
+     "latest_finish": "2026-12-08",
+     "milestone_id": "bf7e1984-3e99-40d6-9c73-399e081b81ee",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5649,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-10-20",
+     "scheduled_start": "2026-10-17",
+     "source": "template",
+     "status": "todo",
+     "title": "Choose the method and baselines"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "3e69d8f2-bc8c-4974-8871-ad77bae437d1"
+     ],
+     "description": "",
+     "estimate_hours": 6.0,
+     "id": "fa303e2f-8a81-43bc-a3a8-07c042571376",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T5",
+     "late_days": 0,
+     "latest_finish": "2026-12-11",
+     "milestone_id": "bf7e1984-3e99-40d6-9c73-399e081b81ee",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5565,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-10-23",
+     "scheduled_start": "2026-10-21",
+     "source": "template",
+     "status": "todo",
+     "title": "Design the experiment or data collection"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "fa303e2f-8a81-43bc-a3a8-07c042571376"
+     ],
+     "description": "",
+     "estimate_hours": 20.0,
+     "id": "18c1aeea-2929-49db-a30c-eeaec2468792",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T6",
+     "late_days": 0,
+     "latest_finish": "2026-12-22",
+     "milestone_id": "132edf50-c0cb-4138-9d11-6077b2105b04",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6327,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-11-23",
+     "scheduled_start": "2026-11-12",
+     "source": "template",
+     "status": "todo",
+     "title": "Prepare the research instrument or prototype"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "c0bc82bd-4ef0-4531-9a71-8b6919739386"
+     ],
+     "description": "",
+     "estimate_hours": 6.0,
+     "id": "82767665-9461-49b4-a828-d88c4052c226",
+     "importance": 0.0,
+     "is_critical": false,
+     "key": "T7",
+     "late_days": 0,
+     "latest_finish": "2026-12-15",
+     "milestone_id": "b69b5871-f338-410f-b0c6-183fc8d0bac2",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.1333,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-10-27",
+     "scheduled_start": "2026-10-24",
+     "source": "template",
+     "status": "todo",
+     "title": "Write chapter 1 Introduction"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "dd7d3e90-a57f-4eaf-a393-55a55dfa023c"
+     ],
+     "description": "",
+     "estimate_hours": 12.0,
+     "id": "c91a7f77-6192-4ed7-97cd-22a13a06996e",
+     "importance": 0.0,
+     "is_critical": false,
+     "key": "T8",
+     "late_days": 0,
+     "latest_finish": "2026-12-15",
+     "milestone_id": "b69b5871-f338-410f-b0c6-183fc8d0bac2",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.1726,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-11-02",
+     "scheduled_start": "2026-10-27",
+     "source": "template",
+     "status": "todo",
+     "title": "Write chapter 2 Literature review"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "fa303e2f-8a81-43bc-a3a8-07c042571376"
+     ],
+     "description": "",
+     "estimate_hours": 8.0,
+     "id": "c26386a0-3b58-4fa8-ba45-f9e04d29b6ca",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T9",
+     "late_days": 0,
+     "latest_finish": "2026-12-15",
+     "milestone_id": "b69b5871-f338-410f-b0c6-183fc8d0bac2",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5988,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-11-06",
+     "scheduled_start": "2026-11-03",
+     "source": "template",
+     "status": "todo",
+     "title": "Write chapter 3 Methodology"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "82767665-9461-49b4-a828-d88c4052c226",
+      "c26386a0-3b58-4fa8-ba45-f9e04d29b6ca",
+      "c91a7f77-6192-4ed7-97cd-22a13a06996e"
+     ],
+     "description": "",
+     "estimate_hours": 6.0,
+     "id": "ca2cefed-112c-4a9d-bf2a-32f412ab3056",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T10",
+     "late_days": 0,
+     "latest_finish": "2026-12-18",
+     "milestone_id": "b69b5871-f338-410f-b0c6-183fc8d0bac2",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5904,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-11-10",
+     "scheduled_start": "2026-11-07",
+     "source": "template",
+     "status": "todo",
+     "title": "Revise chapters 1 to 3 after supervision"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "ca2cefed-112c-4a9d-bf2a-32f412ab3056"
+     ],
+     "description": "",
+     "estimate_hours": 4.0,
+     "id": "cb2a935c-220d-42d6-bfea-330ee2075758",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T11",
+     "late_days": 0,
+     "latest_finish": "2026-12-21",
+     "milestone_id": "c122e2cf-e25c-4be8-84a8-80524d6254bf",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5821,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-11-12",
+     "scheduled_start": "2026-11-10",
+     "source": "template",
+     "status": "todo",
+     "title": "Prepare slides and rehearse the proposal seminar"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "cb2a935c-220d-42d6-bfea-330ee2075758"
+     ],
+     "description": "",
+     "estimate_hours": 2.0,
+     "id": "6a41a1ea-15d3-4316-b55b-0d27dadc6cff",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T12",
+     "late_days": 0,
+     "latest_finish": "2026-12-22",
+     "milestone_id": "c122e2cf-e25c-4be8-84a8-80524d6254bf",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6392,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-11-24",
+     "scheduled_start": "2026-11-23",
+     "source": "template",
+     "status": "todo",
+     "title": "Proposal seminar"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "18c1aeea-2929-49db-a30c-eeaec2468792",
+      "6a41a1ea-15d3-4316-b55b-0d27dadc6cff"
+     ],
+     "description": "",
+     "estimate_hours": 24.0,
+     "id": "55afeec4-71df-40bf-bde5-ecb6aad4a47c",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T13",
+     "late_days": 0,
+     "latest_finish": "2027-01-04",
+     "milestone_id": "86826efa-9b1f-455e-a9bb-2e4b9c28209d",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6309,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-12-07",
+     "scheduled_start": "2026-11-24",
+     "source": "template",
+     "status": "todo",
+     "title": "Run the study or experiment"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "55afeec4-71df-40bf-bde5-ecb6aad4a47c"
+     ],
+     "description": "",
+     "estimate_hours": 12.0,
+     "id": "bcbd09c7-6977-49c8-a290-2b49f6a23c98",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T14",
+     "late_days": 0,
+     "latest_finish": "2027-01-09",
+     "milestone_id": "86826efa-9b1f-455e-a9bb-2e4b9c28209d",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6225,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-12-12",
+     "scheduled_start": "2026-12-07",
+     "source": "template",
+     "status": "todo",
+     "title": "Process and analyse the data"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "bcbd09c7-6977-49c8-a290-2b49f6a23c98"
+     ],
+     "description": "",
+     "estimate_hours": 14.0,
+     "id": "b5f74812-b257-4c83-aae1-0c8aecaad403",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T15",
+     "late_days": 0,
+     "latest_finish": "2027-01-18",
+     "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6142,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-12-21",
+     "scheduled_start": "2026-12-14",
+     "source": "template",
+     "status": "todo",
+     "title": "Write chapter 4 Results and discussion"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "b5f74812-b257-4c83-aae1-0c8aecaad403"
+     ],
+     "description": "",
+     "estimate_hours": 4.0,
+     "id": "9b15eff1-2be1-4b34-9d9a-f4a25073e817",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T16",
+     "late_days": 0,
+     "latest_finish": "2027-01-20",
+     "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.6059,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-12-23",
+     "scheduled_start": "2026-12-21",
+     "source": "template",
+     "status": "todo",
+     "title": "Write chapter 5 Conclusions"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "9b15eff1-2be1-4b34-9d9a-f4a25073e817"
+     ],
+     "description": "",
+     "estimate_hours": 10.0,
+     "id": "578f364e-8c04-4170-a896-8b613f09aea5",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T17",
+     "late_days": 0,
+     "latest_finish": "2027-01-25",
+     "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5975,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-12-28",
+     "scheduled_start": "2026-12-23",
+     "source": "template",
+     "status": "todo",
+     "title": "Revise the full manuscript"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "578f364e-8c04-4170-a896-8b613f09aea5"
+     ],
+     "description": "",
+     "estimate_hours": 4.0,
+     "id": "02c0853a-30c2-490e-a891-96f6a7b03867",
+     "importance": 0.0,
+     "is_critical": false,
+     "key": "T18",
+     "late_days": 0,
+     "latest_finish": "2027-01-29",
+     "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.1377,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2026-12-30",
+     "scheduled_start": "2026-12-29",
+     "source": "template",
+     "status": "todo",
+     "title": "Finish the abstract"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "578f364e-8c04-4170-a896-8b613f09aea5"
+     ],
+     "description": "",
+     "estimate_hours": 12.0,
+     "id": "dd5ae05b-afc0-440b-9d6d-7ad9c8fa00df",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T19",
+     "late_days": 0,
+     "latest_finish": "2027-02-01",
+     "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+     "optional": true,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5904,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2027-01-08",
+     "scheduled_start": "2027-01-02",
+     "source": "template",
+     "status": "todo",
+     "title": "Write a journal article"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "02c0853a-30c2-490e-a891-96f6a7b03867"
+     ],
+     "description": "",
+     "estimate_hours": 4.0,
+     "id": "3b427f93-87cb-4004-b26c-d87f0baabdf6",
+     "importance": 0.0,
+     "is_critical": false,
+     "key": "T20",
+     "late_days": 0,
+     "latest_finish": "2027-01-30",
+     "milestone_id": "b51427b3-1e13-4f56-80c3-b1ff22282475",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.1294,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2027-01-01",
+     "scheduled_start": "2026-12-31",
+     "source": "template",
+     "status": "todo",
+     "title": "Prepare slides and rehearse the defense"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "3b427f93-87cb-4004-b26c-d87f0baabdf6"
+     ],
+     "description": "",
+     "estimate_hours": 2.0,
+     "id": "9a36e270-0ba6-4d22-bf22-b9f4ae6f1b3c",
+     "importance": 0.0,
+     "is_critical": false,
+     "key": "T21",
+     "late_days": 0,
+     "latest_finish": "2027-02-01",
+     "milestone_id": "b51427b3-1e13-4f56-80c3-b1ff22282475",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.1734,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [],
+     "scheduled_end": "2027-01-11",
+     "scheduled_start": "2027-01-11",
+     "source": "template",
+     "status": "todo",
+     "title": "Thesis defense"
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "dd5ae05b-afc0-440b-9d6d-7ad9c8fa00df"
+     ],
+     "description": "",
+     "estimate_hours": 1.0,
+     "id": "c0134141-0799-4908-9ffa-e1bc12dfa54b",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T22",
+     "late_days": 0,
+     "latest_finish": "2027-02-01",
+     "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.557,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [
+      "abdc70d1-030d-43ca-882d-4e7daa10372b"
+     ],
+     "scheduled_end": "2027-01-08",
+     "scheduled_start": "2027-01-08",
+     "source": "template",
+     "status": "todo",
+     "title": "Make sure this is met: The thesis must cite at least 20 references from the last 5 years."
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "dd5ae05b-afc0-440b-9d6d-7ad9c8fa00df"
+     ],
+     "description": "",
+     "estimate_hours": 1.0,
+     "id": "1cc7350b-04cc-46c6-9890-2b842041e345",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T23",
+     "late_days": 0,
+     "latest_finish": "2027-02-01",
+     "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5603,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [
+      "645e3928-31a1-4c83-90c1-35b106f55a08"
+     ],
+     "scheduled_end": "2027-01-09",
+     "scheduled_start": "2027-01-09",
+     "source": "template",
+     "status": "todo",
+     "title": "Make sure this is met: Citations must follow the IEEE style."
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "dd5ae05b-afc0-440b-9d6d-7ad9c8fa00df"
+     ],
+     "description": "",
+     "estimate_hours": 1.0,
+     "id": "5543c5de-5942-4267-81a4-9024663099c0",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T24",
+     "late_days": 0,
+     "latest_finish": "2027-02-01",
+     "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5636,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [
+      "836fbb51-8cb5-4ecc-b7b2-738771757151"
+     ],
+     "scheduled_end": "2027-01-09",
+     "scheduled_start": "2027-01-09",
+     "source": "template",
+     "status": "todo",
+     "title": "Make sure this is met: The manuscript must be at least 40 pages, excluding appendices."
+    },
+    {
+     "actual_hours": null,
+     "completed_at": null,
+     "deferred": false,
+     "definition_of_done": "",
+     "depends_on": [
+      "dd5ae05b-afc0-440b-9d6d-7ad9c8fa00df"
+     ],
+     "description": "",
+     "estimate_hours": 1.0,
+     "id": "91ddd57b-7158-4d60-8ca3-c1f6a02c1990",
+     "importance": 0.0,
+     "is_critical": true,
+     "key": "T25",
+     "late_days": 0,
+     "latest_finish": "2027-02-01",
+     "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+     "optional": false,
+     "parent_task_id": null,
+     "postpone_count": 0,
+     "priority_score": 0.5668,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "requirement_ids": [
+      "ec463caf-b809-4af1-be7f-b566bbe41075"
+     ],
+     "scheduled_end": "2027-01-09",
+     "scheduled_start": "2027-01-09",
+     "source": "template",
+     "status": "todo",
+     "title": "Make sure this is met: Each chapter must be reviewed with the supervisor at least twice."
+    }
+   ]
+  },
+  "GET /projects/5394e573-a3e5-4bae-9ca2-792f2f5e779f/requirements": [
+   {
+    "code": "R1",
+    "covered": true,
+    "id": "abdc70d1-030d-43ca-882d-4e7daa10372b",
+    "met": false,
+    "tasks": [
+     {
+      "id": "c0134141-0799-4908-9ffa-e1bc12dfa54b",
+      "key": "T22",
+      "status": "todo",
+      "title": "Make sure this is met: The thesis must cite at least 20 references from the last 5 years."
+     }
+    ],
+    "text": "The thesis must cite at least 20 references from the last 5 years."
+   },
+   {
+    "code": "R2",
+    "covered": true,
+    "id": "645e3928-31a1-4c83-90c1-35b106f55a08",
+    "met": false,
+    "tasks": [
+     {
+      "id": "1cc7350b-04cc-46c6-9890-2b842041e345",
+      "key": "T23",
+      "status": "todo",
+      "title": "Make sure this is met: Citations must follow the IEEE style."
+     }
+    ],
+    "text": "Citations must follow the IEEE style."
+   },
+   {
+    "code": "R3",
+    "covered": true,
+    "id": "836fbb51-8cb5-4ecc-b7b2-738771757151",
+    "met": false,
+    "tasks": [
+     {
+      "id": "5543c5de-5942-4267-81a4-9024663099c0",
+      "key": "T24",
+      "status": "todo",
+      "title": "Make sure this is met: The manuscript must be at least 40 pages, excluding appendices."
+     }
+    ],
+    "text": "The manuscript must be at least 40 pages, excluding appendices."
+   },
+   {
+    "code": "R4",
+    "covered": true,
+    "id": "ec463caf-b809-4af1-be7f-b566bbe41075",
+    "met": false,
+    "tasks": [
+     {
+      "id": "91ddd57b-7158-4d60-8ca3-c1f6a02c1990",
+      "key": "T25",
+      "status": "todo",
+      "title": "Make sure this is met: Each chapter must be reviewed with the supervisor at least twice."
+     }
+    ],
+    "text": "Each chapter must be reviewed with the supervisor at least twice."
+   }
+  ],
+  "GET /projects/5394e573-a3e5-4bae-9ca2-792f2f5e779f/suggestions": [
+   {
+    "ai_used": false,
+    "created_at": "2026-09-25T04:05:32.215306+00:00",
+    "decided_at": null,
+    "id": "51386d58-8c2b-4b8b-9912-c4e89d4da050",
+    "kind": "task_change",
+    "meta": {
+     "ai_error": "ai_unavailable",
+     "meeting_date": "2026-10-04",
+     "note_id": "00a8d1a7-c973-4125-a16b-f9e8493b2cab",
+     "origin": "supervision"
+    },
+    "ops": [
+     {
+      "entity": "memory",
+      "fields": {
+       "content": "Prepare a comparison table of MCTS and Utility AI",
+       "kind": "feedback",
+       "source": "supervision"
+      },
+      "op": "add"
+     },
+     {
+      "entity": "memory",
+      "fields": {
+       "content": "The supervisor prefers short paragraphs",
+       "kind": "feedback",
+       "source": "supervision"
+      },
+      "op": "add"
+     },
+     {
+      "entity": "task",
+      "fields": {
+       "estimate_hours": 2.0,
+       "milestone_id": "81501024-0a42-4568-9d2c-045f6542598c",
+       "position": 5000,
+       "source": "supervision",
+       "title": "Add 5 recent references to Chapter 2"
+      },
+      "op": "add"
+     },
+     {
+      "entity": "task",
+      "fields": {
+       "estimate_hours": 2.0,
+       "milestone_id": "81501024-0a42-4568-9d2c-045f6542598c",
+       "position": 5001,
+       "source": "supervision",
+       "title": "Clarify the research questions in Chapter 1"
+      },
+      "op": "add"
+     }
+    ],
+    "preview": {},
+    "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+    "rationale": "",
+    "status": "pending"
+   }
+  ],
+  "GET /projects/5394e573-a3e5-4bae-9ca2-792f2f5e779f/threads": [
+   {
+    "created_at": "2026-09-25T04:05:32.247656+00:00",
+    "id": "b2edd5d2-1459-43ef-bc63-ce614ab16ebd",
+    "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+    "title": "How many references are required?"
+   }
+  ],
+  "GET /projects/5394e573-a3e5-4bae-9ca2-792f2f5e779f/weekly-review": {
+   "ai_error": "ai_unavailable",
+   "ai_used": false,
+   "done": [],
+   "done_hours": 0,
+   "focus_next": [
+    {
+     "estimate_hours": 14.0,
+     "id": "dd7d3e90-a57f-4eaf-a393-55a55dfa023c",
+     "is_critical": true,
+     "key": "T2",
+     "late_days": 0,
+     "milestone_title": "Literature review and problem statement",
+     "postpone_count": 0,
+     "priority_score": 0.5982,
+     "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+     "project_title": "Sample: NPC decision-making for an RTS game",
+     "scheduled_end": "2026-10-15",
+     "scheduled_start": "2026-10-08",
+     "status": "in_progress",
+     "title": "Read and summarise papers into a literature matrix"
+    }
+   ],
+   "health_now": "on_track",
+   "health_week_ago": null,
+   "period_end": "2026-10-05",
+   "period_start": "2026-09-28",
+   "postponed": 0,
+   "recommend_replan": false,
+   "slipped": [],
+   "summary": null
+  },
+  "GET /projects/efc6cc44-de75-4922-8abf-0e52919cc982/brief": {
+   "content": {
+    "requirements": []
+   },
+   "created_at": null,
+   "source": null,
+   "version": 0
+  },
+  "GET /projects/efc6cc44-de75-4922-8abf-0e52919cc982/documents": [],
+  "GET /suggestions/51386d58-8c2b-4b8b-9912-c4e89d4da050": {
+   "ai_used": false,
+   "created_at": "2026-09-25T04:05:32.215306+00:00",
+   "decided_at": null,
+   "id": "51386d58-8c2b-4b8b-9912-c4e89d4da050",
+   "kind": "task_change",
+   "meta": {
+    "ai_error": "ai_unavailable",
+    "meeting_date": "2026-10-04",
+    "note_id": "00a8d1a7-c973-4125-a16b-f9e8493b2cab",
+    "origin": "supervision"
+   },
+   "ops": [
+    {
+     "entity": "memory",
+     "fields": {
+      "content": "Prepare a comparison table of MCTS and Utility AI",
+      "kind": "feedback",
+      "source": "supervision"
+     },
+     "op": "add"
+    },
+    {
+     "entity": "memory",
+     "fields": {
+      "content": "The supervisor prefers short paragraphs",
+      "kind": "feedback",
+      "source": "supervision"
+     },
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "estimate_hours": 2.0,
+      "milestone_id": "81501024-0a42-4568-9d2c-045f6542598c",
+      "position": 5000,
+      "source": "supervision",
+      "title": "Add 5 recent references to Chapter 2"
+     },
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "estimate_hours": 2.0,
+      "milestone_id": "81501024-0a42-4568-9d2c-045f6542598c",
+      "position": 5001,
+      "source": "supervision",
+      "title": "Clarify the research questions in Chapter 1"
+     },
+     "op": "add"
+    }
+   ],
+   "preview": {},
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "rationale": "",
+   "status": "pending"
+  },
+  "GET /suggestions/eea14161-53ee-40d6-a7a2-decb94b77c59": {
+   "ai_used": false,
+   "created_at": "2026-09-25T04:05:32.847921+00:00",
+   "decided_at": null,
+   "id": "eea14161-53ee-40d6-a7a2-decb94b77c59",
+   "kind": "plan",
+   "meta": {
+    "ai_error": "ai_unavailable",
+    "assumptions": [],
+    "questions": [],
+    "uncovered_requirements": []
+   },
+   "ops": [
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 0,
+      "title": "Literature review and problem statement"
+     },
+     "key": "M1",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 1,
+      "title": "Method design"
+     },
+     "key": "M2",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 2,
+      "title": "Instrument or prototype"
+     },
+     "key": "M3",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 3,
+      "title": "Draft of chapters 1 to 3"
+     },
+     "key": "M4",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 4,
+      "title": "Proposal seminar"
+     },
+     "key": "S1",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 5,
+      "title": "Experiment and evaluation"
+     },
+     "key": "M5",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 6,
+      "title": "Chapters 4 to 5 and revisions"
+     },
+     "key": "M6",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 7,
+      "title": "Thesis defense"
+     },
+     "key": "S2",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "All PDFs are in the library and indexed",
+      "depends_on": [],
+      "estimate_hours": 6.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 0,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Collect 20 to 25 relevant papers"
+     },
+     "key": "T1",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Every paper has a method and result summary",
+      "depends_on": [
+       "T1"
+      ],
+      "estimate_hours": 14.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 1,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Read and summarise papers into a literature matrix"
+     },
+     "key": "T2",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Approved by the supervisor",
+      "depends_on": [
+       "T2"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 2,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Define the problem"
+     },
+     "key": "T3",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T3"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M2",
+      "optional": false,
+      "position": 3,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Choose the method and baselines"
+     },
+     "key": "T4",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T4"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M2",
+      "optional": false,
+      "position": 4,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Design the experiment or data collection"
+     },
+     "key": "T5",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T5"
+      ],
+      "estimate_hours": 20.0,
+      "milestone_key": "M3",
+      "optional": false,
+      "position": 5,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Prepare the research instrument or prototype"
+     },
+     "key": "T6",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T3"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 6,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 1 Introduction"
+     },
+     "key": "T7",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T2"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 7,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 2 Literature review"
+     },
+     "key": "T8",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T5"
+      ],
+      "estimate_hours": 8.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 8,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 3 Methodology"
+     },
+     "key": "T9",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T7",
+       "T8",
+       "T9"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 9,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Revise chapters 1 to 3 after supervision"
+     },
+     "key": "T10",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T10"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "S1",
+      "optional": false,
+      "position": 10,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Prepare slides and rehearse the proposal seminar"
+     },
+     "key": "T11",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T11"
+      ],
+      "estimate_hours": 2.0,
+      "milestone_key": "S1",
+      "optional": false,
+      "position": 11,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Proposal seminar"
+     },
+     "key": "T12",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T12",
+       "T6"
+      ],
+      "estimate_hours": 24.0,
+      "milestone_key": "M5",
+      "optional": false,
+      "position": 12,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Run the study or experiment"
+     },
+     "key": "T13",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T13"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M5",
+      "optional": false,
+      "position": 13,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Process and analyse the data"
+     },
+     "key": "T14",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T14"
+      ],
+      "estimate_hours": 14.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 14,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 4 Results and discussion"
+     },
+     "key": "T15",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T15"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 15,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 5 Conclusions"
+     },
+     "key": "T16",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T16"
+      ],
+      "estimate_hours": 10.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 16,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Revise the full manuscript"
+     },
+     "key": "T17",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T17"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 17,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Finish the abstract"
+     },
+     "key": "T18",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T17"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M6",
+      "optional": true,
+      "position": 18,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write a journal article"
+     },
+     "key": "T19",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T18"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "S2",
+      "optional": false,
+      "position": 19,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Prepare slides and rehearse the defense"
+     },
+     "key": "T20",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T20"
+      ],
+      "estimate_hours": 2.0,
+      "milestone_key": "S2",
+      "optional": false,
+      "position": 20,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Thesis defense"
+     },
+     "key": "T21",
+     "op": "add"
+    }
+   ],
+   "preview": {
+    "available_hours": 212.0,
+    "buffer_deadline": "2027-02-08",
+    "critical_path": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5",
+     "T6",
+     "T13",
+     "T14",
+     "T15",
+     "T16",
+     "T17",
+     "T19"
+    ],
+    "feasibility": "feasible",
+    "projected_finish": "2027-02-05",
+    "shortfall_hours": 0.0,
+    "tasks": {
+     "T1": {
+      "critical": true,
+      "end": "2026-10-07",
+      "priority": 0.612,
+      "start": "2026-10-05"
+     },
+     "T10": {
+      "critical": true,
+      "end": "2026-11-19",
+      "priority": 0.6295,
+      "start": "2026-11-17"
+     },
+     "T11": {
+      "critical": true,
+      "end": "2026-11-23",
+      "priority": 0.6195,
+      "start": "2026-11-20"
+     },
+     "T12": {
+      "critical": true,
+      "end": "2026-12-08",
+      "priority": 0.729,
+      "start": "2026-12-08"
+     },
+     "T13": {
+      "critical": true,
+      "end": "2026-12-24",
+      "priority": 0.719,
+      "start": "2026-12-09"
+     },
+     "T14": {
+      "critical": true,
+      "end": "2027-01-01",
+      "priority": 0.709,
+      "start": "2026-12-25"
+     },
+     "T15": {
+      "critical": true,
+      "end": "2027-01-12",
+      "priority": 0.699,
+      "start": "2027-01-04"
+     },
+     "T16": {
+      "critical": true,
+      "end": "2027-01-14",
+      "priority": 0.689,
+      "start": "2027-01-13"
+     },
+     "T17": {
+      "critical": true,
+      "end": "2027-01-21",
+      "priority": 0.679,
+      "start": "2027-01-15"
+     },
+     "T18": {
+      "critical": false,
+      "end": "2027-01-25",
+      "priority": 0.2471,
+      "start": "2027-01-22"
+     },
+     "T19": {
+      "critical": true,
+      "end": "2027-02-04",
+      "priority": 0.6869,
+      "start": "2027-01-28"
+     },
+     "T2": {
+      "critical": true,
+      "end": "2026-10-16",
+      "priority": 0.602,
+      "start": "2026-10-08"
+     },
+     "T20": {
+      "critical": false,
+      "end": "2027-01-27",
+      "priority": 0.2371,
+      "start": "2027-01-26"
+     },
+     "T21": {
+      "critical": false,
+      "end": "2027-02-05",
+      "priority": 0.2988,
+      "start": "2027-02-05"
+     },
+     "T3": {
+      "critical": true,
+      "end": "2026-10-20",
+      "priority": 0.582,
+      "start": "2026-10-19"
+     },
+     "T4": {
+      "critical": true,
+      "end": "2026-10-23",
+      "priority": 0.562,
+      "start": "2026-10-21"
+     },
+     "T5": {
+      "critical": true,
+      "end": "2026-10-28",
+      "priority": 0.552,
+      "start": "2026-10-26"
+     },
+     "T6": {
+      "critical": true,
+      "end": "2026-12-07",
+      "priority": 0.7171,
+      "start": "2026-11-24"
+     },
+     "T7": {
+      "critical": false,
+      "end": "2026-11-02",
+      "priority": 0.12,
+      "start": "2026-10-29"
+     },
+     "T8": {
+      "critical": false,
+      "end": "2026-11-10",
+      "priority": 0.1917,
+      "start": "2026-11-03"
+     },
+     "T9": {
+      "critical": true,
+      "end": "2026-11-16",
+      "priority": 0.6395,
+      "start": "2026-11-11"
+     }
+    },
+    "total_hours": 180.0
+   },
+   "project_id": "efc6cc44-de75-4922-8abf-0e52919cc982",
+   "rationale": "",
+   "status": "pending"
+  },
+  "GET /tasks/02c0853a-30c2-490e-a891-96f6a7b03867": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "578f364e-8c04-4170-a896-8b613f09aea5"
+   ],
+   "description": "",
+   "estimate_hours": 4.0,
+   "id": "02c0853a-30c2-490e-a891-96f6a7b03867",
+   "importance": 0.0,
+   "is_critical": false,
+   "key": "T18",
+   "late_days": 0,
+   "latest_finish": "2027-01-29",
+   "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.1377,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-12-30",
+   "scheduled_start": "2026-12-29",
+   "source": "template",
+   "status": "todo",
+   "title": "Finish the abstract"
+  },
+  "GET /tasks/18c1aeea-2929-49db-a30c-eeaec2468792": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "fa303e2f-8a81-43bc-a3a8-07c042571376"
+   ],
+   "description": "",
+   "estimate_hours": 20.0,
+   "id": "18c1aeea-2929-49db-a30c-eeaec2468792",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T6",
+   "late_days": 0,
+   "latest_finish": "2026-12-22",
+   "milestone_id": "132edf50-c0cb-4138-9d11-6077b2105b04",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6327,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-11-23",
+   "scheduled_start": "2026-11-12",
+   "source": "template",
+   "status": "todo",
+   "title": "Prepare the research instrument or prototype"
+  },
+  "GET /tasks/1cc7350b-04cc-46c6-9890-2b842041e345": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "dd5ae05b-afc0-440b-9d6d-7ad9c8fa00df"
+   ],
+   "description": "",
+   "estimate_hours": 1.0,
+   "id": "1cc7350b-04cc-46c6-9890-2b842041e345",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T23",
+   "late_days": 0,
+   "latest_finish": "2027-02-01",
+   "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5603,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [
+    "645e3928-31a1-4c83-90c1-35b106f55a08"
+   ],
+   "scheduled_end": "2027-01-09",
+   "scheduled_start": "2027-01-09",
+   "source": "template",
+   "status": "todo",
+   "title": "Make sure this is met: Citations must follow the IEEE style."
+  },
+  "GET /tasks/3b427f93-87cb-4004-b26c-d87f0baabdf6": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "02c0853a-30c2-490e-a891-96f6a7b03867"
+   ],
+   "description": "",
+   "estimate_hours": 4.0,
+   "id": "3b427f93-87cb-4004-b26c-d87f0baabdf6",
+   "importance": 0.0,
+   "is_critical": false,
+   "key": "T20",
+   "late_days": 0,
+   "latest_finish": "2027-01-30",
+   "milestone_id": "b51427b3-1e13-4f56-80c3-b1ff22282475",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.1294,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2027-01-01",
+   "scheduled_start": "2026-12-31",
+   "source": "template",
+   "status": "todo",
+   "title": "Prepare slides and rehearse the defense"
+  },
+  "GET /tasks/3e69d8f2-bc8c-4974-8871-ad77bae437d1": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "c0bc82bd-4ef0-4531-9a71-8b6919739386"
+   ],
+   "description": "",
+   "estimate_hours": 6.0,
+   "id": "3e69d8f2-bc8c-4974-8871-ad77bae437d1",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T4",
+   "late_days": 0,
+   "latest_finish": "2026-12-08",
+   "milestone_id": "bf7e1984-3e99-40d6-9c73-399e081b81ee",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5649,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-10-20",
+   "scheduled_start": "2026-10-17",
+   "source": "template",
+   "status": "todo",
+   "title": "Choose the method and baselines"
+  },
+  "GET /tasks/5543c5de-5942-4267-81a4-9024663099c0": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "dd5ae05b-afc0-440b-9d6d-7ad9c8fa00df"
+   ],
+   "description": "",
+   "estimate_hours": 1.0,
+   "id": "5543c5de-5942-4267-81a4-9024663099c0",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T24",
+   "late_days": 0,
+   "latest_finish": "2027-02-01",
+   "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5636,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [
+    "836fbb51-8cb5-4ecc-b7b2-738771757151"
+   ],
+   "scheduled_end": "2027-01-09",
+   "scheduled_start": "2027-01-09",
+   "source": "template",
+   "status": "todo",
+   "title": "Make sure this is met: The manuscript must be at least 40 pages, excluding appendices."
+  },
+  "GET /tasks/55afeec4-71df-40bf-bde5-ecb6aad4a47c": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "18c1aeea-2929-49db-a30c-eeaec2468792",
+    "6a41a1ea-15d3-4316-b55b-0d27dadc6cff"
+   ],
+   "description": "",
+   "estimate_hours": 24.0,
+   "id": "55afeec4-71df-40bf-bde5-ecb6aad4a47c",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T13",
+   "late_days": 0,
+   "latest_finish": "2027-01-04",
+   "milestone_id": "86826efa-9b1f-455e-a9bb-2e4b9c28209d",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6309,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-12-07",
+   "scheduled_start": "2026-11-24",
+   "source": "template",
+   "status": "todo",
+   "title": "Run the study or experiment"
+  },
+  "GET /tasks/578f364e-8c04-4170-a896-8b613f09aea5": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "9b15eff1-2be1-4b34-9d9a-f4a25073e817"
+   ],
+   "description": "",
+   "estimate_hours": 10.0,
+   "id": "578f364e-8c04-4170-a896-8b613f09aea5",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T17",
+   "late_days": 0,
+   "latest_finish": "2027-01-25",
+   "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5975,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-12-28",
+   "scheduled_start": "2026-12-23",
+   "source": "template",
+   "status": "todo",
+   "title": "Revise the full manuscript"
+  },
+  "GET /tasks/6a41a1ea-15d3-4316-b55b-0d27dadc6cff": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "cb2a935c-220d-42d6-bfea-330ee2075758"
+   ],
+   "description": "",
+   "estimate_hours": 2.0,
+   "id": "6a41a1ea-15d3-4316-b55b-0d27dadc6cff",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T12",
+   "late_days": 0,
+   "latest_finish": "2026-12-22",
+   "milestone_id": "c122e2cf-e25c-4be8-84a8-80524d6254bf",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6392,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-11-24",
+   "scheduled_start": "2026-11-23",
+   "source": "template",
+   "status": "todo",
+   "title": "Proposal seminar"
+  },
+  "GET /tasks/82767665-9461-49b4-a828-d88c4052c226": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "c0bc82bd-4ef0-4531-9a71-8b6919739386"
+   ],
+   "description": "",
+   "estimate_hours": 6.0,
+   "id": "82767665-9461-49b4-a828-d88c4052c226",
+   "importance": 0.0,
+   "is_critical": false,
+   "key": "T7",
+   "late_days": 0,
+   "latest_finish": "2026-12-15",
+   "milestone_id": "b69b5871-f338-410f-b0c6-183fc8d0bac2",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.1333,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-10-27",
+   "scheduled_start": "2026-10-24",
+   "source": "template",
+   "status": "todo",
+   "title": "Write chapter 1 Introduction"
+  },
+  "GET /tasks/91ddd57b-7158-4d60-8ca3-c1f6a02c1990": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "dd5ae05b-afc0-440b-9d6d-7ad9c8fa00df"
+   ],
+   "description": "",
+   "estimate_hours": 1.0,
+   "id": "91ddd57b-7158-4d60-8ca3-c1f6a02c1990",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T25",
+   "late_days": 0,
+   "latest_finish": "2027-02-01",
+   "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5668,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [
+    "ec463caf-b809-4af1-be7f-b566bbe41075"
+   ],
+   "scheduled_end": "2027-01-09",
+   "scheduled_start": "2027-01-09",
+   "source": "template",
+   "status": "todo",
+   "title": "Make sure this is met: Each chapter must be reviewed with the supervisor at least twice."
+  },
+  "GET /tasks/9a36e270-0ba6-4d22-bf22-b9f4ae6f1b3c": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "3b427f93-87cb-4004-b26c-d87f0baabdf6"
+   ],
+   "description": "",
+   "estimate_hours": 2.0,
+   "id": "9a36e270-0ba6-4d22-bf22-b9f4ae6f1b3c",
+   "importance": 0.0,
+   "is_critical": false,
+   "key": "T21",
+   "late_days": 0,
+   "latest_finish": "2027-02-01",
+   "milestone_id": "b51427b3-1e13-4f56-80c3-b1ff22282475",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.1734,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2027-01-11",
+   "scheduled_start": "2027-01-11",
+   "source": "template",
+   "status": "todo",
+   "title": "Thesis defense"
+  },
+  "GET /tasks/9b15eff1-2be1-4b34-9d9a-f4a25073e817": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "b5f74812-b257-4c83-aae1-0c8aecaad403"
+   ],
+   "description": "",
+   "estimate_hours": 4.0,
+   "id": "9b15eff1-2be1-4b34-9d9a-f4a25073e817",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T16",
+   "late_days": 0,
+   "latest_finish": "2027-01-20",
+   "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6059,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-12-23",
+   "scheduled_start": "2026-12-21",
+   "source": "template",
+   "status": "todo",
+   "title": "Write chapter 5 Conclusions"
+  },
+  "GET /tasks/b5f74812-b257-4c83-aae1-0c8aecaad403": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "bcbd09c7-6977-49c8-a290-2b49f6a23c98"
+   ],
+   "description": "",
+   "estimate_hours": 14.0,
+   "id": "b5f74812-b257-4c83-aae1-0c8aecaad403",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T15",
+   "late_days": 0,
+   "latest_finish": "2027-01-18",
+   "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6142,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-12-21",
+   "scheduled_start": "2026-12-14",
+   "source": "template",
+   "status": "todo",
+   "title": "Write chapter 4 Results and discussion"
+  },
+  "GET /tasks/bcbd09c7-6977-49c8-a290-2b49f6a23c98": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "55afeec4-71df-40bf-bde5-ecb6aad4a47c"
+   ],
+   "description": "",
+   "estimate_hours": 12.0,
+   "id": "bcbd09c7-6977-49c8-a290-2b49f6a23c98",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T14",
+   "late_days": 0,
+   "latest_finish": "2027-01-09",
+   "milestone_id": "86826efa-9b1f-455e-a9bb-2e4b9c28209d",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6225,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-12-12",
+   "scheduled_start": "2026-12-07",
+   "source": "template",
+   "status": "todo",
+   "title": "Process and analyse the data"
+  },
+  "GET /tasks/c0134141-0799-4908-9ffa-e1bc12dfa54b": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "dd5ae05b-afc0-440b-9d6d-7ad9c8fa00df"
+   ],
+   "description": "",
+   "estimate_hours": 1.0,
+   "id": "c0134141-0799-4908-9ffa-e1bc12dfa54b",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T22",
+   "late_days": 0,
+   "latest_finish": "2027-02-01",
+   "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.557,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [
+    "abdc70d1-030d-43ca-882d-4e7daa10372b"
+   ],
+   "scheduled_end": "2027-01-08",
+   "scheduled_start": "2027-01-08",
+   "source": "template",
+   "status": "todo",
+   "title": "Make sure this is met: The thesis must cite at least 20 references from the last 5 years."
+  },
+  "GET /tasks/c0bc82bd-4ef0-4531-9a71-8b6919739386": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "Approved by the supervisor",
+   "depends_on": [
+    "dd7d3e90-a57f-4eaf-a393-55a55dfa023c"
+   ],
+   "description": "",
+   "estimate_hours": 4.0,
+   "id": "c0bc82bd-4ef0-4531-9a71-8b6919739386",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T3",
+   "late_days": 0,
+   "latest_finish": "2026-12-04",
+   "milestone_id": "81501024-0a42-4568-9d2c-045f6542598c",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5815,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-10-17",
+   "scheduled_start": "2026-10-15",
+   "source": "template",
+   "status": "todo",
+   "title": "Define the problem"
+  },
+  "GET /tasks/c26386a0-3b58-4fa8-ba45-f9e04d29b6ca": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "fa303e2f-8a81-43bc-a3a8-07c042571376"
+   ],
+   "description": "",
+   "estimate_hours": 8.0,
+   "id": "c26386a0-3b58-4fa8-ba45-f9e04d29b6ca",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T9",
+   "late_days": 0,
+   "latest_finish": "2026-12-15",
+   "milestone_id": "b69b5871-f338-410f-b0c6-183fc8d0bac2",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5988,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-11-06",
+   "scheduled_start": "2026-11-03",
+   "source": "template",
+   "status": "todo",
+   "title": "Write chapter 3 Methodology"
+  },
+  "GET /tasks/c91a7f77-6192-4ed7-97cd-22a13a06996e": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "dd7d3e90-a57f-4eaf-a393-55a55dfa023c"
+   ],
+   "description": "",
+   "estimate_hours": 12.0,
+   "id": "c91a7f77-6192-4ed7-97cd-22a13a06996e",
+   "importance": 0.0,
+   "is_critical": false,
+   "key": "T8",
+   "late_days": 0,
+   "latest_finish": "2026-12-15",
+   "milestone_id": "b69b5871-f338-410f-b0c6-183fc8d0bac2",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.1726,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-11-02",
+   "scheduled_start": "2026-10-27",
+   "source": "template",
+   "status": "todo",
+   "title": "Write chapter 2 Literature review"
+  },
+  "GET /tasks/ca2cefed-112c-4a9d-bf2a-32f412ab3056": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "82767665-9461-49b4-a828-d88c4052c226",
+    "c26386a0-3b58-4fa8-ba45-f9e04d29b6ca",
+    "c91a7f77-6192-4ed7-97cd-22a13a06996e"
+   ],
+   "description": "",
+   "estimate_hours": 6.0,
+   "id": "ca2cefed-112c-4a9d-bf2a-32f412ab3056",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T10",
+   "late_days": 0,
+   "latest_finish": "2026-12-18",
+   "milestone_id": "b69b5871-f338-410f-b0c6-183fc8d0bac2",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5904,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-11-10",
+   "scheduled_start": "2026-11-07",
+   "source": "template",
+   "status": "todo",
+   "title": "Revise chapters 1 to 3 after supervision"
+  },
+  "GET /tasks/cb2a935c-220d-42d6-bfea-330ee2075758": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "ca2cefed-112c-4a9d-bf2a-32f412ab3056"
+   ],
+   "description": "",
+   "estimate_hours": 4.0,
+   "id": "cb2a935c-220d-42d6-bfea-330ee2075758",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T11",
+   "late_days": 0,
+   "latest_finish": "2026-12-21",
+   "milestone_id": "c122e2cf-e25c-4be8-84a8-80524d6254bf",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5821,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-11-12",
+   "scheduled_start": "2026-11-10",
+   "source": "template",
+   "status": "todo",
+   "title": "Prepare slides and rehearse the proposal seminar"
+  },
+  "GET /tasks/d4d7cd16-43b2-4dd2-ae97-48b6872230c6": {
+   "actual_hours": 6.0,
+   "completed_at": "2026-09-25T04:05:32.209646+00:00",
+   "deferred": false,
+   "definition_of_done": "All PDFs are in the library and indexed",
+   "depends_on": [],
+   "description": "",
+   "estimate_hours": 6.0,
+   "id": "d4d7cd16-43b2-4dd2-ae97-48b6872230c6",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T1",
+   "late_days": 0,
+   "latest_finish": "2026-11-25",
+   "milestone_id": "81501024-0a42-4568-9d2c-045f6542598c",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.6065,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-10-07",
+   "scheduled_start": "2026-10-05",
+   "source": "template",
+   "status": "done",
+   "title": "Collect 20 to 25 relevant papers"
+  },
+  "GET /tasks/dd5ae05b-afc0-440b-9d6d-7ad9c8fa00df": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "578f364e-8c04-4170-a896-8b613f09aea5"
+   ],
+   "description": "",
+   "estimate_hours": 12.0,
+   "id": "dd5ae05b-afc0-440b-9d6d-7ad9c8fa00df",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T19",
+   "late_days": 0,
+   "latest_finish": "2027-02-01",
+   "milestone_id": "0d92c664-ef2e-4d79-a930-49d8cbf00c69",
+   "optional": true,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5904,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2027-01-08",
+   "scheduled_start": "2027-01-02",
+   "source": "template",
+   "status": "todo",
+   "title": "Write a journal article"
+  },
+  "GET /tasks/dd7d3e90-a57f-4eaf-a393-55a55dfa023c": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "Every paper has a method and result summary",
+   "depends_on": [
+    "d4d7cd16-43b2-4dd2-ae97-48b6872230c6"
+   ],
+   "description": "",
+   "estimate_hours": 14.0,
+   "id": "dd7d3e90-a57f-4eaf-a393-55a55dfa023c",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T2",
+   "late_days": 0,
+   "latest_finish": "2026-12-02",
+   "milestone_id": "81501024-0a42-4568-9d2c-045f6542598c",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5982,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-10-15",
+   "scheduled_start": "2026-10-08",
+   "source": "template",
+   "status": "in_progress",
+   "title": "Read and summarise papers into a literature matrix"
+  },
+  "GET /tasks/fa303e2f-8a81-43bc-a3a8-07c042571376": {
+   "actual_hours": null,
+   "completed_at": null,
+   "deferred": false,
+   "definition_of_done": "",
+   "depends_on": [
+    "3e69d8f2-bc8c-4974-8871-ad77bae437d1"
+   ],
+   "description": "",
+   "estimate_hours": 6.0,
+   "id": "fa303e2f-8a81-43bc-a3a8-07c042571376",
+   "importance": 0.0,
+   "is_critical": true,
+   "key": "T5",
+   "late_days": 0,
+   "latest_finish": "2026-12-11",
+   "milestone_id": "bf7e1984-3e99-40d6-9c73-399e081b81ee",
+   "optional": false,
+   "parent_task_id": null,
+   "postpone_count": 0,
+   "priority_score": 0.5565,
+   "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "requirement_ids": [],
+   "scheduled_end": "2026-10-23",
+   "scheduled_start": "2026-10-21",
+   "source": "template",
+   "status": "todo",
+   "title": "Design the experiment or data collection"
+  },
+  "GET /threads/b2edd5d2-1459-43ef-bc63-ce614ab16ebd/messages": [
+   {
+    "citations": [],
+    "content": "How many references are required?",
+    "created_at": "2026-09-25T04:05:32.249266+00:00",
+    "feedback": null,
+    "id": "69c2a2cc-9b57-4080-93e8-89f5467dd453",
+    "kind": "user",
+    "model": null,
+    "role": "user",
+    "thread_id": "b2edd5d2-1459-43ef-bc63-ce614ab16ebd"
+   },
+   {
+    "citations": [
+     {
+      "cited_text": "Informatics Study Programme General rules 1. The thesis must cite at least 20 references from the last 5 years. 2. Citations must follow the IEEE style. 3. The manuscript must be at least 40 pages, excluding appendices. 4. Each chapter must be reviewed with the supervisor at least twice. Key dates Proposal submission: 4 November 2026 The proposal seminar takes place on 4 December 2026 Final defense no later than 22 February 2027",
+      "document_id": "cfada233-f7d8-4d8c-9394-62c11eb0bfa7",
+      "heading_path": "THESIS WRITING GUIDELINES",
+      "number": 1,
+      "page_end": 1,
+      "page_start": 1,
+      "title": "THESIS WRITING GUIDELINES"
+     }
+    ],
+    "content": "",
+    "created_at": "2026-09-25T04:05:32.253375+00:00",
+    "feedback": null,
+    "id": "5e62eb23-d813-48eb-ac34-364bd8ce39a8",
+    "kind": "extractive",
+    "model": null,
+    "role": "assistant",
+    "thread_id": "b2edd5d2-1459-43ef-bc63-ce614ab16ebd"
+   }
+  ],
+  "PATCH /projects/efc6cc44-de75-4922-8abf-0e52919cc982": {
+   "blocked_dates": [],
+   "buffer_pct": 0.15,
+   "created_at": "2026-09-25T04:05:32.813169+00:00",
+   "deadline": "2027-03-01",
+   "description": "",
+   "extra_hours": {},
+   "feasibility": null,
+   "has_plan": false,
+   "health": null,
+   "hours_by_weekday": [
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    0.0,
+    0.0
+   ],
+   "id": "efc6cc44-de75-4922-8abf-0e52919cc982",
+   "mode": "academic",
+   "needs_reschedule": false,
+   "plan_accepted_at": null,
+   "target": "",
+   "task_count": 0,
+   "template": "skripsi",
+   "title": "Thesis recommender system"
+  },
+  "POST /projects": {
+   "blocked_dates": [],
+   "buffer_pct": 0.15,
+   "created_at": "2026-09-25T04:05:32.813169+00:00",
+   "deadline": "2027-03-01",
+   "description": "",
+   "extra_hours": {},
+   "feasibility": null,
+   "has_plan": false,
+   "health": null,
+   "hours_by_weekday": [
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    0.0,
+    0.0
+   ],
+   "id": "efc6cc44-de75-4922-8abf-0e52919cc982",
+   "mode": "academic",
+   "needs_reschedule": false,
+   "plan_accepted_at": null,
+   "target": "",
+   "task_count": 0,
+   "template": "skripsi",
+   "title": "Thesis recommender system"
+  },
+  "POST /projects/5394e573-a3e5-4bae-9ca2-792f2f5e779f/chat": {
+   "ai_error": "ai_unavailable",
+   "answer": {
+    "citations": [
+     {
+      "cited_text": "Informatics Study Programme General rules 1. The thesis must cite at least 20 references from the last 5 years. 2. Citations must follow the IEEE style. 3. The manuscript must be at least 40 pages, excluding appendices. 4. Each chapter must be reviewed with the supervisor at least twice. Key dates Proposal submission: 4 November 2026 The proposal seminar takes place on 4 December 2026 Final defense no later than 22 February 2027",
+      "document_id": "cfada233-f7d8-4d8c-9394-62c11eb0bfa7",
+      "heading_path": "THESIS WRITING GUIDELINES",
+      "number": 1,
+      "page_end": 1,
+      "page_start": 1,
+      "title": "THESIS WRITING GUIDELINES"
+     }
+    ],
+    "content": "",
+    "created_at": "2026-09-25T04:05:32.253375+00:00",
+    "feedback": null,
+    "id": "5e62eb23-d813-48eb-ac34-364bd8ce39a8",
+    "kind": "extractive",
+    "model": null,
+    "role": "assistant",
+    "thread_id": "b2edd5d2-1459-43ef-bc63-ce614ab16ebd"
+   },
+   "question": {
+    "citations": [],
+    "content": "How many references are required?",
+    "created_at": "2026-09-25T04:05:32.249266+00:00",
+    "feedback": null,
+    "id": "69c2a2cc-9b57-4080-93e8-89f5467dd453",
+    "kind": "user",
+    "model": null,
+    "role": "user",
+    "thread_id": "b2edd5d2-1459-43ef-bc63-ce614ab16ebd"
+   },
+   "thread": {
+    "created_at": "2026-09-25T04:05:32.247656+00:00",
+    "id": "b2edd5d2-1459-43ef-bc63-ce614ab16ebd",
+    "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+    "title": "How many references are required?"
+   }
+  },
+  "POST /projects/5394e573-a3e5-4bae-9ca2-792f2f5e779f/replan": [
+   {
+    "ai_used": false,
+    "created_at": "2026-09-25T04:05:32.803374+00:00",
+    "decided_at": null,
+    "id": "b67c7c68-6e33-4810-87fe-43fe7a2a2c45",
+    "kind": "replan",
+    "meta": {
+     "ai_error": "ai_unavailable",
+     "option": "reschedule",
+     "params": {}
+    },
+    "ops": [
+     {
+      "entity": "project",
+      "op": "reschedule"
+     }
+    ],
+    "preview": {
+     "available_hours": 262.0,
+     "buffer_deadline": "2027-02-01",
+     "changed_count": 24,
+     "changes": [
+      {
+       "key": "T2",
+       "new_end": "2026-10-12",
+       "old_end": "2026-10-15",
+       "task_id": "dd7d3e90-a57f-4eaf-a393-55a55dfa023c",
+       "title": "Read and summarise papers into a literature matrix"
+      },
+      {
+       "key": "T3",
+       "new_end": "2026-10-14",
+       "old_end": "2026-10-17",
+       "task_id": "c0bc82bd-4ef0-4531-9a71-8b6919739386",
+       "title": "Define the problem"
+      },
+      {
+       "key": "T4",
+       "new_end": "2026-10-17",
+       "old_end": "2026-10-20",
+       "task_id": "3e69d8f2-bc8c-4974-8871-ad77bae437d1",
+       "title": "Choose the method and baselines"
+      },
+      {
+       "key": "T5",
+       "new_end": "2026-10-20",
+       "old_end": "2026-10-23",
+       "task_id": "fa303e2f-8a81-43bc-a3a8-07c042571376",
+       "title": "Design the experiment or data collection"
+      },
+      {
+       "key": "T7",
+       "new_end": "2026-10-23",
+       "old_end": "2026-10-27",
+       "task_id": "82767665-9461-49b4-a828-d88c4052c226",
+       "title": "Write chapter 1 Introduction"
+      },
+      {
+       "key": "T8",
+       "new_end": "2026-10-30",
+       "old_end": "2026-11-02",
+       "task_id": "c91a7f77-6192-4ed7-97cd-22a13a06996e",
+       "title": "Write chapter 2 Literature review"
+      },
+      {
+       "key": "T9",
+       "new_end": "2026-11-03",
+       "old_end": "2026-11-06",
+       "task_id": "c26386a0-3b58-4fa8-ba45-f9e04d29b6ca",
+       "title": "Write chapter 3 Methodology"
+      },
+      {
+       "key": "T10",
+       "new_end": "2026-11-06",
+       "old_end": "2026-11-10",
+       "task_id": "ca2cefed-112c-4a9d-bf2a-32f412ab3056",
+       "title": "Revise chapters 1 to 3 after supervision"
+      },
+      {
+       "key": "T11",
+       "new_end": "2026-11-09",
+       "old_end": "2026-11-12",
+       "task_id": "cb2a935c-220d-42d6-bfea-330ee2075758",
+       "title": "Prepare slides and rehearse the proposal seminar"
+      },
+      {
+       "key": "T6",
+       "new_end": "2026-11-19",
+       "old_end": "2026-11-23",
+       "task_id": "18c1aeea-2929-49db-a30c-eeaec2468792",
+       "title": "Prepare the research instrument or prototype"
+      },
+      {
+       "key": "T12",
+       "new_end": "2026-11-20",
+       "old_end": "2026-11-24",
+       "task_id": "6a41a1ea-15d3-4316-b55b-0d27dadc6cff",
+       "title": "Proposal seminar"
+      },
+      {
+       "key": "T13",
+       "new_end": "2026-12-03",
+       "old_end": "2026-12-07",
+       "task_id": "55afeec4-71df-40bf-bde5-ecb6aad4a47c",
+       "title": "Run the study or experiment"
+      },
+      {
+       "key": "T14",
+       "new_end": "2026-12-10",
+       "old_end": "2026-12-12",
+       "task_id": "bcbd09c7-6977-49c8-a290-2b49f6a23c98",
+       "title": "Process and analyse the data"
+      },
+      {
+       "key": "T15",
+       "new_end": "2026-12-17",
+       "old_end": "2026-12-21",
+       "task_id": "b5f74812-b257-4c83-aae1-0c8aecaad403",
+       "title": "Write chapter 4 Results and discussion"
+      },
+      {
+       "key": "T16",
+       "new_end": "2026-12-19",
+       "old_end": "2026-12-23",
+       "task_id": "9b15eff1-2be1-4b34-9d9a-f4a25073e817",
+       "title": "Write chapter 5 Conclusions"
+      },
+      {
+       "key": "T17",
+       "new_end": "2026-12-25",
+       "old_end": "2026-12-28",
+       "task_id": "578f364e-8c04-4170-a896-8b613f09aea5",
+       "title": "Revise the full manuscript"
+      },
+      {
+       "key": "T18",
+       "new_end": "2026-12-26",
+       "old_end": "2026-12-30",
+       "task_id": "02c0853a-30c2-490e-a891-96f6a7b03867",
+       "title": "Finish the abstract"
+      },
+      {
+       "key": "T20",
+       "new_end": "2026-12-29",
+       "old_end": "2027-01-01",
+       "task_id": "3b427f93-87cb-4004-b26c-d87f0baabdf6",
+       "title": "Prepare slides and rehearse the defense"
+      },
+      {
+       "key": "T19",
+       "new_end": "2027-01-05",
+       "old_end": "2027-01-08",
+       "task_id": "dd5ae05b-afc0-440b-9d6d-7ad9c8fa00df",
+       "title": "Write a journal article"
+      },
+      {
+       "key": "T22",
+       "new_end": "2027-01-05",
+       "old_end": "2027-01-08",
+       "task_id": "c0134141-0799-4908-9ffa-e1bc12dfa54b",
+       "title": "Make sure this is met: The thesis must cite at least 20 references from the last 5 years."
+      },
+      {
+       "key": "T23",
+       "new_end": "2027-01-06",
+       "old_end": "2027-01-09",
+       "task_id": "1cc7350b-04cc-46c6-9890-2b842041e345",
+       "title": "Make sure this is met: Citations must follow the IEEE style."
+      },
+      {
+       "key": "T24",
+       "new_end": "2027-01-06",
+       "old_end": "2027-01-09",
+       "task_id": "5543c5de-5942-4267-81a4-9024663099c0",
+       "title": "Make sure this is met: The manuscript must be at least 40 pages, excluding appendices."
+      },
+      {
+       "key": "T25",
+       "new_end": "2027-01-07",
+       "old_end": "2027-01-09",
+       "task_id": "91ddd57b-7158-4d60-8ca3-c1f6a02c1990",
+       "title": "Make sure this is met: Each chapter must be reviewed with the supervisor at least twice."
+      },
+      {
+       "key": "T21",
+       "new_end": "2027-01-08",
+       "old_end": "2027-01-11",
+       "task_id": "9a36e270-0ba6-4d22-bf22-b9f4ae6f1b3c",
+       "title": "Thesis defense"
+      }
+     ],
+     "critical_path": [
+      "T2",
+      "T3",
+      "T4",
+      "T5",
+      "T6",
+      "T13",
+      "T14",
+      "T15",
+      "T16",
+      "T17",
+      "T19",
+      "T22"
+     ],
+     "feasibility": "feasible",
+     "projected_finish": "2027-01-08",
+     "shortfall_hours": 0.0,
+     "tasks": {
+      "T10": {
+       "critical": true,
+       "end": "2026-11-06",
+       "priority": 0.5918,
+       "start": "2026-11-04"
+      },
+      "T11": {
+       "critical": true,
+       "end": "2026-11-09",
+       "priority": 0.5832,
+       "start": "2026-11-07"
+      },
+      "T12": {
+       "critical": true,
+       "end": "2026-11-20",
+       "priority": 0.6359,
+       "start": "2026-11-20"
+      },
+      "T13": {
+       "critical": true,
+       "end": "2026-12-03",
+       "priority": 0.6272,
+       "start": "2026-11-21"
+      },
+      "T14": {
+       "critical": true,
+       "end": "2026-12-10",
+       "priority": 0.6185,
+       "start": "2026-12-04"
+      },
+      "T15": {
+       "critical": true,
+       "end": "2026-12-17",
+       "priority": 0.6098,
+       "start": "2026-12-10"
+      },
+      "T16": {
+       "critical": true,
+       "end": "2026-12-19",
+       "priority": 0.6011,
+       "start": "2026-12-18"
+      },
+      "T17": {
+       "critical": true,
+       "end": "2026-12-25",
+       "priority": 0.5924,
+       "start": "2026-12-19"
+      },
+      "T18": {
+       "critical": false,
+       "end": "2026-12-26",
+       "priority": 0.131,
+       "start": "2026-12-25"
+      },
+      "T19": {
+       "critical": true,
+       "end": "2027-01-05",
+       "priority": 0.5822,
+       "start": "2026-12-30"
+      },
+      "T2": {
+       "critical": true,
+       "end": "2026-10-12",
+       "priority": 0.6061,
+       "start": "2026-10-05"
+      },
+      "T20": {
+       "critical": false,
+       "end": "2026-12-29",
+       "priority": 0.1223,
+       "start": "2026-12-28"
+      },
+      "T21": {
+       "critical": false,
+       "end": "2027-01-08",
+       "priority": 0.1627,
+       "start": "2027-01-07"
+      },
+      "T22": {
+       "critical": true,
+       "end": "2027-01-05",
+       "priority": 0.5474,
+       "start": "2027-01-05"
+      },
+      "T23": {
+       "critical": true,
+       "end": "2027-01-06",
+       "priority": 0.5505,
+       "start": "2027-01-06"
+      },
+      "T24": {
+       "critical": true,
+       "end": "2027-01-06",
+       "priority": 0.5535,
+       "start": "2027-01-06"
+      },
+      "T25": {
+       "critical": true,
+       "end": "2027-01-07",
+       "priority": 0.5566,
+       "start": "2027-01-07"
+      },
+      "T3": {
+       "critical": true,
+       "end": "2026-10-14",
+       "priority": 0.5887,
+       "start": "2026-10-12"
+      },
+      "T4": {
+       "critical": true,
+       "end": "2026-10-17",
+       "priority": 0.5714,
+       "start": "2026-10-14"
+      },
+      "T5": {
+       "critical": true,
+       "end": "2026-10-20",
+       "priority": 0.5627,
+       "start": "2026-10-17"
+      },
+      "T6": {
+       "critical": true,
+       "end": "2026-11-19",
+       "priority": 0.6297,
+       "start": "2026-11-09"
+      },
+      "T7": {
+       "critical": false,
+       "end": "2026-10-23",
+       "priority": 0.1391,
+       "start": "2026-10-21"
+      },
+      "T8": {
+       "critical": false,
+       "end": "2026-10-30",
+       "priority": 0.176,
+       "start": "2026-10-24"
+      },
+      "T9": {
+       "critical": true,
+       "end": "2026-11-03",
+       "priority": 0.6005,
+       "start": "2026-10-30"
+      }
+     },
+     "total_hours": 178.0
+    },
+    "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+    "rationale": "",
+    "status": "pending"
+   }
+  ],
+  "POST /projects/efc6cc44-de75-4922-8abf-0e52919cc982/brief/extract": {
+   "ai_error": "ai_unavailable",
+   "ai_used": false,
+   "content": {
+    "constraints": [
+     "10 hours per week"
+    ],
+    "deliverables": [
+     "Proposal",
+     "Chapters 1 to 5",
+     "Proposal seminar and defense slides"
+    ],
+    "goal": "Thesis recommender system",
+    "important_dates": [],
+    "open_questions": [
+     {
+      "answer": "",
+      "question": "Which method or approach will you use?"
+     },
+     {
+      "answer": "",
+      "question": "Where will the data or research object come from?"
+     },
+     {
+      "answer": "",
+      "question": "When is the proposal seminar planned?"
+     }
+    ],
+    "requirements": []
+   },
+   "documents_used": 0
+  },
+  "POST /projects/efc6cc44-de75-4922-8abf-0e52919cc982/plan/generate": {
+   "ai_used": false,
+   "created_at": "2026-09-25T04:05:32.847921+00:00",
+   "decided_at": null,
+   "id": "eea14161-53ee-40d6-a7a2-decb94b77c59",
+   "kind": "plan",
+   "meta": {
+    "ai_error": "ai_unavailable",
+    "assumptions": [],
+    "questions": [],
+    "uncovered_requirements": []
+   },
+   "ops": [
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 0,
+      "title": "Literature review and problem statement"
+     },
+     "key": "M1",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 1,
+      "title": "Method design"
+     },
+     "key": "M2",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 2,
+      "title": "Instrument or prototype"
+     },
+     "key": "M3",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 3,
+      "title": "Draft of chapters 1 to 3"
+     },
+     "key": "M4",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 4,
+      "title": "Proposal seminar"
+     },
+     "key": "S1",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 5,
+      "title": "Experiment and evaluation"
+     },
+     "key": "M5",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 6,
+      "title": "Chapters 4 to 5 and revisions"
+     },
+     "key": "M6",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 7,
+      "title": "Thesis defense"
+     },
+     "key": "S2",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "All PDFs are in the library and indexed",
+      "depends_on": [],
+      "estimate_hours": 6.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 0,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Collect 20 to 25 relevant papers"
+     },
+     "key": "T1",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Every paper has a method and result summary",
+      "depends_on": [
+       "T1"
+      ],
+      "estimate_hours": 14.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 1,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Read and summarise papers into a literature matrix"
+     },
+     "key": "T2",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Approved by the supervisor",
+      "depends_on": [
+       "T2"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 2,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Define the problem"
+     },
+     "key": "T3",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T3"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M2",
+      "optional": false,
+      "position": 3,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Choose the method and baselines"
+     },
+     "key": "T4",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T4"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M2",
+      "optional": false,
+      "position": 4,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Design the experiment or data collection"
+     },
+     "key": "T5",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T5"
+      ],
+      "estimate_hours": 20.0,
+      "milestone_key": "M3",
+      "optional": false,
+      "position": 5,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Prepare the research instrument or prototype"
+     },
+     "key": "T6",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T3"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 6,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 1 Introduction"
+     },
+     "key": "T7",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T2"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 7,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 2 Literature review"
+     },
+     "key": "T8",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T5"
+      ],
+      "estimate_hours": 8.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 8,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 3 Methodology"
+     },
+     "key": "T9",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T7",
+       "T8",
+       "T9"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 9,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Revise chapters 1 to 3 after supervision"
+     },
+     "key": "T10",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T10"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "S1",
+      "optional": false,
+      "position": 10,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Prepare slides and rehearse the proposal seminar"
+     },
+     "key": "T11",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T11"
+      ],
+      "estimate_hours": 2.0,
+      "milestone_key": "S1",
+      "optional": false,
+      "position": 11,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Proposal seminar"
+     },
+     "key": "T12",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T12",
+       "T6"
+      ],
+      "estimate_hours": 24.0,
+      "milestone_key": "M5",
+      "optional": false,
+      "position": 12,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Run the study or experiment"
+     },
+     "key": "T13",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T13"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M5",
+      "optional": false,
+      "position": 13,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Process and analyse the data"
+     },
+     "key": "T14",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T14"
+      ],
+      "estimate_hours": 14.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 14,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 4 Results and discussion"
+     },
+     "key": "T15",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T15"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 15,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 5 Conclusions"
+     },
+     "key": "T16",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T16"
+      ],
+      "estimate_hours": 10.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 16,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Revise the full manuscript"
+     },
+     "key": "T17",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T17"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 17,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Finish the abstract"
+     },
+     "key": "T18",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T17"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M6",
+      "optional": true,
+      "position": 18,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write a journal article"
+     },
+     "key": "T19",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T18"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "S2",
+      "optional": false,
+      "position": 19,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Prepare slides and rehearse the defense"
+     },
+     "key": "T20",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T20"
+      ],
+      "estimate_hours": 2.0,
+      "milestone_key": "S2",
+      "optional": false,
+      "position": 20,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Thesis defense"
+     },
+     "key": "T21",
+     "op": "add"
+    }
+   ],
+   "preview": {
+    "available_hours": 212.0,
+    "buffer_deadline": "2027-02-08",
+    "critical_path": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5",
+     "T6",
+     "T13",
+     "T14",
+     "T15",
+     "T16",
+     "T17",
+     "T19"
+    ],
+    "feasibility": "feasible",
+    "projected_finish": "2027-02-05",
+    "shortfall_hours": 0.0,
+    "tasks": {
+     "T1": {
+      "critical": true,
+      "end": "2026-10-07",
+      "priority": 0.612,
+      "start": "2026-10-05"
+     },
+     "T10": {
+      "critical": true,
+      "end": "2026-11-19",
+      "priority": 0.6295,
+      "start": "2026-11-17"
+     },
+     "T11": {
+      "critical": true,
+      "end": "2026-11-23",
+      "priority": 0.6195,
+      "start": "2026-11-20"
+     },
+     "T12": {
+      "critical": true,
+      "end": "2026-12-08",
+      "priority": 0.729,
+      "start": "2026-12-08"
+     },
+     "T13": {
+      "critical": true,
+      "end": "2026-12-24",
+      "priority": 0.719,
+      "start": "2026-12-09"
+     },
+     "T14": {
+      "critical": true,
+      "end": "2027-01-01",
+      "priority": 0.709,
+      "start": "2026-12-25"
+     },
+     "T15": {
+      "critical": true,
+      "end": "2027-01-12",
+      "priority": 0.699,
+      "start": "2027-01-04"
+     },
+     "T16": {
+      "critical": true,
+      "end": "2027-01-14",
+      "priority": 0.689,
+      "start": "2027-01-13"
+     },
+     "T17": {
+      "critical": true,
+      "end": "2027-01-21",
+      "priority": 0.679,
+      "start": "2027-01-15"
+     },
+     "T18": {
+      "critical": false,
+      "end": "2027-01-25",
+      "priority": 0.2471,
+      "start": "2027-01-22"
+     },
+     "T19": {
+      "critical": true,
+      "end": "2027-02-04",
+      "priority": 0.6869,
+      "start": "2027-01-28"
+     },
+     "T2": {
+      "critical": true,
+      "end": "2026-10-16",
+      "priority": 0.602,
+      "start": "2026-10-08"
+     },
+     "T20": {
+      "critical": false,
+      "end": "2027-01-27",
+      "priority": 0.2371,
+      "start": "2027-01-26"
+     },
+     "T21": {
+      "critical": false,
+      "end": "2027-02-05",
+      "priority": 0.2988,
+      "start": "2027-02-05"
+     },
+     "T3": {
+      "critical": true,
+      "end": "2026-10-20",
+      "priority": 0.582,
+      "start": "2026-10-19"
+     },
+     "T4": {
+      "critical": true,
+      "end": "2026-10-23",
+      "priority": 0.562,
+      "start": "2026-10-21"
+     },
+     "T5": {
+      "critical": true,
+      "end": "2026-10-28",
+      "priority": 0.552,
+      "start": "2026-10-26"
+     },
+     "T6": {
+      "critical": true,
+      "end": "2026-12-07",
+      "priority": 0.7171,
+      "start": "2026-11-24"
+     },
+     "T7": {
+      "critical": false,
+      "end": "2026-11-02",
+      "priority": 0.12,
+      "start": "2026-10-29"
+     },
+     "T8": {
+      "critical": false,
+      "end": "2026-11-10",
+      "priority": 0.1917,
+      "start": "2026-11-03"
+     },
+     "T9": {
+      "critical": true,
+      "end": "2026-11-16",
+      "priority": 0.6395,
+      "start": "2026-11-11"
+     }
+    },
+    "total_hours": 180.0
+   },
+   "project_id": "efc6cc44-de75-4922-8abf-0e52919cc982",
+   "rationale": "",
+   "status": "pending"
+  },
+  "POST /projects/sample": {
+   "blocked_dates": [],
+   "buffer_pct": 0.15,
+   "created_at": "2026-09-25T04:05:32.154659+00:00",
+   "deadline": "2027-02-22",
+   "description": "Compare MCTS and Utility AI for NPC decision-making in real-time strategy games.",
+   "extra_hours": {},
+   "feasibility": "feasible",
+   "has_plan": true,
+   "health": null,
+   "hours_by_weekday": [
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    3.0,
+    0.0
+   ],
+   "id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+   "mode": "academic",
+   "needs_reschedule": false,
+   "plan_accepted_at": "2026-09-25T04:05:32.208449+00:00",
+   "target": "",
+   "task_count": 25,
+   "template": "skripsi",
+   "title": "Sample: NPC decision-making for an RTS game"
+  },
+  "POST /suggestions/eea14161-53ee-40d6-a7a2-decb94b77c59/apply": {
+   "ai_used": false,
+   "created_at": "2026-09-25T04:05:32.847921+00:00",
+   "decided_at": "2026-09-25T04:05:32.880807+00:00",
+   "id": "eea14161-53ee-40d6-a7a2-decb94b77c59",
+   "kind": "plan",
+   "meta": {
+    "ai_error": "ai_unavailable",
+    "assumptions": [],
+    "questions": [],
+    "uncovered_requirements": []
+   },
+   "ops": [
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 0,
+      "title": "Literature review and problem statement"
+     },
+     "key": "M1",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 1,
+      "title": "Method design"
+     },
+     "key": "M2",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 2,
+      "title": "Instrument or prototype"
+     },
+     "key": "M3",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 3,
+      "title": "Draft of chapters 1 to 3"
+     },
+     "key": "M4",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 4,
+      "title": "Proposal seminar"
+     },
+     "key": "S1",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 5,
+      "title": "Experiment and evaluation"
+     },
+     "key": "M5",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 6,
+      "title": "Chapters 4 to 5 and revisions"
+     },
+     "key": "M6",
+     "op": "add"
+    },
+    {
+     "entity": "milestone",
+     "fields": {
+      "position": 7,
+      "title": "Thesis defense"
+     },
+     "key": "S2",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "All PDFs are in the library and indexed",
+      "depends_on": [],
+      "estimate_hours": 6.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 0,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Collect 20 to 25 relevant papers"
+     },
+     "key": "T1",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Every paper has a method and result summary",
+      "depends_on": [
+       "T1"
+      ],
+      "estimate_hours": 14.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 1,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Read and summarise papers into a literature matrix"
+     },
+     "key": "T2",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "Approved by the supervisor",
+      "depends_on": [
+       "T2"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M1",
+      "optional": false,
+      "position": 2,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Define the problem"
+     },
+     "key": "T3",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T3"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M2",
+      "optional": false,
+      "position": 3,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Choose the method and baselines"
+     },
+     "key": "T4",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T4"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M2",
+      "optional": false,
+      "position": 4,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Design the experiment or data collection"
+     },
+     "key": "T5",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T5"
+      ],
+      "estimate_hours": 20.0,
+      "milestone_key": "M3",
+      "optional": false,
+      "position": 5,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Prepare the research instrument or prototype"
+     },
+     "key": "T6",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T3"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 6,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 1 Introduction"
+     },
+     "key": "T7",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T2"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 7,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 2 Literature review"
+     },
+     "key": "T8",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T5"
+      ],
+      "estimate_hours": 8.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 8,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 3 Methodology"
+     },
+     "key": "T9",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T7",
+       "T8",
+       "T9"
+      ],
+      "estimate_hours": 6.0,
+      "milestone_key": "M4",
+      "optional": false,
+      "position": 9,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Revise chapters 1 to 3 after supervision"
+     },
+     "key": "T10",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T10"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "S1",
+      "optional": false,
+      "position": 10,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Prepare slides and rehearse the proposal seminar"
+     },
+     "key": "T11",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T11"
+      ],
+      "estimate_hours": 2.0,
+      "milestone_key": "S1",
+      "optional": false,
+      "position": 11,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Proposal seminar"
+     },
+     "key": "T12",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T12",
+       "T6"
+      ],
+      "estimate_hours": 24.0,
+      "milestone_key": "M5",
+      "optional": false,
+      "position": 12,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Run the study or experiment"
+     },
+     "key": "T13",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T13"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M5",
+      "optional": false,
+      "position": 13,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Process and analyse the data"
+     },
+     "key": "T14",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T14"
+      ],
+      "estimate_hours": 14.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 14,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 4 Results and discussion"
+     },
+     "key": "T15",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T15"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 15,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write chapter 5 Conclusions"
+     },
+     "key": "T16",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T16"
+      ],
+      "estimate_hours": 10.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 16,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Revise the full manuscript"
+     },
+     "key": "T17",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T17"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "M6",
+      "optional": false,
+      "position": 17,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Finish the abstract"
+     },
+     "key": "T18",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T17"
+      ],
+      "estimate_hours": 12.0,
+      "milestone_key": "M6",
+      "optional": true,
+      "position": 18,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Write a journal article"
+     },
+     "key": "T19",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T18"
+      ],
+      "estimate_hours": 4.0,
+      "milestone_key": "S2",
+      "optional": false,
+      "position": 19,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Prepare slides and rehearse the defense"
+     },
+     "key": "T20",
+     "op": "add"
+    },
+    {
+     "entity": "task",
+     "fields": {
+      "definition_of_done": "",
+      "depends_on": [
+       "T20"
+      ],
+      "estimate_hours": 2.0,
+      "milestone_key": "S2",
+      "optional": false,
+      "position": 20,
+      "requirement_refs": [],
+      "source": "template",
+      "title": "Thesis defense"
+     },
+     "key": "T21",
+     "op": "add"
+    }
+   ],
+   "preview": {
+    "available_hours": 212.0,
+    "buffer_deadline": "2027-02-08",
+    "critical_path": [
+     "T1",
+     "T2",
+     "T3",
+     "T4",
+     "T5",
+     "T6",
+     "T13",
+     "T14",
+     "T15",
+     "T16",
+     "T17",
+     "T19"
+    ],
+    "feasibility": "feasible",
+    "projected_finish": "2027-02-05",
+    "shortfall_hours": 0.0,
+    "tasks": {
+     "T1": {
+      "critical": true,
+      "end": "2026-10-07",
+      "priority": 0.612,
+      "start": "2026-10-05"
+     },
+     "T10": {
+      "critical": true,
+      "end": "2026-11-19",
+      "priority": 0.6295,
+      "start": "2026-11-17"
+     },
+     "T11": {
+      "critical": true,
+      "end": "2026-11-23",
+      "priority": 0.6195,
+      "start": "2026-11-20"
+     },
+     "T12": {
+      "critical": true,
+      "end": "2026-12-08",
+      "priority": 0.729,
+      "start": "2026-12-08"
+     },
+     "T13": {
+      "critical": true,
+      "end": "2026-12-24",
+      "priority": 0.719,
+      "start": "2026-12-09"
+     },
+     "T14": {
+      "critical": true,
+      "end": "2027-01-01",
+      "priority": 0.709,
+      "start": "2026-12-25"
+     },
+     "T15": {
+      "critical": true,
+      "end": "2027-01-12",
+      "priority": 0.699,
+      "start": "2027-01-04"
+     },
+     "T16": {
+      "critical": true,
+      "end": "2027-01-14",
+      "priority": 0.689,
+      "start": "2027-01-13"
+     },
+     "T17": {
+      "critical": true,
+      "end": "2027-01-21",
+      "priority": 0.679,
+      "start": "2027-01-15"
+     },
+     "T18": {
+      "critical": false,
+      "end": "2027-01-25",
+      "priority": 0.2471,
+      "start": "2027-01-22"
+     },
+     "T19": {
+      "critical": true,
+      "end": "2027-02-04",
+      "priority": 0.6869,
+      "start": "2027-01-28"
+     },
+     "T2": {
+      "critical": true,
+      "end": "2026-10-16",
+      "priority": 0.602,
+      "start": "2026-10-08"
+     },
+     "T20": {
+      "critical": false,
+      "end": "2027-01-27",
+      "priority": 0.2371,
+      "start": "2027-01-26"
+     },
+     "T21": {
+      "critical": false,
+      "end": "2027-02-05",
+      "priority": 0.2988,
+      "start": "2027-02-05"
+     },
+     "T3": {
+      "critical": true,
+      "end": "2026-10-20",
+      "priority": 0.582,
+      "start": "2026-10-19"
+     },
+     "T4": {
+      "critical": true,
+      "end": "2026-10-23",
+      "priority": 0.562,
+      "start": "2026-10-21"
+     },
+     "T5": {
+      "critical": true,
+      "end": "2026-10-28",
+      "priority": 0.552,
+      "start": "2026-10-26"
+     },
+     "T6": {
+      "critical": true,
+      "end": "2026-12-07",
+      "priority": 0.7171,
+      "start": "2026-11-24"
+     },
+     "T7": {
+      "critical": false,
+      "end": "2026-11-02",
+      "priority": 0.12,
+      "start": "2026-10-29"
+     },
+     "T8": {
+      "critical": false,
+      "end": "2026-11-10",
+      "priority": 0.1917,
+      "start": "2026-11-03"
+     },
+     "T9": {
+      "critical": true,
+      "end": "2026-11-16",
+      "priority": 0.6395,
+      "start": "2026-11-11"
+     }
+    },
+    "total_hours": 180.0
+   },
+   "project_id": "efc6cc44-de75-4922-8abf-0e52919cc982",
+   "rationale": "",
+   "status": "applied"
+  },
+  "POST /tasks/dd7d3e90-a57f-4eaf-a393-55a55dfa023c/start-help": {
+   "ai_error": "ai_unavailable",
+   "ai_used": false,
+   "first_step": "Set a 25-minute timer. Write three bullet points about what \"Read and summarise papers into a literature matrix\" must produce, then start on the smallest one.",
+   "subtasks": [
+    {
+     "estimate_hours": 1.5,
+     "title": "Define the result you need: Read and summarise papers into a literature matrix"
+    },
+    {
+     "estimate_hours": 3.5,
+     "title": "Gather the material and references you need: Read and summarise papers into a literature matrix"
+    },
+    {
+     "estimate_hours": 6.5,
+     "title": "Do the core of the work: Read and summarise papers into a literature matrix"
+    },
+    {
+     "estimate_hours": 3.0,
+     "title": "Review and tidy the result: Read and summarise papers into a literature matrix"
+    }
+   ]
+  },
+  "PUT /projects/efc6cc44-de75-4922-8abf-0e52919cc982/brief": {
+   "content": {
+    "constraints": [
+     "10 hours per week"
+    ],
+    "deliverables": [
+     "Proposal",
+     "Chapters 1 to 5",
+     "Proposal seminar and defense slides"
+    ],
+    "goal": "Thesis recommender system",
+    "important_dates": [],
+    "open_questions": [
+     {
+      "answer": "",
+      "question": "Which method or approach will you use?"
+     },
+     {
+      "answer": "",
+      "question": "Where will the data or research object come from?"
+     },
+     {
+      "answer": "",
+      "question": "When is the proposal seminar planned?"
+     }
+    ],
+    "requirements": []
+   },
+   "created_at": "2026-09-25T04:05:32.833179+00:00",
+   "source": "user",
+   "version": 1
+  }
+ },
+ "locale": "en",
+ "project_id": "5394e573-a3e5-4bae-9ca2-792f2f5e779f",
+ "today": "2026-10-05",
+ "wizard_project_id": "efc6cc44-de75-4922-8abf-0e52919cc982"
+}

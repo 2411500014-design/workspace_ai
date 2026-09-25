@@ -349,5 +349,20 @@
   "welcomePreviewProject": "Thesis: NPCs for an RTS game",
   "welcomePreviewMilestone": "Literature review",
   "welcomePreviewTask1": "Define the research problem",
-  "welcomePreviewTask2": "Read and summarise 10 key papers"
+  "welcomePreviewTask2": "Read and summarise 10 key papers",
+
+  "breakingDown": "Breaking the task into small steps…",
+  "discardChangesMessage": "Your changes are not saved. Leave this page?",
+  "discardChangesAction": "Leave",
+  "sampleProjectTry": "Try a sample project",
+  "sampleProjectHint": "The sample has documents, a brief, a plan and one proposal to try. Delete it any time from Project settings.",
+  "sampleProjectCreating": "Setting up the sample project…",
+  "sampleProjectReady": "The sample project is ready. Have a look around.",
+  "settingsPhoneTitle": "Open on your phone",
+  "settingsPhoneNoNetwork": "This computer is not on a Wi-Fi network. Connect it and your phone to the same Wi-Fi.",
+  "settingsPhoneStartServer": "The server only answers this computer. In VS Code, run \"Backend: API for phones on the same Wi-Fi\", then refresh this card.",
+  "settingsPhoneOpen": "Connect your phone to the same Wi-Fi, then open this address in its browser:",
+  "settingsPhoneBuildFirst": "Build the web app first (Terminal → Run Task → App: build web), then open this address in your phone's browser on the same Wi-Fi:",
+  "answerClosestHeader": "AI isn't active and no passage matches exactly. These come closest; check whether they answer your question:",
+  "answerNotFoundNoAi": "Without AI, the assistant looks for the same words in your documents. Try terms your documents use, such as \"references\" or a method's name."
 }

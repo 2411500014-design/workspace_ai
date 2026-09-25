@@ -175,7 +175,12 @@ class _NotificationsButton extends ConsumerWidget {
     return IconButton(
       tooltip: context.l10n.notificationsTitle,
       icon: Badge(isLabelVisible: unread > 0, label: Text('$unread'), child: const Icon(Icons.notifications_none)),
-      onPressed: () => showModalBottomSheet<void>(context: context, isScrollControlled: true, builder: (_) => const _NotificationsSheet()),
+      onPressed: () => showModalBottomSheet<void>(
+        context: context,
+        useRootNavigator: true,
+        isScrollControlled: true,
+        builder: (_) => const _NotificationsSheet(),
+      ),
     );
   }
 }
@@ -187,6 +192,8 @@ class _NotificationsSheet extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l = context.l10n;
     final items = ref.watch(notificationsProvider);
+    final projects = ref.watch(projectsProvider).value ?? const <Project>[];
+    String? projectTitle(String? id) => projects.where((p) => p.id == id).firstOrNull?.title;
     return SafeArea(
       child: ConstrainedBox(
         constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * 0.7),
@@ -206,15 +213,28 @@ class _NotificationsSheet extends ConsumerWidget {
                       ListTile(
                         leading: Icon(n.type == 'deadline' ? Icons.event_outlined : Icons.monitor_heart_outlined),
                         title: Text(_text(context, n), style: TextStyle(fontWeight: n.read ? FontWeight.w400 : FontWeight.w600)),
-                        subtitle: n.createdAt == null ? null : Text(formatDate(context, n.createdAt!.toLocal())),
+                        subtitle: Text(
+                          [?projectTitle(n.projectId), if (n.createdAt != null) formatDate(context, n.createdAt!.toLocal())].join(' · '),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                         onTap: () async {
-                          if (!n.read) {
-                            await ref.read(repositoryProvider).markNotificationRead(n.id);
-                            ref.invalidate(notificationsProvider);
+                          final container = containerOf(ref);
+                          final router = GoRouter.of(context);
+                          Navigator.pop(context);
+                          // Open the project the notice is about, even if another one is selected.
+                          final projectId = n.projectId;
+                          if (projectId != null && projects.any((p) => p.id == projectId)) {
+                            await container.read(settingsProvider.notifier).selectProject(projectId);
                           }
-                          if (context.mounted) {
-                            Navigator.pop(context);
-                            GoRouter.of(context).go('/project');
+                          router.go('/project');
+                          if (!n.read) {
+                            try {
+                              await container.read(repositoryProvider).markNotificationRead(n.id);
+                              container.invalidate(notificationsProvider);
+                            } catch (_) {
+                              // Stays unread; the next refresh tries again.
+                            }
                           }
                         },
                       ),

@@ -124,6 +124,27 @@ def process_document(document_id: str, user_id: str, gateway: Gateway) -> None:
         db.close()
 
 
+def process_now(db: Session, document: Document, user: Profile, project: Project, gateway: Gateway) -> None:
+    """Process a document inside the caller's session (used for the sample project)."""
+    _process(db, document, user, project, gateway)
+    document.status = "ready"
+    document.error_code = None
+    db.flush()
+
+
+def ready_documents(db: Session, project_id: str) -> list[dict]:
+    """Title, kind and full text of every processed document, in upload order."""
+    result = []
+    for doc in db.scalars(
+        select(Document).where(Document.project_id == project_id, Document.status == "ready").order_by(Document.created_at)
+    ):
+        text = "\n".join(
+            db.scalars(select(DocumentChunk.text).where(DocumentChunk.document_id == doc.id).order_by(DocumentChunk.position))
+        )
+        result.append({"title": doc.title, "kind": doc.kind, "text": text})
+    return result
+
+
 def _process(db: Session, document: Document, user: Profile, project: Project, gateway: Gateway) -> None:
     data = Path(document.storage_path).read_bytes()
     pages = extract_pages(data, document.mime)

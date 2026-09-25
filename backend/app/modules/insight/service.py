@@ -129,7 +129,8 @@ def today_view(db: Session, user: Profile, projects: list[Project], today: date)
         tasks = [t for t in _leaf_tasks(db, project.id) if t.status != "done" and not t.deferred]
         for task in tasks:
             brief = task_brief(task, project, titles, today)
-            if task.scheduled_start and task.scheduled_start <= today:
+            # A task the user has started stays in focus, even if the plan put it later.
+            if (task.scheduled_start and task.scheduled_start <= today) or task.status == "in_progress":
                 focus_candidates.append(brief)
             elif task.scheduled_start and task.scheduled_start <= today + timedelta(days=7):
                 upcoming.append(brief)

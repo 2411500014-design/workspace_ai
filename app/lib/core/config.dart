@@ -13,9 +13,14 @@ class AppConfig {
   static String get defaultApiBaseUrl {
     if (_defined.isNotEmpty) return _trim(_defined);
     if (kIsWeb) {
-      // When the backend serves the built web app, talk to the same origin.
       final base = Uri.base;
-      if (base.port == 8000) return base.origin;
+      if (base.scheme == 'http' || base.scheme == 'https') {
+        // A release build is served by the backend itself, on whatever address the
+        // browser used (localhost, or the laptop's LAN address from a phone).
+        if (kReleaseMode || base.port == 8000) return base.origin;
+        // `flutter run` serves the app on its own port; the API is on 8000 of the same host.
+        return '${base.scheme}://${base.host}:8000';
+      }
       return 'http://localhost:8000';
     }
     if (defaultTargetPlatform == TargetPlatform.android) return 'http://10.0.2.2:8000';

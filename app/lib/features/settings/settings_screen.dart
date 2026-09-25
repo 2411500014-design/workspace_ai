@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
@@ -61,6 +62,7 @@ class SettingsScreen extends ConsumerWidget {
             ),
           ),
           const _ServerCard(),
+          const _PhoneCard(),
           const _AiCard(),
           const _AccountCard(),
           SectionCard(
@@ -112,10 +114,8 @@ class _ServerCardState extends ConsumerState<_ServerCard> {
       return;
     }
     await ref.read(settingsProvider.notifier).setServerUrl(url);
+    if (!mounted) return;
     _url.text = ref.read(apiBaseUrlProvider);
-    ref.invalidate(projectsProvider);
-    ref.invalidate(meProvider);
-    ref.invalidate(todayProvider);
     await _test();
   }
 
@@ -124,6 +124,7 @@ class _ServerCardState extends ConsumerState<_ServerCard> {
     setState(() => _testing = true);
     try {
       await ref.read(repositoryProvider).serverHealth();
+      ref.invalidate(serverHealthProvider);
       if (mounted) showMessage(context, l.settingsServerOk);
     } catch (e) {
       if (mounted) showMessage(context, errorMessage(context, e, serverUrl: ref.read(apiBaseUrlProvider)));
@@ -162,15 +163,77 @@ class _ServerCardState extends ConsumerState<_ServerCard> {
               ),
               if (custom)
                 TextButton(
-                  onPressed: () async {
-                    await ref.read(settingsProvider.notifier).setServerUrl(null);
-                    _url.text = ref.read(apiBaseUrlProvider);
-                    ref.invalidate(projectsProvider);
-                    ref.invalidate(meProvider);
-                  },
+                  onPressed: _testing
+                      ? null
+                      : () async {
+                          await ref.read(settingsProvider.notifier).setServerUrl(null);
+                          if (!mounted) return;
+                          _url.text = ref.read(apiBaseUrlProvider);
+                          await _test();
+                        },
                   child: Text(l.settingsServerReset),
                 ),
             ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Local mode only: the address a phone on the same Wi-Fi opens, or what to do first.
+class _PhoneCard extends ConsumerWidget {
+  const _PhoneCard();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l = context.l10n;
+    final theme = Theme.of(context);
+    final health = ref.watch(serverHealthProvider).value;
+    if (health == null || health['auth_mode'] != 'local') return const SizedBox.shrink();
+    final urls = [for (final u in (health['lan_urls'] as List? ?? const [])) '$u'];
+    final listening = health['lan_listening'] == true;
+    final webApp = health['web_app'] == true;
+    return SectionCard(
+      title: l.settingsPhoneTitle,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (urls.isEmpty)
+            Text(l.settingsPhoneNoNetwork, style: theme.textTheme.bodyMedium)
+          else if (!listening)
+            Text(l.settingsPhoneStartServer, style: theme.textTheme.bodyMedium)
+          else ...[
+            Text(webApp ? l.settingsPhoneOpen : l.settingsPhoneBuildFirst, style: theme.textTheme.bodyMedium),
+            const SizedBox(height: Space.md),
+            for (final url in urls)
+              Padding(
+                padding: const EdgeInsets.only(bottom: Space.xs),
+                child: Row(
+                  children: [
+                    Icon(Icons.smartphone_outlined, size: 20, color: theme.colorScheme.primary),
+                    const SizedBox(width: Space.sm),
+                    Expanded(child: SelectableText(url, style: theme.textTheme.titleSmall)),
+                    IconButton(
+                      tooltip: l.copyText,
+                      icon: const Icon(Icons.copy_outlined, size: 18),
+                      onPressed: () async {
+                        await Clipboard.setData(ClipboardData(text: url));
+                        if (context.mounted) showMessage(context, l.copied);
+                      },
+                    ),
+                  ],
+                ),
+              ),
+          ],
+          const SizedBox(height: Space.sm),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TextButton.icon(
+              onPressed: () => ref.invalidate(serverHealthProvider),
+              icon: const Icon(Icons.refresh, size: 18),
+              label: Text(l.actionRefresh),
+            ),
           ),
         ],
       ),

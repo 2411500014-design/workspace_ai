@@ -87,45 +87,37 @@ class AppLocalizationsId extends AppLocalizations {
   String get errorDeadlinePast => 'Deadline harus setelah hari ini.';
 
   @override
-  String get errorDependencyCycle =>
-      'Dependensi ini membuat lingkaran: task-task akan saling menunggu.';
+  String get errorDependencyCycle => 'Dependensi ini membuat lingkaran: task-task akan saling menunggu.';
 
   @override
-  String get errorPlanExists =>
-      'Project ini sudah punya rencana. Gunakan \"Sesuaikan rencana\".';
+  String get errorPlanExists => 'Project ini sudah punya rencana. Gunakan \"Sesuaikan rencana\".';
 
   @override
   String get errorNoPlan => 'Buat rencana dulu.';
 
   @override
-  String get errorSuggestionDecided =>
-      'Usulan ini sudah diputuskan sebelumnya.';
+  String get errorSuggestionDecided => 'Usulan ini sudah diputuskan sebelumnya.';
 
   @override
-  String get errorUnsupportedFile =>
-      'Format belum didukung. Gunakan PDF, DOCX, TXT, atau MD.';
+  String get errorUnsupportedFile => 'Format belum didukung. Gunakan PDF, DOCX, TXT, atau MD.';
 
   @override
   String get errorFileTooLarge => 'File terlalu besar (maksimal 20 MB).';
 
   @override
-  String get errorTooManyPages =>
-      'Dokumen terlalu panjang (maksimal 300 halaman).';
+  String get errorTooManyPages => 'Dokumen terlalu panjang (maksimal 300 halaman).';
 
   @override
   String get errorDuplicate => 'Dokumen ini sudah ada di library.';
 
   @override
-  String get errorUnreadable =>
-      'File tidak bisa dibaca. Mungkin rusak atau terkunci kata sandi.';
+  String get errorUnreadable => 'File tidak bisa dibaca. Mungkin rusak atau terkunci kata sandi.';
 
   @override
-  String get errorNoText =>
-      'Tidak ada teks yang bisa dibaca. Kemungkinan hasil scan; dukungan dokumen scan menyusul.';
+  String get errorNoText => 'Tidak ada teks yang bisa dibaca. Kemungkinan hasil scan; dukungan dokumen scan menyusul.';
 
   @override
-  String get errorInvalidCapacity =>
-      'Isi 0 sampai 16 jam per hari, dengan minimal satu hari lebih dari 0.';
+  String get errorInvalidCapacity => 'Isi 0 sampai 16 jam per hari, dengan minimal satu hari lebih dari 0.';
 
   @override
   String errorQuota(String date) {
@@ -139,8 +131,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get errorEmptyFile => 'File kosong.';
 
   @override
-  String get aiNotActive =>
-      'AI belum aktif di server ini. Semua fitur tetap berjalan dengan versi dasar tanpa AI.';
+  String get aiNotActive => 'AI belum aktif di server ini. Semua fitur tetap berjalan dengan versi dasar tanpa AI.';
 
   @override
   String get aiLabel => 'Usulan AI';
@@ -164,8 +155,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get aiErrorFailed => 'AI sedang bermasalah, jadi dipakai versi dasar.';
 
   @override
-  String get aiErrorInvalidPlan =>
-      'Rencana dari AI tidak lolos pemeriksaan, jadi dipakai template.';
+  String get aiErrorInvalidPlan => 'Rencana dari AI tidak lolos pemeriksaan, jadi dipakai template.';
 
   @override
   String get healthOnTrack => 'Sesuai jadwal';
@@ -180,16 +170,11 @@ class AppLocalizationsId extends AppLocalizations {
   String get healthNoPlan => 'Belum ada rencana';
 
   @override
-  String get healthReasonInfeasible =>
-      'Jam yang tersedia tidak cukup sampai deadline.';
+  String get healthReasonInfeasible => 'Jam yang tersedia tidak cukup sampai deadline.';
 
   @override
   String healthReasonCriticalLate(int days) {
-    String _temp0 = intl.Intl.pluralLogic(
-      days,
-      locale: localeName,
-      other: 'Task di jalur kritis terlambat $days hari.',
-    );
+    String _temp0 = intl.Intl.pluralLogic(days, locale: localeName, other: 'Task di jalur kritis terlambat $days hari.');
     return '$_temp0';
   }
 
@@ -230,12 +215,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String daysLeft(int days) {
-    String _temp0 = intl.Intl.pluralLogic(
-      days,
-      locale: localeName,
-      other: '$days hari lagi',
-      zero: 'Deadline hari ini',
-    );
+    String _temp0 = intl.Intl.pluralLogic(days, locale: localeName, other: '$days hari lagi', zero: 'Deadline hari ini');
     return '$_temp0';
   }
 
@@ -257,11 +237,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String todayMore(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '+$count task lain juga dijadwalkan hari ini',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '+$count task lain juga dijadwalkan hari ini');
     return '$_temp0';
   }
 
@@ -288,11 +264,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String lateBadge(int days) {
-    String _temp0 = intl.Intl.pluralLogic(
-      days,
-      locale: localeName,
-      other: 'Terlambat $days hari',
-    );
+    String _temp0 = intl.Intl.pluralLogic(days, locale: localeName, other: 'Terlambat $days hari');
     return '$_temp0';
   }
 
@@ -301,11 +273,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String pendingSuggestions(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count usulan menunggu keputusanmu',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count usulan menunggu keputusanmu');
     return '$_temp0';
   }
 
@@ -420,16 +388,14 @@ class AppLocalizationsId extends AppLocalizations {
   String get taskPostpone => 'Tunda';
 
   @override
-  String get taskPostponed =>
-      'Task ditunda. Jadwal akan disesuaikan saat kamu menerima penyesuaian.';
+  String get taskPostponed => 'Task ditunda. Jadwal akan disesuaikan saat kamu menerima penyesuaian.';
 
   @override
   String taskPostponedTwice(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other:
-          'Task ini sudah ditunda $count kali. Coba pecah jadi langkah kecil 25 menit.',
+      other: 'Task ini sudah ditunda $count kali. Coba pecah jadi langkah kecil 25 menit.',
     );
     return '$_temp0';
   }
@@ -477,11 +443,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String suggestionAcceptSelected(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Terima $count yang dipilih',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: 'Terima $count yang dipilih');
     return '$_temp0';
   }
 
@@ -495,8 +457,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get suggestionRejected => 'Usulan ditolak. Rencana tidak berubah.';
 
   @override
-  String get suggestionNothingChanges =>
-      'Tidak ada yang berubah sebelum kamu menerimanya.';
+  String get suggestionNothingChanges => 'Tidak ada yang berubah sebelum kamu menerimanya.';
 
   @override
   String get suggestionPick => 'Pilih perubahan yang mau diterima';
@@ -588,8 +549,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get optionReschedule => 'Susun ulang dari hari ini';
 
   @override
-  String get optionRescheduleDesc =>
-      'Task yang belum selesai dijadwalkan ulang mulai hari ini, yang paling mendesak lebih dulu.';
+  String get optionRescheduleDesc => 'Task yang belum selesai dijadwalkan ulang mulai hari ini, yang paling mendesak lebih dulu.';
 
   @override
   String get optionAddCapacity => 'Tambah jam kerja';
@@ -642,11 +602,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String docPages(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count halaman',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count halaman');
     return '$_temp0';
   }
 
@@ -678,11 +634,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String docUploaded(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count dokumen diunggah dan sedang diproses.',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count dokumen diunggah dan sedang diproses.');
     return '$_temp0';
   }
 
@@ -693,19 +645,16 @@ class AppLocalizationsId extends AppLocalizations {
   String get assistantHint => 'Tanya tentang project atau dokumenmu…';
 
   @override
-  String get assistantEmpty =>
-      'Tanya apa saja tentang project ini. Jawaban merujuk dokumenmu beserta halamannya.';
+  String get assistantEmpty => 'Tanya apa saja tentang project ini. Jawaban merujuk dokumenmu beserta halamannya.';
 
   @override
   String get assistantSuggestion1 => 'Apa saja syarat dari dosen?';
 
   @override
-  String get assistantSuggestion2 =>
-      'Metode apa yang paling sering dipakai di jurnal saya?';
+  String get assistantSuggestion2 => 'Metode apa yang paling sering dipakai di jurnal saya?';
 
   @override
-  String get assistantSuggestion3 =>
-      'Apa yang sebaiknya saya kerjakan minggu ini?';
+  String get assistantSuggestion3 => 'Apa yang sebaiknya saya kerjakan minggu ini?';
 
   @override
   String get assistantThinking => 'Mencari di dokumen…';
@@ -714,16 +663,13 @@ class AppLocalizationsId extends AppLocalizations {
   String get assistantSend => 'Kirim';
 
   @override
-  String get answerExtractiveHeader =>
-      'AI belum aktif. Ini bagian dokumen yang paling relevan:';
+  String get answerExtractiveHeader => 'AI belum aktif. Ini bagian dokumen yang paling relevan:';
 
   @override
-  String get answerNotFound =>
-      'Informasi ini tidak ditemukan di dokumen project.';
+  String get answerNotFound => 'Informasi ini tidak ditemukan di dokumen project.';
 
   @override
-  String get answerGeneral =>
-      'Jawaban dari pengetahuan umum, bukan dari dokumen project.';
+  String get answerGeneral => 'Jawaban dari pengetahuan umum, bukan dari dokumen project.';
 
   @override
   String citationPages(String start, String end) {
@@ -795,8 +741,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get deleteProject => 'Hapus project';
 
   @override
-  String get deleteProjectConfirm =>
-      'Project ini dipindahkan ke tempat sampah dan terhapus permanen setelah 30 hari.';
+  String get deleteProjectConfirm => 'Project ini dipindahkan ke tempat sampah dan terhapus permanen setelah 30 hari.';
 
   @override
   String get pendingTitle => 'Usulan menunggu';
@@ -840,8 +785,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get briefSaved => 'Brief disimpan sebagai versi baru.';
 
   @override
-  String get briefExtracting =>
-      'Menyusun brief dari dokumen… biasanya 30–60 detik.';
+  String get briefExtracting => 'Menyusun brief dari dokumen… biasanya 30–60 detik.';
 
   @override
   String get briefExtractAgain => 'Susun ulang dari dokumen';
@@ -863,15 +807,13 @@ class AppLocalizationsId extends AppLocalizations {
   String get supervisionNotes => 'Catatan bimbingan';
 
   @override
-  String get supervisionNotesHint =>
-      'Satu revisi per baris, misalnya: - Tambah 5 referensi terbaru di Bab 2';
+  String get supervisionNotesHint => 'Satu revisi per baris, misalnya: - Tambah 5 referensi terbaru di Bab 2';
 
   @override
   String get supervisionSave => 'Simpan dan buat usulan';
 
   @override
-  String get supervisionNoProposal =>
-      'Catatan disimpan. Tidak ada revisi yang terdeteksi.';
+  String get supervisionNoProposal => 'Catatan disimpan. Tidak ada revisi yang terdeteksi.';
 
   @override
   String get supervisionHistory => 'Riwayat bimbingan';
@@ -884,11 +826,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String reviewDone(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count task selesai minggu ini',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count task selesai minggu ini');
     return '$_temp0';
   }
 
@@ -899,12 +837,10 @@ class AppLocalizationsId extends AppLocalizations {
   String get reviewNextFocus => 'Fokus minggu depan';
 
   @override
-  String get reviewRecommendReplan =>
-      'Rencana perlu disesuaikan agar tetap realistis.';
+  String get reviewRecommendReplan => 'Rencana perlu disesuaikan agar tetap realistis.';
 
   @override
-  String get reviewNothingDone =>
-      'Belum ada task selesai minggu ini. Tidak apa-apa; mulai lagi dari satu langkah kecil.';
+  String get reviewNothingDone => 'Belum ada task selesai minggu ini. Tidak apa-apa; mulai lagi dari satu langkah kecil.';
 
   @override
   String get reviewHealthNow => 'Status sekarang';
@@ -949,8 +885,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get settingsAiActive => 'Aktif';
 
   @override
-  String get settingsAiInactive =>
-      'Belum aktif. Server berjalan tanpa API key.';
+  String get settingsAiInactive => 'Belum aktif. Server berjalan tanpa API key.';
 
   @override
   String settingsQuota(String used, String limit) {
@@ -978,8 +913,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get settingsDeleteAccount => 'Hapus akun';
 
   @override
-  String get settingsDeleteConfirm =>
-      'Semua project, dokumen, dan catatan akan dihapus permanen. Tindakan ini tidak bisa dibatalkan.';
+  String get settingsDeleteConfirm => 'Semua project, dokumen, dan catatan akan dihapus permanen. Tindakan ini tidak bisa dibatalkan.';
 
   @override
   String get settingsDeleteButton => 'Hapus permanen';
@@ -997,12 +931,10 @@ class AppLocalizationsId extends AppLocalizations {
       'Dokumen dan catatanmu tersimpan di server Purnara. Saat AI aktif, bagian yang relevan dikirim ke penyedia AI (Claude) untuk diproses dan tidak dipakai untuk melatih model.';
 
   @override
-  String get settingsFontLicense =>
-      'Font Plus Jakarta Sans, lisensi SIL Open Font License 1.1.';
+  String get settingsFontLicense => 'Font Plus Jakarta Sans, lisensi SIL Open Font License 1.1.';
 
   @override
-  String get onboardingWelcomeTitle =>
-      'Selesaikan project besarmu, satu langkah sehari.';
+  String get onboardingWelcomeTitle => 'Selesaikan project besarmu, satu langkah sehari.';
 
   @override
   String get onboardingWelcomeBody =>
@@ -1064,12 +996,10 @@ class AppLocalizationsId extends AppLocalizations {
   String get pickDate => 'Pilih tanggal';
 
   @override
-  String get documentsStepHint =>
-      'Unggah proposal dan instruksi dosen. Boleh dilewati dan ditambah nanti.';
+  String get documentsStepHint => 'Unggah proposal dan instruksi dosen. Boleh dilewati dan ditambah nanti.';
 
   @override
-  String get capacityIntro =>
-      'Berapa jam per hari yang realistis untuk project ini?';
+  String get capacityIntro => 'Berapa jam per hari yang realistis untuk project ini?';
 
   @override
   String capacityWeekly(String hours) {
@@ -1117,11 +1047,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String notifDeadline(int days) {
-    String _temp0 = intl.Intl.pluralLogic(
-      days,
-      locale: localeName,
-      other: 'Deadline tinggal $days hari lagi.',
-    );
+    String _temp0 = intl.Intl.pluralLogic(days, locale: localeName, other: 'Deadline tinggal $days hari lagi.');
     return '$_temp0';
   }
 
@@ -1158,11 +1084,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String opsCount(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count perubahan',
-    );
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count perubahan');
     return '$_temp0';
   }
 
@@ -1178,8 +1100,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get chartActual => 'Tercapai';
 
   @override
-  String get briefDraftUnsaved =>
-      'Draf baru dari dokumen. Periksa, lalu simpan.';
+  String get briefDraftUnsaved => 'Draf baru dari dokumen. Periksa, lalu simpan.';
 
   @override
   String get copyText => 'Salin';
@@ -1191,8 +1112,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get settingsLicenses => 'Lisensi open source';
 
   @override
-  String get settingsServerInvalid =>
-      'Alamat tidak valid. Contoh: http://localhost:8000';
+  String get settingsServerInvalid => 'Alamat tidak valid. Contoh: http://localhost:8000';
 
   @override
   String get settingsServerReset => 'Pakai alamat bawaan';
@@ -1208,4 +1128,51 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get welcomePreviewTask2 => 'Baca dan rangkum 10 jurnal utama';
+
+  @override
+  String get breakingDown => 'Memecah task menjadi langkah kecil…';
+
+  @override
+  String get discardChangesMessage => 'Perubahan belum disimpan. Tinggalkan halaman ini?';
+
+  @override
+  String get discardChangesAction => 'Tinggalkan';
+
+  @override
+  String get sampleProjectTry => 'Coba dengan contoh project';
+
+  @override
+  String get sampleProjectHint =>
+      'Contoh berisi dokumen, brief, rencana, dan satu usulan untuk dicoba. Bisa dihapus kapan saja dari Pengaturan Project.';
+
+  @override
+  String get sampleProjectCreating => 'Menyiapkan contoh project…';
+
+  @override
+  String get sampleProjectReady => 'Contoh project siap. Silakan dicoba.';
+
+  @override
+  String get settingsPhoneTitle => 'Buka di HP';
+
+  @override
+  String get settingsPhoneNoNetwork => 'Laptop ini belum terhubung ke Wi-Fi. Sambungkan laptop dan HP ke Wi-Fi yang sama.';
+
+  @override
+  String get settingsPhoneStartServer =>
+      'Server hanya bisa dibuka dari laptop ini. Di VS Code, jalankan \"Backend: API for phones on the same Wi-Fi\", lalu muat ulang kartu ini.';
+
+  @override
+  String get settingsPhoneOpen => 'Sambungkan HP ke Wi-Fi yang sama, lalu buka alamat ini di browser HP:';
+
+  @override
+  String get settingsPhoneBuildFirst =>
+      'Build aplikasi web dulu (Terminal → Run Task → App: build web), lalu buka alamat ini di browser HP pada Wi-Fi yang sama:';
+
+  @override
+  String get answerClosestHeader =>
+      'AI belum aktif dan tidak ada bagian yang cocok persis. Ini yang paling mendekati, periksa apakah menjawab pertanyaanmu:';
+
+  @override
+  String get answerNotFoundNoAi =>
+      'Tanpa AI, asisten mencari kata yang sama di dokumen. Coba kata kunci yang dipakai dokumenmu, misalnya \"referensi\" atau nama metode.';
 }

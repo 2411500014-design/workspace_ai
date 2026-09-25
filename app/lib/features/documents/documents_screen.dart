@@ -9,6 +9,7 @@ import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
 import '../../data/models.dart';
 import '../../data/providers.dart';
+import '../../data/repository.dart';
 
 class DocumentsScreen extends ConsumerWidget {
   const DocumentsScreen({super.key});
@@ -40,9 +41,21 @@ class DocumentsPanel extends ConsumerStatefulWidget {
 class _DocumentsPanelState extends ConsumerState<DocumentsPanel> {
   Timer? _poll;
   bool _uploading = false;
+  ProviderSubscription<AsyncValue<List<DocumentItem>>>? _subscription;
+
+  @override
+  void initState() {
+    super.initState();
+    // Watch the list from its current value on, so documents still processing when the
+    // screen opens are followed too.
+    _subscription = ref.listenManual(documentsProvider(widget.projectId), (_, next) {
+      if (next.hasValue) _schedulePoll(next.requireValue);
+    }, fireImmediately: true);
+  }
 
   @override
   void dispose() {
+    _subscription?.close();
     _poll?.cancel();
     super.dispose();
   }
@@ -65,7 +78,8 @@ class _DocumentsPanelState extends ConsumerState<DocumentsPanel> {
     final files = await FilePicker.pickFiles(type: FileType.custom, allowedExtensions: const ['pdf', 'docx', 'txt', 'md']);
     if (files.isEmpty || !mounted) return;
     setState(() => _uploading = true);
-    final repo = ref.read(repositoryProvider);
+    final container = containerOf(ref);
+    final repo = container.read(repositoryProvider);
     var uploaded = 0;
     final errors = <String>[];
     for (final file in files) {
@@ -76,9 +90,9 @@ class _DocumentsPanelState extends ConsumerState<DocumentsPanel> {
         if (mounted) errors.add('${file.name}: ${errorMessage(context, e)}');
       }
     }
+    container.invalidate(documentsProvider(widget.projectId));
     if (!mounted) return;
     setState(() => _uploading = false);
-    ref.invalidate(documentsProvider(widget.projectId));
     showMessage(context, [if (uploaded > 0) l.docUploaded(uploaded), ...errors].join('\n'));
   }
 
@@ -86,9 +100,6 @@ class _DocumentsPanelState extends ConsumerState<DocumentsPanel> {
   Widget build(BuildContext context) {
     final l = context.l10n;
     final docs = ref.watch(documentsProvider(widget.projectId));
-    ref.listen(documentsProvider(widget.projectId), (_, next) {
-      if (next.hasValue) _schedulePoll(next.requireValue);
-    });
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -133,7 +144,17 @@ class _DocumentCard extends ConsumerWidget {
     final l = context.l10n;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final repo = ref.read(repositoryProvider);
+    Future<void> act(Future<void> Function(PurnaraRepository repo) action) async {
+      final container = containerOf(ref);
+      try {
+        await action(container.read(repositoryProvider));
+      } catch (e) {
+        if (context.mounted) showMessage(context, errorMessage(context, e));
+      }
+      container.invalidate(documentsProvider(projectId));
+      container.invalidate(suggestionsProvider(projectId));
+    }
+
     final (statusText, statusIcon, fg, bg) = switch (document.status) {
       'ready' => (l.docStatusReady, Icons.check_circle_outline, context.statusSuccess.$1, context.statusSuccess.$2),
       'failed' => (l.docStatusFailed, Icons.error_outline, scheme.onErrorContainer, scheme.errorContainer),
@@ -179,8 +200,7 @@ class _DocumentCard extends ConsumerWidget {
                         destructive: true,
                       );
                       if (!ok) return;
-                      await repo.deleteDocument(document.id);
-                      ref.invalidate(documentsProvider(projectId));
+                      await act((repo) => repo.deleteDocument(document.id));
                     },
                   ),
                 ],
@@ -193,10 +213,7 @@ class _DocumentCard extends ConsumerWidget {
                   StatusPill(label: statusText, icon: statusIcon, foreground: fg, background: bg),
                   if (document.status == 'failed')
                     TextButton.icon(
-                      onPressed: () async {
-                        await repo.retryDocument(document.id);
-                        ref.invalidate(documentsProvider(projectId));
-                      },
+                      onPressed: () => act((repo) => repo.retryDocument(document.id)),
                       icon: const Icon(Icons.refresh),
                       label: Text(l.actionRetry),
                     ),
