@@ -1,0 +1,198 @@
+# Academic Mode preset (master plan §5). Versioned in the repo; moves to the database
+# once users can create their own templates. Every user-facing text has id and en.
+id: academic
+version: 1
+name: {id: Akademik, en: Academic}
+persona:
+  id: >-
+    Kamu adalah pembimbing akademik yang sabar dan jujur. Kamu menjelaskan, menyusun
+    struktur, dan memberi umpan balik, tetapi tidak menulis bab jadi untuk dikumpulkan.
+  en: >-
+    You are a patient, honest academic supervisor. You explain, structure and give
+    feedback, but you never write finished chapters for submission.
+terms:
+  chapter: {id: Bab, en: Chapter}
+  supervision: {id: Bimbingan, en: Supervision}
+  supervisor: {id: Dosen pembimbing, en: Supervisor}
+  proposal_seminar: {id: Seminar proposal, en: Proposal seminar}
+  defense: {id: Sidang, en: Thesis defense}
+features: [supervision_log, literature, citations]
+
+templates:
+  - id: skripsi
+    name: {id: Skripsi, en: Undergraduate thesis}
+    description:
+      id: Dari studi literatur sampai sidang, dengan seminar proposal di tengah jalan.
+      en: From literature review to the final defense, with a proposal seminar along the way.
+    deliverables:
+      id: [Proposal, Naskah Bab 1 sampai 5, Slide seminar proposal dan sidang]
+      en: [Proposal, Chapters 1 to 5, Proposal seminar and defense slides]
+    open_questions:
+      id:
+        - Metode atau pendekatan apa yang akan dipakai?
+        - Data atau objek penelitiannya dari mana?
+        - Kapan target seminar proposal?
+      en:
+        - Which method or approach will you use?
+        - Where will the data or research object come from?
+        - When is the proposal seminar planned?
+    milestones:
+      - key: M1
+        title: {id: Studi literatur dan rumusan masalah, en: Literature review and problem statement}
+        tasks:
+          - {key: T1, hours: 6, title: {id: Kumpulkan 20 sampai 25 jurnal yang relevan, en: Collect 20 to 25 relevant papers}, done: {id: Semua PDF masuk library dan terindeks, en: All PDFs are in the library and indexed}}
+          - {key: T2, hours: 14, after: [T1], title: {id: Baca dan rangkum jurnal ke matriks literatur, en: Read and summarise papers into a literature matrix}, done: {id: Setiap jurnal punya ringkasan metode dan hasil, en: Every paper has a method and result summary}}
+          - {key: T3, hours: 4, after: [T2], title: {id: Rumuskan masalah, tujuan, dan batasan, en: Define the problem, aims and scope}, done: {id: Rumusan disetujui dosen, en: Approved by the supervisor}}
+      - key: M2
+        title: {id: Desain metode, en: Method design}
+        tasks:
+          - {key: T4, hours: 6, after: [T3], title: {id: Tentukan metode dan pembanding, en: Choose the method and baselines}}
+          - {key: T5, hours: 6, after: [T4], title: {id: Rancang eksperimen atau pengumpulan data, en: Design the experiment or data collection}}
+      - key: M3
+        title: {id: Instrumen atau prototipe, en: Instrument or prototype}
+        tasks:
+          - {key: T6, hours: 20, after: [T5], title: {id: Siapkan instrumen penelitian atau prototipe, en: Prepare the research instrument or prototype}}
+      - key: M4
+        title: {id: Draf Bab 1 sampai 3, en: Draft of chapters 1 to 3}
+        tasks:
+          - {key: T7, hours: 6, after: [T3], title: {id: Tulis Bab 1 Pendahuluan, en: Write chapter 1 Introduction}}
+          - {key: T8, hours: 12, after: [T2], title: {id: Tulis Bab 2 Tinjauan Pustaka, en: Write chapter 2 Literature review}}
+          - {key: T9, hours: 8, after: [T5], title: {id: Tulis Bab 3 Metodologi, en: Write chapter 3 Methodology}}
+          - {key: T10, hours: 6, after: [T7, T8, T9], title: {id: Revisi Bab 1 sampai 3 dari bimbingan, en: Revise chapters 1 to 3 after supervision}}
+      - key: S1
+        title: {id: Seminar proposal, en: Proposal seminar}
+        tasks:
+          - {key: T11, hours: 4, after: [T10], title: {id: Siapkan slide dan latihan seminar proposal, en: Prepare slides and rehearse the proposal seminar}}
+          - {key: T12, hours: 2, after: [T11], title: {id: Seminar proposal, en: Proposal seminar}}
+      - key: M5
+        title: {id: Eksperimen dan evaluasi, en: Experiment and evaluation}
+        tasks:
+          - {key: T13, hours: 24, after: [T12, T6], title: {id: Jalankan penelitian atau eksperimen, en: Run the study or experiment}}
+          - {key: T14, hours: 12, after: [T13], title: {id: Olah dan analisis data, en: Process and analyse the data}}
+      - key: M6
+        title: {id: Bab 4 sampai 5 dan revisi, en: Chapters 4 to 5 and revisions}
+        tasks:
+          - {key: T15, hours: 14, after: [T14], title: {id: Tulis Bab 4 Hasil dan Pembahasan, en: Write chapter 4 Results and discussion}}
+          - {key: T16, hours: 4, after: [T15], title: {id: Tulis Bab 5 Kesimpulan dan Saran, en: Write chapter 5 Conclusions}}
+          - {key: T17, hours: 10, after: [T16], title: {id: Revisi naskah lengkap, en: Revise the full manuscript}}
+          - {key: T18, hours: 4, after: [T17], title: {id: Rapikan abstrak, daftar pustaka, dan format sesuai panduan, en: Finish the abstract, references and formatting}}
+          - {key: T19, hours: 12, after: [T17], optional: true, title: {id: Tulis artikel jurnal, en: Write a journal article}}
+      - key: S2
+        title: {id: Sidang, en: Thesis defense}
+        tasks:
+          - {key: T20, hours: 4, after: [T18], title: {id: Siapkan slide dan latihan sidang, en: Prepare slides and rehearse the defense}}
+          - {key: T21, hours: 2, after: [T20], title: {id: Sidang, en: Thesis defense}}
+
+  - id: tugas_akhir
+    name: {id: Tugas akhir, en: Final project}
+    description:
+      id: Proyek akhir yang membangun sistem atau produk, dari analisis kebutuhan sampai sidang.
+      en: A final project that builds a system or product, from requirements to the defense.
+    deliverables:
+      id: [Laporan tugas akhir, Sistem atau produk yang berjalan, Slide sidang]
+      en: [Final project report, A working system or product, Defense slides]
+    open_questions:
+      id:
+        - Teknologi apa yang akan dipakai?
+        - Siapa pengguna sistemnya?
+      en:
+        - Which technology will you use?
+        - Who are the users of the system?
+    milestones:
+      - key: M1
+        title: {id: Analisis kebutuhan, en: Requirements analysis}
+        tasks:
+          - {key: T1, hours: 6, title: {id: Kumpulkan referensi dan sistem sejenis, en: Collect references and similar systems}}
+          - {key: T2, hours: 6, after: [T1], title: {id: Susun daftar kebutuhan, en: Write the requirements list}}
+      - key: M2
+        title: {id: Perancangan, en: Design}
+        tasks:
+          - {key: T3, hours: 10, after: [T2], title: {id: Rancang arsitektur dan basis data, en: Design the architecture and database}}
+          - {key: T4, hours: 6, after: [T3], title: {id: Rancang antarmuka, en: Design the interface}}
+      - key: M3
+        title: {id: Implementasi, en: Implementation}
+        tasks:
+          - {key: T5, hours: 30, after: [T3], title: {id: Bangun fitur inti, en: Build the core features}}
+          - {key: T6, hours: 12, after: [T4, T5], title: {id: Bangun antarmuka, en: Build the interface}}
+      - key: M4
+        title: {id: Pengujian, en: Testing}
+        tasks:
+          - {key: T7, hours: 10, after: [T6], title: {id: Uji fungsional dan perbaiki bug, en: Functional testing and bug fixes}}
+          - {key: T8, hours: 6, after: [T7], title: {id: Uji dengan pengguna, en: User testing}}
+      - key: M5
+        title: {id: Laporan, en: Report}
+        tasks:
+          - {key: T9, hours: 16, after: [T2], title: {id: Tulis laporan bab awal, en: Write the opening chapters}}
+          - {key: T10, hours: 12, after: [T8, T9], title: {id: Tulis hasil dan kesimpulan, en: Write results and conclusions}}
+          - {key: T11, hours: 6, after: [T10], title: {id: Revisi laporan, en: Revise the report}}
+      - key: S1
+        title: {id: Sidang, en: Defense}
+        tasks:
+          - {key: T12, hours: 4, after: [T11], title: {id: Siapkan demo dan slide sidang, en: Prepare the demo and defense slides}}
+          - {key: T13, hours: 2, after: [T12], title: {id: Sidang, en: Defense}}
+
+  - id: tugas_besar
+    name: {id: Tugas besar, en: Group project}
+    description:
+      id: Tugas besar mata kuliah, biasanya 6 sampai 10 minggu.
+      en: A course group project, usually 6 to 10 weeks.
+    deliverables:
+      id: [Hasil proyek, Laporan, Presentasi]
+      en: [Project result, Report, Presentation]
+    open_questions:
+      id:
+        - Apa rubrik penilaiannya?
+        - Bagaimana pembagian peran anggota?
+      en:
+        - What is the grading rubric?
+        - How are roles divided in the team?
+    milestones:
+      - key: M1
+        title: {id: Persiapan, en: Preparation}
+        tasks:
+          - {key: T1, hours: 3, title: {id: Pahami instruksi dan rubrik, en: Understand the brief and rubric}}
+          - {key: T2, hours: 2, after: [T1], title: {id: Bagi peran dan jadwal kelompok, en: Split roles and set the team schedule}}
+      - key: M2
+        title: {id: Pengerjaan, en: Work}
+        tasks:
+          - {key: T3, hours: 6, after: [T2], title: {id: Riset dan kumpulkan bahan, en: Research and gather material}}
+          - {key: T4, hours: 16, after: [T3], title: {id: Kerjakan bagian utama, en: Do the main work}}
+          - {key: T5, hours: 4, after: [T4], title: {id: Gabungkan dan periksa hasil, en: Merge and review the work}}
+      - key: M3
+        title: {id: Laporan dan presentasi, en: Report and presentation}
+        tasks:
+          - {key: T6, hours: 6, after: [T5], title: {id: Tulis laporan, en: Write the report}}
+          - {key: T7, hours: 3, after: [T5], title: {id: Siapkan presentasi, en: Prepare the presentation}}
+          - {key: T8, hours: 2, after: [T6, T7], title: {id: Latihan dan kumpulkan, en: Rehearse and submit}}
+
+  - id: makalah
+    name: {id: Makalah atau artikel, en: Paper or article}
+    description:
+      id: Makalah, artikel jurnal, atau naskah lomba.
+      en: A paper, journal article or competition entry.
+    deliverables:
+      id: [Naskah akhir]
+      en: [Final manuscript]
+    open_questions:
+      id:
+        - Ke mana naskah akan dikirim?
+        - Format sitasi apa yang diminta?
+      en:
+        - Where will the manuscript be submitted?
+        - Which citation style is required?
+    milestones:
+      - key: M1
+        title: {id: Topik dan literatur, en: Topic and literature}
+        tasks:
+          - {key: T1, hours: 3, title: {id: Tentukan topik dan pertanyaan, en: Choose the topic and question}}
+          - {key: T2, hours: 8, after: [T1], title: {id: Kumpulkan dan baca literatur, en: Collect and read the literature}}
+      - key: M2
+        title: {id: Penulisan, en: Writing}
+        tasks:
+          - {key: T3, hours: 3, after: [T2], title: {id: Susun kerangka, en: Write the outline}}
+          - {key: T4, hours: 12, after: [T3], title: {id: Tulis draf pertama, en: Write the first draft}}
+          - {key: T5, hours: 5, after: [T4], title: {id: Revisi dan rapikan sitasi, en: Revise and tidy the citations}}
+      - key: M3
+        title: {id: Pengiriman, en: Submission}
+        tasks:
+          - {key: T6, hours: 2, after: [T5], title: {id: Periksa format dan kirim, en: Check the format and submit}}
