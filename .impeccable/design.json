@@ -1,0 +1,843 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-25T01:31:34+00:00",
+  "title": "Design System: Purnara",
+  "extensions": {
+    "colorMeta": {
+      "supervisor-teal": {
+        "role": "primary",
+        "displayName": "Supervisor Teal",
+        "canonical": "#0F766E",
+        "oklch": "oklch(51.1% 0.086 186.4)",
+        "tonalRamp": [
+          "#000F0D",
+          "#032C28",
+          "#0C4C47",
+          "#017169",
+          "#39938A",
+          "#5FB7AD",
+          "#84DCD2",
+          "#BBFEF5"
+        ]
+      },
+      "teal-container": {
+        "role": "primary",
+        "displayName": "Teal Container",
+        "canonical": "#D7F1EC",
+        "oklch": "oklch(93.8% 0.028 182.9)",
+        "tonalRamp": [
+          "#000F0C",
+          "#142A26",
+          "#314743",
+          "#506763",
+          "#708884",
+          "#93ABA6",
+          "#B6CFCB",
+          "#DBF5F0"
+        ]
+      },
+      "on-teal-container": {
+        "role": "primary",
+        "displayName": "On Teal Container",
+        "canonical": "#0B4A45",
+        "oklch": "oklch(37.1% 0.060 186.7)",
+        "tonalRamp": [
+          "#000F0D",
+          "#002C29",
+          "#0F4C47",
+          "#346C67",
+          "#568E88",
+          "#79B2AB",
+          "#9CD6CF",
+          "#C1FCF5"
+        ]
+      },
+      "sage-wash": {
+        "role": "neutral",
+        "displayName": "Sage Wash",
+        "canonical": "#EAF2F0",
+        "oklch": "oklch(95.5% 0.009 179.6)",
+        "tonalRamp": [
+          "#070C0B",
+          "#212725",
+          "#3D4442",
+          "#5C6361",
+          "#7D8482",
+          "#9FA7A5",
+          "#C3CBC9",
+          "#E8F0EE"
+        ]
+      },
+      "on-sage-wash": {
+        "role": "neutral",
+        "displayName": "On Sage Wash",
+        "canonical": "#1E3D3A",
+        "oklch": "oklch(33.5% 0.037 187.5)",
+        "tonalRamp": [
+          "#000F0D",
+          "#0B2B28",
+          "#2A4945",
+          "#496865",
+          "#698A86",
+          "#8BADA9",
+          "#AFD2CD",
+          "#D3F7F3"
+        ]
+      },
+      "critical-orange": {
+        "role": "tertiary",
+        "displayName": "Critical Orange",
+        "canonical": "#C2410C",
+        "oklch": "oklch(55.3% 0.174 38.4)",
+        "tonalRamp": [
+          "#1E0100",
+          "#470F00",
+          "#722508",
+          "#A83400",
+          "#D55325",
+          "#FD784C",
+          "#FDB59F",
+          "#FFE9E2"
+        ]
+      },
+      "critical-container": {
+        "role": "tertiary",
+        "displayName": "Critical Container",
+        "canonical": "#FDECDF",
+        "oklch": "oklch(95.3% 0.025 59.9)",
+        "tonalRamp": [
+          "#130802",
+          "#2E2219",
+          "#4C3F35",
+          "#6C5E53",
+          "#8E7F73",
+          "#B2A296",
+          "#D6C6B9",
+          "#FCEBDE"
+        ]
+      },
+      "on-critical-container": {
+        "role": "tertiary",
+        "displayName": "On Critical Container",
+        "canonical": "#7C2D12",
+        "oklch": "oklch(40.8% 0.116 38.2)",
+        "tonalRamp": [
+          "#1E0100",
+          "#451101",
+          "#732407",
+          "#97462C",
+          "#BD674D",
+          "#E38A6E",
+          "#FDB59E",
+          "#FEE9E3"
+        ]
+      },
+      "late-red": {
+        "role": "status",
+        "displayName": "Late Red",
+        "canonical": "#B91C1C",
+        "oklch": "oklch(50.5% 0.190 27.5)",
+        "tonalRamp": [
+          "#200000",
+          "#4D0103",
+          "#7F080C",
+          "#B51517",
+          "#DD453C",
+          "#FA786B",
+          "#FFB3A9",
+          "#FEE9E6"
+        ]
+      },
+      "late-container": {
+        "role": "status",
+        "displayName": "Late Container",
+        "canonical": "#FDE8E8",
+        "oklch": "oklch(94.8% 0.023 17.6)",
+        "tonalRamp": [
+          "#140708",
+          "#2F2121",
+          "#4E3D3D",
+          "#6E5C5C",
+          "#907D7D",
+          "#B3A0A0",
+          "#D8C4C4",
+          "#FEE9E9"
+        ]
+      },
+      "on-late-container": {
+        "role": "status",
+        "displayName": "On Late Container",
+        "canonical": "#7F1D1D",
+        "oklch": "oklch(39.6% 0.133 25.7)",
+        "tonalRamp": [
+          "#210000",
+          "#4C0206",
+          "#791718",
+          "#9F3C37",
+          "#C55E57",
+          "#ED8279",
+          "#FDB3AC",
+          "#FEE9E7"
+        ]
+      },
+      "on-track-green": {
+        "role": "status",
+        "displayName": "On-Track Green",
+        "canonical": "#15803D",
+        "oklch": "oklch(52.7% 0.137 150.1)",
+        "tonalRamp": [
+          "#001002",
+          "#022E11",
+          "#095024",
+          "#167438",
+          "#379954",
+          "#5EBD76",
+          "#83E299",
+          "#C7FFD1"
+        ]
+      },
+      "on-track-container": {
+        "role": "status",
+        "displayName": "On-Track Container",
+        "canonical": "#E2F6E8",
+        "oklch": "oklch(95.5% 0.028 155.3)",
+        "tonalRamp": [
+          "#030F06",
+          "#1A291F",
+          "#36473C",
+          "#55665A",
+          "#76887B",
+          "#98AB9E",
+          "#BCCFC1",
+          "#E0F4E6"
+        ]
+      },
+      "on-on-track-container": {
+        "role": "status",
+        "displayName": "On On-Track Container",
+        "canonical": "#14532D",
+        "oklch": "oklch(39.3% 0.090 152.5)",
+        "tonalRamp": [
+          "#001004",
+          "#002E13",
+          "#0F4F29",
+          "#347048",
+          "#569268",
+          "#79B68A",
+          "#9CDBAD",
+          "#C9FED6"
+        ]
+      },
+      "attention-amber": {
+        "role": "status",
+        "displayName": "Attention Amber",
+        "canonical": "#B45309",
+        "oklch": "oklch(55.5% 0.146 49.0)",
+        "tonalRamp": [
+          "#1A0400",
+          "#3E1801",
+          "#692F07",
+          "#974711",
+          "#C56323",
+          "#ED864B",
+          "#FDB792",
+          "#FFEADF"
+        ]
+      },
+      "attention-container": {
+        "role": "status",
+        "displayName": "Attention Container",
+        "canonical": "#FDF1D6",
+        "oklch": "oklch(96.1% 0.038 86.9)",
+        "tonalRamp": [
+          "#120A00",
+          "#2D240E",
+          "#4B412B",
+          "#6A6049",
+          "#8C8169",
+          "#AFA48B",
+          "#D4C8AE",
+          "#F9EDD3"
+        ]
+      },
+      "on-attention-container": {
+        "role": "status",
+        "displayName": "On Attention Container",
+        "canonical": "#713F12",
+        "oklch": "oklch(42.1% 0.090 57.7)",
+        "tonalRamp": [
+          "#180600",
+          "#3B1B00",
+          "#643302",
+          "#875329",
+          "#AB744A",
+          "#D0976C",
+          "#F6BB8F",
+          "#FFEADB"
+        ]
+      },
+      "morning-mist": {
+        "role": "neutral",
+        "displayName": "Morning Mist",
+        "canonical": "#F6F8F7",
+        "oklch": "oklch(97.7% 0.002 165.1)",
+        "tonalRamp": [
+          "#0A0B0B",
+          "#242525",
+          "#414242",
+          "#606261",
+          "#818382",
+          "#A4A5A4",
+          "#C8CAC9",
+          "#EDEFEE"
+        ]
+      },
+      "clean-sheet": {
+        "role": "neutral",
+        "displayName": "Clean Sheet",
+        "canonical": "#FFFFFF",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
+        ]
+      },
+      "deep-ink": {
+        "role": "neutral",
+        "displayName": "Deep Ink",
+        "canonical": "#0F1B1A",
+        "oklch": "oklch(21.0% 0.017 189.4)",
+        "tonalRamp": [
+          "#040D0D",
+          "#1B2827",
+          "#384544",
+          "#576563",
+          "#778684",
+          "#9AA9A7",
+          "#BDCDCB",
+          "#E2F2F1"
+        ]
+      },
+      "quiet-ink": {
+        "role": "neutral",
+        "displayName": "Quiet Ink",
+        "canonical": "#53625F",
+        "oklch": "oklch(48.2% 0.019 182.1)",
+        "tonalRamp": [
+          "#030E0C",
+          "#1B2826",
+          "#374543",
+          "#566562",
+          "#768683",
+          "#99A9A6",
+          "#BCCDCA",
+          "#E1F3EF"
+        ]
+      },
+      "field-stroke": {
+        "role": "neutral",
+        "displayName": "Field Stroke",
+        "canonical": "#7F8C89",
+        "oklch": "oklch(62.9% 0.016 180.4)",
+        "tonalRamp": [
+          "#050D0B",
+          "#1D2825",
+          "#394542",
+          "#586461",
+          "#798683",
+          "#9BA8A5",
+          "#BFCDC9",
+          "#E4F2EF"
+        ]
+      },
+      "hairline-sage": {
+        "role": "neutral",
+        "displayName": "Hairline Sage",
+        "canonical": "#E2E8E6",
+        "oklch": "oklch(92.6% 0.007 174.4)",
+        "tonalRamp": [
+          "#080C0B",
+          "#222625",
+          "#3E4342",
+          "#5D6361",
+          "#7E8482",
+          "#A1A6A5",
+          "#C5CBC9",
+          "#EAF0EE"
+        ]
+      },
+      "mist-shade": {
+        "role": "neutral",
+        "displayName": "Mist Shade",
+        "canonical": "#E1E7E5",
+        "oklch": "oklch(92.3% 0.007 174.4)",
+        "tonalRamp": [
+          "#080C0B",
+          "#222625",
+          "#3E4342",
+          "#5D6361",
+          "#7E8482",
+          "#A1A6A5",
+          "#C5CBC9",
+          "#EAF0EE"
+        ]
+      },
+      "night-panel": {
+        "role": "neutral",
+        "displayName": "Night Panel",
+        "canonical": "#1A2624",
+        "oklch": "oklch(25.7% 0.017 183.6)",
+        "tonalRamp": [
+          "#040E0C",
+          "#1C2826",
+          "#384543",
+          "#576562",
+          "#788683",
+          "#9AA9A6",
+          "#BECDCA",
+          "#E3F2F0"
+        ]
+      },
+      "night-panel-text": {
+        "role": "neutral",
+        "displayName": "Night Panel Text",
+        "canonical": "#F2F5F4",
+        "oklch": "oklch(96.8% 0.003 174.5)",
+        "tonalRamp": [
+          "#0A0C0B",
+          "#232625",
+          "#404342",
+          "#5F6261",
+          "#808382",
+          "#A3A6A5",
+          "#C7CAC9",
+          "#ECEFEE"
+        ]
+      },
+      "brand-tile-top": {
+        "role": "brand",
+        "displayName": "Brand Tile Top",
+        "canonical": "#128C82",
+        "oklch": "oklch(57.8% 0.098 185.8)",
+        "tonalRamp": [
+          "#000F0D",
+          "#002C28",
+          "#054D47",
+          "#0F7068",
+          "#23958B",
+          "#50B9AE",
+          "#77DED2",
+          "#B9FFF5"
+        ]
+      },
+      "brand-tile-bottom": {
+        "role": "brand",
+        "displayName": "Brand Tile Bottom",
+        "canonical": "#0B5C56",
+        "oklch": "oklch(42.9% 0.072 186.9)",
+        "tonalRamp": [
+          "#000F0D",
+          "#002C29",
+          "#014D48",
+          "#266E68",
+          "#4B9089",
+          "#6EB4AC",
+          "#92D9D1",
+          "#B7FFF6"
+        ]
+      },
+      "supervisor-teal-dark": {
+        "role": "primary",
+        "displayName": "Supervisor Teal (dark theme)",
+        "canonical": "#4FC7B5",
+        "oklch": "oklch(75.7% 0.110 181.7)",
+        "tonalRamp": [
+          "#000F0C",
+          "#002C27",
+          "#034D44",
+          "#0B7165",
+          "#209686",
+          "#41BBAA",
+          "#6BE1CE",
+          "#BDFEF1"
+        ]
+      },
+      "on-supervisor-teal-dark": {
+        "role": "primary",
+        "displayName": "On Supervisor Teal (dark theme)",
+        "canonical": "#032A26",
+        "oklch": "oklch(25.8% 0.043 184.8)",
+        "tonalRamp": [
+          "#000F0D",
+          "#052C28",
+          "#254A45",
+          "#456964",
+          "#658B85",
+          "#87AEA8",
+          "#ABD3CD",
+          "#D0F8F2"
+        ]
+      },
+      "teal-container-dark": {
+        "role": "primary",
+        "displayName": "Teal Container (dark theme)",
+        "canonical": "#15403B",
+        "oklch": "oklch(34.0% 0.048 184.7)",
+        "tonalRamp": [
+          "#000F0D",
+          "#032C28",
+          "#204A45",
+          "#406A65",
+          "#618C86",
+          "#83AFA9",
+          "#A7D4CD",
+          "#CCFAF2"
+        ]
+      },
+      "night-desk": {
+        "role": "neutral",
+        "displayName": "Night Desk",
+        "canonical": "#0C1110",
+        "oklch": "oklch(17.2% 0.008 181.8)",
+        "tonalRamp": [
+          "#080C0B",
+          "#212625",
+          "#3E4342",
+          "#5C6361",
+          "#7D8483",
+          "#A0A7A5",
+          "#C4CBC9",
+          "#E9F0EF"
+        ]
+      },
+      "night-sheet": {
+        "role": "neutral",
+        "displayName": "Night Sheet",
+        "canonical": "#131A19",
+        "oklch": "oklch(21.0% 0.011 185.8)",
+        "tonalRamp": [
+          "#060D0C",
+          "#1F2726",
+          "#3C4443",
+          "#5B6362",
+          "#7C8483",
+          "#9EA7A6",
+          "#C2CBCA",
+          "#E7F1EF"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#E8EEED",
+        "oklch": "oklch(94.4% 0.007 185.3)",
+        "tonalRamp": [
+          "#080C0B",
+          "#222625",
+          "#3E4342",
+          "#5D6262",
+          "#7E8483",
+          "#A1A6A5",
+          "#C5CACA",
+          "#EAF0EF"
+        ]
+      },
+      "night-quiet-ink": {
+        "role": "neutral",
+        "displayName": "Night Quiet Ink",
+        "canonical": "#9DABA8",
+        "oklch": "oklch(72.9% 0.016 181.6)",
+        "tonalRamp": [
+          "#040D0C",
+          "#1C2826",
+          "#394542",
+          "#586462",
+          "#788683",
+          "#9BA9A6",
+          "#BECDCA",
+          "#E3F2EF"
+        ]
+      },
+      "night-hairline": {
+        "role": "neutral",
+        "displayName": "Night Hairline",
+        "canonical": "#243030",
+        "oklch": "oklch(29.8% 0.016 196.3)",
+        "tonalRamp": [
+          "#040D0D",
+          "#1C2828",
+          "#384545",
+          "#576464",
+          "#788685",
+          "#9AA8A8",
+          "#BECDCD",
+          "#E3F2F2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Rare: the welcome headline (40px, -1.2px on wide screens)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page titles, setup step titles, project names."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section headings, app bar and dialog titles."
+      },
+      "title-small": {
+        "displayName": "Title Small",
+        "purpose": "Card titles and focus-task titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Brief text, assistant answers, empty-state messages; 65-75 characters per line."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Banners, list content, inputs."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, segments, tabs."
+      },
+      "data": {
+        "displayName": "Data",
+        "purpose": "Metadata, pills, dates and hours in tabular figures; the floor is 12px."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-lift",
+        "value": "0 1px 2px rgba(11,46,42,0.04), 0 6px 18px rgba(11,46,42,0.05)",
+        "purpose": "Every card in light mode; none in dark mode."
+      },
+      {
+        "name": "menu",
+        "value": "Material elevation 4, shadow tinted #0B2E2A at 35%",
+        "purpose": "Popup menus."
+      },
+      {
+        "name": "dialog",
+        "value": "Material elevation 6, shadow tinted #0B2E2A at 40%",
+        "purpose": "Dialogs and date pickers."
+      },
+      {
+        "name": "fab",
+        "value": "Material elevation 2 (3 on hover)",
+        "purpose": "The add-task floating action button."
+      },
+      {
+        "name": "brand-contact",
+        "value": "glyph silhouette offset 1 unit, blur 1.1 units, #032623 at 35%",
+        "purpose": "Soft contact shadow under the P in the brand tile."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-enter",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Every response to the user: press, entrances, progress, page transitions."
+      },
+      {
+        "name": "ease-move",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Movement that stays on screen; the web loading bar."
+      },
+      {
+        "name": "press",
+        "value": "140ms, scale 0.985",
+        "purpose": "Tappable cards while pressed."
+      },
+      {
+        "name": "ui",
+        "value": "150-220ms",
+        "purpose": "State changes, selection, text style changes."
+      },
+      {
+        "name": "page",
+        "value": "about 300ms; fade + 2.5% rise; page underneath to 60% opacity",
+        "purpose": "Route transitions."
+      },
+      {
+        "name": "reveal",
+        "value": "420ms, 12px lift, 55ms stagger",
+        "purpose": "Only the day's focus tasks and the welcome screen."
+      },
+      {
+        "name": "skeleton",
+        "value": "1100ms pulse, shown after 160ms",
+        "purpose": "Page loads."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "movement off; content appears in place",
+        "purpose": "Honours the OS setting everywhere."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "rail",
+        "value": "840px"
+      },
+      {
+        "name": "welcome-split",
+        "value": "920px"
+      },
+      {
+        "name": "assistant-threads",
+        "value": "1000px"
+      },
+      {
+        "name": "rail-extended",
+        "value": "1200px"
+      },
+      {
+        "name": "reading-max",
+        "value": "760px"
+      },
+      {
+        "name": "content-max",
+        "value": "960px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one main action on a screen, e.g. Lanjut, Terima rencana, Mulai.",
+      "html": "<button class=\"ds-btn-primary\">Mulai <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z\"/></svg></button>",
+      "css": ".ds-btn-primary { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 22px; border: none; border-radius: 12px; background: #0F766E; color: #FFFFFF; font-size: 14px; font-weight: 600; cursor: pointer; transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1), background 150ms ease; } .ds-btn-primary:hover { background: #0D6961; } .ds-btn-primary:active { transform: scale(0.985); } .ds-btn-primary:focus-visible { outline: 2px solid #0F766E; outline-offset: 3px; }"
+    },
+    {
+      "name": "Outlined Button",
+      "kind": "button",
+      "refersTo": "button-outlined",
+      "description": "Secondary actions such as Tinjau detail.",
+      "html": "<button class=\"ds-btn-outlined\">Tinjau detail</button>",
+      "css": ".ds-btn-outlined { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; height: 48px; padding: 0 22px; border-radius: 12px; border: 1px solid rgba(127,140,137,0.55); background: #FFFFFF; color: #0F1B1A; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 150ms ease, transform 140ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-btn-outlined:hover { background: #F0F3F2; } .ds-btn-outlined:active { transform: scale(0.985); } .ds-btn-outlined:focus-visible { outline: 2px solid #0F766E; outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Clean Sheet field with a softened stroke; focus turns it teal.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Judul project</span><input class=\"ds-input\" value=\"Decision-making NPC untuk game RTS\"></label>",
+      "css": ".ds-field { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; display: grid; gap: 6px; max-width: 360px; } .ds-field-label { font-size: 13px; font-weight: 600; color: #53625F; } .ds-input { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 14px; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(127,140,137,0.7); background: #FFFFFF; color: #0F1B1A; caret-color: #0F766E; outline: none; transition: border-color 150ms ease, box-shadow 150ms ease; } .ds-input:focus-visible { border-color: #0F766E; box-shadow: 0 0 0 1px #0F766E; } .ds-input::selection { background: rgba(15,118,110,0.22); }"
+    },
+    {
+      "name": "Task Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Signature card: checkbox aligned to the first line, title, data line, badges and the help-me-start action.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-row\"><span class=\"ds-check\" aria-hidden=\"true\"></span><div><h3 class=\"ds-card-title\">Kumpulkan 20 sampai 25 jurnal yang relevan</h3><p class=\"ds-card-meta\">Studi literatur · 6 jam · 24 Sep – 28 Sep</p><div class=\"ds-card-badges\"><span class=\"ds-pill ds-pill-critical\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M11 21h-1l1-7H7.5c-.88 0-.33-.75-.31-.78C8.48 10.94 10.42 7.54 13.01 3h1l-1 7h3.51c.4 0 .62.19.4.66C12.97 17.55 11 21 11 21z\"/></svg> Jalur kritis</span><button class=\"ds-link\">Bantu saya mulai</button></div></div></div></article>",
+      "css": ".ds-card { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; max-width: 520px; background: #FFFFFF; border: 1px solid #E2E8E6; border-radius: 16px; padding: 16px; box-shadow: 0 1px 2px rgba(11,46,42,0.04), 0 6px 18px rgba(11,46,42,0.05); transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1); } .ds-card:active { transform: scale(0.985); } .ds-card-row { display: flex; gap: 14px; align-items: flex-start; } .ds-check { flex: none; width: 18px; height: 18px; margin-top: 3px; border: 1.5px solid #7F8C89; border-radius: 6px; } .ds-card-title { margin: 0; font-size: 16px; font-weight: 600; letter-spacing: -0.1px; line-height: 1.4; color: #0F1B1A; } .ds-card-meta { margin: 4px 0 0; font-size: 12px; font-weight: 500; color: #53625F; font-variant-numeric: tabular-nums; } .ds-card-badges { display: flex; gap: 8px; align-items: center; margin-top: 12px; } .ds-pill { display: inline-flex; align-items: center; gap: 5px; height: 26px; padding: 0 10px 0 8px; border-radius: 999px; font-size: 12px; font-weight: 600; } .ds-pill-critical { background: #FDECDF; color: #7C2D12; } .ds-link { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; border: none; background: none; color: #0F766E; font-size: 14px; font-weight: 600; padding: 8px 10px; border-radius: 12px; cursor: pointer; } .ds-link:hover { background: rgba(15,118,110,0.08); } .ds-link:focus-visible { outline: 2px solid #0F766E; outline-offset: 2px; }"
+    },
+    {
+      "name": "Status Pills",
+      "kind": "chip",
+      "refersTo": "pill-on-track",
+      "description": "Health, task status and proposal source: always an icon or word, never colour alone.",
+      "html": "<div class=\"ds-pills\"><span class=\"ds-pill ds-pill-ok\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"/></svg> Sesuai jadwal</span><span class=\"ds-pill ds-pill-attn\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M11 7h2v2h-2zm0 4h2v6h-2zm1-9a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z\"/></svg> Perlu perhatian</span><span class=\"ds-pill ds-pill-late\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z\"/></svg> Terlambat 2 hari</span><span class=\"ds-pill ds-pill-src\">Tanpa AI</span></div>",
+      "css": ".ds-pills { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; display: flex; flex-wrap: wrap; gap: 8px; } .ds-pill { display: inline-flex; align-items: center; gap: 5px; height: 26px; padding: 0 10px 0 8px; border-radius: 999px; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; } .ds-pill-ok { background: #E2F6E8; color: #14532D; } .ds-pill-attn { background: #FDF1D6; color: #713F12; } .ds-pill-late { background: #FDE8E8; color: #7F1D1D; } .ds-pill-src { background: #EAF2F0; color: #1E3D3A; }"
+    },
+    {
+      "name": "Info Banner",
+      "kind": "custom",
+      "refersTo": "banner-info",
+      "description": "A gentle note, e.g. why the non-AI version was used; attention banners use the amber container.",
+      "html": "<div class=\"ds-banner\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M11 7h2v2h-2zm0 4h2v6h-2zm1-9a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z\"/></svg><span>AI belum aktif di server ini. Semua fitur tetap berjalan dengan versi dasar tanpa AI.</span></div>",
+      "css": ".ds-banner { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; display: flex; gap: 12px; align-items: center; max-width: 560px; padding: 10px 14px; border-radius: 12px; background: #EAF2F0; color: #1E3D3A; font-size: 14px; line-height: 1.5; } .ds-banner svg { flex: none; }"
+    },
+    {
+      "name": "Segmented Control",
+      "kind": "custom",
+      "refersTo": "segment-selected",
+      "description": "Language, theme, status and importance choices.",
+      "html": "<div class=\"ds-seg\" role=\"group\"><button class=\"ds-seg-item\" aria-pressed=\"true\">Bahasa Indonesia</button><button class=\"ds-seg-item\" aria-pressed=\"false\">English</button></div>",
+      "css": ".ds-seg { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; display: inline-flex; border: 1px solid rgba(127,140,137,0.45); border-radius: 12px; overflow: hidden; } .ds-seg-item { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; height: 44px; padding: 0 20px; border: none; background: #FFFFFF; color: #0F1B1A; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 150ms ease; } .ds-seg-item + .ds-seg-item { border-left: 1px solid rgba(127,140,137,0.45); } .ds-seg-item[aria-pressed=true] { background: #D7F1EC; color: #0B4A45; } .ds-seg-item:hover { background: #F0F3F2; } .ds-seg-item[aria-pressed=true]:hover { background: #CDEDE6; } .ds-seg-item:focus-visible { outline: 2px solid #0F766E; outline-offset: -2px; }"
+    },
+    {
+      "name": "Bottom Navigation",
+      "kind": "nav",
+      "refersTo": "nav-bar",
+      "description": "Phone navigation for the five destinations; wide screens use a rail with the same indicator.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-item is-active\" href=\"#\"><span class=\"ds-nav-ind\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z\"/></svg></span>Hari Ini</a><a class=\"ds-nav-item\" href=\"#\"><span class=\"ds-nav-ind\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z\"/></svg></span>Rencana</a><a class=\"ds-nav-item\" href=\"#\"><span class=\"ds-nav-ind\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z\"/></svg></span>Dokumen</a></nav>",
+      "css": ".ds-nav { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; display: flex; justify-content: space-around; height: 68px; max-width: 400px; background: #FFFFFF; border-top: 1px solid #E2E8E6; } .ds-nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; flex: 1; color: #53625F; font-size: 12px; font-weight: 500; text-decoration: none; } .ds-nav-ind { display: grid; place-items: center; width: 56px; height: 30px; border-radius: 999px; transition: background 150ms ease; } .ds-nav-item.is-active { color: #0F1B1A; font-weight: 700; } .ds-nav-item.is-active .ds-nav-ind { background: #D7F1EC; color: #0B4A45; } .ds-nav-item:hover .ds-nav-ind { background: #F0F3F2; } .ds-nav-item:focus-visible { outline: 2px solid #0F766E; outline-offset: -4px; border-radius: 12px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Steady Supervisor",
+    "overview": "Purnara looks and behaves like a good thesis supervisor: steady, clear about the next step, never loud, and on the student's side when things slip. The interface is quiet so that the student's own work can be heard. Pages are mostly calm neutrals. Colour appears only when it means something: teal marks what the student can act on or owns, and a small set of status colours says how the project is doing, always alongside words and an icon.\n\nThe system is quiet, precise and encouraging. Precision shows in the details a student relies on: dates and hours set in tabular figures, a checkbox that lines up with its title, a plan that moves only when they accept a change. Encouragement comes from tone rather than decoration. There are no alarms and no scoreboards. Falling behind produces calm options, and finishing a task produces a small confirmation, never a celebration.\n\nIt is one system in two themes. Light mode is a sheet of paper in morning light; dark mode is a desk at night, where lighter surfaces take over the job of shadows. It is also one system in two languages: every layout must hold Indonesian and English copy of different lengths. The explicit anti-references are gamification (streaks, points, confetti, badges), corporate dashboards (dense charts and big KPI numbers), flashy AI chrome (purple gradients, sparkle effects, AI everywhere), and a judgemental tone (red everywhere, frightening countdowns).",
+    "keyCharacteristics": [
+      "Cool, near-neutral surfaces with a single teal accent.",
+      "Hairline borders plus a soft, ink-tinted lift in light mode; tonal layers in dark mode.",
+      "One typeface, Plus Jakarta Sans, with tightened headings and tabular figures for data.",
+      "Status is always text, icon and colour together.",
+      "Restrained, fast motion that honours the operating system's reduced-motion setting."
+    ],
+    "rules": [
+      {
+        "name": "The One Voice Rule",
+        "body": "Teal means \"act here\" or \"this is yours\". It is never used for decoration, section backgrounds, or illustration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Never Colour Alone Rule",
+        "body": "Every status carries an icon and a word as well as a colour, so it survives colour blindness, greyscale screenshots, and both languages.",
+        "section": "colors"
+      },
+      {
+        "name": "The Calm Before Red Rule",
+        "body": "Amber and orange come before red. Red is reserved for a task that is actually late, a failure, or a destructive action.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Kicker Rule",
+        "body": "A heading never has a small label above it. Its context, such as the date or \"Langkah 1 dari 6\", goes underneath it or in the app bar.",
+        "section": "typography"
+      },
+      {
+        "name": "The Aligned Numbers Rule",
+        "body": "Dates, hours, percentages and counts use tabular figures, so columns and lists of numbers line up.",
+        "section": "typography"
+      },
+      {
+        "name": "The Lift, Not Float Rule",
+        "body": "Shadows stay at or below about 5 % opacity and are always tinted with the ink colour. If a shadow is noticeable as a shadow, it is too strong.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep Supervisor Teal for actions, selection, focus and progress only (The One Voice Rule).",
+      "**Do** pair every status colour with an icon and a word (The Never Colour Alone Rule).",
+      "**Do** use Amber before Red; reserve Late Red for real lateness, failure and destruction.",
+      "**Do** put a heading's context under it or in the app bar (The No Kicker Rule).",
+      "**Do** set dates, hours and counts in tabular figures.",
+      "**Do** separate cards with a 1px Hairline Sage border and, in light mode, the card lift. In dark mode, use Night Sheet on Night Desk instead of shadows.",
+      "**Do** keep motion fast and ease-out (140–280ms, `cubic-bezier(0.23, 1, 0.32, 1)`), and stop movement when the system asks for reduced motion.",
+      "**Do** show loading as a skeleton in the page's shape, and keep spinners for waits that need an explanation.",
+      "**Do** test every screen in light and dark, on a phone and on a wide screen, in Indonesian and English."
+    ],
+    "donts": [
+      "**Don't** add gamification: no streaks, points, confetti, badges or leaderboards.",
+      "**Don't** build corporate dashboards: no dense chart walls or giant KPI numbers.",
+      "**Don't** dress the AI up: no purple gradients, glow, sparkle effects or AI chrome on every surface. AI output carries one small source label.",
+      "**Don't** use a judgemental tone: no red everywhere, frightening countdowns or all-caps warnings.",
+      "**Don't** place small uppercase labels above headings, or use coloured left borders on cards, banners or quotes.",
+      "**Don't** use gradient text, glassmorphism, or shadows darker than about 5 %.",
+      "**Don't** recolour or reshape the brand tile: it stays teal and white in both themes and only appears as the logo."
+    ]
+  }
+}

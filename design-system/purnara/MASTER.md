@@ -15,6 +15,8 @@
 
 ## Implemented system (refined 2026-09-25)
 
+> **`DESIGN.md` at the repo root is now the authoritative design system** (tokens in its frontmatter, rules in its sections; sidecar in `.impeccable/design.json`). This section is a short summary kept for history.
+
 The app follows this section. Where the generated rules further down disagree, this section wins; the source of truth in code is `app/lib/core/theme/tokens.dart` and `app_theme.dart`.
 
 - **Colour:** quiet cool neutrals with **one teal accent**, so teal always means "act here" or "yours". Light page `#F6F8F7`, cards `#FFFFFF`, ink `#0F1B1A`, secondary text `#53625F`, hairlines `#E2E8E6`, primary `#0F766E`. Dark page `#0C1110`, cards `#131A19`, ink `#E8EEED`, primary `#4FC7B5`. The orange CTA from the generated palette is **not** used; orange (tertiary) marks only the critical path. Warnings use amber (`warningContainer`), not orange.
