@@ -31,4 +31,4 @@ Purnara (a coined word from *purna*, "complete"; the working name was Rampung un
 - The user works in **VS Code**. `.vscode/` holds shared run configs (backend, Chrome, Windows, Android, compounds), tasks and recommended extensions. `.claude/launch.json` starts the API on port 8000 for the preview browser.
 - Checks, same as CI (`.github/workflows/ci.yml`): in `backend/`, `uv run ruff check .` and `uv run pytest`; in `app/`, `flutter analyze` and `flutter test` (Flutter 3.47.4).
 - Android SDK and Visual Studio (C++) are not installed on the dev machine yet, so Android and Windows builds are untested; web is verified.
-- Git is local only; there is no remote yet. Architecture decisions go in `docs/adr/`; product and process decisions go in the vault.
+- The remote is GitHub `2411500014-design/workspace_ai` (`origin`), default branch `main`. Architecture decisions go in `docs/adr/`; product and process decisions go in the vault.

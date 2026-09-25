@@ -76,7 +76,7 @@ rampung/
 ```
 
 > [!info] Kondisi repo sekarang (2026-09-25)
-> Struktur di atas sudah terisi kode. Bedanya dengan rencana: `lib/` memakai `core/`, `data/`, `features/`, dan `l10n/` (tanpa `shared/`), backend punya modul `accounts/` dan `modes/`, dan belum ada `workers/` karena pemrosesan dokumen memakai `BackgroundTasks`. Package Flutter sudah bernama `purnara`. Git masih lokal tanpa remote.
+> Struktur di atas sudah terisi kode. Bedanya dengan rencana: `lib/` memakai `core/`, `data/`, `features/`, dan `l10n/` (tanpa `shared/`), backend punya modul `accounts/` dan `modes/`, dan belum ada `workers/` karena pemrosesan dokumen memakai `BackgroundTasks`. Package Flutter sudah bernama `purnara`. Repo ada di GitHub: `2411500014-design/workspace_ai`.
 
 ## Versi lokal sekarang
 
