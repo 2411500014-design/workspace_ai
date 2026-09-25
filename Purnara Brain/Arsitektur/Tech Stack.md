@@ -5,7 +5,7 @@ sumber: "§10"
 tags:
   - arsitektur
   - stack
-updated: 2026-09-24
+updated: 2026-09-25
 ---
 
 # Tech Stack
@@ -75,10 +75,28 @@ rampung/
 └── docs/adr/                # catatan keputusan arsitektur
 ```
 
-> [!info] Kondisi repo sekarang (2026-09-24)
-> `D:\Workspace AI\workspace_ai` sudah memakai struktur monorepo di atas. `app/` berisi kerangka bawaan `flutter create` (package masih `workspace_ai`, Flutter 3.47.4 / Dart 3.13.3). `backend/`, `modes/`, dan `evals/` baru berisi README. Selain itu ada `docs/adr/0001-pilihan-stack.md`, CI di `.github/workflows/ci.yml`, `graphify-out/`, dan vault ini. Git masih lokal tanpa remote. Nama package menunggu cek merek, lihat [[K-003 Vault dan struktur folder]].
+> [!info] Kondisi repo sekarang (2026-09-25)
+> Struktur di atas sudah terisi kode. Bedanya dengan rencana: `lib/` memakai `core/`, `data/`, `features/`, dan `l10n/` (tanpa `shared/`), backend punya modul `accounts/` dan `modes/`, dan belum ada `workers/` karena pemrosesan dokumen memakai `BackgroundTasks`. Package Flutter sudah bernama `purnara`. Git masih lokal tanpa remote.
 
-Client Dart di-generate dari spesifikasi OpenAPI FastAPI, supaya model data di Flutter selalu sama dengan backend. Lihat [[API]].
+## Versi lokal sekarang
+
+Stack di atas adalah target produksi. Untuk sekarang semuanya punya versi lokal gratis, dan versi produksinya dipasang lewat konfigurasi (ADR-0002, `docs/adr/0002-pengembangan-lokal-tanpa-biaya.md`).
+
+| Kebutuhan | Sekarang | Nanti |
+| --- | --- | --- |
+| Database dan file | SQLite + folder lokal di `backend/data/` | Supabase Postgres + Storage |
+| Login | Mode `local`: satu pengguna | Supabase Auth |
+| Pemrosesan dokumen | `BackgroundTasks` FastAPI | Worker + Redis |
+| Pencarian dokumen | BM25 + perluasan istilah ID↔EN | BM25 + pgvector, digabung RRF |
+| AI | Opsional; versi dasar tanpa AI | Claude lewat Model Gateway |
+| Hosting | Backend melayani API dan build web di port 8000 | Cloud (tabel Deployment di bawah) |
+
+Catatan implementasi:
+- **Material dari package `material_ui`.** Sejak Flutter 3.47 Material dipisah dari framework, dan go_router 18 memakainya. Aplikasi mengimpor `package:material_ui/material_ui.dart`.
+- **freezed dan client OpenAPI ditunda.** Model data Dart ditulis tangan sampai API stabil; kontraknya dijaga test API dan test widget.
+- Pengembangan memakai **VS Code**; konfigurasi run, task, dan ekstensi ada di `.vscode/`.
+
+Rencananya client Dart di-generate dari spesifikasi OpenAPI FastAPI, supaya model data di Flutter selalu sama dengan backend (ditunda, lihat di atas). Lihat [[API]].
 
 ## Deployment
 

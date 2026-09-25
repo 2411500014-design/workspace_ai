@@ -1,0 +1,43 @@
+{
+  // Flutter / Dart (app/)
+  "dart.projectSearchDepth": 2,
+  "dart.flutterHotReloadOnSave": "all",
+  "dart.previewFlutterUiGuides": true,
+  "[dart]": {
+    "editor.rulers": [140],
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "files.associations": {
+    "*.arb": "json"
+  },
+
+  // Python (backend/)
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/Scripts/python.exe",
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.cwd": "${workspaceFolder}/backend",
+  "python.testing.pytestArgs": ["tests"],
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.rulers": [110],
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+  "ruff.nativeServer": "on",
+
+  // Keep generated and bulky folders out of search.
+  "search.exclude": {
+    "app/build": true,
+    "**/.dart_tool": true,
+    "**/graphify-out/cache": true,
+    "backend/data": true,
+    "**/.hypothesis": true
+  },
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true
+  }
+}

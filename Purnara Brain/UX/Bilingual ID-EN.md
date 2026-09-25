@@ -6,7 +6,7 @@ tags:
   - ux
   - i18n
   - bilingual
-updated: 2026-09-24
+updated: 2026-09-25
 ---
 
 # Bilingual ID-EN
@@ -22,6 +22,12 @@ Purnara memakai **Bahasa Indonesia dan English**. Keputusannya ada di [[K-002 Du
 | Kebijakan privasi | Berbahasa Indonesia (syarat PP 33/2026) | Tetap wajib Indonesia; English sebagai terjemahan |
 
 Menyiapkan dua bahasa sejak hari pertama jauh lebih murah daripada menambalnya belakangan. Biaya tambahannya ada di penerjemahan setiap teks dan dataset evals yang jadi dua kali lipat.
+
+> [!info] Implementasi sekarang (2026-09-25)
+> - ARB `lib/l10n/app_id.arb` (template) dan `app_en.arb`, 323 kunci. `test/l10n_test.dart` memastikan kedua bahasa punya kunci dan placeholder yang sama, dan tidak ada teks kosong; test ini ikut jalan di CI.
+> - Tanpa pilihan tersimpan, bahasa mengikuti perangkat; bahasa selain `en` jatuh ke `id`. Pilihan di Pengaturan disimpan di perangkat dan dikirim ke `profiles.locale`.
+> - Prompt AI **tidak** diduplikasi per bahasa: satu prompt per workflow, dengan instruksi "tulis dalam bahasa X" dari `profiles.locale` (`backend/app/modules/ai/prompts.py`). Template mode (`modes/academic.yaml`) punya judul task dalam dua bahasa.
+> - Belum ada embedding. Pencarian memakai BM25 dengan tabel perluasan istilah ID↔EN, supaya pertanyaan English tetap menemukan dokumen Indonesia untuk istilah umum.
 
 ## Per lapisan
 

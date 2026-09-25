@@ -19,6 +19,7 @@ Satu tempat untuk semua keputusan. Keputusan baru dibuat dari template `Template
 | [[K-001 Nama produk Rampung]] | Nama produk Rampung / Rampung AI | 2026-09-24 | **Digantikan** oleh K-004: bentrok merek di kelas 41 ([[Cek Nama]]) |
 | [[K-002 Dua bahasa ID dan EN]] | Aplikasi dan web dalam Bahasa Indonesia dan English | 2026-09-24 | Diterima |
 | [[K-004 Nama produk Purnara]] | Nama produk Purnara | 2026-09-24 | Diterima; baru GitHub yang diamankan |
+| [[K-005 Mulai membangun aplikasi]] | Aplikasi dibangun sekarang, paralel dengan validasi Fase 0 | 2026-09-24 | Diterima |
 | [[K-003 Vault dan struktur folder]] | Vault di dalam folder project; monorepo menyusul | 2026-09-24 | Diterima, sebagian terbuka |
 
 ## Keputusan arsitektur (ADR di repo)

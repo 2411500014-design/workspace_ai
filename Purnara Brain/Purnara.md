@@ -3,7 +3,7 @@ type: home
 tags:
   - rampung
   - home
-updated: 2026-09-24
+updated: 2026-09-25
 ---
 
 # Purnara
@@ -12,8 +12,8 @@ updated: 2026-09-24
 
 Aplikasi dan web tersedia dalam **Bahasa Indonesia dan English**. Lihat [[K-002 Dua bahasa ID dan EN]].
 
-> [!info] Status per 2026-09-24
-> Tahap perencanaan. [[Master Plan]] selesai (43 halaman). Fase 0 (validasi) mulai 28 Sep 2026. Repo sudah berbentuk monorepo dan punya git lokal, tapi **aplikasinya belum dibangun**: `app/` masih kerangka Flutter bawaan, dan fitur baru dimulai setelah Fase 0.
+> [!info] Status per 2026-09-25
+> Versi pertama aplikasi sudah jalan di laptop tanpa layanan berbayar: Flutter (web, Android, desktop) dan backend FastAPI. AI opsional; tanpa API key setiap fitur memakai versi dasar. Pembangunan berjalan paralel dengan Fase 0 (validasi, mulai 28 Sep 2026) sesuai [[K-005 Mulai membangun aplikasi]]. Cara menjalankan ada di `README.md` di akar repo.
 
 **Folder project:** `D:\Workspace AI\workspace_ai` · **Vault ini:** `Purnara Brain\` di dalam folder itu · **Graph dari master plan:** [[Knowledge Graph]]
 

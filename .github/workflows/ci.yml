@@ -26,3 +26,21 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
+
+  backend:
+    name: Backend (ruff + pytest)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      # No ANTHROPIC_API_KEY here on purpose: CI proves every feature works without AI.
+      - run: uv sync --locked
+      - run: uv run ruff check .
+      - run: uv run pytest

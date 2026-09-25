@@ -5,7 +5,7 @@ sumber: "§19"
 tags:
   - rencana
   - checklist
-updated: 2026-09-24
+updated: 2026-09-25
 ---
 
 # Langkah Pertama 14 Hari
@@ -26,7 +26,7 @@ Centang langsung di Obsidian. Setelah selesai, catat hasilnya di [[Riwayat]].
 - [ ] Amankan nama **Purnara** di GitHub (gratis).
 - [ ] *Saat ada dana:* daftarkan merek Purnara di DJKI (kelas 9 dan 42, pertimbangkan 41) dan beli domain `purnara.com` atau `purnara.id`. Cek ulang ketersediaannya dulu.
 - [x] Siapkan monorepo (`app/`, `backend/`, `modes/`, `evals/`, `docs/adr/`), README, ADR-001 tentang pilihan stack, dan lint di GitHub Actions. *Selesai 2026-09-24. CI baru berjalan setelah ada remote GitHub.* Lihat [[K-003 Vault dan struktur folder]].
-- [ ] ~~Pasang l10n Flutter dengan dua ARB (`id`, `en`)~~ **Ditunda:** aplikasi belum dibangun selama Fase 0. Pasang sebagai langkah pertama saat Fase 1 dimulai, sebelum layar pertama dibuat ([[Bilingual ID-EN]]).
+- [x] Pasang l10n Flutter dengan dua ARB (`id`, `en`). Sempat ditunda, lalu dipasang 2026-09-24 saat pembangunan dimulai ([[K-005 Mulai membangun aplikasi]], [[Bilingual ID-EN]]).
 
 ## Minggu 2: uji solusinya (5 – 11 Okt)
 

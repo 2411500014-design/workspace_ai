@@ -1,6 +1,6 @@
 # Purnara
 
-Purnara (a coined word from *purna*, "complete"; the working name was Rampung until 2026-09-24) is an AI project workspace for Indonesian final-year students (skripsi, TA, research). It is a Flutter app, web first. As of 2026-09-24 it is in the planning stage.
+Purnara (a coined word from *purna*, "complete"; the working name was Rampung until 2026-09-24) is an AI project workspace for Indonesian final-year students (skripsi, TA, research). It is a Flutter app (web, Android, desktop) with a FastAPI backend. A first working version exists as of 2026-09-24.
 
 ## Second brain
 
@@ -25,8 +25,10 @@ Purnara (a coined word from *purna*, "complete"; the working name was Rampung un
 
 ## Current state
 
-- **Fase 0 (validation). Do not build app features yet.** The user asked for the app to wait until validation is done. Repo setup, docs and planning are fine; new screens, l10n wiring and backend code are not, until the user says so.
-- It is a monorepo following the plan: `app/` (Flutter), `backend/`, `modes/`, `evals/`, `docs/adr/`. Only `app/` contains code, and that is still the default `flutter create` skeleton.
-- The Flutter package is still named `workspace_ai`. It will be renamed to `purnara` when Fase 1 starts (K-004).
-- Run Flutter commands from `app/`. CI (`.github/workflows/ci.yml`) runs `flutter analyze` and `flutter test` there, pinned to Flutter 3.47.4.
+- **Building started 2026-09-24 (K-005)**, in parallel with Fase 0 validation. Everything runs locally without paid services (`docs/adr/0002-pengembangan-lokal-tanpa-biaya.md`): SQLite, local files, `auth_mode=local`, BackgroundTasks, BM25 search. AI is optional; every AI feature has a labelled non-AI version.
+- `backend/`: FastAPI modular monolith (`app/modules/{accounts,projects,tasks,planning,documents,ai,insight,modes}`), Alembic migrations, run with uv. Templates live in `modes/academic.yaml`. When `app/build/web` exists, the API also serves the web app on port 8000.
+- `app/`: Flutter package `purnara` (renamed from `workspace_ai`). Material comes from the `material_ui` package; always import `package:material_ui/material_ui.dart`. Riverpod 3, go_router 18, Dio, gen-l10n (`lib/l10n/app_id.arb` is the template; run `flutter gen-l10n` after editing ARB files).
+- The user works in **VS Code**. `.vscode/` holds shared run configs (backend, Chrome, Windows, Android, compounds), tasks and recommended extensions. `.claude/launch.json` starts the API on port 8000 for the preview browser.
+- Checks, same as CI (`.github/workflows/ci.yml`): in `backend/`, `uv run ruff check .` and `uv run pytest`; in `app/`, `flutter analyze` and `flutter test` (Flutter 3.47.4).
+- Android SDK and Visual Studio (C++) are not installed on the dev machine yet, so Android and Windows builds are untested; web is verified.
 - Git is local only; there is no remote yet. Architecture decisions go in `docs/adr/`; product and process decisions go in the vault.

@@ -3,7 +3,7 @@ type: index
 area: Kerja
 tags:
   - pertanyaan
-updated: 2026-09-24
+updated: 2026-09-25
 ---
 
 # Pertanyaan Terbuka
@@ -25,7 +25,7 @@ Hal yang belum diputuskan. Setelah diputuskan, buat catatan keputusan ([[Log Kep
 
 ## Repo dan setup
 - [x] ~~Kapan kerangka Flutter dipindah ke `app/`?~~ Sudah dipindah 2026-09-24. → [[K-003 Vault dan struktur folder]]
-- [ ] Ganti nama package `workspace_ai` menjadi `rampung`, setelah nama lolos cek merek. → [[K-003 Vault dan struktur folder]]
+- [x] Ganti nama package `workspace_ai`. Sudah menjadi `purnara` (2026-09-24). → [[K-004 Nama produk Purnara]] · [[K-005 Mulai membangun aplikasi]]
 - [x] ~~Inisialisasi git~~ Sudah 2026-09-24, lokal di branch `main`.
 - [ ] Buat remote GitHub (privat atau publik?) supaya CI berjalan. → [[Operasional]]
 

@@ -3,7 +3,7 @@ type: log
 area: Kerja
 tags:
   - riwayat
-updated: 2026-09-24
+updated: 2026-09-25
 ---
 
 # Riwayat
@@ -12,6 +12,16 @@ Catatan bertanggal tentang apa yang terjadi di project ini. Entri terbaru ditaru
 
 ## 2026-09
 
+- **2026-09-25**: **Tampilan aplikasi dipoles agar terasa premium**, tanpa mengganti identitasnya (teal, Plus Jakarta Sans, tata letak tetap). Netral dibuat lebih tenang sehingga teal menjadi satu-satunya aksen, kartu diberi kedalaman halus, loading memakai skeleton, gerak halus dan menghormati setelan "kurangi gerak", layar sambutan kini menampilkan pratinjau aplikasi, dan logo baru (huruf P dengan cincin tertutup, dari *purna*) di atas *squircle* teal bergradasi dipakai di semua ikon platform, termasuk adaptive icon Android, favicon SVG, dan gambar pratinjau saat link dibagikan. Dicek lewat screenshot desktop dan ponsel, terang dan gelap. Aturannya dicatat di `design-system/purnara/MASTER.md`.
+- **2026-09-25**: **Versi pertama aplikasi jalan**, lokal tanpa biaya. → [[K-005 Mulai membangun aplikasi]]
+  - Aplikasi Flutter (package `purnara`) untuk web, Android, dan desktop. Isinya setup project 6 langkah, Hari Ini, Rencana (daftar, papan, linimasa), detail task, Project, Sesuaikan rencana, Dokumen, Asisten bersitasi, Brief, Log bimbingan, Review mingguan, dan Pengaturan. Semua teks ada dalam `id` dan `en` (323 kunci).
+  - Backend FastAPI: planning engine, dokumen, AI gateway dengan versi dasar tanpa AI, usulan (diff), dan health harian. Backend juga melayani hasil build web di port 8000.
+  - Diuji: 58 test backend (termasuk properti Hypothesis) dan 16 test Flutter lolos, termasuk cek bahwa kedua bahasa lengkap. Alur lengkap dicoba di browser dalam dua bahasa dan dua tema.
+  - Hypothesis menemukan satu kasus tepi: rencana yang kurang beberapa detik ditandai tidak muat tapi kekurangannya 0 jam. Sudah diperbaiki.
+  - Heuristik tanpa AI diperbaiki dari hasil uji di browser: label tanggal penting diambil dari kata sebelum tanggal, deadline tidak lagi masuk syarat dosen, dan usulan pembaruan brief ditutup otomatis kalau brief yang disimpan sudah memuat syaratnya.
+  - Konfigurasi VS Code (`.vscode/`) untuk menjalankan backend dan aplikasi dengan F5. CI sekarang juga memeriksa backend.
+  - Catatan: Android SDK dan Visual Studio (C++) belum terpasang di laptop, jadi build Android dan Windows belum dicoba.
+- **2026-09-24**: **Pembangunan aplikasi dimulai**, paralel dengan Fase 0. Semua bagian dibuat bisa jalan lokal tanpa layanan berbayar: SQLite, file lokal, satu pengguna tanpa login, pencarian BM25, dan AI opsional. → [[K-005 Mulai membangun aplikasi]] · ADR-0002
 - **2026-09-24**: **Nama produk menjadi Purnara**, menggantikan Rampung. Vault diganti nama menjadi *Purnara Brain*, dan beranda menjadi [[Purnara]]. Semua rujukan ke produk di vault dan repo ikut diganti; catatan riwayat dan cek nama tetap apa adanya. Untuk sekarang hanya GitHub yang diamankan, karena belum ada dana untuk domain dan merek. → [[K-004 Nama produk Purnara]]
 - **2026-09-24**: 16 nama cadangan dicek (merek di PDKI, domain lewat RDAP, username).
   - Finalis: **Purnara** (direkomendasikan; .com, .ai, .app, dan .id tersedia, tidak ada merek serupa di kelas 9/41/42), **Tonggak**, dan **Tekun**.

@@ -7,6 +7,7 @@ Satu file per keputusan arsitektur yang penting: `NNNN-judul-singkat.md`, nomorn
 | ADR | Judul | Status |
 | --- | --- | --- |
 | [0001](0001-pilihan-stack.md) | Pilihan stack teknis | Diterima (2026-09-24) |
+| [0002](0002-pengembangan-lokal-tanpa-biaya.md) | Pengembangan lokal tanpa biaya | Diterima (2026-09-24) |
 
 ## Format
 

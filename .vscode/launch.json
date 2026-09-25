@@ -1,0 +1,93 @@
+{
+  // Run and debug Purnara from VS Code (Run and Debug panel, or F5).
+  // Start with "Purnara: backend + app (Chrome)": it runs the API on port 8000 and
+  // the Flutter app in Chrome on port 5000.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backend: API (FastAPI, port 8000)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["app.main:app", "--reload", "--host", "127.0.0.1", "--port", "8000"],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/Scripts/python.exe",
+      "osx": { "python": "${workspaceFolder}/backend/.venv/bin/python" },
+      "linux": { "python": "${workspaceFolder}/backend/.venv/bin/python" },
+      "justMyCode": true
+    },
+    {
+      "name": "Backend: API for phones on the same Wi-Fi (0.0.0.0:8000)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["app.main:app", "--host", "0.0.0.0", "--port", "8000"],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/Scripts/python.exe",
+      "osx": { "python": "${workspaceFolder}/backend/.venv/bin/python" },
+      "linux": { "python": "${workspaceFolder}/backend/.venv/bin/python" },
+      "justMyCode": true
+    },
+    {
+      "name": "Backend: tests (pytest)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["-q"],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/Scripts/python.exe",
+      "osx": { "python": "${workspaceFolder}/backend/.venv/bin/python" },
+      "linux": { "python": "${workspaceFolder}/backend/.venv/bin/python" },
+      "justMyCode": false
+    },
+    {
+      "name": "App: Chrome (web, port 5000)",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "app",
+      "program": "lib/main.dart",
+      "deviceId": "chrome",
+      "args": ["--web-port", "5000"]
+    },
+    {
+      "name": "App: Windows desktop",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "app",
+      "program": "lib/main.dart",
+      "deviceId": "windows"
+    },
+    {
+      "name": "App: Android (device picked in the status bar)",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "app",
+      "program": "lib/main.dart"
+    },
+    {
+      "name": "App: profile mode (device picked in the status bar)",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "app",
+      "program": "lib/main.dart",
+      "flutterMode": "profile"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Purnara: backend + app (Chrome)",
+      "configurations": ["Backend: API (FastAPI, port 8000)", "App: Chrome (web, port 5000)"],
+      "stopAll": true
+    },
+    {
+      "name": "Purnara: backend + app (Windows)",
+      "configurations": ["Backend: API (FastAPI, port 8000)", "App: Windows desktop"],
+      "stopAll": true
+    },
+    {
+      "name": "Purnara: backend + app (Android)",
+      "configurations": ["Backend: API (FastAPI, port 8000)", "App: Android (device picked in the status bar)"],
+      "stopAll": true
+    }
+  ]
+}

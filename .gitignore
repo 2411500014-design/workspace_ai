@@ -24,8 +24,15 @@ venv/
 .coverage
 htmlcov/
 
-# Editors and OS
-.vscode/
+# Local data: the SQLite database and uploaded documents (backend/data by default).
+backend/data/
+
+# Editors and OS. The shared VS Code setup (run/debug, tasks, extensions) is kept.
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/settings.json
+!.vscode/extensions.json
 .idea/
 *.swp
 .DS_Store

@@ -6,7 +6,7 @@ tanggal: 2026-09-24
 tags:
   - keputusan
   - merek
-updated: 2026-09-24
+updated: 2026-09-25
 ---
 
 # K-004 Nama produk Purnara
@@ -30,7 +30,7 @@ Nama produk: **Purnara**. Diputuskan oleh pemilik project pada 2026-09-24.
 - **Risiko menunggu:** Indonesia memakai sistem *first to file*, jadi siapa pun yang mendaftarkan merek lebih dulu yang dilindungi. Domain juga bisa diambil orang. Cek ulang PDKI dan domain sebelum mengumumkan nama secara luas, dan daftarkan merek segera setelah ada dana. Lihat [[Risiko]].
 - **UI English:** "Purnara" tidak diterjemahkan. Tagline bisa menjelaskan asalnya, misalnya "Purnara: from *purna*, complete." Lihat [[Bilingual ID-EN]].
 - **Vault** berganti nama menjadi **Purnara Brain**. Beranda vault kini [[Purnara]], dan ringkasan di brain umum kini `Projects/Purnara.md`.
-- **Package Flutter** `workspace_ai` diganti menjadi `purnara` saat Fase 1 dimulai, karena aplikasi belum dibangun selama Fase 0 ([[K-003 Vault dan struktur folder]]).
+- **Package Flutter** `workspace_ai` diganti menjadi `purnara` saat Fase 1 dimulai, karena aplikasi belum dibangun selama Fase 0 ([[K-003 Vault dan struktur folder]]). Sudah dilakukan 2026-09-24, saat pembangunan dimulai ([[K-005 Mulai membangun aplikasi]]).
 - Master plan (PDF) dan knowledge graph tetap memakai nama kerja lama. Catatan riwayat tetap menulis "Rampung" karena mencatat apa yang terjadi saat itu.
 
 ## Alternatif yang ditolak
