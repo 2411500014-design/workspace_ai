@@ -1,4 +1,4 @@
-package com.example.workspace_ai
+package id.purnara.app
 
 import io.flutter.embedding.android.FlutterActivity
 

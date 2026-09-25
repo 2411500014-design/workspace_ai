@@ -1,12 +1,13 @@
 {
-    "name": "workspace_ai",
-    "short_name": "workspace_ai",
+    "name": "Purnara",
+    "short_name": "Purnara",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "background_color": "#F6F8F7",
+    "theme_color": "#F6F8F7",
+    "description": "Workspace project berbasis AI untuk menyelesaikan skripsi, TA, dan penelitian tepat waktu.",
+    "lang": "id",
+    "orientation": "any",
     "prefer_related_applications": false,
     "icons": [
         {

@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "workspace_ai" "\0"
+            VALUE "CompanyName", "Purnara" "\0"
+            VALUE "FileDescription", "Purnara" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "workspace_ai" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "workspace_ai.exe" "\0"
-            VALUE "ProductName", "workspace_ai" "\0"
+            VALUE "InternalName", "purnara" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 Purnara. All rights reserved." "\0"
+            VALUE "OriginalFilename", "purnara.exe" "\0"
+            VALUE "ProductName", "Purnara" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

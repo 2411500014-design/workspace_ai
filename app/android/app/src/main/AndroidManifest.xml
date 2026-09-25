@@ -1,8 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- The app talks to the Purnara server. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- The server runs on the student's own computer over plain HTTP (docs/adr/0002).
+         Remove usesCleartextTraffic once the server is reachable over HTTPS. -->
     <application
-        android:label="workspace_ai"
+        android:label="Purnara"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
             android:exported="true"
