@@ -5,7 +5,7 @@ sumber: "§3"
 tags:
   - produk
   - persona
-updated: 2026-09-24
+updated: 2026-09-25
 ---
 
 # Persona dan JTBD
@@ -42,7 +42,7 @@ Pengguna pertama adalah mahasiswa tingkat akhir yang sedang mengerjakan skripsi 
 
 **Validasi:** ketiga persona diuji lewat wawancara 10–15 mahasiswa di Fase 0, sebelum kode fitur ditulis. Lihat [[Roadmap]].
 
-> [!question] Untuk English
-> Persona di atas semuanya mahasiswa Indonesia. Siapa pengguna versi English belum ditentukan. Lihat [[Pertanyaan Terbuka]].
+> [!info] Untuk English
+> Persona di atas semuanya mahasiswa Indonesia. Pengguna versi English adalah pengguna di luar Indonesia ([[K-006 Pengguna English di luar Indonesia]]); personanya belum dibuat.
 
 Terkait: [[Visi dan Positioning]] · [[Mode sebagai Preset]] · [[Go-to-Market]]

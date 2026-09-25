@@ -19,7 +19,9 @@ Hal yang belum diputuskan. Setelah diputuskan, buat catatan keputusan ([[Log Kep
 
 ## Dua bahasa
 - [ ] **Apakah semua teks English harus lengkap saat beta tertutup (1 Feb 2027)?** Peserta beta adalah mahasiswa Indonesia. Pilihan yang lebih ringan: key dan infrastruktur lengkap sejak Fase 1, terjemahan English menyusul per fitur, dan English lengkap saat launch publik. → [[K-002 Dua bahasa ID dan EN]]
-- [ ] **Siapa pengguna English?** Pilihannya: mahasiswa Indonesia yang lebih nyaman dengan UI English, mahasiswa internasional di kampus Indonesia, atau pengguna di luar Indonesia. Jawabannya menentukan apakah perlu template akademik internasional selain alur Bab 1–5, sempro, dan sidang. → [[Persona dan JTBD]], [[Mode sebagai Preset]]
+- [x] ~~**Siapa pengguna English?**~~ Pengguna di luar Indonesia (2026-09-25). → [[K-006 Pengguna English di luar Indonesia]]
+- [ ] **Template akademik internasional** untuk pengguna English (thesis chapters, proposal defense, viva) selain alur Bab 1–5, sempro, dan sidang: apa saja dan kapan? → [[K-006 Pengguna English di luar Indonesia]], [[Mode sebagai Preset]]
+- [ ] **Mata uang dan pembayaran** untuk pengguna luar negeri. Rencana saat ini rupiah lewat Midtrans atau Xendit. → [[Monetisasi]]
 - [ ] **Bahasa jawaban AI:** ikut bahasa pertanyaan, ikut bahasa UI, atau pengaturan per project? Usulan: ikut bahasa pertanyaan, default ke bahasa UI. → [[Bilingual ID-EN]]
 - [ ] Di UI English, istilah khas Indonesia ditampilkan bagaimana: diterjemahkan ("Thesis defense"), dibiarkan ("Sidang"), atau keduanya? → [[Bilingual ID-EN]]
 
@@ -27,7 +29,7 @@ Hal yang belum diputuskan. Setelah diputuskan, buat catatan keputusan ([[Log Kep
 - [x] ~~Kapan kerangka Flutter dipindah ke `app/`?~~ Sudah dipindah 2026-09-24. → [[K-003 Vault dan struktur folder]]
 - [x] Ganti nama package `workspace_ai`. Sudah menjadi `purnara` (2026-09-24). → [[K-004 Nama produk Purnara]] · [[K-005 Mulai membangun aplikasi]]
 - [x] ~~Inisialisasi git~~ Sudah 2026-09-24, lokal di branch `main`.
-- [ ] Buat remote GitHub (privat atau publik?) supaya CI berjalan. → [[Operasional]]
+- [x] ~~Buat remote GitHub~~ Sudah: `2411500014-design/workspace_ai`, dan CI berjalan di setiap push.
 
 ## Dari master plan (diputuskan lewat data)
 - [ ] **Project Chat pakai kelas model apa?** Tabel workflow menulis "kuat atau ringan", tapi hitungan unit economics memakai kelas kuat untuk 60 panggilan per bulan. Ketidakkonsistenan ini ditemukan lewat [[Knowledge Graph]] dan paling besar pengaruhnya ke biaya AI. → [[AI Engine]], [[Monetisasi]]

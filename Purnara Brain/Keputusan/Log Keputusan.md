@@ -3,7 +3,7 @@ type: index
 area: Keputusan
 tags:
   - keputusan
-updated: 2026-09-24
+updated: 2026-09-25
 ---
 
 # Log Keputusan
@@ -21,6 +21,8 @@ Satu tempat untuk semua keputusan. Keputusan baru dibuat dari template `Template
 | [[K-004 Nama produk Purnara]] | Nama produk Purnara | 2026-09-24 | Diterima; baru GitHub yang diamankan |
 | [[K-005 Mulai membangun aplikasi]] | Aplikasi dibangun sekarang, paralel dengan validasi Fase 0 | 2026-09-24 | Diterima |
 | [[K-003 Vault dan struktur folder]] | Vault di dalam folder project; monorepo menyusul | 2026-09-24 | Diterima, sebagian terbuka |
+| [[K-006 Pengguna English di luar Indonesia]] | Pengguna versi English adalah pengguna di luar Indonesia | 2026-09-25 | Diterima |
+| [[K-007 Platform adaptive]] | Desain menyesuaikan per OS: Material 3 di Android, HIG di iOS | 2026-09-25 | Diterima; belum dibangun |
 
 ## Keputusan arsitektur (ADR di repo)
 
